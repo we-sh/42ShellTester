@@ -1,4 +1,4 @@
 #!/bin/csh
 
-./minishell < test_source;
+./minishell > test_ret < test_source;
 
