@@ -1,0 +1,1 @@
+/bin/echo_invalid FIRST_TOKEN || /bin/echo LAST_TOKEN
