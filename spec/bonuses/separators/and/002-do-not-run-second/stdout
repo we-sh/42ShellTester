@@ -1,0 +1,2 @@
+expected_to be_empty
+expected_to have_not_regexp LAST_TOKEN
