@@ -1,9 +1,11 @@
 #!/bin/bash
 
 declare GLOBAL_PROG="$1"
+declare GLOBAL_SPECS_MATCHER="$2"
 declare GLOBAL_INSTALLDIR="$(pwd)"
 declare GLOBAL_TMP_DIRECTORY="${GLOBAL_INSTALLDIR}/tmp"
 declare C_RED="\033[31m\033[38;5;160m"
+declare C_GREEN="\033[31m\033[38;5;70m"
 declare C_CLEAR="\033[0m"
 
 mkdir "${GLOBAL_TMP_DIRECTORY}" 2>/dev/null
@@ -44,7 +46,7 @@ function run_expected_to_have_not_regexp
   then
     return 0
   else
-    printf 1
+    return 1
   fi
 }
 
@@ -86,11 +88,14 @@ function run_expector
     if [ "${?}" != "0" ]
     then
       printf "${C_RED}  ${1} %s${C_CLEAR}\n" "${LINE}"
+    else
+      printf "${C_GREEN}  ${1} %s ok ${C_CLEAR}\n" "${LINE}"
     fi
   done
 
   IFS="${OLD_IFS}"
 }
+
 
 function run_specs
 {
@@ -103,14 +108,17 @@ function run_specs
 
   cd "${GLOBAL_TMP_DIRECTORY}"
 
-  for TEST in $(find "${GLOBAL_INSTALLDIR}" -type d -regex "${GLOBAL_INSTALLDIR}/spec/.*/[0-9]\{3\}-.*")
+  for TEST in $(find -E "${GLOBAL_INSTALLDIR}" -type d -regex "${GLOBAL_INSTALLDIR}/spec/${GLOBAL_SPECS_MATCHER}.*/[0-9]{3}\-.*")
   do
     TEST_NAME="${TEST##*/}"
     TEST_FULLNAME="${TEST##*spec/}"
 
     printf "#%s\n" "${TEST_FULLNAME}"
 
-    eval "${GLOBAL_PROG}" < "${TEST}/stdin" 1> "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout" 2> "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr"
+    eval "${GLOBAL_PROG}" < "${TEST}/stdin" 1> "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout.raw" 2> "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr.raw"
+
+    awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout.raw" > "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout"
+    awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr.raw" > "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr"
 
     RESPONSE_STDOUT="${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout"
     RESPONSE_STDERR="${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr"
