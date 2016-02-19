@@ -1,0 +1,2 @@
+unsetenv PWD
+env

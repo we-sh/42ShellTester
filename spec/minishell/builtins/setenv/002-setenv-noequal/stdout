@@ -1,0 +1,21 @@
+expected_to have_regexp SETENVNULL=$
+
+expected_to have_regexp SETENV1=1$
+
+expected_to have_regexp SETENVLONG=LONG$
+
+expected_to have_regexp setenvlowercase=lowercase$
+
+expected_to have_regexp Sp4c3_T4B=_O_$
+
+expected_to have_regexp _=_$
+
+might have_regexp PATH=$
+
+might have_regexp HOME=$
+
+might have_regexp PWD=$
+
+might have_regexp USER=$
+
+might have_regexp LOGNAME=$

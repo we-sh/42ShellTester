@@ -1,0 +1,17 @@
+expected_to have_regexp PATH=
+expected_to have_regexp PATH=${PATH}
+
+expected_to have_regexp PWD=
+expected_to have_regexp PWD=${PWD}
+
+expected_to have_regexp OLDPWD=
+expected_to have_regexp OLDPWD=${OLDPWD}
+
+expected_to have_regexp HOME=
+expected_to have_regexp HOME=${HOME}
+
+expected_to have_regexp TERM_PROGRAM=
+expected_to have_regexp TERM_PROGRAM=${TERM_PROGRAM}
+
+expected_to have_regexp TEST_42SHTEST=
+expected_to have_regexp TEST_42SHTEST=token1
