@@ -11,6 +11,16 @@ declare C_CLEAR="\033[0m"
 
 mkdir "${GLOBAL_TMP_DIRECTORY}" 2>/dev/null
 
+function run_verb_exit_with_status
+{
+  if [ "${RESPONSE_EXIT_STATUS}" == "${EXPECTED_TO_ARGS[0]}" ]
+  then
+    return 0
+  else
+    return 1
+  fi
+}
+
 function run_verb_be_empty
 {
   if [ "$(awk '{print}' "${RESPONSE}")" == "" ]
@@ -117,9 +127,9 @@ function run_expected_to
   eval "run_verb_${EXPECTED_TO_CMD}"
   if [ "${?}" != "0" ]
   then
-    printf "${C_RED}  ✗ ${1} %s${C_CLEAR}\n" "${LINE}"
+    printf "${C_RED}  ✗ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}"
   else
-    printf "${C_GREEN}  √ ${1} %s${C_CLEAR}\n" "${LINE}"
+    printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}"
   fi
 }
 
@@ -133,9 +143,9 @@ function run_might
   eval "run_verb_${EXPECTED_TO_CMD}"
   if [ "${?}" != "0" ]
   then
-    printf "${C_YELLOW}  ~ ${1} %s${C_CLEAR}\n" "${LINE}"
+    printf "${C_YELLOW}  ~ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}"
   else
-    printf "${C_GREEN}  √ ${1} %s${C_CLEAR}\n" "${LINE}"
+    printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}"
   fi
 }
 
@@ -144,6 +154,7 @@ function run_expector
   local LINE
   local EXPECTED_STD="RESPONSE_${1}"
   local RESPONSE="${!EXPECTED_STD}"
+  local EXPECTED_STD_NAME="${1}"
   local TEST_CMD
   local TEST_RETURN
   local OLD_IFS="${IFS}"
@@ -168,6 +179,7 @@ function run_specs
   local RESULT
   local RESPONSE_STDOUT
   local RESPONSE_STDERR
+  local EXIT_STATUS
 
   cd "${GLOBAL_TMP_DIRECTORY}"
 
@@ -184,6 +196,7 @@ function run_specs
     fi
 
     eval "${GLOBAL_PROG}" < "${TEST}/stdin" 1> "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout.raw" 2> "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr.raw"
+    RESPONSE_EXIT_STATUS=${?}
 
     awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout.raw" > "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout"
     awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr.raw" > "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr"
