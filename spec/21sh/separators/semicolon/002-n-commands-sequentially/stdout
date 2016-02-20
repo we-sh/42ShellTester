@@ -1,0 +1,3 @@
+expected_to have_regexp FIRST_TOKEN
+expected_to have_regexp LAST_TOKEN
+expected_to have_not_regexp "FIRST_TOKEN.*LAST_TOKEN"

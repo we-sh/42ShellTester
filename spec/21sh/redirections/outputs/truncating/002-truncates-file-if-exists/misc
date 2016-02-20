@@ -1,0 +1,3 @@
+expected_to create_file truncated_file with_regexp LAST_TOKEN
+expected_to create_file truncated_file without_regexp FIRST_TOKEN
+expected_to create_file truncated_file with_nb_of_lines 1

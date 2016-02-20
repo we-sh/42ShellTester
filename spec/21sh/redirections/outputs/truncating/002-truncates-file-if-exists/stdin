@@ -1,0 +1,1 @@
+/bin/echo LAST_TOKEN >truncated_file

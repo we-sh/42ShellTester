@@ -8,8 +8,48 @@ declare C_RED="\033[31m\033[38;5;160m"
 declare C_GREEN="\033[31m\033[38;5;34m"
 declare C_YELLOW="\033[31m\033[1;33m"
 declare C_CLEAR="\033[0m"
+declare GLOBAL_TOKEN="42SHTESTTOKEN_$(date +%Y%m%d%H%M)"
 
 mkdir "${GLOBAL_TMP_DIRECTORY}" 2>/dev/null
+
+function run_verb_create_file
+{
+  if [ -f "${EXPECTED_TO_ARGS[0]}" ]
+  then
+    if [ "${EXPECTED_TO_ARGS[1]}" == "" ]
+    then
+      return 0
+    else
+      case "${EXPECTED_TO_ARGS[1]}" in
+        with_regexp)
+          if [ "$(awk -v regexp="${EXPECTED_TO_ARGS[2]}" '$0 ~ regexp {print}' "${EXPECTED_TO_ARGS[0]}")" != "" ]
+          then
+            return 0
+          else
+            return 1
+          fi ;;
+        without_regexp)
+          if [ "$(awk -v regexp="${EXPECTED_TO_ARGS[2]}" '$0 ~ regexp {print}' "${EXPECTED_TO_ARGS[0]}")" == "" ]
+          then
+            return 0
+          else
+            return 1
+          fi ;;
+        with_nb_of_lines)
+          if [ "$(awk 'END {print NR}' "${EXPECTED_TO_ARGS[0]}")" == "${EXPECTED_TO_ARGS[2]}" ]
+          then
+            return 0
+          else
+            return 1
+          fi ;;
+        *)
+          return 2 ;;
+      esac
+    fi
+  else
+    return 1
+  fi
+}
 
 function run_verb_exit_with_status
 {
@@ -122,15 +162,17 @@ function run_expected_to
   shift 1
   local EXPECTED_TO_CMD="${1}"
   shift 1
-  local -a EXPECTED_TO_ARGS=${@}
+  local -a EXPECTED_TO_ARGS='(${@})'
 
   eval "run_verb_${EXPECTED_TO_CMD}"
-  if [ "${?}" != "0" ]
-  then
-    printf "${C_RED}  ✗ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}"
-  else
-    printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}"
-  fi
+  case "${?}" in
+    0)
+      printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+    1)
+      printf "${C_RED}  ~ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+    2)
+      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+  esac
 }
 
 function run_might
@@ -141,12 +183,14 @@ function run_might
   local -a EXPECTED_TO_ARGS=${@}
 
   eval "run_verb_${EXPECTED_TO_CMD}"
-  if [ "${?}" != "0" ]
-  then
-    printf "${C_YELLOW}  ~ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}"
-  else
-    printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}"
-  fi
+  case "${?}" in
+    0)
+      printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+    1)
+      printf "${C_YELLOW}  ~ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+    2)
+      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+  esac
 }
 
 function run_expector
@@ -159,14 +203,12 @@ function run_expector
   local TEST_RETURN
   local OLD_IFS="${IFS}"
 
-  #printf "  ${1}\n"
   IFS=$'\n'
   for LINE in $(cat "${TEST}/$(echo "${1}" | awk '{print tolower($0)}')")
   do
     TEST_CMD="$(echo "${LINE}" | awk '{ print $1 }')"
     eval "run_${TEST_CMD}" ${LINE}
   done
-
   IFS="${OLD_IFS}"
 }
 
@@ -212,6 +254,11 @@ function run_specs
     if [ -f "${TEST}/stderr" ]
     then
       run_expector "STDERR"
+    fi
+
+    if [ -f "${TEST}/misc" ]
+    then
+      run_expector "MISC"
     fi
   done
 
