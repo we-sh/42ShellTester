@@ -1,2 +1,2 @@
-expected_to be_filled
-expected_to have_nb_of_lines 2
+might be_filled
+might have_nb_of_lines 2

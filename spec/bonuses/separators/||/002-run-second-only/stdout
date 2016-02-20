@@ -1,1 +1,1 @@
-expected_to have_regexp LAST_TOKEN
+might have_regexp LAST_TOKEN
