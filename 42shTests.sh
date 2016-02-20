@@ -183,7 +183,7 @@ function run_specs
 
   cd "${GLOBAL_TMP_DIRECTORY}"
 
-  for TEST in $(find -E "${GLOBAL_INSTALLDIR}" -type d -regex "${GLOBAL_INSTALLDIR}/spec/${GLOBAL_SPECS_MATCHER}.*/[0-9]{3}\-.*")
+  for TEST in $(find -E "${GLOBAL_INSTALLDIR}" -type d -regex "${GLOBAL_INSTALLDIR}/spec/.*${GLOBAL_SPECS_MATCHER}.*/[0-9]{3}\-.*")
   do
     TEST_NAME="${TEST##*/}"
     TEST_FULLNAME="${TEST##*spec/}"
@@ -195,17 +195,24 @@ function run_specs
       eval "zsh" "${TEST}/before_exec"
     fi
 
-    eval "${GLOBAL_PROG}" < "${TEST}/stdin" 1> "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout.raw" 2> "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr.raw"
+    RESPONSE_STDOUT="${GLOBAL_TMP_DIRECTORY}/${TEST_FULLNAME//\//-}.stdout"
+    RESPONSE_STDERR="${GLOBAL_TMP_DIRECTORY}/${TEST_FULLNAME//\//-}.stderr"
+
+    eval "${GLOBAL_PROG}" < "${TEST}/stdin" 1> "${RESPONSE_STDOUT}.raw" 2> "${RESPONSE_STDERR}.raw"
     RESPONSE_EXIT_STATUS=${?}
 
-    awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout.raw" > "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout"
-    awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr.raw" > "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr"
+    awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${RESPONSE_STDOUT}.raw" > "${RESPONSE_STDOUT}"
+    awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${RESPONSE_STDERR}.raw" > "${RESPONSE_STDERR}"
 
-    RESPONSE_STDOUT="${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout"
-    RESPONSE_STDERR="${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr"
+    if [ -f "${TEST}/stdout" ]
+    then
+      run_expector "STDOUT"
+    fi
 
-    run_expector "STDOUT"
-    run_expector "STDERR"
+    if [ -f "${TEST}/stderr" ]
+    then
+      run_expector "STDERR"
+    fi
   done
 
   cd "${GLOBAL_INSTALLDIR}"
