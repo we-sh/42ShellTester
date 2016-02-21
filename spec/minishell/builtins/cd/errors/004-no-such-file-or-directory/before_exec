@@ -1,0 +1,4 @@
+if [ -f no_such_file_or_directory ]
+then
+  rm -r no_such_file_or_directory
+fi
