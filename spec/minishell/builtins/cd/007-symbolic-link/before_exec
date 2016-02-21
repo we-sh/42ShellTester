@@ -1,0 +1,2 @@
+rm -f symbolic_link
+ln -s .. symbolic_link
