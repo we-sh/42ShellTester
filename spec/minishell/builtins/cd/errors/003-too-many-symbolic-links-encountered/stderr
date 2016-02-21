@@ -1,1 +1,2 @@
 expected_to be_filled
+might have_regexp "[Tt]oo many symbolic links encountered"

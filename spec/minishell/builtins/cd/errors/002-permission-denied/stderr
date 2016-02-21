@@ -1,1 +1,2 @@
 expected_to be_filled
+might have_regexp "[Pp]ermission denied"
