@@ -8,8 +8,58 @@ declare C_RED="\033[31m\033[38;5;160m"
 declare C_GREEN="\033[31m\033[38;5;34m"
 declare C_YELLOW="\033[31m\033[1;33m"
 declare C_CLEAR="\033[0m"
+declare GLOBAL_TOKEN="42SHTESTTOKEN_$(date +%Y%m%d%H%M)"
 
 mkdir "${GLOBAL_TMP_DIRECTORY}" 2>/dev/null
+
+function run_verb_create_file
+{
+  if [ -f "${EXPECTED_TO_ARGS[0]}" ]
+  then
+    if [ "${EXPECTED_TO_ARGS[1]}" == "" ]
+    then
+      return 0
+    else
+      case "${EXPECTED_TO_ARGS[1]}" in
+        with_regexp)
+          if [ "$(awk -v regexp="${EXPECTED_TO_ARGS[2]}" '$0 ~ regexp {print}' "${EXPECTED_TO_ARGS[0]}")" != "" ]
+          then
+            return 0
+          else
+            return 1
+          fi ;;
+        without_regexp)
+          if [ "$(awk -v regexp="${EXPECTED_TO_ARGS[2]}" '$0 ~ regexp {print}' "${EXPECTED_TO_ARGS[0]}")" == "" ]
+          then
+            return 0
+          else
+            return 1
+          fi ;;
+        with_nb_of_lines)
+          if [ "$(awk 'END {print NR}' "${EXPECTED_TO_ARGS[0]}")" == "${EXPECTED_TO_ARGS[2]}" ]
+          then
+            return 0
+          else
+            return 1
+          fi ;;
+        *)
+          return 2 ;;
+      esac
+    fi
+  else
+    return 1
+  fi
+}
+
+function run_verb_exit_with_status
+{
+  if [ "${RESPONSE_EXIT_STATUS}" == "${EXPECTED_TO_ARGS[0]}" ]
+  then
+    return 0
+  else
+    return 1
+  fi
+}
 
 function run_verb_be_empty
 {
@@ -112,15 +162,17 @@ function run_expected_to
   shift 1
   local EXPECTED_TO_CMD="${1}"
   shift 1
-  local -a EXPECTED_TO_ARGS=${@}
+  local -a EXPECTED_TO_ARGS='(${@})'
 
   eval "run_verb_${EXPECTED_TO_CMD}"
-  if [ "${?}" != "0" ]
-  then
-    printf "${C_RED}  ✗ ${1} %s${C_CLEAR}\n" "${LINE}"
-  else
-    printf "${C_GREEN}  √ ${1} %s${C_CLEAR}\n" "${LINE}"
-  fi
+  case "${?}" in
+    0)
+      printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+    1)
+      printf "${C_RED}  ~ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+    2)
+      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+  esac
 }
 
 function run_might
@@ -131,12 +183,14 @@ function run_might
   local -a EXPECTED_TO_ARGS=${@}
 
   eval "run_verb_${EXPECTED_TO_CMD}"
-  if [ "${?}" != "0" ]
-  then
-    printf "${C_YELLOW}  ~ ${1} %s${C_CLEAR}\n" "${LINE}"
-  else
-    printf "${C_GREEN}  √ ${1} %s${C_CLEAR}\n" "${LINE}"
-  fi
+  case "${?}" in
+    0)
+      printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+    1)
+      printf "${C_YELLOW}  ~ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+    2)
+      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+  esac
 }
 
 function run_expector
@@ -144,18 +198,17 @@ function run_expector
   local LINE
   local EXPECTED_STD="RESPONSE_${1}"
   local RESPONSE="${!EXPECTED_STD}"
+  local EXPECTED_STD_NAME="${1}"
   local TEST_CMD
   local TEST_RETURN
   local OLD_IFS="${IFS}"
 
-  #printf "  ${1}\n"
   IFS=$'\n'
   for LINE in $(cat "${TEST}/$(echo "${1}" | awk '{print tolower($0)}')")
   do
     TEST_CMD="$(echo "${LINE}" | awk '{ print $1 }')"
     eval "run_${TEST_CMD}" ${LINE}
   done
-
   IFS="${OLD_IFS}"
 }
 
@@ -168,10 +221,11 @@ function run_specs
   local RESULT
   local RESPONSE_STDOUT
   local RESPONSE_STDERR
+  local EXIT_STATUS
 
   cd "${GLOBAL_TMP_DIRECTORY}"
 
-  for TEST in $(find -E "${GLOBAL_INSTALLDIR}" -type d -regex "${GLOBAL_INSTALLDIR}/spec/${GLOBAL_SPECS_MATCHER}.*/[0-9]{3}\-.*")
+  for TEST in $(find -E "${GLOBAL_INSTALLDIR}" -type d -regex "${GLOBAL_INSTALLDIR}/spec/.*${GLOBAL_SPECS_MATCHER}.*/[0-9]{3}\-.*")
   do
     TEST_NAME="${TEST##*/}"
     TEST_FULLNAME="${TEST##*spec/}"
@@ -183,16 +237,29 @@ function run_specs
       eval "zsh" "${TEST}/before_exec"
     fi
 
-    eval "${GLOBAL_PROG}" < "${TEST}/stdin" 1> "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout.raw" 2> "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr.raw"
+    RESPONSE_STDOUT="${GLOBAL_TMP_DIRECTORY}/${TEST_FULLNAME//\//-}.stdout"
+    RESPONSE_STDERR="${GLOBAL_TMP_DIRECTORY}/${TEST_FULLNAME//\//-}.stderr"
 
-    awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout.raw" > "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout"
-    awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr.raw" > "${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr"
+    eval "${GLOBAL_PROG}" < "${TEST}/stdin" 1> "${RESPONSE_STDOUT}.raw" 2> "${RESPONSE_STDERR}.raw"
+    RESPONSE_EXIT_STATUS=${?}
 
-    RESPONSE_STDOUT="${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stdout"
-    RESPONSE_STDERR="${GLOBAL_TMP_DIRECTORY}/spec.${TEST_NAME}.stderr"
+    awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${RESPONSE_STDOUT}.raw" > "${RESPONSE_STDOUT}"
+    awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${RESPONSE_STDERR}.raw" > "${RESPONSE_STDERR}"
 
-    run_expector "STDOUT"
-    run_expector "STDERR"
+    if [ -f "${TEST}/stdout" ]
+    then
+      run_expector "STDOUT"
+    fi
+
+    if [ -f "${TEST}/stderr" ]
+    then
+      run_expector "STDERR"
+    fi
+
+    if [ -f "${TEST}/misc" ]
+    then
+      run_expector "MISC"
+    fi
   done
 
   cd "${GLOBAL_INSTALLDIR}"

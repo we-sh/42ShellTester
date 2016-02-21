@@ -1,2 +1,0 @@
-/bin/echo FIRST_TOKEN ||| /bin/echo LAST_TOKEN
-/bin/echo FIRST_TOKEN |||| /bin/echo LAST_TOKEN

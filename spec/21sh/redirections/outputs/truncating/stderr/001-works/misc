@@ -1,0 +1,2 @@
+expected_to create_file new_file_stderr with_regexp "No such file or directory"
+expected_to create_file new_file_stderr with_nb_of_lines 1

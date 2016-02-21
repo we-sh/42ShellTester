@@ -1,0 +1,7 @@
+expected_to have_regexp FIRST_TOKEN
+expected_to have_regexp SECOND_TOKEN
+expected_to have_regexp THIRD_TOKEN
+expected_to have_regexp FOURTH_TOKEN
+expected_to have_not_regexp "FIRST_TOKEN.*SECOND_TOKEN"
+expected_to have_not_regexp "SECOND_TOKEN.*THIRD_TOKEN"
+expected_to have_not_regexp "THIRD_TOKEN.*FOURTH_TOKEN"

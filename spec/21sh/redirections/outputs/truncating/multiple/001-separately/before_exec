@@ -1,0 +1,2 @@
+rm -f new_file_stderr
+rm -f new_file_stdout

@@ -1,0 +1,1 @@
+/bin/echo FIRST_TOKEN ; /bin/echo SECOND_TOKEN ; /bin/echo THIRD_TOKEN ; /bin/echo FOURTH_TOKEN

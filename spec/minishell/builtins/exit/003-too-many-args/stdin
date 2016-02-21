@@ -1,0 +1,2 @@
+exit 42 43
+/bin/echo TOKEN_NOT_EXITED
