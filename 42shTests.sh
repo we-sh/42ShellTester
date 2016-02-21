@@ -167,11 +167,11 @@ function run_expected_to
   eval "run_verb_${EXPECTED_TO_CMD}"
   case "${?}" in
     0)
-      printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+      printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
     1)
-      printf "${C_RED}  ~ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+      printf "${C_RED}  ~ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
     2)
-      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
   esac
 }
 
@@ -185,11 +185,11 @@ function run_might
   eval "run_verb_${EXPECTED_TO_CMD}"
   case "${?}" in
     0)
-      printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+      printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
     1)
-      printf "${C_YELLOW}  ~ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+      printf "${C_YELLOW}  ~ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
     2)
-      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${LINE}" ;;
+      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
   esac
 }
 
@@ -225,7 +225,7 @@ function run_specs
 
   cd "${GLOBAL_TMP_DIRECTORY}"
 
-  for TEST in $(find -E "${GLOBAL_INSTALLDIR}" -type d -regex "${GLOBAL_INSTALLDIR}/spec/.*${GLOBAL_SPECS_MATCHER}.*/[0-9]{3}\-.*")
+  for TEST in $(find -E "${GLOBAL_INSTALLDIR}/spec" -type d -regex "${GLOBAL_INSTALLDIR}/spec/.*${GLOBAL_SPECS_MATCHER}.*/[0-9]{3}\-.*")
   do
     TEST_NAME="${TEST##*/}"
     TEST_FULLNAME="${TEST##*spec/}"
