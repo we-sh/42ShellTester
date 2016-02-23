@@ -238,6 +238,15 @@ function run_specs
     (
       if [ -f "${TEST}/before_exec" ]
       then
+
+        local INDEX=0
+        local TOTAL=$(awk 'END {print NR+1}' "${TEST}/before_exec")
+        while [ "$INDEX" -le "$TOTAL" ]
+        do
+          eval $(awk -v INDEX="${INDEX}" 'BEGIN {FS="="} NR == INDEX {print $0; exit}' "${TEST}/before_exec")
+          (( INDEX += 1 ))
+        done
+
         eval "zsh" "${TEST}/before_exec"
       fi
       eval "${GLOBAL_PROG}" < "${TEST}/stdin" 1> "${RESPONSE_STDOUT}.raw" 2> "${RESPONSE_STDERR}.raw"

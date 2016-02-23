@@ -1,6 +1,3 @@
-if [ -f symbolic_link ]
-then
-  rm -f symbolic_link
-fi
+if [ -f symbolic_link ]; then rm -f symbolic_link; fi
 rm -f symbolic_link
 ln -s .. symbolic_link
