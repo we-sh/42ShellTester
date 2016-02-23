@@ -232,15 +232,16 @@ function run_specs
 
     printf "#%s\n" "${TEST_FULLNAME}"
 
-    if [ -f "${TEST}/before_exec" ]
-    then
-      eval "zsh" "${TEST}/before_exec"
-    fi
-
     RESPONSE_STDOUT="${GLOBAL_TMP_DIRECTORY}/${TEST_FULLNAME//\//-}.stdout"
     RESPONSE_STDERR="${GLOBAL_TMP_DIRECTORY}/${TEST_FULLNAME//\//-}.stderr"
 
-    eval "${GLOBAL_PROG}" < "${TEST}/stdin" 1> "${RESPONSE_STDOUT}.raw" 2> "${RESPONSE_STDERR}.raw"
+    (
+      if [ -f "${TEST}/before_exec" ]
+      then
+        eval "zsh" "${TEST}/before_exec"
+      fi
+      eval "${GLOBAL_PROG}" < "${TEST}/stdin" 1> "${RESPONSE_STDOUT}.raw" 2> "${RESPONSE_STDERR}.raw"
+    )
     RESPONSE_EXIT_STATUS=${?}
 
     awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${RESPONSE_STDOUT}.raw" > "${RESPONSE_STDOUT}"
