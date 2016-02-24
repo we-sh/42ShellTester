@@ -1,0 +1,5 @@
+expected_to have_not_regexp "${GLOBAL_TMP_DIRECTORY}/symbolic_link1$"
+expected_to have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory:PWD$"
+
+expected_to have_not_regexp "${GLOBAL_TMP_DIRECTORY}/symbolic_link1/symbolic_link2$"
+expected_to have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory/subsubdirectory:PWD$"

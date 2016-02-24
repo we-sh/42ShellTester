@@ -1,1 +1,1 @@
-expected_to have_regexp ${GLOBAL_TMP_DIRECTORY%/tmp}$
+expected_to have_regexp "PWD:${GLOBAL_INSTALLDIR}:PWD$"

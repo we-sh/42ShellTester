@@ -1,2 +1,2 @@
 cd symbolic_link
-/bin/pwd
+${GLOBAL_TMP_DIRECTORY}/display_pwd

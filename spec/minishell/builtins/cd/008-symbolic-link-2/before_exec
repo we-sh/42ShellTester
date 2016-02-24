@@ -1,3 +1,6 @@
 rm -f symbolic_link1 symbolic_link2
 ln -s .. symbolic_link1
 ln -s symbolic_link1 symbolic_link2
+
+rm -f display_pwd
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd
