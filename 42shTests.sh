@@ -247,8 +247,8 @@ function run_specs
           (( INDEX += 1 ))
         done
 
-        eval "zsh" "${TEST}/before_exec"
       fi
+
       eval "${GLOBAL_PROG}" < "${TEST}/stdin" 1> "${RESPONSE_STDOUT}.raw" 2> "${RESPONSE_STDERR}.raw"
     )
     RESPONSE_EXIT_STATUS=${?}
