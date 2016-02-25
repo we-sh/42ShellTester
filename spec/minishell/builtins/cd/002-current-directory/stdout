@@ -1,1 +1,1 @@
-expected_to have_regexp ${GLOBAL_TMP_DIRECTORY}$
+expected_to have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}:PWD$"

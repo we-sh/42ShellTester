@@ -1,2 +1,5 @@
 if [ -d permission_denied ]; then chmod 777 permission_denied; rm -r permission_denied; fi
 mkdir -m 0 permission_denied
+
+rm -f display_pwd
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd

@@ -1,2 +1,2 @@
 cd not_a_directory
-/bin/pwd
+${GLOBAL_TMP_DIRECTORY}/display_pwd

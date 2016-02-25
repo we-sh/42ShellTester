@@ -1,0 +1,4 @@
+expected_to have_nb_of_lines 3
+expected_to have_regexp "START DISPLAYING ENVIRONMENT VARIABLES$"
+expected_to have_regexp "TESTVARIABLE=TOKEN$"
+expected_to have_regexp "END DISPLAYING ENVIRONMENT VARIABLES$"

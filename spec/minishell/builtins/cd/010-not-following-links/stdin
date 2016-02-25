@@ -1,0 +1,7 @@
+cd -P symbolic_link1
+/bin/pwd
+${GLOBAL_TMP_DIRECTORY}/display_pwd
+
+cd -P symbolic_link2
+/bin/pwd
+${GLOBAL_TMP_DIRECTORY}/display_pwd

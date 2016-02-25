@@ -1,2 +1,2 @@
 cd ..
-/bin/pwd
+${GLOBAL_TMP_DIRECTORY}/display_pwd

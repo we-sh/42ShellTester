@@ -1,2 +1,2 @@
 cd permission_denied
-/bin/pwd
+${GLOBAL_TMP_DIRECTORY}/display_pwd

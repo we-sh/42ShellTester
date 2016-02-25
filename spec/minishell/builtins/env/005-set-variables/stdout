@@ -1,0 +1,3 @@
+expected_to have_regexp "42SHTESTS1=TOKEN1$"
+expected_to have_regexp "42SHTESTS2=TOKEN2$"
+expected_to have_regexp "42SHTESTS3=TOKEN3$"

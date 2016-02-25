@@ -235,40 +235,57 @@ function run_specs
     RESPONSE_STDOUT="${GLOBAL_TMP_DIRECTORY}/${TEST_FULLNAME//\//-}.stdout"
     RESPONSE_STDERR="${GLOBAL_TMP_DIRECTORY}/${TEST_FULLNAME//\//-}.stderr"
 
-    (
-      if [ -f "${TEST}/before_exec" ]
+    if [ -f "${TEST}/stdin" ]
+    then
+
+      rm -f "${GLOBAL_TMP_DIRECTORY}/stdin"
+      local INDEX=1
+      local LINE
+      local TOTAL=$(awk 'END {print NR+1}' "${TEST}/stdin")
+      while [ "$INDEX" -le "$TOTAL" ]
+      do
+        LINE="$(awk -v INDEX="${INDEX}" 'NR == INDEX {gsub(/\|/, "\"|\""); gsub(/;/, "\";\""); gsub(/>/, "\">\""); gsub(/&/, "\"&\""); gsub(/</, "\"<\""); gsub(/-/, "\"-\""); print $0; exit}' "${TEST}/stdin")"
+        eval echo "${LINE}" >>"${GLOBAL_TMP_DIRECTORY}/stdin"
+
+        (( INDEX += 1 ))
+      done
+
+      (
+        if [ -f "${TEST}/before_exec" ]
+        then
+
+          local INDEX=0
+          local TOTAL=$(awk 'END {print NR+1}' "${TEST}/before_exec")
+          while [ "$INDEX" -le "$TOTAL" ]
+          do
+            eval $(awk -v INDEX="${INDEX}" 'BEGIN {FS="="} NR == INDEX {print $0; exit}' "${TEST}/before_exec")
+            (( INDEX += 1 ))
+          done
+
+        fi
+
+        eval "${GLOBAL_PROG}" < "${GLOBAL_TMP_DIRECTORY}/stdin" 1> "${RESPONSE_STDOUT}.raw" 2> "${RESPONSE_STDERR}.raw"
+      )
+      RESPONSE_EXIT_STATUS=${?}
+
+      awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${RESPONSE_STDOUT}.raw" > "${RESPONSE_STDOUT}"
+      awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${RESPONSE_STDERR}.raw" > "${RESPONSE_STDERR}"
+
+      if [ -f "${TEST}/stdout" ]
       then
-
-        local INDEX=0
-        local TOTAL=$(awk 'END {print NR+1}' "${TEST}/before_exec")
-        while [ "$INDEX" -le "$TOTAL" ]
-        do
-          eval $(awk -v INDEX="${INDEX}" 'BEGIN {FS="="} NR == INDEX {print $0; exit}' "${TEST}/before_exec")
-          (( INDEX += 1 ))
-        done
-
+        run_expector "STDOUT"
       fi
 
-      eval "${GLOBAL_PROG}" < "${TEST}/stdin" 1> "${RESPONSE_STDOUT}.raw" 2> "${RESPONSE_STDERR}.raw"
-    )
-    RESPONSE_EXIT_STATUS=${?}
+      if [ -f "${TEST}/stderr" ]
+      then
+        run_expector "STDERR"
+      fi
 
-    awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${RESPONSE_STDOUT}.raw" > "${RESPONSE_STDOUT}"
-    awk '{gsub(/\033\[[0-9;]*m/, ""); print}' "${RESPONSE_STDERR}.raw" > "${RESPONSE_STDERR}"
+      if [ -f "${TEST}/misc" ]
+      then
+        run_expector "MISC"
+      fi
 
-    if [ -f "${TEST}/stdout" ]
-    then
-      run_expector "STDOUT"
-    fi
-
-    if [ -f "${TEST}/stderr" ]
-    then
-      run_expector "STDERR"
-    fi
-
-    if [ -f "${TEST}/misc" ]
-    then
-      run_expector "MISC"
     fi
   done
 

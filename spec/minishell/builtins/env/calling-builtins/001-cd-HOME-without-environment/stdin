@@ -1,0 +1,2 @@
+env -i cd
+/bin/pwd

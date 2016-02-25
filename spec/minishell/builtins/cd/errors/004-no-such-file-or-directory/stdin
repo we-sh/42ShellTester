@@ -1,2 +1,2 @@
 cd no_such_file_or_directory
-/bin/pwd
+${GLOBAL_TMP_DIRECTORY}/display_pwd
