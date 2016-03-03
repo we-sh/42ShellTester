@@ -1,0 +1,3 @@
+unsetenv _
+unsetenv LSCOLORS
+env

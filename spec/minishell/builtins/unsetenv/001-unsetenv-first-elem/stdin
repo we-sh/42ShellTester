@@ -1,2 +1,2 @@
-unsetenv PWD
+unsetenv SSH_AUTH_SOCK
 env
