@@ -1,0 +1,6 @@
+unsetenv PATH
+unsetenv SSH_AUTH_SOCK
+unsetenv _
+setenv TEST=test
+setenv TEST test
+env

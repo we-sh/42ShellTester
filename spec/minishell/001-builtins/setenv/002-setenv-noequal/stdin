@@ -1,27 +1,14 @@
 setenv SETENVNULL
-
 setenv SETENV1 1
-
 setenv SETENVLONG LONG
-
 setenv setenvlowercase lowercase
-
 	   		 setenv 		Sp4c3_T4B=_O_		 		  
-
 setenv _ _
-
 setenv PATH
-
 setenv HOME
-
 setenv PWD
-
 setenv USER
-
 setenv LOGNAME
-
 setenv =
-
 setenv ===
-
 env

@@ -25,4 +25,3 @@ expected_to have_not_regexp PAGER
 expected_to have_not_regexp LESS
 expected_to have_not_regexp LC_CTYPE
 expected_to have_not_regexp LSCOLORS
-expected_to have_not_regexp _

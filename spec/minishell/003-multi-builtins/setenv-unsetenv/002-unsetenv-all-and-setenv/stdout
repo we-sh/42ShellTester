@@ -1,0 +1,2 @@
+expected_to have_regexp TEST2=ok$
+expected_to have_regexp USER=42shtests$
