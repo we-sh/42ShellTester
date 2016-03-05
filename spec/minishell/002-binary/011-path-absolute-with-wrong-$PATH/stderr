@@ -1,0 +1,2 @@
+expected_to have_regexp "md5: test: No such file or directory"
+expected_to have_regexp "ls: Command not found."

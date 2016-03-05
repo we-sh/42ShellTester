@@ -1,0 +1,3 @@
+expected_to have_regexp "Usage:"
+expected_to have_regexp "ptyexec"
+expected_to have_regexp "[command to run] [arguments...]"

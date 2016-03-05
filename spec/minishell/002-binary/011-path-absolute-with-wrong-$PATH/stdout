@@ -1,0 +1,2 @@
+expected_to match_each_lines_of_file ${GLOBAL_INSTALLDIR}/tmp/output_binary
+expected_to have_regexp 28b265e57ba18215aeff762bfe0d2689
