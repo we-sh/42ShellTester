@@ -6,10 +6,8 @@ unsetenv XPC_FLAGS
 unsetenv LANG
 unsetenv PWD
 unsetenv SHELL
-unsetenv SECURITYSESSIONID
 unsetenv TERM_PROGRAM
 unsetenv PATH
-unsetenv COMMAND_MODE
 unsetenv TERM
 unsetenv HOME
 unsetenv TMPDIR
