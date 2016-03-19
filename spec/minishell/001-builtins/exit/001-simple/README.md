@@ -1,6 +1,6 @@
 # 001-simple
 
-*spec > minishell > builtins > exit > 001-simple*
+*spec > minishell > 001-builtins > exit > 001-simple*
 
 ### Shell commands that are sent to the standard entry
 

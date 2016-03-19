@@ -1,6 +1,6 @@
 # 002-unset-and-set-variable
 
-*spec > minishell > builtins > env > multiple-options > 002-unset-and-set-variable*
+*spec > minishell > 001-builtins > env > multiple-options > 002-unset-and-set-variable*
 
 ### What is done before test
 

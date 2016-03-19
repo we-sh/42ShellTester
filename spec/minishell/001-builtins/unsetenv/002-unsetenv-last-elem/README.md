@@ -1,26 +1,25 @@
-# 001-unsetenv-first-elem
+# 002-unsetenv-last-elem
 
-*spec > minishell > builtins > unsetenv > 001-unsetenv-first-elem*
+*spec > minishell > 001-builtins > unsetenv > 002-unsetenv-last-elem*
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-unsetenv PWD
+unsetenv _
+unsetenv LSCOLORS
 env
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp $PWD
-
-
+expected_to have_not_regexp $LSCOLORS
 ```
 
 ### What is expected on error output
 
 ```bash
-
+expected_to be_empty
 ```
 
 ### Variables

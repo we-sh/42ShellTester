@@ -1,6 +1,6 @@
 # 001-not-a-directory
 
-*spec > minishell > builtins > cd > errors > 001-not-a-directory*
+*spec > minishell > 001-builtins > cd > errors > 001-not-a-directory*
 
 ### What is done before test
 

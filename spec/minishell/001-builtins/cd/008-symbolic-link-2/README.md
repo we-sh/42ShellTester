@@ -1,6 +1,6 @@
 # 008-symbolic-link-2
 
-*spec > minishell > builtins > cd > 008-symbolic-link-2*
+*spec > minishell > 001-builtins > cd > 008-symbolic-link-2*
 
 ### What is done before test
 

@@ -1,6 +1,6 @@
 # 002-permission-denied
 
-*spec > minishell > builtins > cd > errors > 002-permission-denied*
+*spec > minishell > 001-builtins > cd > errors > 002-permission-denied*
 
 ### What is done before test
 

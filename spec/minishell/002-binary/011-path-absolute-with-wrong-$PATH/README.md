@@ -1,35 +1,38 @@
-# 001-basic-unsetenv-and-setenv
+# 011-path-absolute-with-wrong-$PATH
 
-*spec > minishell > 003-multi-builtins > setenv-unsetenv > 001-basic-unsetenv-and-setenv*
+*spec > minishell > 002-binary > 011-path-absolute-with-wrong-$PATH*
 
 ### What is done before test
 
 ```bash
-env > stored_env;
+rm -f ${GLOBAL_INSTALLDIR}/tmp/output_binary
+ls -1 ${GLOBAL_INSTALLDIR}/spec > ${GLOBAL_INSTALLDIR}/tmp/output_binary
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-unsetenv PATH
-unsetenv SSH_AUTH_SOCK
-unsetenv _
-setenv TEST=test
-setenv TEST test
-env
+setenv PATH toto
+setenv PATH=toto
+/bin/ls -1 ../spec
+ls ../spec
+/sbin/md5 test
+/sbin/md5 /sbin/md5
+
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_regexp TEST=test$
-
+expected_to match_each_lines_of_file ${GLOBAL_INSTALLDIR}/tmp/output_binary
+expected_to have_regexp 28b265e57ba18215aeff762bfe0d2689
 ```
 
 ### What is expected on error output
 
 ```bash
-
+expected_to have_regexp "md5: test: No such file or directory"
+expected_to have_regexp "ls: Command not found."
 ```
 
 ### Variables

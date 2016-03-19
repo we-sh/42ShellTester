@@ -1,6 +1,6 @@
 # 004-status-of-last-command
 
-*spec > minishell > builtins > exit > 004-status-of-last-command*
+*spec > minishell > 001-builtins > exit > 004-status-of-last-command*
 
 ### Shell commands that are sent to the standard entry
 

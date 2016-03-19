@@ -1,6 +1,6 @@
 # 003-ignore-environment-1
 
-*spec > minishell > builtins > env > 003-ignore-environment-1*
+*spec > minishell > 001-builtins > env > 003-ignore-environment-1*
 
 ### What is done before test
 

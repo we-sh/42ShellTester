@@ -1,27 +1,24 @@
-# 006-oldpwd
+# 002-path-relative-\usr\bin-whereis
 
-*spec > minishell > builtins > cd > 006-oldpwd*
+*spec > minishell > 002-binary > 002-path-relative-\usr\bin-whereis*
 
 ### What is done before test
 
 ```bash
-rm -f display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-cd /
-cd -
-${GLOBAL_TMP_DIRECTORY}/display_pwd
+whereis yes
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}:PWD$"
+expected_to have_regexp /usr/bin/yes
 ```
 
 ### What is expected on error output

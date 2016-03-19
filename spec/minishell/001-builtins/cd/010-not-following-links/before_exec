@@ -1,7 +1,0 @@
-rm -fr symbolic_link1 subdirectory
-mkdir -p subdirectory/subsubdirectory
-ln -s subdirectory symbolic_link1
-ln -s subsubdirectory subdirectory/symbolic_link2
-
-rm -f display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd

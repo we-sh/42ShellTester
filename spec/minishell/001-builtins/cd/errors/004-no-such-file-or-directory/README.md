@@ -1,6 +1,6 @@
 # 004-no-such-file-or-directory
 
-*spec > minishell > builtins > cd > errors > 004-no-such-file-or-directory*
+*spec > minishell > 001-builtins > cd > errors > 004-no-such-file-or-directory*
 
 ### What is done before test
 

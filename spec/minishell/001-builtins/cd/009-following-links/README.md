@@ -1,27 +1,28 @@
 # 009-following-links
 
-*spec > minishell > builtins > cd > 009-following-links*
+*spec > minishell > 001-builtins > cd > 009-following-links*
 
 ### What is done before test
 
 ```bash
-rm -fr symbolic_link1 subdirectory
+rm -fr subdirectory_link subdirectory
 mkdir -p subdirectory/subsubdirectory
-ln -s subdirectory symbolic_link1
-ln -s subsubdirectory subdirectory/symbolic_link2
+ln -s subdirectory subdirectory_link
+ln -s subsubdirectory subdirectory/subsubdirectory_link
 
 rm -f display_pwd
 gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-cd symbolic_link1
+cd subdirectory_link
 /bin/pwd
 ${GLOBAL_TMP_DIRECTORY}/display_pwd
 
-cd symbolic_link2
+cd subsubdirectory_link
 /bin/pwd
 ${GLOBAL_TMP_DIRECTORY}/display_pwd
 
@@ -30,11 +31,12 @@ ${GLOBAL_TMP_DIRECTORY}/display_pwd
 ### What is expected on standard output
 
 ```bash
-expected_to have_regexp "${GLOBAL_TMP_DIRECTORY}/symbolic_link1$"
+expected_to have_regexp "${GLOBAL_TMP_DIRECTORY}/subdirectory_link$"
 expected_to have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory:PWD$"
 
-expected_to have_regexp "${GLOBAL_TMP_DIRECTORY}/symbolic_link1/symbolic_link2$"
+expected_to have_regexp "${GLOBAL_TMP_DIRECTORY}/subdirectory_link/subsubdirectory_link$"
 expected_to have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory/subsubdirectory:PWD$"
+
 ```
 
 ### What is expected on error output

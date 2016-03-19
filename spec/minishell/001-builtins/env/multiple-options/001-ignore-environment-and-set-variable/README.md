@@ -1,6 +1,6 @@
 # 001-ignore-environment-and-set-variable
 
-*spec > minishell > builtins > env > multiple-options > 001-ignore-environment-and-set-variable*
+*spec > minishell > 001-builtins > env > multiple-options > 001-ignore-environment-and-set-variable*
 
 ### What is done before test
 

@@ -1,6 +1,6 @@
 # 003-too-many-symbolic-links-encountered
 
-*spec > minishell > builtins > cd > errors > 003-too-many-symbolic-links-encountered*
+*spec > minishell > 001-builtins > cd > errors > 003-too-many-symbolic-links-encountered*
 
 ### What is done before test
 

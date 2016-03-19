@@ -1,6 +1,6 @@
 # 001-env-same-value-as-parent
 
-*spec > minishell > builtins > env > 001-env-same-value-as-parent*
+*spec > minishell > 001-builtins > env > 001-env-same-value-as-parent*
 
 ### What is done before test
 

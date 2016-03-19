@@ -1,6 +1,6 @@
 # 005-set-variables
 
-*spec > minishell > builtins > env > 005-set-variables*
+*spec > minishell > 001-builtins > env > 005-set-variables*
 
 ### What is done before test
 

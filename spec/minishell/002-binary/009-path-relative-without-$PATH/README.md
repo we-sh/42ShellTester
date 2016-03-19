@@ -1,25 +1,33 @@
-# 003-too-many-args
+# 009-path-relative-without-$PATH
 
-*spec > minishell > 001-builtins > exit > 003-too-many-args*
+*spec > minishell > 002-binary > 009-path-relative-without-$PATH*
+
+### What is done before test
+
+```bash
+rm -f ${GLOBAL_INSTALLDIR}/tmp/output_binary
+ls ${GLOBAL_INSTALLDIR}/spec > ${GLOBAL_INSTALLDIR}/tmp/output_binary
+```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-exit 42 43
-/bin/echo TOKEN_NOT_EXITED
+unsetenv PATH
+ls -1 ../spec
+md5 test
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_regexp TOKEN_NOT_EXITED
+expected_to match_each_lines_of_file ${GLOBAL_INSTALLDIR}/tmp/output_binary
 ```
 
 ### What is expected on error output
 
 ```bash
-might be_filled
+expected_to have_regexp "md5: Command not found."
 ```
 
 ### Variables
