@@ -1,6 +1,6 @@
 # 001-separately
 
-*spec > 21sh > redirections > outputs > truncating > multiple > 001-separately*
+*[spec > 21sh > redirections > outputs > truncating > multiple](..) > 001-separately*
 
 ### What is done before test
 
@@ -19,16 +19,16 @@ rm -f new_file_stdout
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp "No such file or directory"
-expected_to have_not_regexp "42shTests.sh"
+expected_to_not have_regexp "No such file or directory"
+expected_to_not have_regexp "42shTests.sh"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to have_not_regexp "No such file or directory"
-expected_to have_not_regexp "42shTests.sh"
+expected_to_not have_regexp "No such file or directory"
+expected_to_not have_regexp "42shTests.sh"
 
 ```
 

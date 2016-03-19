@@ -1,18 +1,19 @@
 # 005-set-variables
 
-*spec > minishell > 001-builtins > env > 005-set-variables*
+*[spec > minishell > 001-builtins > env](..) > 005-set-variables*
 
 ### What is done before test
 
 ```bash
-rm -f display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-env/main.c -o display_env
+rm -f ./display_env
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env 42SHTESTS1=TOKEN1 42SHTESTS2=TOKEN2 42SHTESTS3=TOKEN3 display_env
+env 42SHTESTS1=TOKEN1 42SHTESTS2=TOKEN2 42SHTESTS3=TOKEN3 ./display_env
 
 ```
 

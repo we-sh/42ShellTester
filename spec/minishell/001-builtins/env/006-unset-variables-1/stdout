@@ -1,3 +1,3 @@
-might have_not_regexp "HOME="
-might have_not_regexp "PATH="
-might have_not_regexp "TESTVARIABLE="
+might_not have_regexp "HOME="
+might_not have_regexp "PATH="
+might_not have_regexp "TESTVARIABLE="

@@ -1,6 +1,6 @@
 # 003-too-many-args
 
-*spec > minishell > 001-builtins > exit > 003-too-many-args*
+*[spec > minishell > 001-builtins > exit](..) > 003-too-many-args*
 
 ### Shell commands that are sent to the standard entry
 
@@ -19,7 +19,8 @@ expected_to have_regexp TOKEN_NOT_EXITED
 ### What is expected on error output
 
 ```bash
-might be_filled
+might_not be_empty
+
 ```
 
 ### Variables

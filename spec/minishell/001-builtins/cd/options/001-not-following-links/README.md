@@ -1,6 +1,6 @@
 # 001-not-following-links
 
-*spec > minishell > 001-builtins > cd > options > 001-not-following-links*
+*[spec > minishell > 001-builtins > cd > options](..) > 001-not-following-links*
 
 ### What is done before test
 
@@ -10,8 +10,8 @@ mkdir -p subdirectory/subsubdirectory
 ln -s subdirectory subdirectory_link
 ln -s subsubdirectory subdirectory/subsubdirectory_link
 
-rm -f display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd
+rm -f ./display_pwd
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd
 
 ```
 
@@ -31,10 +31,10 @@ ${GLOBAL_TMP_DIRECTORY}/display_pwd
 ### What is expected on standard output
 
 ```bash
-might have_not_regexp "${GLOBAL_TMP_DIRECTORY}/subdirectory_link$"
+might_not have_regexp "${GLOBAL_TMP_DIRECTORY}/subdirectory_link$"
 might have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory:PWD$"
 
-might have_not_regexp "${GLOBAL_TMP_DIRECTORY}/subdirectory_link/subsubdirectory_link$"
+might_not have_regexp "${GLOBAL_TMP_DIRECTORY}/subdirectory_link/subsubdirectory_link$"
 might have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory/subsubdirectory:PWD$"
 
 ```

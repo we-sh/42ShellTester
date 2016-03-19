@@ -1,6 +1,6 @@
 # 010-path-relative-with-wrong-$PATH
 
-*spec > minishell > 002-binary > 010-path-relative-with-wrong-$PATH*
+*[spec > minishell > 002-binary](..) > 010-path-relative-with-wrong-$PATH*
 
 ### What is done before test
 

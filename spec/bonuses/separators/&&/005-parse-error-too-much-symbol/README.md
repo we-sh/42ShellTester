@@ -1,6 +1,6 @@
 # 005-parse-error-too-much-symbol
 
-*spec > bonuses > separators > && > 005-parse-error-too-much-symbol*
+*[spec > bonuses > separators > &&](..) > 005-parse-error-too-much-symbol*
 
 ### Shell commands that are sent to the standard entry
 
@@ -18,7 +18,7 @@ might be_empty
 ### What is expected on error output
 
 ```bash
-might be_filled
+might_not be_empty
 might have_nb_of_lines 2
 
 ```

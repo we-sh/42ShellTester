@@ -1,11 +1,15 @@
 # 004-no-such-file-or-directory
 
-*spec > minishell > 001-builtins > cd > errors > 004-no-such-file-or-directory*
+*[spec > minishell > 001-builtins > cd > errors](..) > 004-no-such-file-or-directory*
 
 ### What is done before test
 
 ```bash
 if [ -f no_such_file_or_directory ]; then rm -r no_such_file_or_directory; fi
+
+rm -f ./display_pwd
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd
+
 ```
 
 ### Shell commands that are sent to the standard entry
@@ -25,8 +29,9 @@ expected_to have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}:PWD$"
 ### What is expected on error output
 
 ```bash
-expected_to be_filled
+expected_to_not be_empty
 might have_regexp "[Nn]o such file or directory"
+
 ```
 
 ### What miscellaneous behaviors are expected

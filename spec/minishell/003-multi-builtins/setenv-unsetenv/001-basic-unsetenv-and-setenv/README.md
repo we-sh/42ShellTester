@@ -1,6 +1,6 @@
 # 001-basic-unsetenv-and-setenv
 
-*spec > minishell > 003-multi-builtins > setenv-unsetenv > 001-basic-unsetenv-and-setenv*
+*[spec > minishell > 003-multi-builtins > setenv-unsetenv](..) > 001-basic-unsetenv-and-setenv*
 
 ### What is done before test
 
@@ -23,12 +23,6 @@ env
 
 ```bash
 expected_to have_regexp TEST=test$
-
-```
-
-### What is expected on error output
-
-```bash
 
 ```
 

@@ -1,6 +1,6 @@
 # 004-alone
 
-*spec > 21sh > separators > semicolon > 004-alone*
+*[spec > 21sh > separators > semicolon](..) > 004-alone*
 
 ### Shell commands that are sent to the standard entry
 

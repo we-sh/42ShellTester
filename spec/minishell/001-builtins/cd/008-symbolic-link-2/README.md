@@ -1,6 +1,6 @@
 # 008-symbolic-link-2
 
-*spec > minishell > 001-builtins > cd > 008-symbolic-link-2*
+*[spec > minishell > 001-builtins > cd](..) > 008-symbolic-link-2*
 
 ### What is done before test
 
@@ -9,8 +9,9 @@ rm -f symbolic_link1 symbolic_link2
 ln -s .. symbolic_link1
 ln -s symbolic_link1 symbolic_link2
 
-rm -f display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd
+rm -f ./display_pwd
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd
+
 ```
 
 ### Shell commands that are sent to the standard entry

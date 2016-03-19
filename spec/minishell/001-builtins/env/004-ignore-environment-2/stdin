@@ -1,1 +1,1 @@
-env --ignore-environment display_env
+env --ignore-environment ./display_env

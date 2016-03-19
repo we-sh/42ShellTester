@@ -1,6 +1,6 @@
 # 004-parse-error-at-end
 
-*spec > bonuses > separators > || > 004-parse-error-at-end*
+*[spec > bonuses > separators > ||](..) > 004-parse-error-at-end*
 
 ### Shell commands that are sent to the standard entry
 
@@ -19,7 +19,7 @@ might be_empty
 ### What is expected on error output
 
 ```bash
-might be_filled
+might_not be_empty
 
 ```
 

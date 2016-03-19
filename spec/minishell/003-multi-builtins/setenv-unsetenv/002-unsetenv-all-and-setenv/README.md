@@ -1,6 +1,6 @@
 # 002-unsetenv-all-and-setenv
 
-*spec > minishell > 003-multi-builtins > setenv-unsetenv > 002-unsetenv-all-and-setenv*
+*[spec > minishell > 003-multi-builtins > setenv-unsetenv](..) > 002-unsetenv-all-and-setenv*
 
 ### What is done before test
 
@@ -58,12 +58,6 @@ env
 ```bash
 expected_to have_regexp TEST2=ok$
 expected_to have_regexp USER=42shtests$
-
-```
-
-### What is expected on error output
-
-```bash
 
 ```
 

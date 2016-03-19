@@ -1,18 +1,20 @@
 # 002-unset-and-set-variable
 
-*spec > minishell > 001-builtins > env > multiple-options > 002-unset-and-set-variable*
+*[spec > minishell > 001-builtins > env > multiple-options](..) > 002-unset-and-set-variable*
 
 ### What is done before test
 
 ```bash
-rm -f display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-env/main.c -o display_env
+rm -f ./display_env
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env -u HOME -u PATH TESTVARIABLE=TOKEN display_env
+env -u HOME -u PATH TESTVARIABLE=TOKEN ./display_env
+
 ```
 
 ### What is expected on standard output
@@ -20,9 +22,10 @@ env -u HOME -u PATH TESTVARIABLE=TOKEN display_env
 ```bash
 might have_regexp "START DISPLAYING ENVIRONMENT VARIABLES$"
 might have_regexp "TESTVARIABLE=TOKEN$"
-might have_not_regexp "HOME="
-might have_not_regexp "PATH="
+might_not have_regexp "HOME="
+might_not have_regexp "PATH="
 might have_regexp "END DISPLAYING ENVIRONMENT VARIABLES$"
+
 ```
 
 ### What is expected on error output

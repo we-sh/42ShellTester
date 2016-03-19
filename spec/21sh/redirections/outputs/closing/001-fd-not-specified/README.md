@@ -1,6 +1,6 @@
 # 001-fd-not-specified
 
-*spec > 21sh > redirections > outputs > closing > 001-fd-not-specified*
+*[spec > 21sh > redirections > outputs > closing](..) > 001-fd-not-specified*
 
 ### Shell commands that are sent to the standard entry
 
@@ -12,7 +12,7 @@
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp "42shTests.sh"
+expected_to_not have_regexp "42shTests.sh"
 
 ```
 

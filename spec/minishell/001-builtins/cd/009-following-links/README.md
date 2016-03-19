@@ -1,6 +1,6 @@
 # 009-following-links
 
-*spec > minishell > 001-builtins > cd > 009-following-links*
+*[spec > minishell > 001-builtins > cd](..) > 009-following-links*
 
 ### What is done before test
 
@@ -10,8 +10,8 @@ mkdir -p subdirectory/subsubdirectory
 ln -s subdirectory subdirectory_link
 ln -s subsubdirectory subdirectory/subsubdirectory_link
 
-rm -f display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd
+rm -f ./display_pwd
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd
 
 ```
 

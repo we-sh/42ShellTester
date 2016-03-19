@@ -1,6 +1,6 @@
 # 009-path-relative-without-$PATH
 
-*spec > minishell > 002-binary > 009-path-relative-without-$PATH*
+*[spec > minishell > 002-binary](..) > 009-path-relative-without-$PATH*
 
 ### What is done before test
 

@@ -1,1 +1,1 @@
-expected_to have_not_regexp INVISIBLE_TOKEN
+expected_to_not have_regexp INVISIBLE_TOKEN

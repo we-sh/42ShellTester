@@ -1,6 +1,6 @@
 # 001-path-relative-\bin-ls
 
-*spec > minishell > 002-binary > 001-path-relative-\bin-ls*
+*[spec > minishell > 002-binary](..) > 001-path-relative-\bin-ls*
 
 ### What is done before test
 

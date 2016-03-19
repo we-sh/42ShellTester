@@ -1,6 +1,6 @@
 # 002-permission-denied
 
-*spec > minishell > 001-builtins > cd > errors > 002-permission-denied*
+*[spec > minishell > 001-builtins > cd > errors](..) > 002-permission-denied*
 
 ### What is done before test
 
@@ -8,8 +8,9 @@
 if [ -d permission_denied ]; then chmod 777 permission_denied; rm -r permission_denied; fi
 mkdir -m 0 permission_denied
 
-rm -f display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd
+rm -f ./display_pwd
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd
+
 ```
 
 ### Shell commands that are sent to the standard entry
@@ -29,8 +30,9 @@ expected_to have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}:PWD$"
 ### What is expected on error output
 
 ```bash
-expected_to be_filled
+expected_to_not be_empty
 might have_regexp "[Pp]ermission denied"
+
 ```
 
 ### What miscellaneous behaviors are expected

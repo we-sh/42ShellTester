@@ -1,6 +1,6 @@
 # 003-stderr-specified
 
-*spec > 21sh > redirections > outputs > closing > 003-stderr-specified*
+*[spec > 21sh > redirections > outputs > closing](..) > 003-stderr-specified*
 
 ### Shell commands that are sent to the standard entry
 
@@ -19,7 +19,7 @@ expected_to have_regexp "42shTests.sh"
 ### What is expected on error output
 
 ```bash
-expected_to have_not_regexp "No such file or directory"
+expected_to_not have_regexp "No such file or directory"
 
 ```
 

@@ -1,6 +1,6 @@
 # 001-run-first-only
 
-*spec > bonuses > separators > || > 001-run-first-only*
+*[spec > bonuses > separators > ||](..) > 001-run-first-only*
 
 ### Shell commands that are sent to the standard entry
 
@@ -13,7 +13,7 @@
 
 ```bash
 might have_regexp FIRST_TOKEN
-might have_not_regexp LAST_TOKEN
+might_not have_regexp LAST_TOKEN
 
 ```
 

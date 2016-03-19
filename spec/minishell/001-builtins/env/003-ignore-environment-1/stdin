@@ -1,1 +1,1 @@
-env -i display_env
+env -i ./display_env

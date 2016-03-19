@@ -1,6 +1,6 @@
 # 001-creates-file-if-not-exits
 
-*spec > 21sh > redirections > outputs > truncating > 001-creates-file-if-not-exits*
+*[spec > 21sh > redirections > outputs > truncating](..) > 001-creates-file-if-not-exits*
 
 ### What is done before test
 
@@ -18,7 +18,8 @@ rm -f new_file
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp TOKEN1
+expected_to_not have_regexp TOKEN1
+
 ```
 
 ### What miscellaneous behaviors are expected

@@ -1,6 +1,6 @@
 # 004-twice
 
-*spec > 21sh > redirections > outputs > closing > 004-twice*
+*[spec > 21sh > redirections > outputs > closing](..) > 004-twice*
 
 ### Shell commands that are sent to the standard entry
 
@@ -12,14 +12,14 @@
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp "42shTests.sh"
+expected_to_not have_regexp "42shTests.sh"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to have_not_regexp "No such file or directory"
+expected_to_not have_regexp "No such file or directory"
 
 ```
 

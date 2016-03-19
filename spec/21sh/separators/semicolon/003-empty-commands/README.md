@@ -1,6 +1,6 @@
 # 003-empty-commands
 
-*spec > 21sh > separators > semicolon > 003-empty-commands*
+*[spec > 21sh > separators > semicolon](..) > 003-empty-commands*
 
 ### Shell commands that are sent to the standard entry
 

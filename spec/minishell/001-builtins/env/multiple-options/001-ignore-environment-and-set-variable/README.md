@@ -1,18 +1,20 @@
 # 001-ignore-environment-and-set-variable
 
-*spec > minishell > 001-builtins > env > multiple-options > 001-ignore-environment-and-set-variable*
+*[spec > minishell > 001-builtins > env > multiple-options](..) > 001-ignore-environment-and-set-variable*
 
 ### What is done before test
 
 ```bash
-rm -f display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-env/main.c -o display_env
+rm -f ./display_env
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env -i TESTVARIABLE=TOKEN display_env
+env -i TESTVARIABLE=TOKEN ./display_env
+
 ```
 
 ### What is expected on standard output

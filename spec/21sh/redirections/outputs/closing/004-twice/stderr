@@ -1,1 +1,1 @@
-expected_to have_not_regexp "No such file or directory"
+expected_to_not have_regexp "No such file or directory"

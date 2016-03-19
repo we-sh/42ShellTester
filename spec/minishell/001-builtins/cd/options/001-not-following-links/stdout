@@ -1,5 +1,5 @@
-might have_not_regexp "${GLOBAL_TMP_DIRECTORY}/subdirectory_link$"
+might_not have_regexp "${GLOBAL_TMP_DIRECTORY}/subdirectory_link$"
 might have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory:PWD$"
 
-might have_not_regexp "${GLOBAL_TMP_DIRECTORY}/subdirectory_link/subsubdirectory_link$"
+might_not have_regexp "${GLOBAL_TMP_DIRECTORY}/subdirectory_link/subsubdirectory_link$"
 might have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory/subsubdirectory:PWD$"

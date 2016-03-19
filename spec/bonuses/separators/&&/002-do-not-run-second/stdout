@@ -1,2 +1,2 @@
 might be_empty
-might have_not_regexp LAST_TOKEN
+might_not have_regexp LAST_TOKEN

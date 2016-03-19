@@ -1,2 +1,2 @@
 might have_regexp FIRST_TOKEN
-might have_not_regexp LAST_TOKEN
+might_not have_regexp LAST_TOKEN

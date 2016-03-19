@@ -1,6 +1,6 @@
 # 002-truncates-file-if-exists
 
-*spec > 21sh > redirections > outputs > truncating > 002-truncates-file-if-exists*
+*[spec > 21sh > redirections > outputs > truncating](..) > 002-truncates-file-if-exists*
 
 ### What is done before test
 
@@ -18,7 +18,8 @@
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp LAST_TOKEN
+expected_to_not have_regexp LAST_TOKEN
+
 ```
 
 ### What miscellaneous behaviors are expected

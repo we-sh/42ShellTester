@@ -1,6 +1,6 @@
 # 001-with-explicit-fd
 
-*spec > 21sh > redirections > outputs > truncating > stdout > 001-with-explicit-fd*
+*[spec > 21sh > redirections > outputs > truncating > stdout](..) > 001-with-explicit-fd*
 
 ### What is done before test
 
@@ -18,7 +18,8 @@ rm -f new_file
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp TOKEN1
+expected_to_not have_regexp TOKEN1
+
 ```
 
 ### What miscellaneous behaviors are expected

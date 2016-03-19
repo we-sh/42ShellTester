@@ -1,6 +1,6 @@
 # 007-path-absolute-\bin\ls
 
-*spec > minishell > 002-binary > 007-path-absolute-\bin\ls*
+*[spec > minishell > 002-binary](..) > 007-path-absolute-\bin\ls*
 
 ### What is done before test
 

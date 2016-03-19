@@ -1,28 +1,30 @@
 # 006-unset-variables-1
 
-*spec > minishell > 001-builtins > env > 006-unset-variables-1*
+*[spec > minishell > 001-builtins > env](..) > 006-unset-variables-1*
 
 ### What is done before test
 
 ```bash
-rm -f display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-env/main.c -o display_env
+rm -f ./display_env
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
 export TESTVARIABLE=TOKEN
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env -u HOME -u PATH -u TESTVARIABLE display_env
+env -u HOME -u PATH -u TESTVARIABLE ./display_env
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might have_not_regexp "HOME="
-might have_not_regexp "PATH="
-might have_not_regexp "TESTVARIABLE="
+might_not have_regexp "HOME="
+might_not have_regexp "PATH="
+might_not have_regexp "TESTVARIABLE="
+
 ```
 
 ### What is expected on error output

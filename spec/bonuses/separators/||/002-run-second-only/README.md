@@ -1,6 +1,6 @@
 # 002-run-second-only
 
-*spec > bonuses > separators > || > 002-run-second-only*
+*[spec > bonuses > separators > ||](..) > 002-run-second-only*
 
 ### Shell commands that are sent to the standard entry
 
@@ -19,7 +19,7 @@ might have_regexp LAST_TOKEN
 ### What is expected on error output
 
 ```bash
-might be_filled
+might_not be_empty
 
 ```
 
