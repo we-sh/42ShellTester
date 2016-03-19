@@ -1,6 +1,6 @@
 # 001-cd-HOME-without-environment
 
-*spec > minishell > builtins > env > calling-builtins > 001-cd-HOME-without-environment*
+*spec > minishell > 001-builtins > env > calling-builtins > 001-cd-HOME-without-environment*
 
 ### Shell commands that are sent to the standard entry
 

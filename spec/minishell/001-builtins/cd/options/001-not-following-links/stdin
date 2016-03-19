@@ -1,7 +1,7 @@
-cd -P symbolic_link1
+cd -P subdirectory_link
 /bin/pwd
 ${GLOBAL_TMP_DIRECTORY}/display_pwd
 
-cd -P symbolic_link2
+cd -P subsubdirectory_link
 /bin/pwd
 ${GLOBAL_TMP_DIRECTORY}/display_pwd

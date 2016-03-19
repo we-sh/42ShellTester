@@ -1,6 +1,6 @@
 # 002-current-directory
 
-*spec > minishell > builtins > cd > 002-current-directory*
+*spec > minishell > 001-builtins > cd > 002-current-directory*
 
 ### What is done before test
 

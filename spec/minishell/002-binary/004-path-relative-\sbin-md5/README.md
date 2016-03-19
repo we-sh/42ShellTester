@@ -1,25 +1,30 @@
-# 003-too-many-args
+# 004-path-relative-\sbin-md5
 
-*spec > minishell > 001-builtins > exit > 003-too-many-args*
+*spec > minishell > 002-binary > 004-path-relative-\sbin-md5*
+
+### What is done before test
+
+```bash
+
+```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-exit 42 43
-/bin/echo TOKEN_NOT_EXITED
+md5 /bin/test
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_regexp TOKEN_NOT_EXITED
+expected_to have_regexp 82b5f678825a8f6737f65c32cbee6236
 ```
 
 ### What is expected on error output
 
 ```bash
-might be_filled
+expected_to be_empty
 ```
 
 ### Variables

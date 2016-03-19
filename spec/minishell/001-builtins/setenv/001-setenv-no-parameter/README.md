@@ -1,6 +1,6 @@
 # 001-setenv-no-parameter
 
-*spec > minishell > builtins > setenv > 001-setenv-no-parameter*
+*spec > minishell > 001-builtins > setenv > 001-setenv-no-parameter*
 
 ### What is done before test
 

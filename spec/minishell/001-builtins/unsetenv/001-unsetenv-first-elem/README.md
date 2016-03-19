@@ -1,26 +1,25 @@
 # 001-unsetenv-first-elem
 
-*spec > minishell > builtins > unsetenv > 001-unsetenv-first-elem*
+*spec > minishell > 001-builtins > unsetenv > 001-unsetenv-first-elem*
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-unsetenv PWD
+unsetenv SSH_AUTH_SOCK
 env
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp $PWD
-
+expected_to have_not_regexp $SSH_AUTH_SOCK
 
 ```
 
 ### What is expected on error output
 
 ```bash
-
+expected_to be_empty
 ```
 
 ### Variables

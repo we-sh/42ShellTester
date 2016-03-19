@@ -1,6 +1,6 @@
 # 006-unset-variables-1
 
-*spec > minishell > builtins > env > 006-unset-variables-1*
+*spec > minishell > 001-builtins > env > 006-unset-variables-1*
 
 ### What is done before test
 

@@ -1,25 +1,31 @@
-# 003-too-many-args
+# 005-path-relative-usr\local\bin\monop
 
-*spec > minishell > 001-builtins > exit > 003-too-many-args*
+*spec > minishell > 002-binary > 005-path-relative-usr\local\bin\monop*
+
+### What is done before test
+
+```bash
+rm -f ${GLOBAL_INSTALLDIR}/tmp/output_binary
+monop --runtime-version ${GLOBAL_INSTALLDIR}/spec/ > ${GLOBAL_INSTALLDIR}/tmp/output_binary
+```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-exit 42 43
-/bin/echo TOKEN_NOT_EXITED
+monop --runtime-version
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_regexp TOKEN_NOT_EXITED
+expected_to match_each_lines_of_file ${GLOBAL_INSTALLDIR}/tmp/output_binary
 ```
 
 ### What is expected on error output
 
 ```bash
-might be_filled
+expected_to be_empty
 ```
 
 ### Variables

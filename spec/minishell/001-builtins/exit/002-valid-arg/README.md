@@ -1,6 +1,6 @@
 # 002-valid-arg
 
-*spec > minishell > builtins > exit > 002-valid-arg*
+*spec > minishell > 001-builtins > exit > 002-valid-arg*
 
 ### Shell commands that are sent to the standard entry
 

@@ -1,25 +1,32 @@
-# 003-too-many-args
+# 003-path-relative-stderr-\usr\sbin-rarpd
 
-*spec > minishell > 001-builtins > exit > 003-too-many-args*
+*spec > minishell > 002-binary > 003-path-relative-stderr-\usr\sbin-rarpd*
+
+### What is done before test
+
+```bash
+rm -f ${GLOBAL_INSTALLDIR}/tmp/output_binary
+rarpd 2> ${GLOBAL_INSTALLDIR}/tmp/output_binary
+```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-exit 42 43
-/bin/echo TOKEN_NOT_EXITED
+rarpd
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_regexp TOKEN_NOT_EXITED
+might be_empty
 ```
 
 ### What is expected on error output
 
 ```bash
-might be_filled
+expected_to have_regexp "usage: rarpd -a [ -d -f ]"
+
 ```
 
 ### Variables

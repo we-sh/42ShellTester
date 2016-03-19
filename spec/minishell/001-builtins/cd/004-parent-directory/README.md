@@ -1,6 +1,6 @@
 # 004-parent-directory
 
-*spec > minishell > builtins > cd > 004-parent-directory*
+*spec > minishell > 001-builtins > cd > 004-parent-directory*
 
 ### What is done before test
 

@@ -1,6 +1,6 @@
 # 005-absolute-path
 
-*spec > minishell > builtins > cd > 005-absolute-path*
+*spec > minishell > 001-builtins > cd > 005-absolute-path*
 
 ### What is done before test
 
