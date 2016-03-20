@@ -1,0 +1,2 @@
+rm -f read_on_stdin
+gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/spec/support/read-on-stdin/main.c" -o read_on_stdin

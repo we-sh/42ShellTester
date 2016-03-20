@@ -1,0 +1,6 @@
+expected_to have_not_regexp "${GLOBAL_TOKEN}_1_1"
+expected_to have_not_regexp "${GLOBAL_TOKEN}_2_1"
+expected_to have_not_regexp "${GLOBAL_TOKEN}_3_1"
+expected_to have_not_regexp "${GLOBAL_TOKEN}_1_2"
+expected_to have_not_regexp "${GLOBAL_TOKEN}_2_2"
+expected_to have_not_regexp "${GLOBAL_TOKEN}_3_2"

@@ -1,1 +1,0 @@
-/bin/ls .. invalid_folder &>new_file_stderr_and_stdout

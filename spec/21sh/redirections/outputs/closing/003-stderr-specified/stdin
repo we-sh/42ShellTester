@@ -1,1 +1,1 @@
-/bin/ls .. invalid_folder 2>&-
+/bin/ls -1 .. invalid_folder 2>&-
