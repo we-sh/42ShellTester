@@ -1,1 +1,2 @@
-expected_to have_regexp "md5: Command not found."
+expected_to be_filled
+might have_regexp "[Cc]ommand not found"

@@ -1,1 +1,1 @@
-expected_to match_each_lines_of_file ${GLOBAL_INSTALLDIR}/tmp/output_binary
+expected_to match_each_lines_of_file "${GLOBAL_INSTALLDIR}/tmp/output_binary"
