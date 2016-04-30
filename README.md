@@ -27,4 +27,4 @@ cd ~/42shTests && sh 42shTests.sh "/ABSOLUTE/PATH/TO/YOUR/SHELL" "exit/"      # 
 
 ### Credits
 
-Made by @gabkk, @jgigault, @ftwftw0
+Made by @gabkk, @jgigault, @ftwftw0, @anouvel
