@@ -1,1 +1,1 @@
-/bin/ls .. invalid_folder 1>new_file_stdout 2>new_file_stderr
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_1 ${GLOBAL_TOKEN}_2 1>new_file_stdout 2>new_file_stderr

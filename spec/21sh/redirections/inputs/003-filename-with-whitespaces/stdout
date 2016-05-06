@@ -1,0 +1,3 @@
+expected_to have_regexp "${GLOBAL_TOKEN}_LINE_1$"
+expected_to have_regexp "${GLOBAL_TOKEN}_LINE_2$"
+expected_to have_regexp "${GLOBAL_TOKEN}_LINE_3$"

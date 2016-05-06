@@ -1,2 +1,0 @@
-expected_to create_file new_file_stderr_and_stdout with_regexp "No such file or directory"
-expected_to create_file new_file_stderr_and_stdout with_regexp "42shTests.sh"

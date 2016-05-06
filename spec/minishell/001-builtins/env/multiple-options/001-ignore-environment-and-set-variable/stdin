@@ -1,1 +1,1 @@
-env -i TESTVARIABLE=TOKEN display_env
+env -i TESTVARIABLE=TOKEN ./display_env

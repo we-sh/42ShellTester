@@ -1,0 +1,2 @@
+expected_to have_regexp "${GLOBAL_TOKEN}_START"
+expected_to have_regexp "${GLOBAL_TOKEN}_END"

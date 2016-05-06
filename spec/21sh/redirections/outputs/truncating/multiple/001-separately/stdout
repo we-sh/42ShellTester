@@ -1,2 +1,2 @@
-expected_to have_not_regexp "No such file or directory"
-expected_to have_not_regexp "42shTests.sh"
+expected_to have_not_regexp "${GLOBAL_TOKEN}_1"
+expected_to have_not_regexp "${GLOBAL_TOKEN}_2"

@@ -1,2 +1,2 @@
-expected_to create_file new_file_stderr with_regexp "No such file or directory"
-expected_to create_file new_file_stdout with_regexp "42shTests.sh"
+expected_to create_file new_file_stdout with_regexp "${GLOBAL_TOKEN}_1$"
+expected_to create_file new_file_stderr with_regexp "${GLOBAL_TOKEN}_2$"
