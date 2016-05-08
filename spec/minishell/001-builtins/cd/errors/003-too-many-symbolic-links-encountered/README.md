@@ -1,6 +1,6 @@
 # 003-too-many-symbolic-links-encountered
 
-*spec > minishell > 001-builtins > cd > errors > 003-too-many-symbolic-links-encountered*
+*[spec > minishell > 001-builtins > cd > errors](..) > 003-too-many-symbolic-links-encountered*
 
 ### What is done before test
 
@@ -10,8 +10,9 @@ ln -s symbolic_link1 symbolic_link2
 ln -s symbolic_link2 symbolic_link3
 ln -s symbolic_link3 symbolic_link1
 
-rm -f display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd
+rm -f ./display_pwd
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd
+
 ```
 
 ### Shell commands that are sent to the standard entry
@@ -31,8 +32,9 @@ expected_to have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}:PWD$"
 ### What is expected on error output
 
 ```bash
-expected_to be_filled
+expected_to_not be_empty
 might have_regexp "[Tt]oo many symbolic links encountered"
+
 ```
 
 ### What miscellaneous behaviors are expected

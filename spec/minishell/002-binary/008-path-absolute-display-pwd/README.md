@@ -1,6 +1,6 @@
 # 008-path-absolute-display-pwd
 
-*spec > minishell > 002-binary > 008-path-absolute-display-pwd*
+*[spec > minishell > 002-binary](..) > 008-path-absolute-display-pwd*
 
 ### What is done before test
 

@@ -1,6 +1,6 @@
 # 002-env-check-usefull-var
 
-*spec > minishell > 001-builtins > env > 002-env-check-usefull-var*
+*[spec > minishell > 001-builtins > env](..) > 002-env-check-usefull-var*
 
 ### What is done before test
 

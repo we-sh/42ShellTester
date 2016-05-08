@@ -1,6 +1,6 @@
 # 003-unsetenv-mult-argv
 
-*spec > minishell > 001-builtins > unsetenv > 003-unsetenv-mult-argv*
+*[spec > minishell > 001-builtins > unsetenv](..) > 003-unsetenv-mult-argv*
 
 ### Shell commands that are sent to the standard entry
 
@@ -42,24 +42,24 @@ env
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp $SSH_AUTH_SOCK
-expected_to have_not_regexp $Apple_PubSub_Socket_Render
-expected_to have_not_regexp $COLORFGBG
-expected_to have_not_regexp $ITERM_PROFILE
-expected_to have_not_regexp $XPC_FLAGS
-expected_to have_not_regexp $LANG
-expected_to have_not_regexp $SHELL
-expected_to have_not_regexp $TERM_PROGRAM
-expected_to have_not_regexp $TERM
-expected_to have_not_regexp $TMPDIR
-expected_to have_not_regexp $__CF_USER_TEXT_ENCODING
-expected_to have_not_regexp $ITERM_SESSION_ID
-expected_to have_not_regexp $PAGER
-expected_to have_not_regexp $ZSH
-expected_to have_not_regexp $LESS
-expected_to have_not_regexp $LC_CTYPE
-expected_to have_not_regexp $LSCOLORS
-expected_to have_not_regexp $PATH
+expected_to_not have_regexp $SSH_AUTH_SOCK
+expected_to_not have_regexp $Apple_PubSub_Socket_Render
+expected_to_not have_regexp $COLORFGBG
+expected_to_not have_regexp $ITERM_PROFILE
+expected_to_not have_regexp $XPC_FLAGS
+expected_to_not have_regexp $LANG
+expected_to_not have_regexp $SHELL
+expected_to_not have_regexp $TERM_PROGRAM
+expected_to_not have_regexp $TERM
+expected_to_not have_regexp $TMPDIR
+expected_to_not have_regexp $__CF_USER_TEXT_ENCODING
+expected_to_not have_regexp $ITERM_SESSION_ID
+expected_to_not have_regexp $PAGER
+expected_to_not have_regexp $ZSH
+expected_to_not have_regexp $LESS
+expected_to_not have_regexp $LC_CTYPE
+expected_to_not have_regexp $LSCOLORS
+expected_to_not have_regexp $PATH
 
 ```
 

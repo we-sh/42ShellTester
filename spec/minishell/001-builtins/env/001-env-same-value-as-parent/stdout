@@ -1,1 +1,1 @@
-expected_to special_funct_match_parent_env stored_env
+expected_to match_each_lines_of_file "stored_env"

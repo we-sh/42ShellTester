@@ -1,6 +1,6 @@
 # 003-setenv-equal
 
-*spec > minishell > 001-builtins > setenv > 003-setenv-equal*
+*[spec > minishell > 001-builtins > setenv](..) > 003-setenv-equal*
 
 ### Shell commands that are sent to the standard entry
 
@@ -64,7 +64,8 @@ expected_to have_regexp LOGNAME=$
 ### What is expected on error output
 
 ```bash
-might be_filled
+might_not be_empty
+
 ```
 
 ### Variables

@@ -1,6 +1,6 @@
 # 002-do-not-run-second
 
-*spec > bonuses > separators > && > 002-do-not-run-second*
+*[spec > bonuses > separators > &&](..) > 002-do-not-run-second*
 
 ### Shell commands that are sent to the standard entry
 
@@ -13,14 +13,14 @@
 
 ```bash
 might be_empty
-might have_not_regexp LAST_TOKEN
+might_not have_regexp LAST_TOKEN
 
 ```
 
 ### What is expected on error output
 
 ```bash
-might be_filled
+might_not be_empty
 
 ```
 

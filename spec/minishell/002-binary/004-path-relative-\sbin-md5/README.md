@@ -1,6 +1,6 @@
 # 004-path-relative-\sbin-md5
 
-*spec > minishell > 002-binary > 004-path-relative-\sbin-md5*
+*[spec > minishell > 002-binary](..) > 004-path-relative-\sbin-md5*
 
 ### What is done before test
 

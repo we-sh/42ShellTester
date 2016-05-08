@@ -1,6 +1,6 @@
 # 006-path-relative-stderr-\usr\local\munki\ptyexec
 
-*spec > minishell > 002-binary > 006-path-relative-stderr-\usr\local\munki\ptyexec*
+*[spec > minishell > 002-binary](..) > 006-path-relative-stderr-\usr\local\munki\ptyexec*
 
 ### What is done before test
 

@@ -1,11 +1,19 @@
 # 004-status-of-last-command
 
-*spec > minishell > 001-builtins > exit > 004-status-of-last-command*
+*[spec > minishell > 001-builtins > exit](..) > 004-status-of-last-command*
+
+### What is done before test
+
+```bash
+rm -f ./exit_with_status
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/exit-with-status/main.c -o ./exit_with_status
+
+```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-/bin/[ 42 -eq 21
+./exit_with_status 42
 exit
 
 ```
@@ -13,7 +21,8 @@ exit
 ### What miscellaneous behaviors are expected
 
 ```bash
-might exit_with_status 1
+expected_to exit_with_status 42
+
 ```
 
 ### Variables

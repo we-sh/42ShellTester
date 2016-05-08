@@ -1,12 +1,13 @@
 # 005-absolute-path
 
-*spec > minishell > 001-builtins > cd > 005-absolute-path*
+*[spec > minishell > 001-builtins > cd](..) > 005-absolute-path*
 
 ### What is done before test
 
 ```bash
-rm -f display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd
+rm -f ./display_pwd
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd
+
 ```
 
 ### Shell commands that are sent to the standard entry

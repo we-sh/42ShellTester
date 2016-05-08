@@ -1,6 +1,6 @@
 # 002-n-commands-sequentially
 
-*spec > 21sh > separators > semicolon > 002-n-commands-sequentially*
+*[spec > 21sh > separators > semicolon](..) > 002-n-commands-sequentially*
 
 ### Shell commands that are sent to the standard entry
 

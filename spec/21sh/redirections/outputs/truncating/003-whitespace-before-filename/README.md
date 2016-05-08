@@ -1,6 +1,6 @@
 # 003-whitespace-before-filename
 
-*spec > 21sh > redirections > outputs > truncating > 003-whitespace-before-filename*
+*[spec > 21sh > redirections > outputs > truncating](..) > 003-whitespace-before-filename*
 
 ### What is done before test
 
@@ -18,7 +18,8 @@ rm -f new_file
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp TOKEN1
+expected_to_not have_regexp TOKEN1
+
 ```
 
 ### What is expected on error output

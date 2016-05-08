@@ -1,6 +1,6 @@
 # 001-cd-HOME-without-environment
 
-*spec > minishell > 001-builtins > env > calling-builtins > 001-cd-HOME-without-environment*
+*[spec > minishell > 001-builtins > env > calling-builtins](..) > 001-cd-HOME-without-environment*
 
 ### Shell commands that are sent to the standard entry
 
@@ -13,13 +13,15 @@ env -i cd
 
 ```bash
 expected_to have_regexp "${GLOBAL_TMP_DIRECTORY}$"
-expected_to have_not_regexp "${HOME}$"
+expected_to_not have_regexp "${HOME}$"
+
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to be_filled
+expected_to_not be_empty
+
 ```
 
 ### Variables

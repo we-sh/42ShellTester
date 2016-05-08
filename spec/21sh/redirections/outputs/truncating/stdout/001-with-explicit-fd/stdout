@@ -1,1 +1,1 @@
-expected_to have_not_regexp TOKEN1
+expected_to_not have_regexp TOKEN1

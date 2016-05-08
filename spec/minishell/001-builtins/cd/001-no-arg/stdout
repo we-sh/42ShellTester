@@ -1,2 +1,2 @@
-expected_to have_not_regexp "${GLOBAL_TMP_DIRECTORY}$"
+expected_to_not have_regexp "${GLOBAL_TMP_DIRECTORY}$"
 expected_to have_regexp "PWD:${HOME}:PWD$"

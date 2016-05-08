@@ -1,2 +1,2 @@
-/bin/[ 42 -eq 21
+./exit_with_status 42
 exit

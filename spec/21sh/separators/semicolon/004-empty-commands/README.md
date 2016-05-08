@@ -1,6 +1,6 @@
-# 004-alone
+# 004-empty-commands
 
-*spec > 21sh > separators > semicolon > 004-alone*
+*[spec > 21sh > separators > semicolon](..) > 004-empty-commands*
 
 ### Shell commands that are sent to the standard entry
 
@@ -9,14 +9,14 @@
 ;
 ;
 ;
-/bin/echo TOKEN
+/bin/echo ${GLOBAL_TOKEN}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_regexp TOKEN$
+expected_to have_regexp "${GLOBAL_TOKEN}$"
 ```
 
 ### What is expected on error output

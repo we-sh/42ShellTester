@@ -1,6 +1,6 @@
 # 002-unsetenv-last-elem
 
-*spec > minishell > 001-builtins > unsetenv > 002-unsetenv-last-elem*
+*[spec > minishell > 001-builtins > unsetenv](..) > 002-unsetenv-last-elem*
 
 ### Shell commands that are sent to the standard entry
 
@@ -13,7 +13,8 @@ env
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp $LSCOLORS
+expected_to_not have_regexp $LSCOLORS
+
 ```
 
 ### What is expected on error output

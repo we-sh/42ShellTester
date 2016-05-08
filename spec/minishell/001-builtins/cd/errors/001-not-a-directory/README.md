@@ -1,14 +1,15 @@
 # 001-not-a-directory
 
-*spec > minishell > 001-builtins > cd > errors > 001-not-a-directory*
+*[spec > minishell > 001-builtins > cd > errors](..) > 001-not-a-directory*
 
 ### What is done before test
 
 ```bash
 touch not_a_directory
 
-rm -f display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd
+rm -f ./display_pwd
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd
+
 ```
 
 ### Shell commands that are sent to the standard entry
@@ -28,8 +29,9 @@ expected_to have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}:PWD$"
 ### What is expected on error output
 
 ```bash
-expected_to be_filled
+expected_to_not be_empty
 might have_regexp "[Nn]ot a directory"
+
 ```
 
 ### What miscellaneous behaviors are expected

@@ -1,18 +1,20 @@
 # 004-ignore-environment-2
 
-*spec > minishell > 001-builtins > env > 004-ignore-environment-2*
+*[spec > minishell > 001-builtins > env](..) > 004-ignore-environment-2*
 
 ### What is done before test
 
 ```bash
-rm -f display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-env/main.c -o display_env
+rm -f ./display_env
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env --ignore-environment display_env
+env --ignore-environment ./display_env
+
 ```
 
 ### What is expected on standard output

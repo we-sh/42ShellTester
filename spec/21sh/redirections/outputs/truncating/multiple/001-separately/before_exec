@@ -1,4 +1,4 @@
 rm -f new_file_stderr
 rm -f new_file_stdout
-rm -f write_on_stdout_and_stderr
-gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/spec/support/write-on-stdout-and-stderr/main.c" -o write_on_stdout_and_stderr
+rm -f ./write_on_stdout_and_stderr
+gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/write-on-stdout-and-stderr/main.c" -o ./write_on_stdout_and_stderr

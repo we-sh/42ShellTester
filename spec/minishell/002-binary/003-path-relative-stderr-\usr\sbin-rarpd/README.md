@@ -1,6 +1,6 @@
 # 003-path-relative-stderr-\usr\sbin-rarpd
 
-*spec > minishell > 002-binary > 003-path-relative-stderr-\usr\sbin-rarpd*
+*[spec > minishell > 002-binary](..) > 003-path-relative-stderr-\usr\sbin-rarpd*
 
 ### What is done before test
 

@@ -1,6 +1,6 @@
 # 001-unsetenv-first-elem
 
-*spec > minishell > 001-builtins > unsetenv > 001-unsetenv-first-elem*
+*[spec > minishell > 001-builtins > unsetenv](..) > 001-unsetenv-first-elem*
 
 ### Shell commands that are sent to the standard entry
 
@@ -12,7 +12,7 @@ env
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp $SSH_AUTH_SOCK
+expected_to_not have_regexp $SSH_AUTH_SOCK
 
 ```
 

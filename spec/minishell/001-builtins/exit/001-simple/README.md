@@ -1,6 +1,6 @@
 # 001-simple
 
-*spec > minishell > 001-builtins > exit > 001-simple*
+*[spec > minishell > 001-builtins > exit](..) > 001-simple*
 
 ### Shell commands that are sent to the standard entry
 
@@ -12,7 +12,8 @@ exit
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp INVISIBLE_TOKEN
+expected_to_not have_regexp INVISIBLE_TOKEN
+
 ```
 
 ### What is expected on error output

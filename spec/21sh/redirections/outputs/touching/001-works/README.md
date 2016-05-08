@@ -1,6 +1,6 @@
 # 001-works
 
-*spec > 21sh > redirections > outputs > touching > 001-works*
+*[spec > 21sh > redirections > outputs > touching](..) > 001-works*
 
 ### What is done before test
 

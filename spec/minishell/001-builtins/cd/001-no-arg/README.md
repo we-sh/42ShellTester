@@ -1,12 +1,13 @@
 # 001-no-arg
 
-*spec > minishell > 001-builtins > cd > 001-no-arg*
+*[spec > minishell > 001-builtins > cd](..) > 001-no-arg*
 
 ### What is done before test
 
 ```bash
-rm -f display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/spec/support/display-pwd/main.c -o display_pwd
+rm -f ./display_pwd
+gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd
+
 ```
 
 ### Shell commands that are sent to the standard entry
@@ -20,8 +21,9 @@ ${GLOBAL_TMP_DIRECTORY}/display_pwd
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp "${GLOBAL_TMP_DIRECTORY}$"
+expected_to_not have_regexp "${GLOBAL_TMP_DIRECTORY}$"
 expected_to have_regexp "PWD:${HOME}:PWD$"
+
 ```
 
 ### What is expected on error output

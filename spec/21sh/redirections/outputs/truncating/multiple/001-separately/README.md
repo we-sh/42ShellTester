@@ -1,42 +1,46 @@
 # 001-separately
 
-*spec > 21sh > redirections > outputs > truncating > multiple > 001-separately*
+*[spec > 21sh > redirections > outputs > truncating > multiple](..) > 001-separately*
 
 ### What is done before test
 
 ```bash
 rm -f new_file_stderr
 rm -f new_file_stdout
+rm -f ./write_on_stdout_and_stderr
+gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/write-on-stdout-and-stderr/main.c" -o ./write_on_stdout_and_stderr
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-/bin/ls .. invalid_folder 1>new_file_stdout 2>new_file_stderr
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_1 ${GLOBAL_TOKEN}_2 1>new_file_stdout 2>new_file_stderr
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp "No such file or directory"
-expected_to have_not_regexp "42shTests.sh"
+expected_to_not have_regexp "${GLOBAL_TOKEN}_1"
+expected_to_not have_regexp "${GLOBAL_TOKEN}_2"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to have_not_regexp "No such file or directory"
-expected_to have_not_regexp "42shTests.sh"
+expected_to_not have_regexp "${GLOBAL_TOKEN}_1"
+expected_to_not have_regexp "${GLOBAL_TOKEN}_2"
 
 ```
 
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file new_file_stderr with_regexp "No such file or directory"
-expected_to create_file new_file_stdout with_regexp "42shTests.sh"
+expected_to create_file new_file_stdout with_regexp "${GLOBAL_TOKEN}_1$"
+expected_to create_file new_file_stderr with_regexp "${GLOBAL_TOKEN}_2$"
+
 ```
 
 ### Variables

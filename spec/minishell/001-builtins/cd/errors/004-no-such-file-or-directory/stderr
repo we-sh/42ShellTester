@@ -1,2 +1,2 @@
-expected_to be_filled
+expected_to_not be_empty
 might have_regexp "[Nn]o such file or directory"

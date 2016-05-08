@@ -1,5 +1,5 @@
 might have_regexp "START DISPLAYING ENVIRONMENT VARIABLES$"
 might have_regexp "TESTVARIABLE=TOKEN$"
-might have_not_regexp "HOME="
-might have_not_regexp "PATH="
+might_not have_regexp "HOME="
+might_not have_regexp "PATH="
 might have_regexp "END DISPLAYING ENVIRONMENT VARIABLES$"

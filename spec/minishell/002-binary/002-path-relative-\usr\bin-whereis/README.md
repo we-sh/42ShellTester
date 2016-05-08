@@ -1,6 +1,6 @@
 # 002-path-relative-\usr\bin-whereis
 
-*spec > minishell > 002-binary > 002-path-relative-\usr\bin-whereis*
+*[spec > minishell > 002-binary](..) > 002-path-relative-\usr\bin-whereis*
 
 ### What is done before test
 

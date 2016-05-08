@@ -1,19 +1,20 @@
-# 003-empty-commands
+# 003-empty-commands-inline
 
-*spec > 21sh > separators > semicolon > 003-empty-commands*
+*[spec > 21sh > separators > semicolon](..) > 003-empty-commands-inline*
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-/bin/echo FIRST_TOKEN ; ; ; ; ; ; ; ; ; ; ; /bin/echo LAST_TOKEN
+/bin/echo ${GLOBAL_TOKEN}_START ; ; ; ; ; ; ; ; ; ; ; /bin/echo ${GLOBAL_TOKEN}_END
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_regexp FIRST_TOKEN
-expected_to have_regexp LAST_TOKEN
+expected_to have_regexp "${GLOBAL_TOKEN}_START"
+expected_to have_regexp "${GLOBAL_TOKEN}_END"
+
 ```
 
 ### What is expected on error output

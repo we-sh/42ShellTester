@@ -1,1 +1,1 @@
-env --unset HOME --unset PATH --unset TESTVARIABLE display_env
+env --unset HOME --unset PATH --unset TESTVARIABLE ./display_env

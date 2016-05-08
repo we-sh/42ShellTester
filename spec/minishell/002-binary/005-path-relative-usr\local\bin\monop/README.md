@@ -1,6 +1,6 @@
 # 005-path-relative-usr\local\bin\monop
 
-*spec > minishell > 002-binary > 005-path-relative-usr\local\bin\monop*
+*[spec > minishell > 002-binary](..) > 005-path-relative-usr\local\bin\monop*
 
 ### What is done before test
 

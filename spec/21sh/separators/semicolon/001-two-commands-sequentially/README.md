@@ -1,6 +1,6 @@
 # 001-two-commands-sequentially
 
-*spec > 21sh > separators > semicolon > 001-two-commands-sequentially*
+*[spec > 21sh > separators > semicolon](..) > 001-two-commands-sequentially*
 
 ### Shell commands that are sent to the standard entry
 

@@ -1,6 +1,6 @@
 # 001-works
 
-*spec > 21sh > redirections > outputs > truncating > stderr > 001-works*
+*[spec > 21sh > redirections > outputs > truncating > stderr](..) > 001-works*
 
 ### What is done before test
 
@@ -18,7 +18,7 @@ rm -f new_file_stderr
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp "No such file or directory"
+expected_to_not have_regexp "No such file or directory"
 expected_to have_regexp "42shTests.sh"
 
 ```

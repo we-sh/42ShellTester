@@ -1,11 +1,12 @@
 # 001-setenv-no-parameter
 
-*spec > minishell > 001-builtins > setenv > 001-setenv-no-parameter*
+*[spec > minishell > 001-builtins > setenv](..) > 001-setenv-no-parameter*
 
 ### What is done before test
 
 ```bash
-env > stored_env;
+env | awk 'BEGIN {FS="="} $0 !~ /^OLDPWD/ {print $1"="}' > stored_env
+
 ```
 
 ### Shell commands that are sent to the standard entry
@@ -17,7 +18,8 @@ setenv
 ### What is expected on standard output
 
 ```bash
-expected_to special_funct_match_parent_env stored_env
+expected_to match_each_lines_of_file "stored_env"
+
 ```
 
 ### What is expected on error output

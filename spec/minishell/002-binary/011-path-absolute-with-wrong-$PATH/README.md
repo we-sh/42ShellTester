@@ -1,6 +1,6 @@
 # 011-path-absolute-with-wrong-$PATH
 
-*spec > minishell > 002-binary > 011-path-absolute-with-wrong-$PATH*
+*[spec > minishell > 002-binary](..) > 011-path-absolute-with-wrong-$PATH*
 
 ### What is done before test
 
