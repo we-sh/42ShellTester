@@ -1,2 +1,2 @@
-expected_to have_regexp "I AM STILL ALIVE$"
-expected_to have_regexp "${GLOBAL_TOKEN}$"
+expected_to have_regexp "${GLOBAL_TOKEN}_1$"
+expected_to have_regexp "${GLOBAL_TOKEN}_2$"

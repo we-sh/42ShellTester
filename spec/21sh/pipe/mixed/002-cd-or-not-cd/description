@@ -1,0 +1,1 @@
+Calling the built-in `cd` in a piped process does not result in a current directory change.

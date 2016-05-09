@@ -4,19 +4,27 @@
 
 Calling the built-in `exit` in a piped process does not result in a Shell termination.
 In this test, the two commands `echo` are nevertheless executed.
+### What is done before test
+
+```bash
+rm -f ./write_on_stdout
+gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/write-on-stdout/main.c" -o ./write_on_stdout
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
-exit | echo "I AM STILL ALIVE"
-echo "${GLOBAL_TOKEN}"
+exit | ./write_on_stdout \"${GLOBAL_TOKEN}_1\"
+./write_on_stdout "${GLOBAL_TOKEN}_2"
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_regexp "I AM STILL ALIVE$"
-expected_to have_regexp "${GLOBAL_TOKEN}$"
+expected_to have_regexp "${GLOBAL_TOKEN}_1$"
+expected_to have_regexp "${GLOBAL_TOKEN}_2$"
 
 ```
 

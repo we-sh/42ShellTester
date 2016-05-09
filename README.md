@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42shTests is currently packaged with **87 tests**.
+42shTests is currently packaged with **88 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -62,7 +62,8 @@ Also run pending tests.
     * [002-chained-pipes <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/002-chained-pipes)
     * [003-many-chained-pipes <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/003-many-chained-pipes)
     * **[mixed/](spec/21sh/pipe/mixed)**
-      * [001-exit-or-not-exit <img src='./lib/assets/hard.png' width='38' height='12' />](spec/21sh/pipe/mixed/001-exit-or-not-exit)
+      * [001-exit-or-not-exit <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/001-exit-or-not-exit)
+      * [002-cd-or-not-cd <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/002-cd-or-not-cd)
   * **[redirections/](spec/21sh/redirections)**
     * **[inputs/](spec/21sh/redirections/inputs)**
       * [001-close-stdin <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/inputs/001-close-stdin)
