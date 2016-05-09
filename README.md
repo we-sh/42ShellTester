@@ -138,14 +138,14 @@ Also display tests that succeed (hidden by default).
       * [003-too-many-args](spec/minishell/001-builtins/exit/003-too-many-args)
       * [004-status-of-last-command](spec/minishell/001-builtins/exit/004-status-of-last-command)
     * **[setenv](spec/minishell/001-builtins/setenv)**
-      * [001-setenv-no-parameter](spec/minishell/001-builtins/setenv/001-setenv-no-parameter)
-      * [002-setenv-noequal](spec/minishell/001-builtins/setenv/002-setenv-noequal)
-      * [003-setenv-equal](spec/minishell/001-builtins/setenv/003-setenv-equal)
+      * [001-setenv-no-parameter](spec/minishell/001-builtins/setenv/001-setenv-no-parameter) <img src='./lib/assets/non-posix.png' width='76' height='14' />
+      * [002-setenv-noequal](spec/minishell/001-builtins/setenv/002-setenv-noequal) <img src='./lib/assets/non-posix.png' width='76' height='14' />
+      * [003-setenv-equal](spec/minishell/001-builtins/setenv/003-setenv-equal) <img src='./lib/assets/non-posix.png' width='76' height='14' />
     * **[unsetenv](spec/minishell/001-builtins/unsetenv)**
-      * [001-unsetenv-first-elem](spec/minishell/001-builtins/unsetenv/001-unsetenv-first-elem)
-      * [002-unsetenv-last-elem](spec/minishell/001-builtins/unsetenv/002-unsetenv-last-elem)
-      * [003-unsetenv-mult-argv](spec/minishell/001-builtins/unsetenv/003-unsetenv-mult-argv)
-      * [004-unsetenv-mult-argv-inline](spec/minishell/001-builtins/unsetenv/004-unsetenv-mult-argv-inline)
+      * [001-unsetenv-first-elem](spec/minishell/001-builtins/unsetenv/001-unsetenv-first-elem) <img src='./lib/assets/non-posix.png' width='76' height='14' />
+      * [002-unsetenv-last-elem](spec/minishell/001-builtins/unsetenv/002-unsetenv-last-elem) <img src='./lib/assets/non-posix.png' width='76' height='14' />
+      * [003-unsetenv-mult-argv](spec/minishell/001-builtins/unsetenv/003-unsetenv-mult-argv) <img src='./lib/assets/non-posix.png' width='76' height='14' />
+      * [004-unsetenv-mult-argv-inline](spec/minishell/001-builtins/unsetenv/004-unsetenv-mult-argv-inline) <img src='./lib/assets/non-posix.png' width='76' height='14' />
   * **[002-binary](spec/minishell/002-binary)**
     * [001-path-relative-in-ls](spec/minishell/002-binary/001-path-relative-in-ls)
     * [002-path-relative-usrin-whereis](spec/minishell/002-binary/002-path-relative-usrin-whereis)
