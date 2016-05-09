@@ -209,7 +209,7 @@ Follow the guideline to add a new test:
 
 * **`might`** / **`might_not`** + *`verb`*: An assertion beginning with **might** (or its opposite **might_not**) always makes the test resulting in success status. When the expectation that follows **may not** comply, it is nevertheless considered as success but it displays a warning message.
 
-### Verbs
+## Verbs
 
 * **`be_empty`**: Actual output is empty.
 * **`create_file`** + *`$filename`*: Actual command creates a file named *$filename*. May also be followed with a file test:
@@ -220,6 +220,26 @@ Follow the guideline to add a new test:
 * **`have_nb_of_lines`** + *`$int`*: Actual output contains exactly *$int* lines.
 * **`have_regexp`** + *`$regex`*: At least one line of actual output does match with the regular expression *$regex*.
 * **`match_each_lines_of_file`** + *`$filename`*: Actual output does match with each regular expression contained in the file named *$filename* (in an indifferent order).
+
+## Adding new verb
+
+A verb is a function that is prefixed by `run_verb_` and that returns `0` or `1` according to the tested behavior. It may return a status `255` when bad or missing argument.
+
+At runtime, the framework provides a list of variables that can be used by the verbs:
+
+* **`RESPONSE`**: The path to the file containing actual output (STDOUT or STDERR)
+* **`RESPONSE_EXIT_STATUS`**: The exit status of the Shell termination
+* **`EXPECTED_TO_ARGS[]`**: An array containing the arguments following the verb
+
+Follow the guideline to add a new verb:
+
+1. Choose the best name that respects the *CamelCase* convention and that can be human-readable when used with an assertion (e.g. `expected_to be_empty` can be read `actual output is expected to be empty`)
+2. Create a file in `lib/verbs/` with the exact name of the verb and that is prefixed with `run_verb_` (e.g. `lib/verbs/run_verb_be_empty.sh`
+3. Add a *shebang*: `#!/bin/sh` and a comment that describes the tested behavior
+4. Create a function with the exact name of the verb and that is prefixed with `run_verb_` (the same as the file name) and make it respect the following rules:
+  * Local variables must be declared with `local`
+  * No output can be done with `echo` or `printf`
+  * Returns `0` on succes, `1` on fail or `255` on bad use
 
 ## Tasks
 
