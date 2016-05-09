@@ -88,6 +88,7 @@ function run_browse_directory
   if [ -f "${DIR}/stdin" ]
   then
     [ -f "${DIR}/non-posix" ] && IMGS=" <img src='./lib/assets/non-posix.png' width='63' height='12' />"
+    [ -f "${DIR}/hard" ] && IMGS="${IMGS} <img src='./lib/assets/hard.png' width='38' height='12' />"
     [ -f "${DIR}/pending" ] && IMGS="${IMGS} <img src='./lib/assets/pending.png' width='54' height='12' />"
     GLOBAL_LIST_OF_TESTS="${GLOBAL_LIST_OF_TESTS}$(printf "% $(( INDEX * 2 ))s\052 [%s](%s)" "" "${DIR_NAME}${IMGS}" "${DIR}")\n"
     run_create_readme "${INDEX}" "${DIR}"
