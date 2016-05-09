@@ -1,0 +1,2 @@
+Simple test with two piped commands.
+The first process write a token on STDOUT and another on STDERR, then the second one read on STDIN and write lines suffixed with the character '@' (similar to `cat -e`). The third one does the same as the second one, so that lines are suffixed with '@@'.

@@ -1,0 +1,2 @@
+One line with many piped commands.
+The first process write a token on STDOUT and another on STDERR, then the others read on STDIN and write lines suffixed with the character '@' (similar to `cat -e`). The full command line results in an output suffixed with ten characters '@@@@@@@@@@'.
