@@ -29,19 +29,19 @@ sh ~/42shTests/42shTests.sh "PATH/TO/YOUR/SHELL"
 
 You can use the following options:
 
-#### `--filter` + `$regex`
+##### `--filter` + `$regex`
 
 Run tests that matches with the specified regular expression (e.g. `--filter "builtins"`).
 
-#### `--reference` + `$binary`
+##### `--reference` + `$binary`
 
 Run tests that does not fail with the specified Shell binary (e.g. `--reference "bash"`).
 
-#### `--posix`
+##### `--posix`
 
 Run tests that are POSIX compliant only (run all by default).
 
-#### `--show-success`
+##### `--show-success`
 
 Also display tests that succeed (hidden by default).
 
