@@ -83,15 +83,13 @@ function run_browse_directory
   local PARENT_DIR_NAME="${DIR%/*}"
   local README="${DIR}/README.md"
   local SUBDIR
+  local IMGS=""
 
   if [ -f "${DIR}/stdin" ]
   then
-    if [ -f "${DIR}/non-posix" ]
-    then
-      GLOBAL_LIST_OF_TESTS="${GLOBAL_LIST_OF_TESTS}$(printf "% $(( INDEX * 2 ))s\052 [%s](%s) %s" "" "${DIR_NAME}" "${DIR}" "<img src='./lib/assets/non-posix.png' width='63' height='12' />")\n"
-    else
-      GLOBAL_LIST_OF_TESTS="${GLOBAL_LIST_OF_TESTS}$(printf "% $(( INDEX * 2 ))s\052 [%s](%s)" "" "${DIR_NAME}" "${DIR}")\n"
-    fi
+    [ -f "${DIR}/non-posix" ] && IMGS=" <img src='./lib/assets/non-posix.png' width='63' height='12' />"
+    [ -f "${DIR}/pending" ] && IMGS="${IMGS} <img src='./lib/assets/pending.png' width='54' height='12' />"
+    GLOBAL_LIST_OF_TESTS="${GLOBAL_LIST_OF_TESTS}$(printf "% $(( INDEX * 2 ))s\052 [%s](%s)" "" "${DIR_NAME}${IMGS}" "${DIR}")\n"
     run_create_readme "${INDEX}" "${DIR}"
   else
 
