@@ -86,7 +86,12 @@ function run_browse_directory
 
   if [ -f "${DIR}/stdin" ]
   then
-    GLOBAL_LIST_OF_TESTS="${GLOBAL_LIST_OF_TESTS}$(printf "% $(( INDEX * 2 ))s\052 [%s](%s)" "" "${DIR_NAME}" "${DIR}")\n"
+    if [ -f "${DIR}/non-posix" ]
+    then
+      GLOBAL_LIST_OF_TESTS="${GLOBAL_LIST_OF_TESTS}$(printf "% $(( INDEX * 2 ))s\052 [%s](%s) %s" "" "${DIR_NAME}" "${DIR}" "<img src='./lib/assets/non-posix.png' width='76' height='14' />")\n"
+    else
+      GLOBAL_LIST_OF_TESTS="${GLOBAL_LIST_OF_TESTS}$(printf "% $(( INDEX * 2 ))s\052 [%s](%s)" "" "${DIR_NAME}" "${DIR}")\n"
+    fi
     run_create_readme "${INDEX}" "${DIR}"
   else
 
@@ -111,18 +116,25 @@ run_browse_directory -1 "spec"
 
 awk -v LIST="${GLOBAL_LIST_OF_TESTS}" -v GLOBAL_TOTAL_TESTS="${GLOBAL_TOTAL_TESTS}" '
 BEGIN {
-  DISPLAY_LIST=0
+  INSERT_DATA=0
 }
-DISPLAY_LIST == 0 {
-  gsub(/<!--START_TOTAL_TESTS-->[0-9]*<!--END_TOTAL_TESTS-->/, "<!--START_TOTAL_TESTS-->"GLOBAL_TOTAL_TESTS"<!--END_TOTAL_TESTS-->");
+INSERT_DATA == 0 {
+  print
+}
+$0 ~ /<!--START_TOTAL_TESTS-->/ {
+  INSERT_DATA=1;
+  print "42shTests is currently packaged with **"GLOBAL_TOTAL_TESTS" tests**."
+}
+$0 ~ /<!--END_TOTAL_TESTS-->/ {
+  INSERT_DATA=0;
   print
 }
 $0 ~ /<!--START_LIST_TESTS-->/ {
-  DISPLAY_LIST=1;
+  INSERT_DATA=1;
   print LIST
 }
 $0 ~ /<!--END_LIST_TESTS-->/ {
-  DISPLAY_LIST=0;
+  INSERT_DATA=0;
   print
 }
 ' README.md > README.new.md && rm -f README.md && mv README.new.md README.md

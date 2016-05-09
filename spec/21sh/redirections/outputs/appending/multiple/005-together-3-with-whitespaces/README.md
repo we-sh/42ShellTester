@@ -23,12 +23,12 @@ gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/write-on-stdout-and-stde
 ### What is expected on standard output
 
 ```bash
-expected_to have_not_regexp "${GLOBAL_TOKEN}_1_1"
-expected_to have_not_regexp "${GLOBAL_TOKEN}_2_1"
-expected_to have_not_regexp "${GLOBAL_TOKEN}_3_1"
-expected_to have_not_regexp "${GLOBAL_TOKEN}_1_2"
-expected_to have_not_regexp "${GLOBAL_TOKEN}_2_2"
-expected_to have_not_regexp "${GLOBAL_TOKEN}_3_2"
+expected_to_not have_regexp "${GLOBAL_TOKEN}_1_1"
+expected_to_not have_regexp "${GLOBAL_TOKEN}_2_1"
+expected_to_not have_regexp "${GLOBAL_TOKEN}_3_1"
+expected_to_not have_regexp "${GLOBAL_TOKEN}_1_2"
+expected_to_not have_regexp "${GLOBAL_TOKEN}_2_2"
+expected_to_not have_regexp "${GLOBAL_TOKEN}_3_2"
 
 ```
 

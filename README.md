@@ -7,7 +7,9 @@
 
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
-42shTests is currently packaged with **<!--START_TOTAL_TESTS-->82<!--END_TOTAL_TESTS--> tests**.
+<!--START_TOTAL_TESTS-->
+42shTests is currently packaged with **82 tests**.
+<!--END_TOTAL_TESTS-->
 
 ## Install
 
@@ -23,22 +25,25 @@ Add the path to your Shell as argument:
 sh ~/42shTests/42shTests.sh "PATH/TO/YOUR/SHELL"
 ```
 
+## Options
+
 You can use the following options:
 
-* **`--filter`** + `$regex`
+#### `--filter` + `$regex`
 
 Run tests that matches with the specified regular expression (e.g. `--filter "builtins"`).
-* **`--reference`** + `$binary`
 
-Run tests that does not fail with the specified Shell binary (e.g. `--reference "bash"`)
+#### `--reference` + `$binary`
 
-* **`--posix`**
+Run tests that does not fail with the specified Shell binary (e.g. `--reference "bash"`).
 
-Run tests that are POSIX compliant only.
+#### `--posix`
 
-* **`--show-success`**
+Run tests that are POSIX compliant only (run all by default).
 
-Also display tests that succeed (hidden by default)
+#### `--show-success`
+
+Also display tests that succeed (hidden by default).
 
 ## List of tests
 
