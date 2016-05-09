@@ -41,13 +41,17 @@ Run tests that does not fail with the specified Shell binary (e.g. `--reference 
 
 Run tests that are POSIX compliant only (run all by default).
 
+##### `--hard`
+
+Run tests that are marked as « hard » (omitted by default).
+
 ##### `--show-success`
 
 Also display tests that succeed (hidden by default).
 
 ##### `--pending`
 
-Run also pending tests.
+Also run pending tests.
 
 ## List of tests
 
