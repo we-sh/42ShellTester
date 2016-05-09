@@ -1,6 +1,6 @@
 # 003-parse-error-at-beginning
 
-*[spec > bonuses > separators > ||](..) > 003-parse-error-at-beginning*
+*[spec > bonuses > separators > or](..) > 003-parse-error-at-beginning*
 
 ### Shell commands that are sent to the standard entry
 

@@ -1,6 +1,6 @@
 # 001-run-twice
 
-*[spec > bonuses > separators > &&](..) > 001-run-twice*
+*[spec > bonuses > separators > and](..) > 001-run-twice*
 
 ### Shell commands that are sent to the standard entry
 

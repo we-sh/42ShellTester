@@ -1,6 +1,6 @@
 # 002-run-second-only
 
-*[spec > bonuses > separators > ||](..) > 002-run-second-only*
+*[spec > bonuses > separators > or](..) > 002-run-second-only*
 
 ### Shell commands that are sent to the standard entry
 

@@ -88,7 +88,7 @@ function run_browse_directory
   then
     if [ -f "${DIR}/non-posix" ]
     then
-      GLOBAL_LIST_OF_TESTS="${GLOBAL_LIST_OF_TESTS}$(printf "% $(( INDEX * 2 ))s\052 [%s](%s) %s" "" "${DIR_NAME}" "${DIR}" "<img src='./lib/assets/non-posix.png' width='76' height='14' />")\n"
+      GLOBAL_LIST_OF_TESTS="${GLOBAL_LIST_OF_TESTS}$(printf "% $(( INDEX * 2 ))s\052 [%s](%s) %s" "" "${DIR_NAME}" "${DIR}" "<img src='./lib/assets/non-posix.png' width='63' height='12' />")\n"
     else
       GLOBAL_LIST_OF_TESTS="${GLOBAL_LIST_OF_TESTS}$(printf "% $(( INDEX * 2 ))s\052 [%s](%s)" "" "${DIR_NAME}" "${DIR}")\n"
     fi

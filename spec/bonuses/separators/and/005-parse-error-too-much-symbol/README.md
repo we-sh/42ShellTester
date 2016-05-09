@@ -1,6 +1,6 @@
 # 005-parse-error-too-much-symbol
 
-*[spec > bonuses > separators > &&](..) > 005-parse-error-too-much-symbol*
+*[spec > bonuses > separators > and](..) > 005-parse-error-too-much-symbol*
 
 ### Shell commands that are sent to the standard entry
 

@@ -88,18 +88,18 @@ Also display tests that succeed (hidden by default).
       * [004-empty-commands](spec/21sh/separators/semicolon/004-empty-commands)
 * **[bonuses/](spec/bonuses)**
   * **[separators/](spec/bonuses/separators)**
-    * **[&&/](spec/bonuses/separators/&&)**
-      * [001-run-twice](spec/bonuses/separators/&&/001-run-twice)
-      * [002-do-not-run-second](spec/bonuses/separators/&&/002-do-not-run-second)
-      * [003-parse-error-at-beginning](spec/bonuses/separators/&&/003-parse-error-at-beginning)
-      * [004-parse-error-at-end](spec/bonuses/separators/&&/004-parse-error-at-end)
-      * [005-parse-error-too-much-symbol](spec/bonuses/separators/&&/005-parse-error-too-much-symbol)
-    * **[||/](spec/bonuses/separators/||)**
-      * [001-run-first-only](spec/bonuses/separators/||/001-run-first-only)
-      * [002-run-second-only](spec/bonuses/separators/||/002-run-second-only)
-      * [003-parse-error-at-beginning](spec/bonuses/separators/||/003-parse-error-at-beginning)
-      * [004-parse-error-at-end](spec/bonuses/separators/||/004-parse-error-at-end)
-      * [005-parse-error-too-much-symbol](spec/bonuses/separators/||/005-parse-error-too-much-symbol)
+    * **[and/](spec/bonuses/separators/and)**
+      * [001-run-twice](spec/bonuses/separators/and/001-run-twice)
+      * [002-do-not-run-second](spec/bonuses/separators/and/002-do-not-run-second)
+      * [003-parse-error-at-beginning](spec/bonuses/separators/and/003-parse-error-at-beginning)
+      * [004-parse-error-at-end](spec/bonuses/separators/and/004-parse-error-at-end)
+      * [005-parse-error-too-much-symbol](spec/bonuses/separators/and/005-parse-error-too-much-symbol)
+    * **[or/](spec/bonuses/separators/or)**
+      * [001-run-first-only](spec/bonuses/separators/or/001-run-first-only)
+      * [002-run-second-only](spec/bonuses/separators/or/002-run-second-only)
+      * [003-parse-error-at-beginning](spec/bonuses/separators/or/003-parse-error-at-beginning)
+      * [004-parse-error-at-end](spec/bonuses/separators/or/004-parse-error-at-end)
+      * [005-parse-error-too-much-symbol](spec/bonuses/separators/or/005-parse-error-too-much-symbol)
 * **[minishell/](spec/minishell)**
   * **[001-builtins/](spec/minishell/001-builtins)**
     * **[cd/](spec/minishell/001-builtins/cd)**
@@ -138,14 +138,14 @@ Also display tests that succeed (hidden by default).
       * [003-too-many-args](spec/minishell/001-builtins/exit/003-too-many-args)
       * [004-status-of-last-command](spec/minishell/001-builtins/exit/004-status-of-last-command)
     * **[setenv/](spec/minishell/001-builtins/setenv)**
-      * [001-setenv-no-parameter](spec/minishell/001-builtins/setenv/001-setenv-no-parameter) <img src='./lib/assets/non-posix.png' width='76' height='14' />
-      * [002-setenv-noequal](spec/minishell/001-builtins/setenv/002-setenv-noequal) <img src='./lib/assets/non-posix.png' width='76' height='14' />
-      * [003-setenv-equal](spec/minishell/001-builtins/setenv/003-setenv-equal) <img src='./lib/assets/non-posix.png' width='76' height='14' />
+      * [001-setenv-no-parameter](spec/minishell/001-builtins/setenv/001-setenv-no-parameter) <img src='./lib/assets/non-posix.png' width='63' height='12' />
+      * [002-setenv-noequal](spec/minishell/001-builtins/setenv/002-setenv-noequal) <img src='./lib/assets/non-posix.png' width='63' height='12' />
+      * [003-setenv-equal](spec/minishell/001-builtins/setenv/003-setenv-equal) <img src='./lib/assets/non-posix.png' width='63' height='12' />
     * **[unsetenv/](spec/minishell/001-builtins/unsetenv)**
-      * [001-unsetenv-first-elem](spec/minishell/001-builtins/unsetenv/001-unsetenv-first-elem) <img src='./lib/assets/non-posix.png' width='76' height='14' />
-      * [002-unsetenv-last-elem](spec/minishell/001-builtins/unsetenv/002-unsetenv-last-elem) <img src='./lib/assets/non-posix.png' width='76' height='14' />
-      * [003-unsetenv-mult-argv](spec/minishell/001-builtins/unsetenv/003-unsetenv-mult-argv) <img src='./lib/assets/non-posix.png' width='76' height='14' />
-      * [004-unsetenv-mult-argv-inline](spec/minishell/001-builtins/unsetenv/004-unsetenv-mult-argv-inline) <img src='./lib/assets/non-posix.png' width='76' height='14' />
+      * [001-unsetenv-first-elem](spec/minishell/001-builtins/unsetenv/001-unsetenv-first-elem) <img src='./lib/assets/non-posix.png' width='63' height='12' />
+      * [002-unsetenv-last-elem](spec/minishell/001-builtins/unsetenv/002-unsetenv-last-elem) <img src='./lib/assets/non-posix.png' width='63' height='12' />
+      * [003-unsetenv-mult-argv](spec/minishell/001-builtins/unsetenv/003-unsetenv-mult-argv) <img src='./lib/assets/non-posix.png' width='63' height='12' />
+      * [004-unsetenv-mult-argv-inline](spec/minishell/001-builtins/unsetenv/004-unsetenv-mult-argv-inline) <img src='./lib/assets/non-posix.png' width='63' height='12' />
   * **[002-binary/](spec/minishell/002-binary)**
     * [001-path-relative-in-ls](spec/minishell/002-binary/001-path-relative-in-ls)
     * [002-path-relative-usrin-whereis](spec/minishell/002-binary/002-path-relative-usrin-whereis)
@@ -199,8 +199,9 @@ Follow the guideline to add a new test:
 2. If necessary, create a file `before_exec` that contains the shell commands that prepare the environment and the temporary resources (e.g. `mkdir valid_folder`)
 2. Create a file `stdin` that contains the shell command you want to test (e.g. `cd invalid_folder`)
 3. Create the files `stdout` and/or `stderr` that contain the expected output assertions (e.g. in stderr: `expected_to_not be_empty`) (see available assertions and verbs bellow)
-4. You may also create a file `misc` that contains special expectations (e.g. `expected_to_not exit_with_status 0`)
+4. You may also create a file `misc` that contains special expectations not concerning output on standard and error (e.g. `expected_to_not exit_with_status 0`)
 5. If necessary, create a file `description` that describes more precisely the purpose of the test (e.g. `Trying to access invalid folder must display an error on standard error and result in a failure status code`) (the description will be included at top of the auto-generated README)
+6. If the test is not POSIX compliant, create a file `non-posix` that explains why.
 
 ## Assertions
 

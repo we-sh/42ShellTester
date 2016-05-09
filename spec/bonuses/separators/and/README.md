@@ -1,6 +1,6 @@
-# &&
+# and
 
-*[spec > bonuses > separators](..) > &&*
+*[spec > bonuses > separators](..) > and*
 
 * [001-run-twice](./001-run-twice)
 * [002-do-not-run-second](./002-do-not-run-second)

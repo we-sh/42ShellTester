@@ -1,6 +1,6 @@
 # 002-do-not-run-second
 
-*[spec > bonuses > separators > &&](..) > 002-do-not-run-second*
+*[spec > bonuses > separators > and](..) > 002-do-not-run-second*
 
 ### Shell commands that are sent to the standard entry
 

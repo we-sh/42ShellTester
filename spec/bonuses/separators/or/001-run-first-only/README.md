@@ -1,6 +1,6 @@
 # 001-run-first-only
 
-*[spec > bonuses > separators > ||](..) > 001-run-first-only*
+*[spec > bonuses > separators > or](..) > 001-run-first-only*
 
 ### Shell commands that are sent to the standard entry
 

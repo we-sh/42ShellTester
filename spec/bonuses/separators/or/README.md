@@ -1,6 +1,6 @@
-# ||
+# or
 
-*[spec > bonuses > separators](..) > ||*
+*[spec > bonuses > separators](..) > or*
 
 * [001-run-first-only](./001-run-first-only)
 * [002-run-second-only](./002-run-second-only)

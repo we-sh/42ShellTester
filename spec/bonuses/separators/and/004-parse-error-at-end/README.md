@@ -1,6 +1,6 @@
 # 004-parse-error-at-end
 
-*[spec > bonuses > separators > &&](..) > 004-parse-error-at-end*
+*[spec > bonuses > separators > and](..) > 004-parse-error-at-end*
 
 ### Shell commands that are sent to the standard entry
 
