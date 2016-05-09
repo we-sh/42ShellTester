@@ -161,7 +161,7 @@ Run also pending tests.
     * [008-path-absolute-display-pwd <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/008-path-absolute-display-pwd)
     * [009-path-relative-without-$PATH <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/009-path-relative-without-$PATH)
     * [010-path-relative-with-wrong-$PATH <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/010-path-relative-with-wrong-$PATH)
-    * [011-path-absolute-with-wrong-$PATH](spec/minishell/002-binary/011-path-absolute-with-wrong-$PATH)
+    * [011-path-absolute-with-wrong-$PATH <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/011-path-absolute-with-wrong-$PATH)
   * **[003-multi-builtins/](spec/minishell/003-multi-builtins)**
     * **[setenv-unsetenv/](spec/minishell/003-multi-builtins/setenv-unsetenv)**
       * [001-basic-unsetenv-and-setenv <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/003-multi-builtins/setenv-unsetenv/001-basic-unsetenv-and-setenv)
