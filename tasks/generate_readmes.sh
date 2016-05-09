@@ -95,7 +95,7 @@ function run_browse_directory
     run_create_readme "${INDEX}" "${DIR}"
   else
 
-    [ "${INDEX}" != "-1" ] && GLOBAL_LIST_OF_TESTS="${GLOBAL_LIST_OF_TESTS}$(printf "% $(( INDEX * 2 ))s\052 **[%s](%s)**" "" "${DIR_NAME}" "${DIR}")\n"
+    [ "${INDEX}" != "-1" ] && GLOBAL_LIST_OF_TESTS="${GLOBAL_LIST_OF_TESTS}$(printf "% $(( INDEX * 2 ))s\052 **[%s/](%s)**" "" "${DIR_NAME}" "${DIR}")\n"
 
     printf "# %s\n\n" "${DIR_NAME}" >"${README}"
     [ "${INDEX}" != "-1" ] && printf "*[%s](%s) > %s*\n\n" "${PARENT_DIR_NAME//\// > }" ".." "${DIR_NAME}" >>"${README}"
