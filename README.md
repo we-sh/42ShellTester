@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42shTests is currently packaged with **82 tests**.
+42shTests is currently packaged with **87 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -53,6 +53,12 @@ Run also pending tests.
 
 <!--START_LIST_TESTS-->
 * **[21sh/](spec/21sh)**
+  * **[pipe/](spec/21sh/pipe)**
+    * [001-single-pipe <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/001-single-pipe)
+    * [002-chained-pipes <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/002-chained-pipes)
+    * [003-many-chained-pipes <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/003-many-chained-pipes)
+    * **[mixed/](spec/21sh/pipe/mixed)**
+      * [001-exit-or-not-exit <img src='./lib/assets/hard.png' width='38' height='12' />](spec/21sh/pipe/mixed/001-exit-or-not-exit)
   * **[redirections/](spec/21sh/redirections)**
     * **[inputs/](spec/21sh/redirections/inputs)**
       * [001-close-stdin <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/inputs/001-close-stdin)
@@ -166,6 +172,8 @@ Run also pending tests.
     * **[setenv-unsetenv/](spec/minishell/003-multi-builtins/setenv-unsetenv)**
       * [001-basic-unsetenv-and-setenv <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/003-multi-builtins/setenv-unsetenv/001-basic-unsetenv-and-setenv)
       * [002-unsetenv-all-and-setenv <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/003-multi-builtins/setenv-unsetenv/002-unsetenv-all-and-setenv)
+  * **[misc/](spec/minishell/misc)**
+    * [copy-of-environment <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/misc/copy-of-environment)
 
 <!--END_LIST_TESTS-->
 
