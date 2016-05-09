@@ -32,6 +32,8 @@ declare GLOBAL_LOG=""
 declare GLOBAL_SHOW_SUCCESS=0
 declare GLOBAL_RUN_POSIX_ONLY=0
 declare GLOBAL_RUN_PENDING_TESTS=0
+declare GLOBAL_RUN_HARD_TESTS=0
+declare GLOBAL_INVALID_OPTION=0
 declare C_RED="\033[31m\033[38;5;160m"
 declare C_GREEN="\033[31m\033[38;5;34m"
 declare C_YELLOW="\033[31m\033[1;33m"
@@ -58,6 +60,13 @@ while [ ! -z "${1}" ]; do
         ;;
       "--posix")
         GLOBAL_RUN_POSIX_ONLY=1
+        ;;
+      "--hard")
+        GLOBAL_RUN_HARD_TESTS=1
+        ;;
+      *)
+        printf "%s\n" "Invalid option: ${1}"
+        exit 1
         ;;
     esac
   else
