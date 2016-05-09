@@ -1,0 +1,2 @@
+Calling the built-in `exit` in a piped process does not result in a Shell termination.
+In this test, the two commands `echo` are nevertheless executed.
