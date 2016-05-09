@@ -45,6 +45,10 @@ Run tests that are POSIX compliant only (run all by default).
 
 Also display tests that succeed (hidden by default).
 
+##### `--pending`
+
+Run also pending tests.
+
 ## List of tests
 
 <!--START_LIST_TESTS-->

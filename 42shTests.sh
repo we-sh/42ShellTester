@@ -31,6 +31,7 @@ declare GLOBAL_TOTAL_FAILED_TESTS=0
 declare GLOBAL_LOG=""
 declare GLOBAL_SHOW_SUCCESS=0
 declare GLOBAL_RUN_POSIX_ONLY=0
+declare GLOBAL_RUN_PENDING_TESTS=0
 declare C_RED="\033[31m\033[38;5;160m"
 declare C_GREEN="\033[31m\033[38;5;34m"
 declare C_YELLOW="\033[31m\033[1;33m"
@@ -51,6 +52,9 @@ while [ ! -z "${1}" ]; do
         ;;
       "--show-success")
         GLOBAL_SHOW_SUCCESS=1
+        ;;
+      "--pending")
+        GLOBAL_RUN_PENDING_TESTS=1
         ;;
       "--posix")
         GLOBAL_RUN_POSIX_ONLY=1
