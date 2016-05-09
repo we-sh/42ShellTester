@@ -189,9 +189,9 @@ Thirdly, a test must concern one single feature at a time, that means **wherever
 
 Fourthly, when a test need binaries like `/bin/env` or `/bin/echo`, prefer to recode your own, simplier and multi-platform, and place it in `support/` folder. Then use the `before_exec` callback to compile it and make it available for your test.
 
-Sixthly, a test that is not POSIX compliant must contain a file named `non-posix`.
+Sixthly, a test that is not POSIX compliant must contain a file named `non-posix` containing a small explanation of why.
 
-Finally, don't write a README and let the task `generate_readmes` do it for you :-)
+Finally, don't write a README and let the task `generate_readmes` do it for you :-) A description may be added in a file named `description` that will appear at the top of the README.
 
 Follow the guideline to add a new test:
 
