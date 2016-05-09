@@ -239,7 +239,8 @@ Follow the guideline to add a new verb:
 4. Create a function with the exact name of the verb and that is prefixed with `run_verb_` (the same as the file name) and make it respect the following rules:
   * Local variables must be declared with `local`
   * No output can be done with `echo` or `printf`
-  * Returns `0` on succes, `1` on fail or `255` on bad use
+  * Function returns `0` on succes, `1` on fail or `255` on bad use
+  * Use the array `EXPECTED_TO_ARGS[]` to take advantage of arguments (e.g. `expected_to have_regexp "regex"`, then `EXPECTED_TO_ARGS[0]` contains `regex`)
 
 ## Tasks
 
