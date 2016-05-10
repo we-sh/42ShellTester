@@ -32,6 +32,7 @@ function run_main
   local LOG_CURRENT_TEST_MISC
   local LOG_SUCCESS_TESTS
   local LOG_FAILED_TESTS
+  local OLD_IFS="${IFS}"
 
   if [ ! -f "${GLOBAL_PROG}" ]
   then
@@ -39,6 +40,7 @@ function run_main
     [ ! -f "$(which "${GLOBAL_PROG}")" ] && printf "%s\n" "Wrong argument: the specified argument is not executable" && return
   fi
 
+  IFS=$'\n'
   for TEST in $(find -E "${GLOBAL_INSTALLDIR}/spec" -type d -regex "${GLOBAL_INSTALLDIR}/spec/.*${GLOBAL_SPECS_FILTER}.*")
   do
     if [ -f "${TEST}/stdin" ] && [ ! -f "${TEST}/non-posix" -o "${GLOBAL_RUN_POSIX_ONLY}" == "0" ] && [ ! -f "${TEST}/pending" -o "${GLOBAL_RUN_PENDING_TESTS}" == "1" ] && [ ! -f "${TEST}/hard" -o "${GLOBAL_RUN_HARD_TESTS}" == "1" ]
@@ -205,4 +207,5 @@ function run_main
 
     fi
   done
+  IFS="${OLD_IFS}"
 }
