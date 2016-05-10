@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42shTests is currently packaged with **88 tests**.
+42shTests is currently packaged with **89 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -57,6 +57,8 @@ Also run pending tests.
 
 <!--START_LIST_TESTS-->
 * **[21sh/](spec/21sh)**
+  * **[misc/](spec/21sh/misc)**
+    * [001-any-prompt-when-non-interactive](spec/21sh/misc/001-any-prompt-when-non-interactive)
   * **[pipe/](spec/21sh/pipe)**
     * [001-single-pipe <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/001-single-pipe)
     * [002-chained-pipes <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/002-chained-pipes)

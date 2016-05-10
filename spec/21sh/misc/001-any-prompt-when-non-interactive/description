@@ -1,0 +1,1 @@
+A non-interactive Shell should not output a prompt. All the test suite runs the Shell in a non-interactive way so that `isatty()` returns `0`. This test is the only one that take it into account so that you can succeed the rest of the suite.
