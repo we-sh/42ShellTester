@@ -260,6 +260,23 @@ Follow the guideline to add a new verb:
   * Function returns `0` on succes, `1` on fail or `255` on bad use
   * Use the array `EXPECTED_TO_ARGS[]` to take advantage of arguments (e.g. `expected_to match_regex "regex"`, then `EXPECTED_TO_ARGS[0]` contains `regex`)
 
+## Support binaries
+
+The framework 42ShellTester provides several binaries to be used within the tests. Using them instead of using Unix binaries prevents from undefined behaviors and compatibility errors.
+
+Find the available list of support binaries bellow:
+
+<!--START_SUPPORT_BINARIES_LIST-->
+
+* **./display_env** -> A binary that iterates on `**envp` and write each element on standard output.
+* **./display_program_name** -> A binary that writes its name on standard ouput.
+* **./display_pwd** -> A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`.
+* **./exit_with_status** -> A binary that immediately exits with the status given as first argument.
+* **./read_on_stdin** -> A binary that reads on standard entry and write each line on standard output suffixed with the character `@` (e.g. same behavior as `cat -e` and the *newline* character).
+* **./write_on_stdout** -> A binary that writes on standard output the first given argument (the same behavior as `echo` but with only one argument). If no argument is given, it writes the string "write on stdout".
+* **./write_on_stdout_and_stderr** -> A binary that writes on standard output the first given argument, and writes on standard error the second given argument. If an argument is missing, it writes the strings "write on stdout" and "write on stderr".
+<!--END_SUPPORT_BINARIES_LIST-->
+
 ## Tasks
 
 * `bash ./tasks/generate_readmes.sh` (only on master branch) to automaticaly generate the README files of tests

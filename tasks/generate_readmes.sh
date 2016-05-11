@@ -6,6 +6,7 @@ GLOBAL_LOCALBRANCH=$(git branch | awk '$0 ~ /^\*/ {print $2; exit}')
 GLOBAL_LIST_OF_TESTS=
 GLOBAL_TOTAL_TESTS=0
 GLOBAL_SUPPORT_BINARIES_LIST=""
+GLOBAL_SUPPORT_BINARIES_LIST2=""
 
 if [ "${GLOBAL_LOCALBRANCH}" != "master" ]
 then
@@ -41,6 +42,7 @@ run_create_support_binaries_readme()
       printf "\`\`\`c\n%s\n\`\`\`\n" "$(cat "${SUPPORT_MAIN}")" >>"${README}"
 
       GLOBAL_SUPPORT_BINARIES_LIST="$(printf "%s\n%s" "${GLOBAL_SUPPORT_BINARIES_LIST}" "* **./${SUPPORT_BINARY_NAME}** -> $(cat "${SUPPORT_DESCRIPTION}")")"
+      GLOBAL_SUPPORT_BINARIES_LIST2="${GLOBAL_SUPPORT_BINARIES_LIST2}\n\052 **./${SUPPORT_BINARY_NAME}** -> $(cat "${SUPPORT_DESCRIPTION}")"
 
     fi
   done
@@ -96,12 +98,12 @@ run_create_readme()
     printf "\n\`\`\`\n\n" >>"${README}"
   fi
 
-  printf "### Variables\n\nThe following variables may appear in ths test:\n\n" >>"${README}"
+  printf "### Variables\n\nThe following variables may appear in this test:\n\n" >>"${README}"
   printf "* \${**GLOBAL_INSTALLDIR**} -> The installation directory of 42ShellTester\n" >>"${README}"
   printf "* \${**GLOBAL_TMP_DIRECTORY**} -> The temporary directory in which tests are executed\n" >>"${README}"
   printf "* \${**GLOBAL_TOKEN**} -> A token that changes value at launch time\n" >>"${README}"
   printf "* \${**PATH**} -> The standard environment variable PATH\n" >>"${README}"
-  printf "* \${**HOME**} -> The standard environment variable HOME\n" >>"${README}"
+  printf "* \${**HOME**} -> The standard environment variable HOME\n\n" >>"${README}"
 
   printf "### Support binaries\n\nThe following binaries may appear in this test:\n\n%s\n" "${GLOBAL_SUPPORT_BINARIES_LIST}" >>"${README}"
 }
@@ -145,7 +147,7 @@ run_browse_directory()
 
 run_browse_directory -1 "spec"
 
-awk -v LIST="${GLOBAL_LIST_OF_TESTS}" -v GLOBAL_TOTAL_TESTS="${GLOBAL_TOTAL_TESTS}" '
+awk -v SUPPORT_BINARIES_LIST="${GLOBAL_SUPPORT_BINARIES_LIST2}" -v LIST="${GLOBAL_LIST_OF_TESTS}" -v GLOBAL_TOTAL_TESTS="${GLOBAL_TOTAL_TESTS}" '
 BEGIN {
   INSERT_DATA=0
 }
@@ -157,6 +159,14 @@ $0 ~ /<!--START_TOTAL_TESTS-->/ {
   print "42ShellTester is currently packaged with **"GLOBAL_TOTAL_TESTS" tests**."
 }
 $0 ~ /<!--END_TOTAL_TESTS-->/ {
+  INSERT_DATA=0;
+  print
+}
+$0 ~ /<!--START_SUPPORT_BINARIES_LIST-->/ {
+  INSERT_DATA=1;
+  print SUPPORT_BINARIES_LIST
+}
+$0 ~ /<!--END_SUPPORT_BINARIES_LIST-->/ {
   INSERT_DATA=0;
   print
 }

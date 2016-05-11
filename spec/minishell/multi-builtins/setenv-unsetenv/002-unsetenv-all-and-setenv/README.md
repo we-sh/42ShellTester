@@ -63,13 +63,14 @@ expected_to match_regex USER=42shtests$
 
 ### Variables
 
-The following variables may appear in ths test:
+The following variables may appear in this test:
 
 * ${**GLOBAL_INSTALLDIR**} -> The installation directory of 42ShellTester
 * ${**GLOBAL_TMP_DIRECTORY**} -> The temporary directory in which tests are executed
 * ${**GLOBAL_TOKEN**} -> A token that changes value at launch time
 * ${**PATH**} -> The standard environment variable PATH
 * ${**HOME**} -> The standard environment variable HOME
+
 ### Support binaries
 
 The following binaries may appear in this test:
