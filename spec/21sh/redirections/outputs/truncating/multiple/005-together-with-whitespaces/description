@@ -1,0 +1,2 @@
+A right redirection can be associated to the twice outputs by using `&>...`, that means `redirect stdout and stderr to ...`.
+In this test, we specify the file name in a separate field.

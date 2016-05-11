@@ -1,0 +1,1 @@
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_stdout ${GLOBAL_TOKEN}_stderr &>>new_file_stderr_and_stdout

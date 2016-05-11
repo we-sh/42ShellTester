@@ -1,0 +1,1 @@
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_stdout_second ${GLOBAL_TOKEN}_stderr_second 1>>append_file_stdout 2>>append_file_stderr

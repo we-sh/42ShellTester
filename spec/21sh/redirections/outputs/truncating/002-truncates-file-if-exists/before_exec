@@ -1,1 +1,1 @@
-/bin/echo FIRST_TOKEN >truncated_file
+./write_on_stdout ${GLOBAL_TOKEN}_first >truncated_file

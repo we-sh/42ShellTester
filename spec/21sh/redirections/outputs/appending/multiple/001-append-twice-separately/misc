@@ -1,0 +1,4 @@
+expected_to create_file "append_file_stdout" with_regexp "${GLOBAL_TOKEN}_stdout_first$"
+expected_to create_file "append_file_stdout" with_regexp "${GLOBAL_TOKEN}_stdout_second$"
+expected_to create_file "append_file_stderr" with_regexp "${GLOBAL_TOKEN}_stderr_first$"
+expected_to create_file "append_file_stderr" with_regexp "${GLOBAL_TOKEN}_stderr_second$"

@@ -1,0 +1,2 @@
+A double right redirection opens the file with the oflag `O_APPEND`, so that its size is not truncated to 0 and output is written at the end of file. If the file does not exist, it is created.
+In this test, the standard output is appended to the file.

@@ -1,3 +1,1 @@
 rm -f new_file_stderr_and_stdout
-rm -f ./write_on_stdout_and_stderr
-gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/write-on-stdout-and-stderr/main.c" -o ./write_on_stdout_and_stderr

@@ -1,0 +1,1 @@
+A Shell may be able to touch an empty file with the right redirection and the pseudo file descriptor `:`.

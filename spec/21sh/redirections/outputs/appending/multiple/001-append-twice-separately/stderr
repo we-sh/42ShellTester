@@ -1,0 +1,1 @@
+expected_to_not match_regex "${GLOBAL_TOKEN}_stderr_second"

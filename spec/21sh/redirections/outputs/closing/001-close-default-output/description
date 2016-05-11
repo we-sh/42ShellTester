@@ -1,0 +1,2 @@
+Not specifying which output to close makes the default standard output to be closed (`>&-` is similar to `1>&-`).
+Closing the standard output has the same behavior as redirecting to `/dev/null`.

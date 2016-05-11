@@ -1,1 +1,0 @@
-/bin/ls .. invalid_folder >&-

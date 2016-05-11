@@ -1,0 +1,1 @@
+Closing the standard output and the standard error has the same behavior as redirecting to `/dev/null` (e.g. `ls 1>/dev/null 2>/dev/null`).

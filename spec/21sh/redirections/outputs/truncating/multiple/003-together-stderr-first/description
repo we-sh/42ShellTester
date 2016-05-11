@@ -1,0 +1,2 @@
+A right redirection can be associated to the twice outputs by using `M>&N`, that means `redirect M to where N is redirected`.
+In this test the standard error is specified first.

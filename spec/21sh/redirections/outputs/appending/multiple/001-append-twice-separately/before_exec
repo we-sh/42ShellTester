@@ -1,0 +1,2 @@
+./write_on_stdout "${GLOBAL_TOKEN}_stdout_first" >append_file_stdout
+./write_on_stdout "${GLOBAL_TOKEN}_stderr_first" >append_file_stderr
