@@ -1,2 +1,2 @@
 expected_not_to be_empty
-might have_regexp "No such file or directory"
+might have_regexp "[Nn]o such file or directory"
