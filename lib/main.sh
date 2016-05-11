@@ -191,6 +191,7 @@ function run_main
             2) GLOBAL_LOG="$(printf "%s ${C_YELLOW}%s${C_CLEAR}" "${GLOBAL_LOG}" "(WARNING)")" ;;
             255) GLOBAL_LOG="$(printf "%s ${C_RED}%s${C_CLEAR}" "${GLOBAL_LOG}" "(RUNTIME ERROR)")" ;;
           esac
+          [ -f "${TEST}/description" ] && GLOBAL_LOG="$(printf "%s\n  %s" "${GLOBAL_LOG}" "$(cat "${TEST}/description")")"
           [ "${LOG_CURRENT_TEST_STDOUT}" != "" ] && GLOBAL_LOG="$(printf "%s\n%s" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_STDOUT}")"
           [ "${LOG_CURRENT_TEST_STDERR}" != "" ] && GLOBAL_LOG="$(printf "%s\n%s" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_STDERR}")"
           [ "${LOG_CURRENT_TEST_MISC}" != "" ] && GLOBAL_LOG="$(printf "%s\n%s" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_MISC}")"
