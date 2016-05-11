@@ -61,11 +61,11 @@ function run_expected_to
   ASSERT_STATUS="${?}"
   case "${ASSERT_STATUS}" in
     0)
-      printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_GREEN}  √ %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
     1)
-      printf "${C_RED}  x ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_RED}  x %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
     255)
-      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_RED} [!] INVALID TEST COMMAND: %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
   esac
 
   return "${ASSERT_STATUS}"
@@ -84,12 +84,12 @@ function run_expected_to_not
   case "${ASSERT_STATUS}" in
     1)
       ASSERT_STATUS="0"
-      printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_GREEN}  √ %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
     0)
       ASSERT_STATUS="1"
-      printf "${C_RED}  x ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_RED}  x %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
     255)
-      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_RED} [!] INVALID TEST COMMAND: %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
   esac
 
   return "${ASSERT_STATUS}"
@@ -107,12 +107,12 @@ function run_might
   ASSERT_STATUS="${?}"
   case "${ASSERT_STATUS}" in
     0)
-      printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_GREEN}  √ %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
     1)
       ASSERT_STATUS="2"
-      printf "${C_YELLOW}  ~ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_YELLOW}  ~ %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
     255)
-      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_RED} [!] INVALID TEST COMMAND: %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
   esac
 
   return "${ASSERT_STATUS}"

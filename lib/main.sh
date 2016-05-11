@@ -199,9 +199,9 @@ function run_main
 
           GLOBAL_LOG="$(printf "  %s\n\n  STDIN:\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "$(awk '{printf "  %02s: %s\n", NR, $0}' "${TEST}/stdin")")"
 
-          [ "${LOG_CURRENT_TEST_STDOUT}" != "" ] && GLOBAL_LOG="$(printf "%s\n\n%s\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_STDOUT}" "$(awk '{printf "  %02s: %s\n", NR, $0}' "${RESPONSE_STDOUT}")")"
-          [ "${LOG_CURRENT_TEST_STDERR}" != "" ] && GLOBAL_LOG="$(printf "%s\n\n%s\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_STDERR}" "$(awk '{printf "  %02s: %s\n", NR, $0}' "${RESPONSE_STDERR}")")"
-          [ "${LOG_CURRENT_TEST_MISC}" != "" ] && GLOBAL_LOG="$(printf "%s\n\n%s" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_MISC}")"
+          [ "${LOG_CURRENT_TEST_STDOUT}" != "" ] && GLOBAL_LOG="$(printf "%s\n\n  STDOUT:\n%s\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_STDOUT}" "$(awk '{printf "  %02s: %s\n", NR, $0} END {if (NR==0) { print "  (no output)" }}' "${RESPONSE_STDOUT}")")"
+          [ "${LOG_CURRENT_TEST_STDERR}" != "" ] && GLOBAL_LOG="$(printf "%s\n\n  STDERR:\n%s\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_STDERR}" "$(awk '{printf "  %02s: %s\n", NR, $0} END {if (NR==0) { print "  (no output)" }}' "${RESPONSE_STDERR}")")"
+          [ "${LOG_CURRENT_TEST_MISC}" != "" ] && GLOBAL_LOG="$(printf "%s\n\n  MISC:\n%s" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_MISC}")"
           [ "${TEST_STATUS}" == "1" ] && (( GLOBAL_TOTAL_FAILED_TESTS = GLOBAL_TOTAL_FAILED_TESTS + 1 ))
         fi
 
