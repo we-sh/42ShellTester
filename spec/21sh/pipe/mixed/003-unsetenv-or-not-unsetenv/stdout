@@ -1,0 +1,1 @@
+expected_to have_regexp "VARIABLE_TEST=${GLOBAL_TOKEN}$"
