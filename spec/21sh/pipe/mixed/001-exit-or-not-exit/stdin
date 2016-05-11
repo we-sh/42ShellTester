@@ -1,2 +1,2 @@
-exit | ./write_on_stdout \"${GLOBAL_TOKEN}_1\"
+exit | ./write_on_stdout "I AM ALIVE"
 ./write_on_stdout "${GLOBAL_TOKEN}_2"
