@@ -42,7 +42,7 @@ run_create_support_binaries_readme()
       printf "\`\`\`c\n%s\n\`\`\`\n" "$(cat "${SUPPORT_MAIN}")" >>"${README}"
 
       GLOBAL_SUPPORT_BINARIES_LIST="$(printf "%s\n%s" "${GLOBAL_SUPPORT_BINARIES_LIST}" "* **./${SUPPORT_BINARY_NAME}** -> $(cat "${SUPPORT_DESCRIPTION}")")"
-      GLOBAL_SUPPORT_BINARIES_LIST2="${GLOBAL_SUPPORT_BINARIES_LIST2}\n\052 **./${SUPPORT_BINARY_NAME}** -> $(cat "${SUPPORT_DESCRIPTION}")"
+      GLOBAL_SUPPORT_BINARIES_LIST2="${GLOBAL_SUPPORT_BINARIES_LIST2}\n\052 **./${SUPPORT_BINARY_NAME}** -> $(cat "${SUPPORT_DESCRIPTION}")\n"
 
     fi
   done
