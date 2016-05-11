@@ -1,27 +1,42 @@
-# 003-many-chained-pipes
+# 001-append-default-to-file
 
-*[spec > 21sh > pipe](..) > 003-many-chained-pipes*
+*[spec > 21sh > redirections > outputs > appending](..) > 001-append-default-to-file*
 
-One line with many piped commands.
-The first process write a token on STDOUT and another on STDERR, then the others read on STDIN and write lines suffixed with the character '@' (similar to `cat -e`). The full command line results in an output suffixed with ten characters '@@@@@@@@@@'.
+A double right redirection opens the file with the oflag `O_APPEND`, so that its size is not truncated to 0 and output is written at the end of file. If the file does not exist, it is created.
+In this test, the output to be redirected is not specified so that the standard output is appended to the file.
+### What is done before test
+
+```bash
+./write_on_stdout "${GLOBAL_TOKEN}_first" >append_file_default
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_stdout ${GLOBAL_TOKEN}_stderr | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_default ${GLOBAL_TOKEN}_stderr >>append_file_default
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_stdout@@@@@@@@@@$"
+expected_to_not match_regex "${GLOBAL_TOKEN}_default"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_stderr$"
+expected_to match_regex "${GLOBAL_TOKEN}_stderr"
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to create_file "append_file_default" with_regexp "${GLOBAL_TOKEN}_first"
+expected_to create_file "append_file_default" with_regexp "${GLOBAL_TOKEN}_default"
 
 ```
 

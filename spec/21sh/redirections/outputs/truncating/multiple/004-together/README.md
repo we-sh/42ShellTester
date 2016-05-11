@@ -1,13 +1,12 @@
-# 004-together-and
+# 004-together
 
-*[spec > 21sh > redirections > outputs > truncating > multiple](..) > 004-together-and*
+*[spec > 21sh > redirections > outputs > truncating > multiple](..) > 004-together*
 
+A right redirection can be associated to the twice outputs by using `&>...`, that means `redirect stdout and stderr to ...`.
 ### What is done before test
 
 ```bash
-rm -f new_file_stderr_and_stdout
-rm -f ./write_on_stdout_and_stderr
-gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/write-on-stdout-and-stderr/main.c" -o ./write_on_stdout_and_stderr
+rm -f "new_file_stderr_and_stdout"
 
 ```
 
@@ -37,8 +36,8 @@ expected_to_not match_regex "${GLOBAL_TOKEN}_2"
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file new_file_stderr_and_stdout with_regexp "${GLOBAL_TOKEN}_1$"
-expected_to create_file new_file_stderr_and_stdout with_regexp "${GLOBAL_TOKEN}_2$"
+expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_1$"
+expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_2$"
 
 ```
 

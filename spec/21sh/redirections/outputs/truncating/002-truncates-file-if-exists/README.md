@@ -2,32 +2,42 @@
 
 *[spec > 21sh > redirections > outputs > truncating](..) > 002-truncates-file-if-exists*
 
+The right redirection `>` opens the file with the oflag `O_TRUNC` so that the file size is truncated to 0 before writing in it.
 ### What is done before test
 
 ```bash
-/bin/echo FIRST_TOKEN >truncated_file
+./write_on_stdout ${GLOBAL_TOKEN}_first >truncated_file
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-/bin/echo LAST_TOKEN >truncated_file
+./write_on_stdout ${GLOBAL_TOKEN}_second >truncated_file
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex LAST_TOKEN
+expected_to_not match_regex ${GLOBAL_TOKEN}_second
+
+```
+
+### What is expected on error output
+
+```bash
+expected_to be_empty
 
 ```
 
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file truncated_file with_regexp LAST_TOKEN
-expected_to create_file truncated_file without_regexp FIRST_TOKEN
-expected_to create_file truncated_file with_nb_of_lines 1
+expected_to create_file "truncated_file" with_regexp "${GLOBAL_TOKEN}_second"
+expected_to create_file "truncated_file" without_regexp "${GLOBAL_TOKEN}_first"
+expected_to create_file "truncated_file" with_nb_of_lines "1"
+
 ```
 
 ### Variables

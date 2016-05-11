@@ -6,7 +6,7 @@ A non-interactive Shell should not output a prompt. All the test suite runs the 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_on_stdout "${GLOBAL_TOKEN}"
+./write_on_stdout ${GLOBAL_TOKEN}
 
 ```
 

@@ -2,37 +2,40 @@
 
 *[spec > 21sh > redirections > outputs > touching](..) > 001-works*
 
+A Shell may be able to touch an empty file with the right redirection and the pseudo file descriptor `:`.
 ### What is done before test
 
 ```bash
-rm -f new_file
+rm -f "new_file"
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-/bin/ls .. invalid_folder :>new_file
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_stdout ${GLOBAL_TOKEN}_stderr :>new_file
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "42shTests.sh"
+expected_to match_regex "${GLOBAL_TOKEN}_stdout"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to match_regex "No such file or directory"
+expected_to match_regex "${GLOBAL_TOKEN}_stderr"
 
 ```
 
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file new_file with_nb_of_lines 0
+expected_to create_file "new_file" with_nb_of_lines "0"
+
 ```
 
 ### Variables

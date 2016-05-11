@@ -6,7 +6,7 @@ A pipe character `|` that is not enclosed in double-quotes is interpreted as a p
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_on_stdout "${GLOBAL_TOKEN}"|./read_on_stdin
+./write_on_stdout ${GLOBAL_TOKEN}|./read_on_stdin
 
 ```
 

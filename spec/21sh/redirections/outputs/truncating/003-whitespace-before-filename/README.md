@@ -2,23 +2,25 @@
 
 *[spec > 21sh > redirections > outputs > truncating](..) > 003-whitespace-before-filename*
 
+The file name for a right redirection can be specified closely to the character `>` or in a separated field.
 ### What is done before test
 
 ```bash
-rm -f new_file
+rm -f "new_file"
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-/bin/echo TOKEN1 > new_file
+./write_on_stdout ${GLOBAL_TOKEN} > new_file
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex TOKEN1
+expected_to_not match_regex "${GLOBAL_TOKEN}"
 
 ```
 
@@ -31,8 +33,9 @@ expected_to be_empty
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file new_file with_regexp TOKEN1
-expected_to create_file new_file with_nb_of_lines 1
+expected_to create_file "new_file" with_regexp "${GLOBAL_TOKEN}"
+expected_to create_file "new_file" with_nb_of_lines "1"
+
 ```
 
 ### Variables

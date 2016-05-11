@@ -1,26 +1,40 @@
-# 002-stdout-specified
+# 002-close-stdout
 
-*[spec > 21sh > redirections > outputs > closing](..) > 002-stdout-specified*
+*[spec > 21sh > redirections > outputs > closing](..) > 002-close-stdout*
+
+Closing the standard output has the same behavior as redirecting to `/dev/null` (e.g. `ls 1>/dev/null`).
+### What is done before test
+
+```bash
+rm -f "-"
+
+```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-/bin/ls .. invalid_folder 1>&-
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_stdout ${GLOBAL_TOKEN}_stderr 1>&-
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex "42shTests.sh"
+expected_to_not match_regex "${GLOBAL_TOKEN}_stdout"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to_not be_empty
-might match_regex "[Nn]o such file or directory"
+expected_to match_regex "${GLOBAL_TOKEN}_stderr"
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to_not create_file "-"
 
 ```
 

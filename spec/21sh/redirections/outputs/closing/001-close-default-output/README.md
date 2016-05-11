@@ -1,26 +1,41 @@
-# 001-fd-not-specified
+# 001-close-default-output
 
-*[spec > 21sh > redirections > outputs > closing](..) > 001-fd-not-specified*
+*[spec > 21sh > redirections > outputs > closing](..) > 001-close-default-output*
+
+Not specifying which output to close makes the default standard output to be closed (`>&-` is similar to `1>&-`).
+Closing the standard output has the same behavior as redirecting to `/dev/null`.
+### What is done before test
+
+```bash
+rm -f "-"
+
+```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-/bin/ls .. invalid_folder >&-
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_stdout ${GLOBAL_TOKEN}_stderr >&-
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex "42shTests.sh"
+expected_to_not match_regex "${GLOBAL_TOKEN}_stdout"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to_not be_empty
-might match_regex "[Nn]o such file or directory"
+expected_to match_regex "${GLOBAL_TOKEN}_stderr"
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to_not create_file "-"
 
 ```
 

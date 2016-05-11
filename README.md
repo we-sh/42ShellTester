@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **85 tests**.
+42ShellTester is currently packaged with **90 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -76,13 +76,18 @@ Also run pending tests.
       * [004-no-such-file <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/inputs/004-no-such-file)
     * **[outputs/](spec/21sh/redirections/outputs)**
       * **[appending/](spec/21sh/redirections/outputs/appending)**
+        * [001-append-default-to-file](spec/21sh/redirections/outputs/appending/001-append-default-to-file)
+        * [002-append-stdout-to-file](spec/21sh/redirections/outputs/appending/002-append-stdout-to-file)
+        * [003-append-stderr-to-file](spec/21sh/redirections/outputs/appending/003-append-stderr-to-file)
         * **[multiple/](spec/21sh/redirections/outputs/appending/multiple)**
-          * [005-together-3-with-whitespaces <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/multiple/005-together-3-with-whitespaces)
+          * [001-append-twice-separately <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/multiple/001-append-twice-separately)
+          * [002-append-twice-together <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/multiple/002-append-twice-together)
+          * [003-append-twice-together-with-whitespaces <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/multiple/003-append-twice-together-with-whitespaces)
       * **[closing/](spec/21sh/redirections/outputs/closing)**
-        * [001-fd-not-specified <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/001-fd-not-specified)
-        * [002-stdout-specified <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/002-stdout-specified)
-        * [003-stderr-specified <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/003-stderr-specified)
-        * [004-twice <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/004-twice)
+        * [001-close-default-output <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/001-close-default-output)
+        * [002-close-stdout <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/002-close-stdout)
+        * [003-close-stderr <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/003-close-stderr)
+        * [004-close-twice-outputs <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/004-close-twice-outputs)
       * **[touching/](spec/21sh/redirections/outputs/touching)**
         * [001-works <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/touching/001-works)
       * **[truncating/](spec/21sh/redirections/outputs/truncating)**
@@ -93,8 +98,8 @@ Also run pending tests.
           * [001-separately <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/multiple/001-separately)
           * [002-together-stdout-first <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/multiple/002-together-stdout-first)
           * [003-together-stderr-first <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/multiple/003-together-stderr-first)
-          * [004-together-and <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/multiple/004-together-and)
-          * [005-together-and-with-whitespaces <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/multiple/005-together-and-with-whitespaces)
+          * [004-together <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/multiple/004-together)
+          * [005-together-with-whitespaces <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/multiple/005-together-with-whitespaces)
         * **[stderr/](spec/21sh/redirections/outputs/truncating/stderr)**
           * [001-works <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/stderr/001-works)
         * **[stdout/](spec/21sh/redirections/outputs/truncating/stdout)**

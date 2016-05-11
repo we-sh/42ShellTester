@@ -1,27 +1,45 @@
-# 003-many-chained-pipes
+# 001-append-twice-separately
 
-*[spec > 21sh > pipe](..) > 003-many-chained-pipes*
+*[spec > 21sh > redirections > outputs > appending > multiple](..) > 001-append-twice-separately*
 
-One line with many piped commands.
-The first process write a token on STDOUT and another on STDERR, then the others read on STDIN and write lines suffixed with the character '@' (similar to `cat -e`). The full command line results in an output suffixed with ten characters '@@@@@@@@@@'.
+A double right redirection opens the file with the oflag `O_APPEND`, so that its size is not truncated to 0 and output is written at the end of file. If the file does not exist, it is created.
+In this test, each output is appended to different files.
+### What is done before test
+
+```bash
+./write_on_stdout "${GLOBAL_TOKEN}_stdout_first" >append_file_stdout
+./write_on_stdout "${GLOBAL_TOKEN}_stderr_first" >append_file_stderr
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_stdout ${GLOBAL_TOKEN}_stderr | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin | ./read_on_stdin
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_stdout_second ${GLOBAL_TOKEN}_stderr_second 1>>append_file_stdout 2>>append_file_stderr
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_stdout@@@@@@@@@@$"
+expected_to_not match_regex "${GLOBAL_TOKEN}_stdout_second"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_stderr$"
+expected_to_not match_regex "${GLOBAL_TOKEN}_stderr_second"
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to create_file "append_file_stdout" with_regexp "${GLOBAL_TOKEN}_stdout_first$"
+expected_to create_file "append_file_stdout" with_regexp "${GLOBAL_TOKEN}_stdout_second$"
+expected_to create_file "append_file_stderr" with_regexp "${GLOBAL_TOKEN}_stderr_first$"
+expected_to create_file "append_file_stderr" with_regexp "${GLOBAL_TOKEN}_stderr_second$"
 
 ```
 

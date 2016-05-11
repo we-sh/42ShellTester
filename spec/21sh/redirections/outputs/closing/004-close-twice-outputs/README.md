@@ -1,25 +1,40 @@
-# 004-twice
+# 004-close-twice-outputs
 
-*[spec > 21sh > redirections > outputs > closing](..) > 004-twice*
+*[spec > 21sh > redirections > outputs > closing](..) > 004-close-twice-outputs*
+
+Closing the standard output and the standard error has the same behavior as redirecting to `/dev/null` (e.g. `ls 1>/dev/null 2>/dev/null`).
+### What is done before test
+
+```bash
+rm -f "-"
+
+```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-/bin/ls .. invalid_folder &>&-
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_stdout ${GLOBAL_TOKEN}_stderr 1>&- 2>&-
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex "42shTests.sh"
+expected_to_not match_regex "${GLOBAL_TOKEN}_stdout"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to be_empty
+expected_to_not match_regex "${GLOBAL_TOKEN}_stderr"
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to_not create_file "-"
 
 ```
 

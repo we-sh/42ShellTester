@@ -2,13 +2,12 @@
 
 *[spec > 21sh > redirections > outputs > truncating > multiple](..) > 001-separately*
 
+A different right redirection may be specified for each output.
 ### What is done before test
 
 ```bash
-rm -f new_file_stderr
-rm -f new_file_stdout
-rm -f ./write_on_stdout_and_stderr
-gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/write-on-stdout-and-stderr/main.c" -o ./write_on_stdout_and_stderr
+rm -f "new_file_stderr"
+rm -f "new_file_stdout"
 
 ```
 
@@ -38,8 +37,8 @@ expected_to_not match_regex "${GLOBAL_TOKEN}_2"
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file new_file_stdout with_regexp "${GLOBAL_TOKEN}_1$"
-expected_to create_file new_file_stderr with_regexp "${GLOBAL_TOKEN}_2$"
+expected_to create_file "new_file_stdout" with_regexp "${GLOBAL_TOKEN}_1$"
+expected_to create_file "new_file_stderr" with_regexp "${GLOBAL_TOKEN}_2$"
 
 ```
 

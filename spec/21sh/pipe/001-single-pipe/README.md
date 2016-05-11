@@ -7,7 +7,7 @@ The first process write a token on STDOUT and another on STDERR, then the second
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_on_stdout_and_stderr "${GLOBAL_TOKEN}_stdout" "${GLOBAL_TOKEN}_stderr" | ./read_on_stdin
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_stdout ${GLOBAL_TOKEN}_stderr | ./read_on_stdin
 
 ```
 
