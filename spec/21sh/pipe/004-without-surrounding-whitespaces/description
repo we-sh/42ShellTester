@@ -1,0 +1,1 @@
+A pipe character `|` that is not enclosed in double-quotes is interpreted as a pipe separator even if it is closely placed to the next and previous command fields.
