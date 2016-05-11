@@ -37,7 +37,7 @@ function run_main
   if [ ! -f "${GLOBAL_PROG}" ]
   then
     [ "${GLOBAL_PROG}" == "" ] && printf "%s\n" "Missing argument: specify the binary to test" && return
-    [ ! -f "$(which "${GLOBAL_PROG}")" ] && printf "%s\n" "Wrong argument: the specified argument is not executable" && return
+    [ ! -f "${GLOBAL_PROG}" -a ! -f "$(which "${GLOBAL_PROG}")" ] && printf "%s\n" "Wrong argument: no such file '"${GLOBAL_PROG}"'" && return
   fi
 
   IFS=$'\n'
