@@ -1,1 +1,1 @@
-./write_on_stdout "${GLOBAL_TOKEN}"|./read_on_stdin
+./write_on_stdout ${GLOBAL_TOKEN}|./read_on_stdin

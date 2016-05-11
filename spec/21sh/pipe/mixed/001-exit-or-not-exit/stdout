@@ -1,2 +1,2 @@
-expected_to match_regex "I AM ALIVE$"
+expected_to match_regex "ALIVE$"
 expected_to match_regex "${GLOBAL_TOKEN}_2$"
