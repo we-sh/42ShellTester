@@ -1,40 +1,26 @@
-# 003-unsetenv-mult-argv
+# 002-unsetenv-mult-argv
 
-*[spec > minishell > builtins > unsetenv](..) > 003-unsetenv-mult-argv*
+*[spec > minishell > builtins > unsetenv](..) > 002-unsetenv-mult-argv*
+
+This test was made to check if we can unset multiple arguments.
+So we unset all the environment variables inside the tester environment and set a 3 new variables.
+Thereafter we are unseting all of them inside the tested shell.### What is done before test
+
+```bash
+for VARIABLE in $(env | awk 'BEGIN {FS="="} {print $1}'); do unset "${VARIABLE}"; done;
+export UN=un
+export DEUX=deux
+export TROIS=trois
+
+```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-unsetenv SSH_AUTH_SOCK
-unsetenv Apple_PubSub_Socket_Render
-unsetenv COLORFGBG
-unsetenv ITERM_PROFILE
-unsetenv XPC_FLAGS
-unsetenv LANG
-unsetenv PWD
-unsetenv SHELL
-unsetenv TERM_PROGRAM
-unsetenv PATH
-unsetenv TERM
-unsetenv HOME
-unsetenv TMPDIR
-unsetenv USER
-unsetenv XPC_SERVICE_NAME
-unsetenv LOGNAME
-unsetenv __CF_USER_TEXT_ENCODING
-unsetenv ITERM_SESSION_ID
-unsetenv SHLVL
-unsetenv OLDPWD
-unsetenv ZSH
-unsetenv PAGER
-unsetenv LESS
-unsetenv LC_CTYPE
-unsetenv LSCOLORS
-unsetenv _
-unsetenv HOSTTYPE
-unsetenv VENDOR
-unsetenv OSTYPE
-unsetenv MACHTYPE
+unsetenv UN
+unsetenv DEUX
+unsetenv TROIS
+unseten _
 env
 
 ```
@@ -42,24 +28,9 @@ env
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex $SSH_AUTH_SOCK
-expected_to_not match_regex $Apple_PubSub_Socket_Render
-expected_to_not match_regex $COLORFGBG
-expected_to_not match_regex $ITERM_PROFILE
-expected_to_not match_regex $XPC_FLAGS
-expected_to_not match_regex $LANG
-expected_to_not match_regex $SHELL
-expected_to_not match_regex $TERM_PROGRAM
-expected_to_not match_regex $TERM
-expected_to_not match_regex $TMPDIR
-expected_to_not match_regex $__CF_USER_TEXT_ENCODING
-expected_to_not match_regex $ITERM_SESSION_ID
-expected_to_not match_regex $PAGER
-expected_to_not match_regex $ZSH
-expected_to_not match_regex $LESS
-expected_to_not match_regex $LC_CTYPE
-expected_to_not match_regex $LSCOLORS
-expected_to_not match_regex $PATH
+expected_to_not match_regex "UN"
+expected_to_not match_regex "DEUX"
+expected_to_not match_regex "TROIS"
 
 ```
 

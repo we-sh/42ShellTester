@@ -2,6 +2,17 @@
 
 *[spec > minishell > builtins > unsetenv](..) > 001-unsetenv-first-elem*
 
+This test was made to control if the Head of the env list was set correctly.
+So we unset all the environment variables inside the tester environment and set a new one.
+Thereafter we are unseting inside the tested shell. We are using env to check if the last head was remove correctly.
+### What is done before test
+
+```bash
+for VARIABLE in $(env | awk 'BEGIN {FS="="} {print $1}'); do unset "${VARIABLE}"; done;
+export SSH_AUTH_SOCK=test
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash

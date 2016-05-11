@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **90 tests**.
+42ShellTester is currently packaged with **89 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -125,9 +125,6 @@ Also run pending tests.
       * [004-parse-error-at-end <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/or/004-parse-error-at-end)
       * [005-parse-error-too-much-symbol <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/or/005-parse-error-too-much-symbol)
 * **[minishell/](spec/minishell)**
-  * **[001-builtins/](spec/minishell/001-builtins)**
-    * **[cd/](spec/minishell/001-builtins/cd)**
-      * **[errors/](spec/minishell/001-builtins/cd/errors)**
   * **[binary/](spec/minishell/binary)**
     * [001-binary-path-relative <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/001-binary-path-relative)
     * [002-binary-path-absolute <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/002-binary-path-absolute)
@@ -176,9 +173,8 @@ Also run pending tests.
       * [003-setenv-equal <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/003-setenv-equal)
     * **[unsetenv/](spec/minishell/builtins/unsetenv)**
       * [001-unsetenv-first-elem <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/001-unsetenv-first-elem)
-      * [002-unsetenv-last-elem <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/002-unsetenv-last-elem)
-      * [003-unsetenv-mult-argv <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/003-unsetenv-mult-argv)
-      * [004-unsetenv-mult-argv-inline <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/004-unsetenv-mult-argv-inline)
+      * [002-unsetenv-mult-argv <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/002-unsetenv-mult-argv)
+      * [003-unsetenv-mult-argv-inline <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/003-unsetenv-mult-argv-inline)
   * **[misc/](spec/minishell/misc)**
     * [copy-of-environment <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/misc/copy-of-environment)
   * **[multi-builtins/](spec/minishell/multi-builtins)**
