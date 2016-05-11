@@ -3,7 +3,7 @@
 *[spec > 21sh > redirections > outputs > appending > multiple](..) > 003-append-twice-together-with-whitespaces*
 
 A double right redirection opens the file with the oflag `O_APPEND`, so that its size is not truncated to 0 and output is written at the end of file. If the file does not exist, it is created.
-In this test, twice outputs are appended to the file and the file name is specified in a separated field.
+In this test, twice outputs are appended to the same file.
 ### What is done before test
 
 ```bash
