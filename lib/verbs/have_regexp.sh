@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # /*
 # Test regular expression

@@ -22,7 +22,7 @@ git clone https://github.com/42shTests/42shTests ~/42shTests
 Add the path to your Shell as argument:
 
 ```bash
-sh ~/42shTests/42shTests.sh "PATH/TO/YOUR/SHELL"
+bash ~/42shTests/42shTests.sh "PATH/TO/YOUR/SHELL"
 ```
 
 ## Options
@@ -263,7 +263,7 @@ Follow the guideline to add a new verb:
 
 ## Tasks
 
-* `sh ./tasks/generate_readmes.sh` (only on master branch) to automaticaly generate the README files of tests
+* `bash ./tasks/generate_readmes.sh` (only on master branch) to automaticaly generate the README files of tests
 
 # The Team
 
