@@ -1,2 +1,2 @@
 expected_to have_nb_of_lines 1
-expected_to have_regexp "^${GLOBAL_TOKEN}$"
+expected_to match_regex "^${GLOBAL_TOKEN}$"

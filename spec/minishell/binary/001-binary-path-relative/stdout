@@ -1,2 +1,2 @@
-expected_to have_regexp "display_name1"
-expected_to have_regexp "display_name2"
+expected_to match_regex "display_name1"
+expected_to match_regex "display_name2"

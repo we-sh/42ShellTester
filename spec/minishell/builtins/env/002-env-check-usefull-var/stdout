@@ -1,14 +1,14 @@
-expected_to have_regexp PATH=
-expected_to have_regexp PATH=${PATH}
+expected_to match_regex PATH=
+expected_to match_regex PATH=${PATH}
 
-expected_to have_regexp PWD=
-expected_to have_regexp PWD=${PWD}
+expected_to match_regex PWD=
+expected_to match_regex PWD=${PWD}
 
-expected_to have_regexp OLDPWD=
-expected_to have_regexp OLDPWD=${OLDPWD}
+expected_to match_regex OLDPWD=
+expected_to match_regex OLDPWD=${OLDPWD}
 
-expected_to have_regexp HOME=
-expected_to have_regexp HOME=${HOME}
+expected_to match_regex HOME=
+expected_to match_regex HOME=${HOME}
 
-expected_to have_regexp TEST_42SHTEST=
-expected_to have_regexp TEST_42SHTEST=token1
+expected_to match_regex TEST_42SHTEST=
+expected_to match_regex TEST_42SHTEST=token1

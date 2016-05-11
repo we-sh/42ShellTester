@@ -1,1 +1,1 @@
-might have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}:PWD$"
+might match_regex "PWD:${GLOBAL_TMP_DIRECTORY}:PWD$"

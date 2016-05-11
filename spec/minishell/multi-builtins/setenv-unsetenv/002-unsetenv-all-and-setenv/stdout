@@ -1,2 +1,2 @@
-expected_to have_regexp TEST2=ok$
-expected_to have_regexp USER=42shtests$
+expected_to match_regex TEST2=ok$
+expected_to match_regex USER=42shtests$

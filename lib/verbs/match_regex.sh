@@ -6,7 +6,7 @@
 # RESPONSE             -> actual output (stdout or stderr)
 # */
 
-run_verb_have_regexp()
+run_verb_match_regex()
 {
   if [ "$(awk -v regexp="${EXPECTED_TO_ARGS[0]}" '$0 ~ regexp {print}' "${RESPONSE}")" != "" ]
   then

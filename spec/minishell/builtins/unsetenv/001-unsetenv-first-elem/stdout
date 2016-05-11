@@ -1,1 +1,1 @@
-expected_to_not have_regexp $SSH_AUTH_SOCK
+expected_to_not match_regex $SSH_AUTH_SOCK

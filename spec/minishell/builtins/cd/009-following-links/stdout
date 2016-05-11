@@ -1,5 +1,5 @@
-expected_to have_regexp "${GLOBAL_TMP_DIRECTORY}/subdirectory_link$"
-expected_to have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory:PWD$"
+expected_to match_regex "${GLOBAL_TMP_DIRECTORY}/subdirectory_link$"
+expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory:PWD$"
 
-expected_to have_regexp "${GLOBAL_TMP_DIRECTORY}/subdirectory_link/subsubdirectory_link$"
-expected_to have_regexp "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory/subsubdirectory:PWD$"
+expected_to match_regex "${GLOBAL_TMP_DIRECTORY}/subdirectory_link/subsubdirectory_link$"
+expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory/subsubdirectory:PWD$"

@@ -1,2 +1,2 @@
 expected_to_not be_empty
-might have_regexp "[Nn]ot a directory"
+might match_regex "[Nn]ot a directory"

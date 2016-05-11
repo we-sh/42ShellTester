@@ -1,2 +1,2 @@
-expected_to_not have_regexp "${GLOBAL_TOKEN}_1"
-expected_to_not have_regexp "${GLOBAL_TOKEN}_2"
+expected_to_not match_regex "${GLOBAL_TOKEN}_1"
+expected_to_not match_regex "${GLOBAL_TOKEN}_2"

@@ -1,1 +1,1 @@
-expected_to have_regexp "${GLOBAL_TOKEN}$"
+expected_to match_regex "${GLOBAL_TOKEN}$"

@@ -237,7 +237,7 @@ Follow the guideline to add a new test:
   * **`with_nb_of_lines`** + *`$int`*: The file contains exactly *$int* lines.
 * **`exit_with_status`** + *`$int`*: The Shell termination results in the exit status *$int*.
 * **`have_nb_of_lines`** + *`$int`*: Actual output contains exactly *$int* lines.
-* **`have_regexp`** + *`$regex`*: At least one line of actual output does match with the regular expression *$regex*.
+* **`match_regex`** + *`$regex`*: At least one line of actual output does match with the regular expression *$regex*.
 * **`match_each_lines_of_file`** + *`$filename`*: Actual output does match with each regular expression contained in the file named *$filename* (in an indifferent order).
 
 ## Adding new verb
@@ -259,7 +259,7 @@ Follow the guideline to add a new verb:
   * Local variables must be declared with `local`
   * No output can be done with `echo` or `printf`
   * Function returns `0` on succes, `1` on fail or `255` on bad use
-  * Use the array `EXPECTED_TO_ARGS[]` to take advantage of arguments (e.g. `expected_to have_regexp "regex"`, then `EXPECTED_TO_ARGS[0]` contains `regex`)
+  * Use the array `EXPECTED_TO_ARGS[]` to take advantage of arguments (e.g. `expected_to match_regex "regex"`, then `EXPECTED_TO_ARGS[0]` contains `regex`)
 
 ## Tasks
 

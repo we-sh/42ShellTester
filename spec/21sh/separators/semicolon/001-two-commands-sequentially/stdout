@@ -1,4 +1,4 @@
-expected_to have_regexp FIRST_TOKEN$
-expected_to have_regexp SECOND_TOKEN$
-expected_to have_regexp THIRD_TOKEN$
-expected_to have_regexp FOURTH_TOKEN$
+expected_to match_regex FIRST_TOKEN$
+expected_to match_regex SECOND_TOKEN$
+expected_to match_regex THIRD_TOKEN$
+expected_to match_regex FOURTH_TOKEN$

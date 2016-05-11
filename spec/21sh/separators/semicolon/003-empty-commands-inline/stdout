@@ -1,2 +1,2 @@
-expected_to have_regexp "${GLOBAL_TOKEN}_START"
-expected_to have_regexp "${GLOBAL_TOKEN}_END"
+expected_to match_regex "${GLOBAL_TOKEN}_START"
+expected_to match_regex "${GLOBAL_TOKEN}_END"

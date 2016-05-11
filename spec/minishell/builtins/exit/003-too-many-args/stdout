@@ -1,1 +1,1 @@
-expected_to have_regexp TOKEN_NOT_EXITED
+expected_to match_regex TOKEN_NOT_EXITED

@@ -1,1 +1,1 @@
-expected_to have_regexp TEST=test$
+expected_to match_regex TEST=test$

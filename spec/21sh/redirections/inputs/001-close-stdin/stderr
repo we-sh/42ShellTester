@@ -1,1 +1,1 @@
-expected_to have_regexp "STDIN READ ERROR$"
+expected_to match_regex "STDIN READ ERROR$"

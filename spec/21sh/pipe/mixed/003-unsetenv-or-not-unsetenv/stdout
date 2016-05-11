@@ -1,1 +1,1 @@
-expected_to have_regexp "VARIABLE_TEST=${GLOBAL_TOKEN}$"
+expected_to match_regex "VARIABLE_TEST=${GLOBAL_TOKEN}$"
