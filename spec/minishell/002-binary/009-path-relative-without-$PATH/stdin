@@ -1,3 +1,0 @@
-unsetenv PATH
-/bin/ls -1 ../spec
-md5 test

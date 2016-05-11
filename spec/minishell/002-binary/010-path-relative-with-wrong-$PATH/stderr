@@ -1,2 +1,0 @@
-expected_to have_regexp "md5: Command not found."
-expected_to have_regexp "ls: Command not found."
