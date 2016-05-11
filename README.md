@@ -1,6 +1,6 @@
-# 42shTests
+# 42ShellTester
 
-<img align="right"  src="./lib/assets/42shTestsTeamLogo_sm.png" width="213" />42shTests is an **integration testing framework** wrote in Bash and designed for the pedagogical projects of the Shell branch at School 42 (Paris) listed bellow:
+<img align="right"  src="./lib/assets/42shTestsTeamLogo_sm.png" width="213" />42ShellTester is an **integration testing framework** wrote in Bash and designed for the pedagogical projects of the Shell branch at School 42 (Paris) listed bellow:
 * **minishell**
 * **21sh**
 * **42sh**
@@ -14,7 +14,7 @@ It brings you an easy way to **add**, **maintain** and **run** integration tests
 ## Install
 
 ```bash
-git clone https://github.com/42shTests/42shTests ~/42shTests
+git clone https://github.com/42shTests/42ShellTester ~/42ShellTester
 ```
 
 ## Run tests
@@ -22,7 +22,7 @@ git clone https://github.com/42shTests/42shTests ~/42shTests
 Add the path to your Shell as argument:
 
 ```bash
-bash ~/42shTests/42shTests.sh "PATH/TO/YOUR/SHELL"
+bash ~/42ShellTester/42ShellTester.sh "PATH/TO/YOUR/SHELL"
 ```
 
 ## Options
@@ -198,7 +198,7 @@ Also run pending tests.
 
 ## Adding new test
 
-An integration test must be **self-sufficient**, that means executing the full test suite or only one test must result in the same failed or success status. The framework 42shTests brings you tools for that!
+An integration test must be **self-sufficient**, that means executing the full test suite or only one test must result in the same failed or success status. The framework 42ShellTester brings you tools for that!
 
 Firstly, tests are executed inside a temporary folder `tmp/` that is created at launch time and placed at the root installation folder of the framework. You may generate temporary files, binaries and folders that are needed for your test, but pay attention to not touch external folders. Use the `before_exec` callback to generate these resources.
 

@@ -67,7 +67,7 @@ run_create_readme()
   fi
 
   printf "### Variables\n\nThe following variables may appear in the tests:\n\n" >>"${README}"
-  printf "* \${**GLOBAL_INSTALLDIR**} -> The installation directory of 42shTests\n" >>"${README}"
+  printf "* \${**GLOBAL_INSTALLDIR**} -> The installation directory of 42ShellTester\n" >>"${README}"
   printf "* \${**GLOBAL_TMP_DIRECTORY**} -> The temporary directory in which tests are executed\n" >>"${README}"
   printf "* \${**GLOBAL_TOKEN**} -> A token that changes value at launch time\n" >>"${README}"
   printf "* \${**PATH**} -> The standard environment variable PATH\n" >>"${README}"
@@ -122,7 +122,7 @@ INSERT_DATA == 0 {
 }
 $0 ~ /<!--START_TOTAL_TESTS-->/ {
   INSERT_DATA=1;
-  print "42shTests is currently packaged with **"GLOBAL_TOTAL_TESTS" tests**."
+  print "42ShellTester is currently packaged with **"GLOBAL_TOTAL_TESTS" tests**."
 }
 $0 ~ /<!--END_TOTAL_TESTS-->/ {
   INSERT_DATA=0;
