@@ -28,6 +28,7 @@ declare GLOBAL_LOCALBRANCH=$(git branch | awk '$0 ~ /^\*/ {print $2; exit}')
 declare GLOBAL_TOKEN="42SHTESTTOKEN_$(date +%Y%m%d%H%M)"
 declare GLOBAL_TOTAL_TESTS=0
 declare GLOBAL_TOTAL_FAILED_TESTS=0
+declare GLOBAL_TOTAL_PENDING_TESTS=0
 declare GLOBAL_LOG=""
 declare GLOBAL_SHOW_SUCCESS=0
 declare GLOBAL_RUN_POSIX_ONLY=0
@@ -95,7 +96,7 @@ cd "${GLOBAL_TMP_DIRECTORY}"
 run_main
 
 # display log
-printf "%s\n\nTotal tests: %s\nTotal failed tests: %s\n" "${GLOBAL_LOG}" "${GLOBAL_TOTAL_TESTS}" "${GLOBAL_TOTAL_FAILED_TESTS}"
+printf "%s\n\nTotal tests: %s\nTotal failed tests: %s\nTotal pending tests: %s\n" "${GLOBAL_LOG}" "${GLOBAL_TOTAL_TESTS}" "${GLOBAL_TOTAL_FAILED_TESTS}" "${GLOBAL_TOTAL_PENDING_TESTS}"
 
 # go back to entry directory
 cd "${GLOBAL_ENTRYPATH}"
