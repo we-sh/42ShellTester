@@ -32,6 +32,7 @@ function run_main
   local LOG_CURRENT_TEST_MISC
   local LOG_SUCCESS_TESTS
   local LOG_FAILED_TESTS
+  local AWK_PATH="$(which "awk")"
   local OLD_IFS="${IFS}"
 
   if [ ! -f "${GLOBAL_PROG}" ]
@@ -78,10 +79,10 @@ function run_main
         then
 
           local INDEX=0
-          local TOTAL=$(awk 'END {print NR+1}' "${TEST}/before_exec")
+          local TOTAL=$(${AWK_PATH} 'END {print NR+1}' "${TEST}/before_exec")
           while [ "$INDEX" -le "$TOTAL" ]
           do
-            eval $(awk -v INDEX="${INDEX}" 'NR == INDEX {print $0; exit}' "${TEST}/before_exec")
+            eval $(${AWK_PATH} -v INDEX="${INDEX}" 'NR == INDEX {print $0; exit}' "${TEST}/before_exec")
             (( INDEX += 1 ))
           done
 
@@ -101,10 +102,10 @@ function run_main
           then
 
             local INDEX=0
-            local TOTAL=$(awk 'END {print NR+1}' "${TEST}/before_exec")
+            local TOTAL=$(${AWK_PATH} 'END {print NR+1}' "${TEST}/before_exec")
             while [ "$INDEX" -le "$TOTAL" ]
             do
-              eval $(awk -v INDEX="${INDEX}" 'NR == INDEX {print $0; exit}' "${TEST}/before_exec")
+              eval $(${AWK_PATH} -v INDEX="${INDEX}" 'NR == INDEX {print $0; exit}' "${TEST}/before_exec")
               (( INDEX += 1 ))
             done
 
