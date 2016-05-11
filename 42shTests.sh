@@ -35,9 +35,11 @@ declare GLOBAL_RUN_POSIX_ONLY=0
 declare GLOBAL_RUN_PENDING_TESTS=0
 declare GLOBAL_RUN_HARD_TESTS=0
 declare GLOBAL_INVALID_OPTION=0
+declare C_BOLD="\033[37;1m"
 declare C_RED="\033[31m\033[38;5;160m"
 declare C_GREEN="\033[31m\033[38;5;34m"
 declare C_YELLOW="\033[31m\033[1;33m"
+declare C_GREY="\033[38;5;239m"
 declare C_CLEAR="\033[0m"
 
 # retrieve options

@@ -186,17 +186,22 @@ function run_main
 
         if [ "${TEST_STATUS}" != "0" -o "${GLOBAL_SHOW_SUCCESS}" == "1" ]
         then
-          GLOBAL_LOG="$(printf "%s\n\n%s" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST}")"
+          GLOBAL_LOG="$(printf "%s\n\n${C_BOLD}%s${C_CLEAR}" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST}")"
           case "${TEST_STATUS}" in
             0) GLOBAL_LOG="$(printf "%s ${C_GREEN}%s${C_CLEAR}" "${GLOBAL_LOG}" "(SUCCESS)")" ;;
             1) GLOBAL_LOG="$(printf "%s ${C_RED}%s${C_CLEAR}" "${GLOBAL_LOG}" "(FAILED)")" ;;
             2) GLOBAL_LOG="$(printf "%s ${C_YELLOW}%s${C_CLEAR}" "${GLOBAL_LOG}" "(WARNING)")" ;;
             255) GLOBAL_LOG="$(printf "%s ${C_RED}%s${C_CLEAR}" "${GLOBAL_LOG}" "(RUNTIME ERROR)")" ;;
           esac
-          [ -f "${TEST}/description" ] && GLOBAL_LOG="$(printf "%s\n  %s" "${GLOBAL_LOG}" "$(cat "${TEST}/description")")"
-          [ "${LOG_CURRENT_TEST_STDOUT}" != "" ] && GLOBAL_LOG="$(printf "%s\n%s" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_STDOUT}")"
-          [ "${LOG_CURRENT_TEST_STDERR}" != "" ] && GLOBAL_LOG="$(printf "%s\n%s" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_STDERR}")"
-          [ "${LOG_CURRENT_TEST_MISC}" != "" ] && GLOBAL_LOG="$(printf "%s\n%s" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_MISC}")"
+          [ -f "${TEST}/description" ] && GLOBAL_LOG="$(printf "%s\n\n  Description:\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "$(awk '{printf "  %s\n", $0}' "${TEST}/description")")"
+
+          [ -f "${TEST}/before_exec" ] && GLOBAL_LOG="$(printf "%s\n\n  Before test:\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "$(awk '{printf "  %02s: %s\n", NR, $0}' "${TEST}/before_exec")")"
+
+          GLOBAL_LOG="$(printf "  %s\n\n  STDIN:\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "$(awk '{printf "  %02s: %s\n", NR, $0}' "${TEST}/stdin")")"
+
+          [ "${LOG_CURRENT_TEST_STDOUT}" != "" ] && GLOBAL_LOG="$(printf "%s\n\n%s\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_STDOUT}" "$(awk '{printf "  %02s: %s\n", NR, $0}' "${RESPONSE_STDOUT}")")"
+          [ "${LOG_CURRENT_TEST_STDERR}" != "" ] && GLOBAL_LOG="$(printf "%s\n\n%s\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_STDERR}" "$(awk '{printf "  %02s: %s\n", NR, $0}' "${RESPONSE_STDERR}")")"
+          [ "${LOG_CURRENT_TEST_MISC}" != "" ] && GLOBAL_LOG="$(printf "%s\n\n%s" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_MISC}")"
           [ "${TEST_STATUS}" == "1" ] && (( GLOBAL_TOTAL_FAILED_TESTS = GLOBAL_TOTAL_FAILED_TESTS + 1 ))
         fi
 
