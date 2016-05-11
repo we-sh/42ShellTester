@@ -6,7 +6,7 @@
 # RESPONSE_EXIT_STATUS -> actual exit status
 # */
 
-function run_verb_exit_with_status
+run_verb_exit_with_status()
 {
   if [ "${RESPONSE_EXIT_STATUS}" == "${EXPECTED_TO_ARGS[0]}" ]
   then

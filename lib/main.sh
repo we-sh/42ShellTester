@@ -10,7 +10,7 @@
 # - displays the results
 # */
 
-function run_main
+run_main()
 {
   local TEST
   local TEST_NAME

@@ -7,7 +7,7 @@
 # EXPECTED_TO_ARGS[2]  -> argument of file test
 # */
 
-function run_verb_create_file
+run_verb_create_file()
 {
   if [ -f "${EXPECTED_TO_ARGS[0]}" ]
   then

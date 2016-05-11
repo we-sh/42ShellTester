@@ -6,7 +6,7 @@
 # RESPONSE             -> actual output (stdout or stderr)
 # */
 
-function run_verb_have_nb_of_lines
+run_verb_have_nb_of_lines()
 {
   if [ "$(awk 'END {printf NR}' "${RESPONSE}")" == "${EXPECTED_TO_ARGS[0]}" ]
   then

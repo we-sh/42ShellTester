@@ -18,7 +18,7 @@ then
   exit 1
 fi
 
-function run_create_readme
+run_create_readme()
 {
   local INDEX="${1}"
   local TEST="${2}"
@@ -74,7 +74,7 @@ function run_create_readme
   printf "* \${**HOME**} -> The standard environment variable HOME\n" >>"${README}"
 }
 
-function run_browse_directory
+run_browse_directory()
 {
   local -i INDEX=${1}
   local DIR="${2}"

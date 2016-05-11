@@ -4,7 +4,7 @@
 # Launcher
 # */
 
-function get_install_directory
+get_install_directory()
 {
   local SOURCE="${BASH_SOURCE[0]}"
   local DIR
@@ -18,29 +18,29 @@ function get_install_directory
 }
 
 # global variables
-declare GLOBAL_PROG=""
-declare GLOBAL_PROG_REFERENCE=""
-declare GLOBAL_SPECS_FILTER=""
-declare GLOBAL_ENTRYPATH=$(pwd)
-declare GLOBAL_INSTALLDIR="$(get_install_directory)"
-declare GLOBAL_TMP_DIRECTORY="${GLOBAL_INSTALLDIR}/tmp"
-declare GLOBAL_LOCALBRANCH=$(git branch | awk '$0 ~ /^\*/ {print $2; exit}')
-declare GLOBAL_TOKEN="42SHTESTTOKEN_$(date +%Y%m%d%H%M)"
-declare GLOBAL_TOTAL_TESTS=0
-declare GLOBAL_TOTAL_FAILED_TESTS=0
-declare GLOBAL_TOTAL_PENDING_TESTS=0
-declare GLOBAL_LOG=""
-declare GLOBAL_SHOW_SUCCESS=0
-declare GLOBAL_RUN_POSIX_ONLY=0
-declare GLOBAL_RUN_PENDING_TESTS=0
-declare GLOBAL_RUN_HARD_TESTS=0
-declare GLOBAL_INVALID_OPTION=0
-declare C_BOLD="\033[37;1m"
-declare C_RED="\033[31m\033[38;5;160m"
-declare C_GREEN="\033[31m\033[38;5;34m"
-declare C_YELLOW="\033[31m\033[1;33m"
-declare C_GREY="\033[38;5;239m"
-declare C_CLEAR="\033[0m"
+GLOBAL_PROG=""
+GLOBAL_PROG_REFERENCE=""
+GLOBAL_SPECS_FILTER=""
+GLOBAL_ENTRYPATH=$(pwd)
+GLOBAL_INSTALLDIR="$(get_install_directory)"
+GLOBAL_TMP_DIRECTORY="${GLOBAL_INSTALLDIR}/tmp"
+GLOBAL_LOCALBRANCH=$(git branch | awk '$0 ~ /^\*/ {print $2; exit}')
+GLOBAL_TOKEN="42SHTESTTOKEN_$(date +%Y%m%d%H%M)"
+GLOBAL_TOTAL_TESTS=0
+GLOBAL_TOTAL_FAILED_TESTS=0
+GLOBAL_TOTAL_PENDING_TESTS=0
+GLOBAL_LOG=""
+GLOBAL_SHOW_SUCCESS=0
+GLOBAL_RUN_POSIX_ONLY=0
+GLOBAL_RUN_PENDING_TESTS=0
+GLOBAL_RUN_HARD_TESTS=0
+GLOBAL_INVALID_OPTION=0
+C_BOLD="\033[37;1m"
+C_RED="\033[31m\033[38;5;160m"
+C_GREEN="\033[31m\033[38;5;34m"
+C_YELLOW="\033[31m\033[1;33m"
+C_GREY="\033[38;5;239m"
+C_CLEAR="\033[0m"
 
 # retrieve options
 while [ ! -z "${1}" ]; do

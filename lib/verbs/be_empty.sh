@@ -5,7 +5,7 @@
 # RESPONSE -> actual output (stdout or stderr)
 # */
 
-function run_verb_be_empty
+run_verb_be_empty()
 {
   if [ "$(awk '{print}' "${RESPONSE}")" == "" ]
   then

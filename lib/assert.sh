@@ -19,7 +19,7 @@
 # functions that calls the verbs and treats their exit status
 # */
 
-function run_assert
+run_assert()
 {
   local LINE
   local PREFIX_STD="${1}"
@@ -49,7 +49,7 @@ function run_assert
   return "${ASSERT_STATUS}"
 }
 
-function run_expected_to
+run_expected_to()
 {
   shift 1
   local EXPECTED_TO_CMD="${1}"
@@ -71,7 +71,7 @@ function run_expected_to
   return "${ASSERT_STATUS}"
 }
 
-function run_expected_to_not
+run_expected_to_not()
 {
   shift 1
   local EXPECTED_TO_CMD="${1}"
@@ -95,7 +95,7 @@ function run_expected_to_not
   return "${ASSERT_STATUS}"
 }
 
-function run_might
+run_might()
 {
   shift 1
   local EXPECTED_TO_CMD="${1}"
@@ -118,7 +118,7 @@ function run_might
   return "${ASSERT_STATUS}"
 }
 
-function run_might_not
+run_might_not()
 {
   shift 1
   local EXPECTED_TO_CMD="${1}"
