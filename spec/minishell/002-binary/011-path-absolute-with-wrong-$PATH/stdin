@@ -1,6 +1,0 @@
-setenv PATH toto
-setenv PATH=toto
-/bin/ls -1 ../spec
-ls ../spec
-/sbin/md5 test
-/sbin/md5 /sbin/md5

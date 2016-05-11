@@ -1,2 +1,0 @@
-rm -f ${GLOBAL_INSTALLDIR}/tmp/output_binary
-ls ${GLOBAL_INSTALLDIR}/spec > ${GLOBAL_INSTALLDIR}/tmp/output_binary

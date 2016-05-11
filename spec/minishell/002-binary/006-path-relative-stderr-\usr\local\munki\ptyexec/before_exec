@@ -1,2 +1,0 @@
-rm -f ${GLOBAL_INSTALLDIR}/tmp/output_binary
-ptyexec 2> ${GLOBAL_INSTALLDIR}/tmp/output_binary

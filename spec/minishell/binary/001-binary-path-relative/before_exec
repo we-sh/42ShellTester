@@ -1,0 +1,9 @@
+mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath
+mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1 ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2
+rm -f ./display_name
+rm -f ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name1
+rm -f ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name2
+gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/display-program-name/main.c" -o ./display_name
+cp ./display_name ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name1
+cp ./display_name ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2/display_name2
+export PATH=${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1:NONE:${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2

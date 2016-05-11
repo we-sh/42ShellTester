@@ -1,2 +1,0 @@
-rm -f ${GLOBAL_INSTALLDIR}/tmp/output_binary
-${GLOBAL_INSTALLDIR}/tmp/display_pwd > ${GLOBAL_INSTALLDIR}/tmp/output_binary

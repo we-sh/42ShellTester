@@ -1,0 +1,3 @@
+This test purpose is to check if your shell is not able to use binary with a wrong PATH
+We are changing the actual PATH by PATH=NULL
+And executing the commande ls

@@ -1,0 +1,6 @@
+mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath
+mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1
+rm -f ./fake_ls
+gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/display-pwd/main.c" -o ./fake_ls
+cp ./fake_ls ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/ls
+export PATH=${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1:$PATH
