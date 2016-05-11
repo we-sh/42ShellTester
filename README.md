@@ -238,7 +238,7 @@ Follow the guideline to add a new test:
 * **`exit_with_status`** + *`$int`*: The Shell termination results in the exit status *$int*.
 * **`have_nb_of_lines`** + *`$int`*: Actual output contains exactly *$int* lines.
 * **`match_regex`** + *`$regex`*: At least one line of actual output does match with the regular expression *$regex*.
-* **`match_each_lines_of_file`** + *`$filename`*: Actual output does match with each regular expression contained in the file named *$filename* (in an indifferent order).
+* **`match_each_regex_of_file`** + *`$filename`*: Actual output does match with each regular expression contained in the file named *$filename* (in an indifferent order).
 
 ## Adding new verb
 

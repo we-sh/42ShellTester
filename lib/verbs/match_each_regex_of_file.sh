@@ -6,7 +6,7 @@
 # RESPONSE             -> actual output (stdout or stderr)
 # */
 
-run_verb_match_each_lines_of_file()
+run_verb_match_each_regex_of_file()
 {
   local INDEX=0 ERROR=0 TOTAL LINE
   TOTAL=$(awk 'END {print NR+1}' "${EXPECTED_TO_ARGS[0]}")
