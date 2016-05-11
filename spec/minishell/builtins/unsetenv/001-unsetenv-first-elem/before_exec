@@ -1,0 +1,2 @@
+for VARIABLE in $(env | awk 'BEGIN {FS="="} {print $1}'); do unset "${VARIABLE}"; done;
+export SSH_AUTH_SOCK=test
