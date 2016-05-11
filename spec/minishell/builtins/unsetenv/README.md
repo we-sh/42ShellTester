@@ -1,6 +1,6 @@
 # unsetenv
 
-*[spec > minishell > 001-builtins](..) > unsetenv*
+*[spec > minishell > builtins](..) > unsetenv*
 
 * [001-unsetenv-first-elem](./001-unsetenv-first-elem)
 * [002-unsetenv-last-elem](./002-unsetenv-last-elem)

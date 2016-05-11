@@ -1,15 +1,9 @@
-# 002-binary
+# binary
 
-*[spec > minishell](..) > 002-binary*
+*[spec > minishell](..) > binary*
 
-* [001-path-relative-\bin-ls](./001-path-relative-\bin-ls)
-* [002-path-relative-\usr\bin-whereis](./002-path-relative-\usr\bin-whereis)
-* [003-path-relative-stderr-\usr\sbin-rarpd](./003-path-relative-stderr-\usr\sbin-rarpd)
-* [004-path-relative-\sbin-md5](./004-path-relative-\sbin-md5)
-* [005-path-relative-usr\local\bin\monop](./005-path-relative-usr\local\bin\monop)
-* [006-path-relative-stderr-\usr\local\munki\ptyexec](./006-path-relative-stderr-\usr\local\munki\ptyexec)
-* [007-path-absolute-\bin\ls](./007-path-absolute-\bin\ls)
-* [008-path-absolute-display-pwd](./008-path-absolute-display-pwd)
-* [009-path-relative-without-$PATH](./009-path-relative-without-$PATH)
-* [010-path-relative-with-wrong-$PATH](./010-path-relative-with-wrong-$PATH)
-* [011-path-absolute-with-wrong-$PATH](./011-path-absolute-with-wrong-$PATH)
+* [001-binary-path-relative](./001-binary-path-relative)
+* [002-binary-path-absolute](./002-binary-path-absolute)
+* [003-binary-test-exec-order](./003-binary-test-exec-order)
+* [004-binary-test-empty-path](./004-binary-test-empty-path)
+* [005-binary-test-wrong-path](./005-binary-test-wrong-path)

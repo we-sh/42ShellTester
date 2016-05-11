@@ -1,0 +1,1 @@
+A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`.

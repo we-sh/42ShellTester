@@ -1,6 +1,6 @@
 # cd
 
-*[spec > minishell > 001-builtins](..) > cd*
+*[spec > minishell > builtins](..) > cd*
 
 * [001-no-arg](./001-no-arg)
 * [002-current-directory](./002-current-directory)

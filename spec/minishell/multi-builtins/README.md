@@ -1,5 +1,5 @@
-# 003-multi-builtins
+# multi-builtins
 
-*[spec > minishell](..) > 003-multi-builtins*
+*[spec > minishell](..) > multi-builtins*
 
 * [setenv-unsetenv](./setenv-unsetenv)

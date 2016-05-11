@@ -1,10 +1,11 @@
 #!/bin/bash
 
-declare GLOBAL_INSTALLDIR="$(pwd)"
-declare GLOBAL_TMP_DIRECTORY="${GLOBAL_INSTALLDIR}/tmp"
-declare GLOBAL_LOCALBRANCH=$(git branch | awk '$0 ~ /^\*/ {print $2; exit}')
-declare GLOBAL_LIST_OF_TESTS
-declare -i GLOBAL_TOTAL_TESTS=0
+GLOBAL_INSTALLDIR="$(pwd)"
+GLOBAL_TMP_DIRECTORY="${GLOBAL_INSTALLDIR}/tmp"
+GLOBAL_LOCALBRANCH=$(git branch | awk '$0 ~ /^\*/ {print $2; exit}')
+GLOBAL_LIST_OF_TESTS=
+GLOBAL_TOTAL_TESTS=0
+GLOBAL_SUPPORT_BINARIES_LIST=""
 
 if [ "${GLOBAL_LOCALBRANCH}" != "master" ]
 then
@@ -17,6 +18,35 @@ then
   printf "%s\n" "Task error: must be run from install directory"
   exit 1
 fi
+
+run_create_support_binaries_readme()
+{
+  local SUPPORT_FILE
+  local README
+  local SUPPORT_FILE_NAME
+
+  for SUPPORT_FILE in ./support/*
+  do
+    if [ -d "${SUPPORT_FILE}" ]
+    then
+
+      README="${SUPPORT_FILE}/README.md"
+      SUPPORT_MAIN="${SUPPORT_FILE}/main.c"
+      SUPPORT_DESCRIPTION="${SUPPORT_FILE}/description"
+      SUPPORT_DIR_NAME="${SUPPORT_FILE##*/}"
+      SUPPORT_BINARY_NAME="${SUPPORT_DIR_NAME//-/_}"
+
+      printf "# %s\n\n" "./${SUPPORT_BINARY_NAME}" >"${README}"
+      [ -f "${SUPPORT_DESCRIPTION}" ] && printf "%s\n\n" "$(cat "${SUPPORT_DESCRIPTION}")" >>"${README}"
+      printf "\`\`\`c\n%s\n\`\`\`\n" "$(cat "${SUPPORT_MAIN}")" >>"${README}"
+
+      GLOBAL_SUPPORT_BINARIES_LIST="$(printf "%s\n%s" "${GLOBAL_SUPPORT_BINARIES_LIST}" "* **./${SUPPORT_BINARY_NAME}** -> $(cat "${SUPPORT_DESCRIPTION}")")"
+
+    fi
+  done
+}
+
+run_create_support_binaries_readme
 
 run_create_readme()
 {
@@ -66,12 +96,14 @@ run_create_readme()
     printf "\n\`\`\`\n\n" >>"${README}"
   fi
 
-  printf "### Variables\n\nThe following variables may appear in the tests:\n\n" >>"${README}"
+  printf "### Variables\n\nThe following variables may appear in ths test:\n\n" >>"${README}"
   printf "* \${**GLOBAL_INSTALLDIR**} -> The installation directory of 42ShellTester\n" >>"${README}"
   printf "* \${**GLOBAL_TMP_DIRECTORY**} -> The temporary directory in which tests are executed\n" >>"${README}"
   printf "* \${**GLOBAL_TOKEN**} -> A token that changes value at launch time\n" >>"${README}"
   printf "* \${**PATH**} -> The standard environment variable PATH\n" >>"${README}"
   printf "* \${**HOME**} -> The standard environment variable HOME\n" >>"${README}"
+
+  printf "### Support binaries\n\nThe following binaries may appear in this test:\n\n%s\n" "${GLOBAL_SUPPORT_BINARIES_LIST}" >>"${README}"
 }
 
 run_browse_directory()

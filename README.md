@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42shTests is currently packaged with **89 tests**.
+42ShellTester is currently packaged with **85 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -58,14 +58,16 @@ Also run pending tests.
 <!--START_LIST_TESTS-->
 * **[21sh/](spec/21sh)**
   * **[misc/](spec/21sh/misc)**
-    * [001-any-prompt-when-non-interactive](spec/21sh/misc/001-any-prompt-when-non-interactive)
+    * [001-no-prompt-in-non-interactive-mode <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/misc/001-no-prompt-in-non-interactive-mode)
   * **[pipe/](spec/21sh/pipe)**
     * [001-single-pipe <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/001-single-pipe)
     * [002-chained-pipes <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/002-chained-pipes)
     * [003-many-chained-pipes <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/003-many-chained-pipes)
+    * [004-without-surrounding-whitespaces <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/004-without-surrounding-whitespaces)
     * **[mixed/](spec/21sh/pipe/mixed)**
       * [001-exit-or-not-exit <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/001-exit-or-not-exit)
       * [002-cd-or-not-cd <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/002-cd-or-not-cd)
+      * [003-unsetenv-or-not-unsetenv <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/003-unsetenv-or-not-unsetenv)
   * **[redirections/](spec/21sh/redirections)**
     * **[inputs/](spec/21sh/redirections/inputs)**
       * [001-close-stdin <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/inputs/001-close-stdin)
@@ -120,67 +122,64 @@ Also run pending tests.
 * **[minishell/](spec/minishell)**
   * **[001-builtins/](spec/minishell/001-builtins)**
     * **[cd/](spec/minishell/001-builtins/cd)**
-      * [001-no-arg <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/001-no-arg)
-      * [002-current-directory <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/002-current-directory)
-      * [003-current-directory-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/003-current-directory-2)
-      * [004-parent-directory <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/004-parent-directory)
-      * [005-absolute-path <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/005-absolute-path)
-      * [007-symbolic-link <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/007-symbolic-link)
-      * [008-symbolic-link-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/008-symbolic-link-2)
-      * [009-following-links <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/009-following-links)
       * **[errors/](spec/minishell/001-builtins/cd/errors)**
-        * [001-not-a-directory <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/errors/001-not-a-directory)
-        * [002-permission-denied <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/errors/002-permission-denied)
-        * [003-too-many-symbolic-links-encountered <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/errors/003-too-many-symbolic-links-encountered)
-        * [004-no-such-file-or-directory <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/errors/004-no-such-file-or-directory)
-      * **[options/](spec/minishell/001-builtins/cd/options)**
-        * [001-not-following-links <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/options/001-not-following-links)
-        * [002-oldpwd <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/cd/options/002-oldpwd)
-    * **[env/](spec/minishell/001-builtins/env)**
-      * [001-env-same-value-as-parent <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/env/001-env-same-value-as-parent)
-      * [002-env-check-usefull-var <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/env/002-env-check-usefull-var)
-      * [003-ignore-environment-1 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/env/003-ignore-environment-1)
-      * [004-ignore-environment-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/env/004-ignore-environment-2)
-      * [005-set-variables <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/env/005-set-variables)
-      * [006-unset-variables-1 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/env/006-unset-variables-1)
-      * [007-unset-variables-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/env/007-unset-variables-2)
-      * **[calling-builtins/](spec/minishell/001-builtins/env/calling-builtins)**
-        * [001-cd-HOME-without-environment <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/env/calling-builtins/001-cd-HOME-without-environment)
-      * **[multiple-options/](spec/minishell/001-builtins/env/multiple-options)**
-        * [001-ignore-environment-and-set-variable <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/env/multiple-options/001-ignore-environment-and-set-variable)
-        * [002-unset-and-set-variable <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/env/multiple-options/002-unset-and-set-variable)
-    * **[exit/](spec/minishell/001-builtins/exit)**
-      * [001-simple <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/exit/001-simple)
-      * [002-valid-arg <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/exit/002-valid-arg)
-      * [003-too-many-args <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/exit/003-too-many-args)
-      * [004-status-of-last-command <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/exit/004-status-of-last-command)
-    * **[setenv/](spec/minishell/001-builtins/setenv)**
-      * [001-setenv-no-parameter <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/setenv/001-setenv-no-parameter)
-      * [002-setenv-noequal <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/setenv/002-setenv-noequal)
-      * [003-setenv-equal <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/setenv/003-setenv-equal)
-    * **[unsetenv/](spec/minishell/001-builtins/unsetenv)**
-      * [001-unsetenv-first-elem <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/unsetenv/001-unsetenv-first-elem)
-      * [002-unsetenv-last-elem <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/unsetenv/002-unsetenv-last-elem)
-      * [003-unsetenv-mult-argv <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/unsetenv/003-unsetenv-mult-argv)
-      * [004-unsetenv-mult-argv-inline <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/001-builtins/unsetenv/004-unsetenv-mult-argv-inline)
-  * **[002-binary/](spec/minishell/002-binary)**
-    * [001-path-relative-in-ls <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/001-path-relative-in-ls)
-    * [002-path-relative-usrin-whereis <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/002-path-relative-usrin-whereis)
-    * [003-path-relative-stderr-usrsbin-rarpd <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/003-path-relative-stderr-usrsbin-rarpd)
-    * [004-path-relative-sbin-md5 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/004-path-relative-sbin-md5)
-    * [005-path-relative-usrlocalinmonop <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/005-path-relative-usrlocalinmonop)
-    * [006-path-relative-stderr-usrlocalmunkiptyexec <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/006-path-relative-stderr-usrlocalmunkiptyexec)
-    * [007-path-absolute-inls <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/007-path-absolute-inls)
-    * [008-path-absolute-display-pwd <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/008-path-absolute-display-pwd)
-    * [009-path-relative-without-$PATH <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/009-path-relative-without-$PATH)
-    * [010-path-relative-with-wrong-$PATH <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/010-path-relative-with-wrong-$PATH)
-    * [011-path-absolute-with-wrong-$PATH <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/002-binary/011-path-absolute-with-wrong-$PATH)
-  * **[003-multi-builtins/](spec/minishell/003-multi-builtins)**
-    * **[setenv-unsetenv/](spec/minishell/003-multi-builtins/setenv-unsetenv)**
-      * [001-basic-unsetenv-and-setenv <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/003-multi-builtins/setenv-unsetenv/001-basic-unsetenv-and-setenv)
-      * [002-unsetenv-all-and-setenv <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/003-multi-builtins/setenv-unsetenv/002-unsetenv-all-and-setenv)
+  * **[binary/](spec/minishell/binary)**
+    * [001-binary-path-relative <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/001-binary-path-relative)
+    * [002-binary-path-absolute <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/002-binary-path-absolute)
+    * [003-binary-test-exec-order <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/003-binary-test-exec-order)
+    * [004-binary-test-empty-path <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/004-binary-test-empty-path)
+    * [005-binary-test-wrong-path <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/005-binary-test-wrong-path)
+  * **[builtins/](spec/minishell/builtins)**
+    * **[cd/](spec/minishell/builtins/cd)**
+      * [001-no-arg <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/001-no-arg)
+      * [002-current-directory <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/002-current-directory)
+      * [003-current-directory-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/003-current-directory-2)
+      * [004-parent-directory <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/004-parent-directory)
+      * [005-absolute-path <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/005-absolute-path)
+      * [007-symbolic-link <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/007-symbolic-link)
+      * [008-symbolic-link-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/008-symbolic-link-2)
+      * [009-following-links <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/009-following-links)
+      * **[errors/](spec/minishell/builtins/cd/errors)**
+        * [001-not-a-directory <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/001-not-a-directory)
+        * [002-permission-denied <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/002-permission-denied)
+        * [003-too-many-symbolic-links-encountered <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/003-too-many-symbolic-links-encountered)
+        * [004-no-such-file-or-directory <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/004-no-such-file-or-directory)
+      * **[options/](spec/minishell/builtins/cd/options)**
+        * [001-not-following-links <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/options/001-not-following-links)
+        * [002-oldpwd <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/options/002-oldpwd)
+    * **[env/](spec/minishell/builtins/env)**
+      * [001-env-same-value-as-parent <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/001-env-same-value-as-parent)
+      * [002-env-check-usefull-var <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/002-env-check-usefull-var)
+      * [003-ignore-environment-1 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/003-ignore-environment-1)
+      * [004-ignore-environment-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/004-ignore-environment-2)
+      * [005-set-variables <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/005-set-variables)
+      * [006-unset-variables-1 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/006-unset-variables-1)
+      * [007-unset-variables-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/007-unset-variables-2)
+      * **[calling-builtins/](spec/minishell/builtins/env/calling-builtins)**
+        * [001-cd-HOME-without-environment <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/calling-builtins/001-cd-HOME-without-environment)
+      * **[multiple-options/](spec/minishell/builtins/env/multiple-options)**
+        * [001-ignore-environment-and-set-variable <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/multiple-options/001-ignore-environment-and-set-variable)
+        * [002-unset-and-set-variable <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/multiple-options/002-unset-and-set-variable)
+    * **[exit/](spec/minishell/builtins/exit)**
+      * [001-simple <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/exit/001-simple)
+      * [002-valid-arg <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/exit/002-valid-arg)
+      * [003-too-many-args <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/exit/003-too-many-args)
+      * [004-status-of-last-command <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/exit/004-status-of-last-command)
+    * **[setenv/](spec/minishell/builtins/setenv)**
+      * [001-setenv-no-parameter <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/001-setenv-no-parameter)
+      * [002-setenv-noequal <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/002-setenv-noequal)
+      * [003-setenv-equal <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/003-setenv-equal)
+    * **[unsetenv/](spec/minishell/builtins/unsetenv)**
+      * [001-unsetenv-first-elem <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/001-unsetenv-first-elem)
+      * [002-unsetenv-last-elem <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/002-unsetenv-last-elem)
+      * [003-unsetenv-mult-argv <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/003-unsetenv-mult-argv)
+      * [004-unsetenv-mult-argv-inline <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/004-unsetenv-mult-argv-inline)
   * **[misc/](spec/minishell/misc)**
     * [copy-of-environment <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/misc/copy-of-environment)
+  * **[multi-builtins/](spec/minishell/multi-builtins)**
+    * **[setenv-unsetenv/](spec/minishell/multi-builtins/setenv-unsetenv)**
+      * [001-basic-unsetenv-and-setenv <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/multi-builtins/setenv-unsetenv/001-basic-unsetenv-and-setenv)
+      * [002-unsetenv-all-and-setenv <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/multi-builtins/setenv-unsetenv/002-unsetenv-all-and-setenv)
 
 <!--END_LIST_TESTS-->
 

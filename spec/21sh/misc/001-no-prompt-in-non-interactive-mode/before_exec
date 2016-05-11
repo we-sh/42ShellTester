@@ -1,2 +1,0 @@
-rm -f ./write_on_stdout
-gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/write-on-stdout/main.c" -o ./write_on_stdout

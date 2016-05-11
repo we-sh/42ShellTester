@@ -1,6 +1,6 @@
 # setenv
 
-*[spec > minishell > 001-builtins](..) > setenv*
+*[spec > minishell > builtins](..) > setenv*
 
 * [001-setenv-no-parameter](./001-setenv-no-parameter)
 * [002-setenv-noequal](./002-setenv-noequal)

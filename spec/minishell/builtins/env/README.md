@@ -1,6 +1,6 @@
 # env
 
-*[spec > minishell > 001-builtins](..) > env*
+*[spec > minishell > builtins](..) > env*
 
 * [001-env-same-value-as-parent](./001-env-same-value-as-parent)
 * [002-env-check-usefull-var](./002-env-check-usefull-var)

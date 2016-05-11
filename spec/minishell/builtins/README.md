@@ -1,6 +1,6 @@
-# 001-builtins
+# builtins
 
-*[spec > minishell](..) > 001-builtins*
+*[spec > minishell](..) > builtins*
 
 * [cd](./cd)
 * [env](./env)

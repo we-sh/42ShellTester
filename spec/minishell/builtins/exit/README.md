@@ -1,6 +1,6 @@
 # exit
 
-*[spec > minishell > 001-builtins](..) > exit*
+*[spec > minishell > builtins](..) > exit*
 
 * [001-simple](./001-simple)
 * [002-valid-arg](./002-valid-arg)
