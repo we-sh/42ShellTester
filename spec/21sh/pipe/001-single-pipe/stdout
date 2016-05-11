@@ -1,3 +1,1 @@
-expected_to match_regex "START READING ON STDIN@$"
 expected_to match_regex "${GLOBAL_TOKEN}_stdout@$"
-expected_to match_regex "END READING ON STDIN@$"
