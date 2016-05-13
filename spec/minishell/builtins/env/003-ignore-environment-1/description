@@ -1,0 +1,2 @@
+The purpose of this test is to check the implementation of env -i.
+We are using a binary which have to display environment variable. But we a launching this binary with env -i, the output is suppose to be empty.

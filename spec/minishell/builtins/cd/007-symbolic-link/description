@@ -1,0 +1,2 @@
+The purpose of this test is to check if cd follow symbolic link as argument.
+We had create a symbolic link to '..' which will be the argument of cd.

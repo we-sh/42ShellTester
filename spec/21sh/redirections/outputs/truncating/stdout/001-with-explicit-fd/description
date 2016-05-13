@@ -1,0 +1,2 @@
+The purpose of this test is to check if '1>' redirect STDIN to a file.
+We are using echo with one argument. The output should NOT return anything on the standard output.

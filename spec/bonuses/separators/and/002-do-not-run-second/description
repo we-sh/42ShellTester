@@ -1,0 +1,1 @@
+The purpose of this test is to check if '&&' operator doesn't print the second command if the first one is invalid .

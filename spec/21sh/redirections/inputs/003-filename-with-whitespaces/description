@@ -1,0 +1,2 @@
+The purpose of this test is to check if '<' is redirecting the associate file data into the STDIN binary.
+We are adding space between the binary, the symbole '<' and the file. So your parsing is also test inside this test.

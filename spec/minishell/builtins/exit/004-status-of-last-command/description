@@ -1,0 +1,1 @@
+The purpose of this test is to check if exit return the last binary return status when we are not setting an argument for exit.

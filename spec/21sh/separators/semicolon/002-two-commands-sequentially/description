@@ -1,0 +1,2 @@
+The purpose of this test is to check if ';' is well implemented.
+We'll chaining two ECHO commands with ';' and check if the output is correct.

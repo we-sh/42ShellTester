@@ -1,0 +1,3 @@
+The purpose of this test is to check if your shell is setting and unsetting multiples environments variables correctly.
+Be carefull we are using the following syntax for setenv
+setenv KEY=value

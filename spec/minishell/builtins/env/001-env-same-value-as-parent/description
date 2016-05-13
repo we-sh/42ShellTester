@@ -1,0 +1,2 @@
+The purpose of this test is to check if your shell is using a copy of his parent environment as environment.
+We are using a copy of the environment variable before starting your shell and the command env from your shell.

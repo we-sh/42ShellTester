@@ -1,0 +1,2 @@
+Parsing test.
+The purpose of this test is to check if '&&' operator doesn't print the first command if there is no command after &&.

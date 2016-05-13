@@ -1,0 +1,1 @@
+The purpose of this test is to check if cd throw an error when we are passing an infinite loop of symbolic link as argument.

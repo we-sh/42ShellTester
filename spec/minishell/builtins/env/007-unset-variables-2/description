@@ -1,0 +1,1 @@
+The purpose of this test is to check if env can takes parameters with "--unset" to remove environments variables.

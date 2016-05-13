@@ -1,6 +1,6 @@
 unsetenv PATH
 unsetenv SSH_AUTH_SOCK
-unsetenv _
+unsetenv HOME
 setenv TEST=test
-setenv TEST test
+setenv HOME=home
 env
