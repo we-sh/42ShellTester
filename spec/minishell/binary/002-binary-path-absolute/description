@@ -1,4 +1,4 @@
-This test check if you are using folders into the $PATH environement variable
+This test check if you are using folders from the environement variable $PATH.
 We are changing the actual PATH by PATH=${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1:${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2
 And executing the commande display_name1 display_name2 located inside those folders
-This test use the ABSOLUTE PATH
+This test use the ABSOLUTE PATH for binaries

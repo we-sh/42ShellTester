@@ -1,0 +1,3 @@
+The purpose of this test is to check if cd follow the symbolic link of a symbolic link as argument.
+We had create a symbolic link to the an other symb link of .. which will be the argument of cd.
+(Check the before_exec file for more information)
