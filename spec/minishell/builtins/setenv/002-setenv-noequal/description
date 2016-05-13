@@ -1,0 +1,3 @@
+The purpose of this test is to check if your setenv command works to add new environments variables.
+For this test we are using the following syntax.
+setenv VALUE key

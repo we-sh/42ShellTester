@@ -1,0 +1,1 @@
+The purpose of this test is to check if exit doesn't exit and return an error when we are using more than one argument.

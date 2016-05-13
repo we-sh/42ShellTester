@@ -1,0 +1,1 @@
+The purpose of this test is to check if env -i works if we use a second argument to set an environment variable, we are also checking if this command unset environments variables for a given binary.
