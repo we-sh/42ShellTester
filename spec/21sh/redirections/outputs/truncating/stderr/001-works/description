@@ -1,0 +1,2 @@
+The purpose of this test is to check if '2>' redirect STDERR to a file.
+We are using ls with the parent folder and an invalid folder as arguments. The output should be the content of the 42ShellTester directory. And to NOT return error from the invalid folder on the standard output.
