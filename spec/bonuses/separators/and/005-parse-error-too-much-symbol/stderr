@@ -1,2 +1,2 @@
-might_not be_empty
-might have_nb_of_lines 2
+expected_to_not be_empty
+might match_regex "[Ss]yntax error"
