@@ -1,4 +1,6 @@
 # unset all variables
 for VARIABLE in $(env | awk 'BEGIN {FS="="} {print $1}'); do unset "${VARIABLE}"; done;
 
-export VARTEST="${GLOBAL_TOKEN}"
+export ONE="${GLOBAL_TOKEN}_1"
+export TWO="${GLOBAL_TOKEN}_2"
+export THREE="${GLOBAL_TOKEN}_3"

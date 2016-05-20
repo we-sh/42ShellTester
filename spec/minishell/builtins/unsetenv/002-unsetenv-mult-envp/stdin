@@ -1,0 +1,4 @@
+unsetenv ONE
+unsetenv TWO
+unsetenv THREE
+./display_env

@@ -1,4 +1,2 @@
+# unset all variables
 for VARIABLE in $(env | awk 'BEGIN {FS="="} {print $1}'); do unset "${VARIABLE}"; done;
-export UN=un
-export DEUX=deux
-export TROIS=trois

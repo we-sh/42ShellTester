@@ -1,2 +1,2 @@
-unsetenv SSH_AUTH_SOCK
-env
+unsetenv VARTEST
+./display_env

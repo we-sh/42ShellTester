@@ -1,6 +1,0 @@
-unsetenv PATH
-unsetenv SSH_AUTH_SOCK
-unsetenv HOME
-setenv TEST=test
-setenv HOME=home
-env

@@ -1,6 +1,0 @@
-setenv TEST=test
-setenv TEST test
-unsetenv TEST
-setenv TEST2=ok
-setenv USER=42shtests
-env

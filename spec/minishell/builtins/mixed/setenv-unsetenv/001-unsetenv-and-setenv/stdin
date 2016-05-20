@@ -1,0 +1,5 @@
+setenv TEST1 ${GLOBAL_TOKEN}_TEST1
+unsetenv TEST1
+setenv TEST2 ${GLOBAL_TOKEN}_TEST2
+setenv USER ${GLOBAL_TOKEN}_USER
+./display_env

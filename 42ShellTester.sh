@@ -49,7 +49,7 @@ while [ ! -z "${1}" ]; do
     case "${1}" in
       "--reference")
         shift 1
-        GLOBAL_PROG_REFERENCE="${1}"
+        GLOBAL_PROG_REFERENCE="$(which ${1})"
         ;;
       "--filter")
         shift 1
@@ -73,7 +73,10 @@ while [ ! -z "${1}" ]; do
         ;;
     esac
   else
-    [ "${GLOBAL_PROG}" == "" ] && GLOBAL_PROG="${1}"
+    if [ "${GLOBAL_PROG}" == "" ]
+    then
+      [[ "${1}" =~ ^[\.]\/ ]] && GLOBAL_PROG="${1}" || GLOBAL_PROG="$(which ${1})"
+    fi
   fi
   shift 1
 done

@@ -1,0 +1,3 @@
+expected_to_not match_regex "ONE="
+expected_to_not match_regex "TWO="
+expected_to_not match_regex "THREE="

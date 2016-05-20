@@ -1,0 +1,2 @@
+unsetenv ONE TWO THREE
+./display_env
