@@ -1,0 +1,1 @@
+The purpose of this test is to check that using the OR separator `||` with chained commands results in the execution of all until the first succeed. The remaining commands are not executed.

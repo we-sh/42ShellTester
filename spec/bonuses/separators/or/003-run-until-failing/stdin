@@ -1,0 +1,1 @@
+./exit_with_status 0 && ./exit_with_status 0 && ./exit_with_status 0 && ./exit_with_status 0 && ./write_on_stdout ${GLOBAL_TOKEN}_FIRST && ./exit_with_status 42 && ./write_on_stdout ${GLOBAL_TOKEN}_SECOND

@@ -1,0 +1,1 @@
+./exit_with_status 0 && ./write_on_stdout ${GLOBAL_TOKEN}_SUCCESS || ./write_on_stderr ${GLOBAL_TOKEN}_ERROR 21

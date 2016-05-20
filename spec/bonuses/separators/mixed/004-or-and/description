@@ -1,0 +1,1 @@
+The purpose of this test is to check that using the two separators OR `||` and AND `&&` applies the good logic: The second command is executed if the first one fails, and the third command is executed if the second one succeeds or is not executed.

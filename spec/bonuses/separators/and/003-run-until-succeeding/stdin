@@ -1,0 +1,1 @@
+./exit_with_status 1 || ./exit_with_status 2 || ./exit_with_status 3 || ./exit_with_status 4 || ./write_on_stdout ${GLOBAL_TOKEN}_FIRST || ./write_on_stdout ${GLOBAL_TOKEN}_SECOND
