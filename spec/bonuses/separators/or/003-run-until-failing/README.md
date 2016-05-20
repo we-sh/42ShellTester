@@ -1,36 +1,34 @@
-# 004-binary-test-empty-path
+# 003-run-until-failing
 
-*[spec > minishell > binary](..) > 004-binary-test-empty-path*
+*[spec > bonuses > separators > or](..) > 003-run-until-failing*
 
-This test purpose is to check if your shell is not able to use binary without PATH
-We are changing the actual PATH by PATH=
-And executing the commande ls
-### What is done before test
-
-```bash
-export PATH=
-
-```
-
+The purpose of this test is to check that using the AND separator `&&` with chained commands results in the execution of all until the first fail.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+./exit_with_status 0 && ./exit_with_status 0 && ./exit_with_status 0 && ./exit_with_status 0 && ./write_on_stdout ${GLOBAL_TOKEN}_FIRST && ./exit_with_status 42 && ./write_on_stdout ${GLOBAL_TOKEN}_SECOND
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to be_empty
+expected_to match_regex "${GLOBAL_TOKEN}_FIRST"
+expected_to_not match_regex "${GLOBAL_TOKEN}_SECOND"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_not_to be_empty
-might match_regex "[Nn]o such file or directory"
+expected_to be_empty
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to exit_with_status "42"
 
 ```
 

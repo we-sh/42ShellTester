@@ -4,6 +4,6 @@
 
 * [001-run-first-only](./001-run-first-only)
 * [002-run-second-only](./002-run-second-only)
-* [003-parse-error-at-beginning](./003-parse-error-at-beginning)
-* [004-parse-error-at-end](./004-parse-error-at-end)
+* [003-run-until-failing](./003-run-until-failing)
+* [004-parse-error-at-beginning](./004-parse-error-at-beginning)
 * [005-parse-error-too-much-symbol](./005-parse-error-too-much-symbol)

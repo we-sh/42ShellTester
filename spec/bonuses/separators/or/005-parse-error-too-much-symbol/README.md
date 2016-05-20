@@ -2,11 +2,13 @@
 
 *[spec > bonuses > separators > or](..) > 005-parse-error-too-much-symbol*
 
+Parsing test.
+The purpose of this test is to check that using more than two pipe symbols `|` is detected as an error.
+The Shell should display an error and exit with a error status code.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-/bin/echo FIRST_TOKEN ||| /bin/echo LAST_TOKEN
-/bin/echo FIRST_TOKEN |||| /bin/echo LAST_TOKEN
+./write_on_stdout ${GLOBAL_TOKEN} ||| ./write_on_stdout ${GLOBAL_TOKEN}
 
 ```
 
@@ -21,7 +23,15 @@ might be_empty
 
 ```bash
 might_not be_empty
-might have_nb_of_lines 2
+might match_regex "([Ss]yntax|[Pp]arse) error"
+
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+might_not exit_with_status "0"
 
 ```
 
@@ -45,5 +55,6 @@ The following binaries may appear in this test:
 * **./display_pwd** -> A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`.
 * **./exit_with_status** -> A binary that immediately exits with the status given as first argument.
 * **./read_on_stdin** -> A binary that reads on standard entry and write each line on standard output suffixed with the character `@` (e.g. same behavior as `cat -e` and the *newline* character). When `read(2)` returns `-1`, then the string `STDIN READ ERROR` is written on standard error.
+* **./write_on_stderr** -> A binary that writes on standard error the first given argument (the same behavior as `echo` but with only one argument) and exits with an error status code given as second argument. If no argument is given, it writes the string "write on stderr" and exit with status `1`.
 * **./write_on_stdout** -> A binary that writes on standard output the first given argument (the same behavior as `echo` but with only one argument). If no argument is given, it writes the string "write on stdout".
 * **./write_on_stdout_and_stderr** -> A binary that writes on standard output the first given argument, and writes on standard error the second given argument. If an argument is missing, it writes the strings "write on stdout" and "write on stderr".

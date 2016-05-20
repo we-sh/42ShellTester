@@ -1,36 +1,33 @@
-# 004-binary-test-empty-path
+# 001-and-or
 
-*[spec > minishell > binary](..) > 004-binary-test-empty-path*
+*[spec > bonuses > separators > mixed](..) > 001-and-or*
 
-This test purpose is to check if your shell is not able to use binary without PATH
-We are changing the actual PATH by PATH=
-And executing the commande ls
-### What is done before test
-
-```bash
-export PATH=
-
-```
-
+The purpose of this test is to check that using the two separators AND `&&` and OR `||` applies the good logic: The second command is executed if the first one succeeds, and the third command is executed if the second one fails or is not executed.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+./exit_with_status 42 && ./write_on_stderr ${GLOBAL_TOKEN}_ERROR 21 || ./write_on_stdout ${GLOBAL_TOKEN}_SUCCESS
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to be_empty
+expected_to match_regex "${GLOBAL_TOKEN}_SUCCESS"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_not_to be_empty
-might match_regex "[Nn]o such file or directory"
+expected_to be_empty
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to exit_with_status "0"
 
 ```
 

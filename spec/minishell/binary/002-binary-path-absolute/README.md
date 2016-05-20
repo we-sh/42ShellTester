@@ -2,10 +2,10 @@
 
 *[spec > minishell > binary](..) > 002-binary-path-absolute*
 
-This test check if you are using folders into the $PATH environement variable
+This test check if you are using folders from the environement variable $PATH.
 We are changing the actual PATH by PATH=${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1:${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2
 And executing the commande display_name1 display_name2 located inside those folders
-This test use the ABSOLUTE PATH
+This test use the ABSOLUTE PATH for binaries
 ### What is done before test
 
 ```bash
@@ -64,5 +64,6 @@ The following binaries may appear in this test:
 * **./display_pwd** -> A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`.
 * **./exit_with_status** -> A binary that immediately exits with the status given as first argument.
 * **./read_on_stdin** -> A binary that reads on standard entry and write each line on standard output suffixed with the character `@` (e.g. same behavior as `cat -e` and the *newline* character). When `read(2)` returns `-1`, then the string `STDIN READ ERROR` is written on standard error.
+* **./write_on_stderr** -> A binary that writes on standard error the first given argument (the same behavior as `echo` but with only one argument) and exits with an error status code given as second argument. If no argument is given, it writes the string "write on stderr" and exit with status `1`.
 * **./write_on_stdout** -> A binary that writes on standard output the first given argument (the same behavior as `echo` but with only one argument). If no argument is given, it writes the string "write on stdout".
 * **./write_on_stdout_and_stderr** -> A binary that writes on standard output the first given argument, and writes on standard error the second given argument. If an argument is missing, it writes the strings "write on stdout" and "write on stderr".

@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **89 tests**.
+42ShellTester is currently packaged with **95 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -108,21 +108,28 @@ Also run pending tests.
     * **[semicolon/](spec/21sh/separators/semicolon)**
       * [001-two-commands-sequentially <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/separators/semicolon/001-two-commands-sequentially)
       * [002-n-commands-sequentially <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/separators/semicolon/002-n-commands-sequentially)
-      * [003-empty-commands-inline <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/separators/semicolon/003-empty-commands-inline)
-      * [004-empty-commands <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/separators/semicolon/004-empty-commands)
+      * [003-parse-error-empty-inline-command <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/separators/semicolon/003-parse-error-empty-inline-command)
+      * [004-parse-error-empty-command <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/separators/semicolon/004-parse-error-empty-command)
 * **[bonuses/](spec/bonuses)**
   * **[separators/](spec/bonuses/separators)**
     * **[and/](spec/bonuses/separators/and)**
       * [001-run-twice <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/and/001-run-twice)
       * [002-do-not-run-second <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/and/002-do-not-run-second)
-      * [003-parse-error-at-beginning <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/and/003-parse-error-at-beginning)
-      * [004-parse-error-at-end <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/and/004-parse-error-at-end)
+      * [003-run-until-succeeding <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/and/003-run-until-succeeding)
+      * [004-parse-error-at-beginning <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/and/004-parse-error-at-beginning)
       * [005-parse-error-too-much-symbol <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/and/005-parse-error-too-much-symbol)
+    * **[mixed/](spec/bonuses/separators/mixed)**
+      * [001-and-or <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/mixed/001-and-or)
+      * [002-and-or <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/mixed/002-and-or)
+      * [003-and-or <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/mixed/003-and-or)
+      * [004-or-and <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/mixed/004-or-and)
+      * [005-or-and <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/mixed/005-or-and)
+      * [006-or-and <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/mixed/006-or-and)
     * **[or/](spec/bonuses/separators/or)**
       * [001-run-first-only <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/or/001-run-first-only)
       * [002-run-second-only <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/or/002-run-second-only)
-      * [003-parse-error-at-beginning <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/or/003-parse-error-at-beginning)
-      * [004-parse-error-at-end <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/or/004-parse-error-at-end)
+      * [003-run-until-failing <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/or/003-run-until-failing)
+      * [004-parse-error-at-beginning <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/or/004-parse-error-at-beginning)
       * [005-parse-error-too-much-symbol <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/or/005-parse-error-too-much-symbol)
 * **[minishell/](spec/minishell)**
   * **[binary/](spec/minishell/binary)**
@@ -155,8 +162,8 @@ Also run pending tests.
       * [003-ignore-environment-1 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/003-ignore-environment-1)
       * [004-ignore-environment-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/004-ignore-environment-2)
       * [005-set-variables <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/005-set-variables)
-      * [006-unset-variables-1 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/006-unset-variables-1)
-      * [007-unset-variables-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/007-unset-variables-2)
+      * [006-unset-variables-1 <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/006-unset-variables-1)
+      * [007-unset-variables-2 <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/007-unset-variables-2)
       * **[calling-builtins/](spec/minishell/builtins/env/calling-builtins)**
         * [001-cd-HOME-without-environment <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/calling-builtins/001-cd-HOME-without-environment)
       * **[multiple-options/](spec/minishell/builtins/env/multiple-options)**
@@ -274,6 +281,7 @@ Find the available list of support binaries bellow:
 * **`./display_pwd`**: A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`.
 * **`./exit_with_status`**: A binary that immediately exits with the status given as first argument.
 * **`./read_on_stdin`**: A binary that reads on standard entry and write each line on standard output suffixed with the character `@` (e.g. same behavior as `cat -e` and the *newline* character). When `read(2)` returns `-1`, then the string `STDIN READ ERROR` is written on standard error.
+* **`./write_on_stderr`**: A binary that writes on standard error the first given argument (the same behavior as `echo` but with only one argument) and exits with an error status code given as second argument. If no argument is given, it writes the string "write on stderr" and exit with status `1`.
 * **`./write_on_stdout`**: A binary that writes on standard output the first given argument (the same behavior as `echo` but with only one argument). If no argument is given, it writes the string "write on stdout".
 * **`./write_on_stdout_and_stderr`**: A binary that writes on standard output the first given argument, and writes on standard error the second given argument. If an argument is missing, it writes the strings "write on stdout" and "write on stderr".
 
