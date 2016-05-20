@@ -1,6 +1,6 @@
-# 002-append-twice-together
+# 003-append-twice-together-with-whitespaces
 
-*[spec > 21sh > redirections > outputs > appending > multiple](..) > 002-append-twice-together*
+*[spec > 21sh > redirections > outputs > appending > multiple](..) > 003-append-twice-together-with-whitespaces*
 
 A double right redirection opens the file with the oflag `O_APPEND`, so that its size is not truncated to 0 and output is written at the end of file. If the file does not exist, it is created.
 In this test, twice outputs are appended to the same file.
@@ -14,45 +14,29 @@ rm -f "new_file_stderr_and_stdout"
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_1_1 ${GLOBAL_TOKEN}_1_2 &>> new_file_stderr_and_stdout
-./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_2_1 ${GLOBAL_TOKEN}_2_2 &>>	new_file_stderr_and_stdout
-./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_3_1 ${GLOBAL_TOKEN}_3_2 &>>	  	new_file_stderr_and_stdout
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_stdout ${GLOBAL_TOKEN}_stderr &>>new_file_stderr_and_stdout
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex "${GLOBAL_TOKEN}_1_1"
-expected_to_not match_regex "${GLOBAL_TOKEN}_2_1"
-expected_to_not match_regex "${GLOBAL_TOKEN}_3_1"
-expected_to_not match_regex "${GLOBAL_TOKEN}_1_2"
-expected_to_not match_regex "${GLOBAL_TOKEN}_2_2"
-expected_to_not match_regex "${GLOBAL_TOKEN}_3_2"
+expected_to_not match_regex "${GLOBAL_TOKEN}_stdout"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to_not match_regex "${GLOBAL_TOKEN}_1_1"
-expected_to_not match_regex "${GLOBAL_TOKEN}_2_1"
-expected_to_not match_regex "${GLOBAL_TOKEN}_3_1"
-expected_to_not match_regex "${GLOBAL_TOKEN}_1_2"
-expected_to_not match_regex "${GLOBAL_TOKEN}_2_2"
-expected_to_not match_regex "${GLOBAL_TOKEN}_3_2"
+expected_to_not match_regex "${GLOBAL_TOKEN}_stderr"
 
 ```
 
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_1_1$"
-expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_2_1$"
-expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_3_1$"
-expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_1_2$"
-expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_2_2$"
-expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_3_2$"
+expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_stdout$"
+expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_stderr$"
 
 ```
 

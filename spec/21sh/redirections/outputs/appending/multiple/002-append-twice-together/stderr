@@ -1,6 +1,1 @@
-expected_to_not match_regex "${GLOBAL_TOKEN}_1_1"
-expected_to_not match_regex "${GLOBAL_TOKEN}_2_1"
-expected_to_not match_regex "${GLOBAL_TOKEN}_3_1"
-expected_to_not match_regex "${GLOBAL_TOKEN}_1_2"
-expected_to_not match_regex "${GLOBAL_TOKEN}_2_2"
-expected_to_not match_regex "${GLOBAL_TOKEN}_3_2"
+expected_to_not match_regex "${GLOBAL_TOKEN}_stderr"
