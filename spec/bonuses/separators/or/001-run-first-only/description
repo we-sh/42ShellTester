@@ -1,1 +1,1 @@
-The purpose of this test is to check if '||' operator works with two valid commands.
+The purpose of this test is to check that the OR operator `||` makes the right command to not be executed if the left one exits with a success status.

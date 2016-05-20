@@ -1,2 +1,2 @@
 might_not be_empty
-might match_regex "[Ss]yntax error"
+might match_regex "([Ss]yntax|[Pp]arse) error"

@@ -1,1 +1,1 @@
-might match_regex LAST_TOKEN
+might match_regex "${GLOBAL_TOKEN}"

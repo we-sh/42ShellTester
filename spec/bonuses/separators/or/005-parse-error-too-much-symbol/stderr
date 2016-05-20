@@ -1,2 +1,3 @@
 might_not be_empty
-might have_nb_of_lines 2
+might match_regex "([Ss]yntax|[Pp]arse) error"
+

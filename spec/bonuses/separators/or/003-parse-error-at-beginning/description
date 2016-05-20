@@ -1,2 +1,3 @@
 Parsing test.
-The purpose of this test is to check if '||' operator doesn't print the second command if there is no command before ||.
+The purpose of this test is to check that the OR operator `||` must be placed after a valid command.
+If not, the Shell should display an error and exit with an error status code.

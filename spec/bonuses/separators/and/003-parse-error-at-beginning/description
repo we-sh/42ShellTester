@@ -1,3 +1,3 @@
 Parsing test.
-The purpose of this test is to check that the AND operator `&&` must be placed after a valid valid command.
+The purpose of this test is to check that the AND operator `&&` must be placed after a valid command.
 If not, the Shell should display an error and exit with an error status code.
