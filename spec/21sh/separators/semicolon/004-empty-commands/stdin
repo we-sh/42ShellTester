@@ -1,5 +1,0 @@
-;
-;
-;
-;
-/bin/echo ${GLOBAL_TOKEN}

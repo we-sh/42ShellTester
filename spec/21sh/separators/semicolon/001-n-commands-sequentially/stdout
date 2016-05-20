@@ -1,4 +1,0 @@
-expected_to match_regex FIRST_TOKEN$
-expected_to match_regex SECOND_TOKEN$
-expected_to match_regex THIRD_TOKEN$
-expected_to match_regex FOURTH_TOKEN$

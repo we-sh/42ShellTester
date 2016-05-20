@@ -1,0 +1,1 @@
+The purpose of this test is to check that the semicolon separator `;` makes two inline commands to be executed sequentially.
