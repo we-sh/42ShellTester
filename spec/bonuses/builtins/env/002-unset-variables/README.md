@@ -1,13 +1,12 @@
-# 006-unset-variables-1
+# 002-unset-variables
 
-*[spec > minishell > builtins > env](..) > 006-unset-variables-1*
+*[spec > bonuses > builtins > env](..) > 002-unset-variables*
 
-The purpose of this test is to check if env can takes parameters with "-u" to remove environments variables.### What is done before test
+The purpose of this test is to check that the builtin `env` implement the option `-u` to unset environment variables.
+### What is done before test
 
 ```bash
-rm -f ./display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
-export TESTVARIABLE=TOKEN
+export TESTVARIABLE="${GLOBAL_TOKEN}"
 
 ```
 
@@ -21,16 +20,17 @@ env -u HOME -u PATH -u TESTVARIABLE ./display_env
 ### What is expected on standard output
 
 ```bash
-might_not match_regex "HOME="
-might_not match_regex "PATH="
-might_not match_regex "TESTVARIABLE="
+expected_to_not match_regex "HOME="
+expected_to_not match_regex "PATH="
+expected_to_not match_regex "TESTVARIABLE="
 
 ```
 
 ### What is expected on error output
 
 ```bash
-might be_empty
+expected_to be_empty
+
 ```
 
 ### Variables

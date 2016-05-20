@@ -2,15 +2,8 @@
 
 *[spec > minishell > builtins > env](..) > 003-ignore-environment-1*
 
-The purpose of this test is to check the implementation of env -i.
-We are using a binary which have to display environment variable. But we a launching this binary with env -i, the output is suppose to be empty.### What is done before test
-
-```bash
-rm -f ./display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
-
-```
-
+The purpose of this test is to check the implementation of `env -i`.
+We are using a binary which have to display environment variable. But we a launching this binary with env -i, the output is suppose to be empty.
 ### Shell commands that are sent to the standard entry
 
 ```bash

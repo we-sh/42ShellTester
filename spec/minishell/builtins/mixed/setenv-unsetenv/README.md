@@ -1,6 +1,5 @@
 # setenv-unsetenv
 
-*[spec > minishell > multi-builtins](..) > setenv-unsetenv*
+*[spec > minishell > builtins > mixed](..) > setenv-unsetenv*
 
-* [001-basic-unsetenv-and-setenv](./001-basic-unsetenv-and-setenv)
-* [002-unsetenv-all-and-setenv](./002-unsetenv-all-and-setenv)
+* [001-unsetenv-and-setenv](./001-unsetenv-and-setenv)

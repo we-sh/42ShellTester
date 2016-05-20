@@ -8,22 +8,25 @@ Thereafter we are unseting inside the tested shell. We are using env to check if
 ### What is done before test
 
 ```bash
+# unset all variables
 for VARIABLE in $(env | awk 'BEGIN {FS="="} {print $1}'); do unset "${VARIABLE}"; done;
-export SSH_AUTH_SOCK=test
+
+export VARTEST="${GLOBAL_TOKEN}"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-unsetenv SSH_AUTH_SOCK
-env
+unsetenv VARTEST
+./display_env
+
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex $SSH_AUTH_SOCK
+expected_to_not match_regex "VARTEST="
 
 ```
 

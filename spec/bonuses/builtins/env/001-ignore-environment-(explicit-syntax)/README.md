@@ -1,17 +1,9 @@
-# 004-ignore-environment-2
+# 001-ignore-environment-(explicit-syntax)
 
-*[spec > minishell > builtins > env](..) > 004-ignore-environment-2*
+*[spec > bonuses > builtins > env](..) > 001-ignore-environment-(explicit-syntax)*
 
-The purpose of this test is to check the implementation of env "--ignore-environment". 
+The purpose of this test is to check the implementation of the option `-i` with the explicit syntax `--ignore-environment`.
 We are using a binary which have to display environment variable. But we a launching this binary with env -i, the output is suppose to be empty.
-### What is done before test
-
-```bash
-rm -f ./display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
-
-```
-
 ### Shell commands that are sent to the standard entry
 
 ```bash

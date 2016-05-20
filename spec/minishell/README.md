@@ -5,4 +5,3 @@
 * [binary](./binary)
 * [builtins](./builtins)
 * [misc](./misc)
-* [multi-builtins](./multi-builtins)

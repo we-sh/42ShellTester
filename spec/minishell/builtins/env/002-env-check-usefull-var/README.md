@@ -2,11 +2,12 @@
 
 *[spec > minishell > builtins > env](..) > 002-env-check-usefull-var*
 
-The purpose of this test is to check if basic environment variable are stored well.
-We add a special variable before the exectution### What is done before test
+The purpose of this test is to check that basic environment variables are well stored.
+We add a special variable to the environment before the execution.
+### What is done before test
 
 ```bash
-export TEST_42SHTEST=token1;
+export TEST_42SHTEST="${GLOBAL_TOKEN}"
 
 ```
 
@@ -19,20 +20,10 @@ env
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex PATH=
-expected_to match_regex PATH=${PATH}
-
-expected_to match_regex PWD=
-expected_to match_regex PWD=${PWD}
-
-expected_to match_regex OLDPWD=
-expected_to match_regex OLDPWD=${OLDPWD}
-
-expected_to match_regex HOME=
-expected_to match_regex HOME=${HOME}
-
-expected_to match_regex TEST_42SHTEST=
-expected_to match_regex TEST_42SHTEST=token1
+expected_to match_regex "PATH=${PATH}"
+expected_to match_regex "PWD=${PWD}"
+expected_to match_regex "HOME=${HOME}"
+expected_to match_regex "TEST_42SHTEST=${GLOBAL_TOKEN}"
 
 ```
 

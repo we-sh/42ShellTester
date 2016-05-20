@@ -2,18 +2,11 @@
 
 *[spec > minishell > builtins > env > multiple-options](..) > 001-ignore-environment-and-set-variable*
 
-The purpose of this test is to check if env -i works if we use a second argument to set an environment variable, we are also checking if this command unset environments variables for a given binary.### What is done before test
-
-```bash
-rm -f ./display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
-
-```
-
+The purpose of this test is to check that `env -i` works if we use a second argument to set an environment variable, we are also checking if this command unset environments variables for a given binary.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env -i TESTVARIABLE=TOKEN ./display_env
+env -i TESTVARIABLE=${GLOBAL_TOKEN} ./display_env
 
 ```
 
@@ -22,7 +15,7 @@ env -i TESTVARIABLE=TOKEN ./display_env
 ```bash
 expected_to have_nb_of_lines 3
 expected_to match_regex "START DISPLAYING ENVIRONMENT VARIABLES$"
-expected_to match_regex "TESTVARIABLE=TOKEN$"
+expected_to match_regex "TESTVARIABLE=${GLOBAL_TOKEN}$"
 expected_to match_regex "END DISPLAYING ENVIRONMENT VARIABLES$"
 
 ```

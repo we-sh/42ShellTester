@@ -1,33 +1,41 @@
-# 002-unsetenv-all-and-setenv
+# 001-unsetenv-and-setenv
 
-*[spec > minishell > multi-builtins > setenv-unsetenv](..) > 002-unsetenv-all-and-setenv*
+*[spec > minishell > builtins > mixed > setenv-unsetenv](..) > 001-unsetenv-and-setenv*
 
-The purpose of this test is to check if your shell is setting and unsetting multiples environments variables correctly.
-This test start without any environment variable.
-Be carefull we are using the following syntax for setenv
-setenv KEY=value### What is done before test
+The purpose of this test is to check that your Shell sets and unsets multiple environment variables.
+This test starts with an empty environment and use the syntax `setenv KEY [value]`.
+### What is done before test
 
 ```bash
-env > stored_env;
+# unset all variables
 for VARIABLE in $(env | awk 'BEGIN {FS="="} {print $1}'); do unset "${VARIABLE}"; done;
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-setenv TEST=test
-setenv TEST test
-unsetenv TEST
-setenv TEST2=ok
-setenv USER=42shtests
-env
+setenv TEST1 ${GLOBAL_TOKEN}_TEST1
+unsetenv TEST1
+setenv TEST2 ${GLOBAL_TOKEN}_TEST2
+setenv USER ${GLOBAL_TOKEN}_USER
+./display_env
+
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex TEST2=ok$
-expected_to match_regex USER=42shtests$
+expected_to_not match_regex "TEST1="
+expected_to match_regex "TEST2=${GLOBAL_TOKEN}_TEST2$"
+expected_to match_regex "USER=${GLOBAL_TOKEN}_USER$"
+
+```
+
+### What is expected on error output
+
+```bash
+expected_to be_empty
 
 ```
 

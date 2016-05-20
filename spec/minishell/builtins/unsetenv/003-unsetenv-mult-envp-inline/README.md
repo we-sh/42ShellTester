@@ -1,33 +1,35 @@
-# 003-unsetenv-mult-argv-inline
+# 003-unsetenv-mult-envp-inline
 
-*[spec > minishell > builtins > unsetenv](..) > 003-unsetenv-mult-argv-inline*
+*[spec > minishell > builtins > unsetenv](..) > 003-unsetenv-mult-envp-inline*
 
 This test was made to check if we can unset multiple arguments INLINE.
 So we unset all the environment variables inside the tester environment and set a 3 new variables.
 Thereafter we are unseting all of them INLINE inside the tested shell.### What is done before test
 
 ```bash
+# unset all variables
 for VARIABLE in $(env | awk 'BEGIN {FS="="} {print $1}'); do unset "${VARIABLE}"; done;
-export UN=un
-export DEUX=deux
-export TROIS=trois
+
+export ONE="${GLOBAL_TOKEN}_1"
+export TWO="${GLOBAL_TOKEN}_2"
+export THREE="${GLOBAL_TOKEN}_3"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-unsetenv UN DEUX TROIS
-env
+unsetenv ONE TWO THREE
+./display_env
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex "UN"
-expected_to_not match_regex "DEUX"
-expected_to_not match_regex "TROIS"
+expected_to_not match_regex "ONE="
+expected_to_not match_regex "TWO="
+expected_to_not match_regex "THREE="
 
 ```
 
