@@ -76,9 +76,9 @@ Also run pending tests.
       * [004-no-such-file <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/inputs/004-no-such-file)
     * **[outputs/](spec/21sh/redirections/outputs)**
       * **[appending/](spec/21sh/redirections/outputs/appending)**
-        * [001-append-default-to-file](spec/21sh/redirections/outputs/appending/001-append-default-to-file)
-        * [002-append-stdout-to-file](spec/21sh/redirections/outputs/appending/002-append-stdout-to-file)
-        * [003-append-stderr-to-file](spec/21sh/redirections/outputs/appending/003-append-stderr-to-file)
+        * [001-append-default-to-file <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/001-append-default-to-file)
+        * [002-append-stdout-to-file <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/002-append-stdout-to-file)
+        * [003-append-stderr-to-file <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/003-append-stderr-to-file)
         * **[multiple/](spec/21sh/redirections/outputs/appending/multiple)**
           * [001-append-twice-separately <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/multiple/001-append-twice-separately)
           * [002-append-twice-together <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/multiple/002-append-twice-together)
