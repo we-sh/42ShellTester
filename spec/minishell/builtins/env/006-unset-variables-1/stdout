@@ -1,3 +1,0 @@
-might_not match_regex "HOME="
-might_not match_regex "PATH="
-might_not match_regex "TESTVARIABLE="

@@ -1,0 +1,1 @@
+The purpose of this test is to check that the builtin `env` implements the option `-u` with the explicit syntax `--unset` to unset environment variables.

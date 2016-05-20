@@ -1,2 +1,0 @@
-The purpose of this test is to check if calling cd with env -i throw an error.
-Cd is suppose to throw an error because in this case $HOME is not suppose to be set.

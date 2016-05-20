@@ -1,0 +1,3 @@
+expected_to_not match_regex "HOME="
+expected_to_not match_regex "PATH="
+expected_to_not match_regex "TESTVARIABLE="

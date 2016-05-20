@@ -1,4 +1,4 @@
 expected_to have_nb_of_lines 3
 expected_to match_regex "START DISPLAYING ENVIRONMENT VARIABLES$"
-expected_to match_regex "TESTVARIABLE=TOKEN$"
+expected_to match_regex "TESTVARIABLE=${GLOBAL_TOKEN}$"
 expected_to match_regex "END DISPLAYING ENVIRONMENT VARIABLES$"

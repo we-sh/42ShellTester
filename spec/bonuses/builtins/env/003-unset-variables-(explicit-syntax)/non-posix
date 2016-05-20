@@ -1,0 +1,1 @@
+`env --unset` is not registered in the POSIX standard.

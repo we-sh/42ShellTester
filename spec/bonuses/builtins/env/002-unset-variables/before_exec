@@ -1,0 +1,1 @@
+export TESTVARIABLE="${GLOBAL_TOKEN}"

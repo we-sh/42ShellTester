@@ -1,2 +1,2 @@
-The purpose of this test is to check if basic environment variable are stored well.
-We add a special variable before the exectution
+The purpose of this test is to check that basic environment variables are well stored.
+We add a special variable to the environment before the execution.
