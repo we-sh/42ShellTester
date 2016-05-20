@@ -1,1 +1,1 @@
-./write_on_stdout ${GLOBAL_TOKEN}_1 &&& ./write_on_stdout ${GLOBAL_TOKEN}_2
+./write_on_stdout ${GLOBAL_TOKEN} &&& ./write_on_stdout ${GLOBAL_TOKEN}

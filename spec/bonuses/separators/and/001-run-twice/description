@@ -1,1 +1,1 @@
-The purpose of this test is to check if '&&' operator works with two valid commands.
+The purpose of this test is to check that the AND operator `&&` works with two valid commands.

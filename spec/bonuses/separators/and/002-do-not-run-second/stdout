@@ -1,2 +1,2 @@
+might_not match_regex ${GLOBAL_TOKEN}
 might be_empty
-might_not match_regex LAST_TOKEN

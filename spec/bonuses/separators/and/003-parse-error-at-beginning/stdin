@@ -1,1 +1,1 @@
-&& /bin/echo TOKEN
+&& ./write_on_stdout ${GLOBAL_TOKEN}

@@ -1,1 +1,1 @@
-/bin/echo FIRST_TOKEN && /bin/echo LAST_TOKEN
+./write_on_stdout ${GLOBAL_TOKEN}_LEFT && ./write_on_stdout ${GLOBAL_TOKEN}_RIGHT

@@ -1,2 +1,2 @@
-expected_to_not be_empty
+might_not be_empty
 might match_regex "[Ss]yntax error"

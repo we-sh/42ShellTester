@@ -1,3 +1,3 @@
 Parsing test.
 The purpose of this test is to check that more than two '&' operators are detected as a syntax error.
-It should not execute the two commands `write_on_stdout` but display an error.
+It should not execute the two commands `write_on_stdout` but display an error and exit with an error status code.

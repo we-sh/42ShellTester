@@ -1,1 +1,1 @@
-/bin/echo_invalid FIRST_TOKEN && /bin/echo LAST_TOKEN
+./exit_with_status "42" && ./write_on_stdout ${GLOBAL_TOKEN}

@@ -1,2 +1,2 @@
-might match_regex FIRST_TOKEN
-might match_regex LAST_TOKEN
+might match_regex "${GLOBAL_TOKEN}_LEFT"
+might match_regex "${GLOBAL_TOKEN}_RIGHT"
