@@ -1,2 +1,1 @@
-rm -f ./display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
+export VARTEST1="OLD_VALUE"

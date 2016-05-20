@@ -2,27 +2,27 @@
 
 *[spec > minishell > builtins > env](..) > 005-set-variables*
 
-The purpose of this test is to check if env can takes parameters as arguments and if it adds them to the environment.### What is done before test
+The purpose of this test is to check that the builtin `env` can modify or set multiple environment variables before executing the given command.
+### What is done before test
 
 ```bash
-rm -f ./display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
+export VARTEST1="OLD_VALUE"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env 42SHTESTS1=TOKEN1 42SHTESTS2=TOKEN2 42SHTESTS3=TOKEN3 ./display_env
+env VARTEST1=${GLOBAL_TOKEN}_1 VARTEST2=${GLOBAL_TOKEN}_2 VARTEST3=${GLOBAL_TOKEN}_3 ./display_env
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "42SHTESTS1=TOKEN1$"
-expected_to match_regex "42SHTESTS2=TOKEN2$"
-expected_to match_regex "42SHTESTS3=TOKEN3$"
+expected_to match_regex "VARTEST1=${GLOBAL_TOKEN}_1$"
+expected_to match_regex "VARTEST2=${GLOBAL_TOKEN}_2$"
+expected_to match_regex "VARTEST3=${GLOBAL_TOKEN}_3$"
 
 ```
 
