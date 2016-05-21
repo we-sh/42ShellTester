@@ -2,7 +2,7 @@
 
 *[spec > 21sh > pipe](..) > 005-synchronous-pipeline*
 
-The purpose of this test is to check that the Shell waits for the last command specified in a pipeline to complete, before continuing its execution. In this test, the first command of the pipeline takes a longer time to complete than the second command, so that the output should appear in a reverse order. The Shell should wait for twice processes to complete before launching the third command.
+The purpose of this test is to check that the Shell waits for all commands specified in a pipeline to complete, before continuing its execution. In this test, the first command of the pipeline takes a longer time to complete than the second command, so that the output should appear in a reverse order. The Shell should wait for twice processes to complete before launching the third command.
 ### Shell commands that are sent to the standard entry
 
 ```bash
