@@ -1,45 +1,34 @@
-# 001-binary-path-relative
+# 005-synchronous-pipeline
 
-*[spec > minishell > binary](..) > 001-binary-path-relative*
+*[spec > 21sh > pipe](..) > 005-synchronous-pipeline*
 
-This test check if you are using folders from the environement variable $PATH.
-We are changing the actual PATH by PATH=${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1:${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2
-And executing the commande display_name1 and display_name2 located inside those folders
-### What is done before test
-
-```bash
-mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath
-mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1 ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2
-rm -f ./display_name
-rm -f ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name1
-rm -f ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name2
-gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/display-program-name/main.c" -o ./display_name
-cp ./display_name ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name1
-cp ./display_name ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2/display_name2
-export PATH=${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1:NONE:${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2
-
-```
-
+The purpose of this test is to check that the Shell waits for the last command specified in a pipeline to complete, before continuing its execution. In this test, the first command of the pipeline takes a longer time to complete than the second command, so that the output should appear in a reverse order. The Shell should wait for twice processes to complete before launching the third command.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-display_name1
-display_name2
+./sleep_and_write_on_stderr 1 ${GLOBAL_TOKEN}_FIRST | ./sleep_and_write_on_stderr 0 ${GLOBAL_TOKEN}_SECOND
+./sleep_and_write_on_stderr 0 ${GLOBAL_TOKEN}_LAST
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "display_name1"
-expected_to match_regex "display_name2"
+expected_to be_empty
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to be_empty
+expected_to match_regex "${GLOBAL_TOKEN}_SECOND${GLOBAL_TOKEN}_FIRST${GLOBAL_TOKEN}_LAST"
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to exit_with_status "0"
 
 ```
 

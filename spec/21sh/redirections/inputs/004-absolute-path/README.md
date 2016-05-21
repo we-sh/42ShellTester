@@ -1,38 +1,30 @@
-# 001-binary-path-relative
+# 004-absolute-path
 
-*[spec > minishell > binary](..) > 001-binary-path-relative*
+*[spec > 21sh > redirections > inputs](..) > 004-absolute-path*
 
-This test check if you are using folders from the environement variable $PATH.
-We are changing the actual PATH by PATH=${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1:${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2
-And executing the commande display_name1 and display_name2 located inside those folders
+The purpose of this test is to check that using an absolute path to a file within the STDIN redirection `<` results in the ability of the child process to read on this file through the file descriptor STDIN.
 ### What is done before test
 
 ```bash
-mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath
-mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1 ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2
-rm -f ./display_name
-rm -f ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name1
-rm -f ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name2
-gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/display-program-name/main.c" -o ./display_name
-cp ./display_name ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name1
-cp ./display_name ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2/display_name2
-export PATH=${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1:NONE:${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2
+echo "${GLOBAL_TOKEN}_LINE_1" > simple_text_file
+echo "${GLOBAL_TOKEN}_LINE_2" >> simple_text_file
+echo "${GLOBAL_TOKEN}_LINE_3" >> simple_text_file
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-display_name1
-display_name2
+./read_on_stdin <${GLOBAL_TMP_DIRECTORY}/simple_text_file
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "display_name1"
-expected_to match_regex "display_name2"
+expected_to match_regex "${GLOBAL_TOKEN}_LINE_1"
+expected_to match_regex "${GLOBAL_TOKEN}_LINE_2"
+expected_to match_regex "${GLOBAL_TOKEN}_LINE_3"
 
 ```
 
@@ -40,6 +32,13 @@ expected_to match_regex "display_name2"
 
 ```bash
 expected_to be_empty
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to exit_with_status "0"
 
 ```
 
