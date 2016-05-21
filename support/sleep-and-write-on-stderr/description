@@ -1,0 +1,1 @@
+A binary that sleeps for a duration in seconds given as first argument and then writes on STDERR the string given as second argument without EOL.

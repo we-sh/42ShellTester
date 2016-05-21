@@ -1,0 +1,1 @@
+./read_on_stdin <${GLOBAL_TMP_DIRECTORY}/simple_text_file

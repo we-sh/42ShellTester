@@ -1,1 +1,1 @@
-The purpose of this test is to check if '<&-' is closing STDIN.
+The purpose of this test is to check that using the closing operator `&-` within the STDIN redirection `<` results in a closed standard input, so that `read(2)` results in a read error.

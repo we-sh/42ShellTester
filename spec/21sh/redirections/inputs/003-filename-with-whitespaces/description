@@ -1,2 +1,2 @@
-The purpose of this test is to check if '<' is redirecting the associate file data into the STDIN binary.
-We are adding space between the binary, the symbole '<' and the file. So your parsing is also test inside this test.
+The purpose of this test is to check that using a file path `simple_text_file` within the STDIN redirection `<` results in the ability of the child process to read on this file through the file descriptor STDIN.
+The file path is specified in a separated field.

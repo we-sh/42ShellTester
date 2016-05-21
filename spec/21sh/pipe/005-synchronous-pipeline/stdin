@@ -1,0 +1,2 @@
+./sleep_and_write_on_stderr 1 ${GLOBAL_TOKEN}_FIRST | ./sleep_and_write_on_stderr 0 ${GLOBAL_TOKEN}_SECOND
+./sleep_and_write_on_stderr 0 ${GLOBAL_TOKEN}_LAST
