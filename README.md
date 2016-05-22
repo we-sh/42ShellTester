@@ -45,13 +45,17 @@ Run tests that are POSIX compliant only (run all by default).
 
 Run tests that are marked as « hard » (omitted by default).
 
-##### `--show-success`
-
-Also display tests that succeed (hidden by default).
-
 ##### `--pending`
 
 Also run pending tests.
+
+##### `--all`
+
+Equivalent to use the two options `--pending` and `--hard` together.
+
+##### `--show-success`
+
+Also display tests that succeed (hidden by default).
 
 ## List of tests
 

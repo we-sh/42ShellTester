@@ -34,6 +34,7 @@ GLOBAL_SHOW_SUCCESS=0
 GLOBAL_RUN_POSIX_ONLY=0
 GLOBAL_RUN_PENDING_TESTS=0
 GLOBAL_RUN_HARD_TESTS=0
+GLOBAL_RUN_ALL_TESTS=0
 GLOBAL_INVALID_OPTION=0
 C_BOLD="\033[37;1m"
 C_RED="\033[31m\033[38;5;160m"
@@ -66,6 +67,9 @@ while [ ! -z "${1}" ]; do
         ;;
       "--hard")
         GLOBAL_RUN_HARD_TESTS=1
+        ;;
+      "--all")
+        GLOBAL_RUN_ALL_TESTS=1
         ;;
       *)
         printf "%s\n" "Invalid option: ${1}"
