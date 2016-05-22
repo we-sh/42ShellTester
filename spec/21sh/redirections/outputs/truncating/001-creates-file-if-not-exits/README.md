@@ -34,7 +34,7 @@ expected_to be_empty
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file "new_file" with_regexp "${GLOBAL_TOKEN}"
+expected_to create_file "new_file" matching_regex "${GLOBAL_TOKEN}"
 expected_to create_file "new_file" with_nb_of_lines "1"
 
 ```

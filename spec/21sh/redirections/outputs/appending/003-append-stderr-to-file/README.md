@@ -35,8 +35,8 @@ expected_to_not match_regex "${GLOBAL_TOKEN}_stderr"
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file "append_file_stderr" with_regexp "${GLOBAL_TOKEN}_first"
-expected_to create_file "append_file_stderr" with_regexp "${GLOBAL_TOKEN}_stderr"
+expected_to create_file "append_file_stderr" matching_regex "${GLOBAL_TOKEN}_first"
+expected_to create_file "append_file_stderr" matching_regex "${GLOBAL_TOKEN}_stderr"
 
 ```
 

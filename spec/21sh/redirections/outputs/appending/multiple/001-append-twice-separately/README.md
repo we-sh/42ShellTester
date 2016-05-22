@@ -36,10 +36,10 @@ expected_to_not match_regex "${GLOBAL_TOKEN}_stderr_second"
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file "append_file_stdout" with_regexp "${GLOBAL_TOKEN}_stdout_first$"
-expected_to create_file "append_file_stdout" with_regexp "${GLOBAL_TOKEN}_stdout_second$"
-expected_to create_file "append_file_stderr" with_regexp "${GLOBAL_TOKEN}_stderr_first$"
-expected_to create_file "append_file_stderr" with_regexp "${GLOBAL_TOKEN}_stderr_second$"
+expected_to create_file "append_file_stdout" matching_regex "${GLOBAL_TOKEN}_stdout_first$"
+expected_to create_file "append_file_stdout" matching_regex "${GLOBAL_TOKEN}_stdout_second$"
+expected_to create_file "append_file_stderr" matching_regex "${GLOBAL_TOKEN}_stderr_first$"
+expected_to create_file "append_file_stderr" matching_regex "${GLOBAL_TOKEN}_stderr_second$"
 
 ```
 

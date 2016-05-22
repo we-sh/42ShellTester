@@ -2,39 +2,41 @@
 
 *[spec > 21sh > redirections > outputs > truncating > stderr](..) > 001-works*
 
-The purpose of this test is to check if '2>' redirect STDERR to a file.
-We are using ls with the parent folder and an invalid folder as arguments. The output should be the content of the 42ShellTester directory. And to NOT return error from the invalid folder on the standard output.### What is done before test
+The purpose of this test is to check that redirecting the standard error STDERR to a file `2>` works. In this test, the binary writes a token on each standard and error output, so that only the STDOUT is outputted and STDERR is written in a file `new_file_stderr`.
+### What is done before test
 
 ```bash
-rm -f new_file_stderr
+rm -f "./new_file_stderr"
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-/bin/ls .. invalid_folder 2>new_file_stderr
+./write_on_stdout_and_stderr ${GLOBAL_TOKEN}_STDOUT ${GLOBAL_TOKEN}_STDERR 2>new_file_stderr
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex "No such file or directory"
-expected_to match_regex "42shTests.sh"
+expected_to match_regex "${GLOBAL_TOKEN}_STDOUT"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to be_empty
+expected_to_not match_regex "${GLOBAL_TOKEN}_STDERR"
+
 ```
 
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file new_file_stderr with_regexp "No such file or directory"
-expected_to create_file new_file_stderr with_nb_of_lines 1
+expected_to create_file "new_file_stderr" matching_regex "${GLOBAL_TOKEN}_STDERR"
+expected_to create_file "new_file_stderr" with_nb_of_lines 1
+
 ```
 
 ### Variables

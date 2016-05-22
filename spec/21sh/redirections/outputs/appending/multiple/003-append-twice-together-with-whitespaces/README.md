@@ -47,12 +47,12 @@ expected_to_not match_regex "${GLOBAL_TOKEN}_3_2"
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_1_1$"
-expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_2_1$"
-expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_3_1$"
-expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_1_2$"
-expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_2_2$"
-expected_to create_file "new_file_stderr_and_stdout" with_regexp "${GLOBAL_TOKEN}_3_2$"
+expected_to create_file "new_file_stderr_and_stdout" matching_regex "${GLOBAL_TOKEN}_1_1$"
+expected_to create_file "new_file_stderr_and_stdout" matching_regex "${GLOBAL_TOKEN}_2_1$"
+expected_to create_file "new_file_stderr_and_stdout" matching_regex "${GLOBAL_TOKEN}_3_1$"
+expected_to create_file "new_file_stderr_and_stdout" matching_regex "${GLOBAL_TOKEN}_1_2$"
+expected_to create_file "new_file_stderr_and_stdout" matching_regex "${GLOBAL_TOKEN}_2_2$"
+expected_to create_file "new_file_stderr_and_stdout" matching_regex "${GLOBAL_TOKEN}_3_2$"
 
 ```
 

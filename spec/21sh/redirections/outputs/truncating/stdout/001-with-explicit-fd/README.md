@@ -26,8 +26,9 @@ expected_to_not match_regex TOKEN1
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file new_file with_regexp TOKEN1
+expected_to create_file new_file matching_regex TOKEN1
 expected_to create_file new_file with_nb_of_lines 1
+
 ```
 
 ### Variables
