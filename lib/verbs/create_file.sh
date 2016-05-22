@@ -16,14 +16,14 @@ run_verb_create_file()
       return 0
     else
       case "${EXPECTED_TO_ARGS[1]}" in
-        with_regexp)
+        matching_regex)
           if [ "$(awk -v regexp="${EXPECTED_TO_ARGS[2]}" '$0 ~ regexp {print}' "${EXPECTED_TO_ARGS[0]}")" == "" ]
           then
             return 1
           else
             return 0
           fi ;;
-        without_regexp)
+        not_matching_regex)
           if [ "$(awk -v regexp="${EXPECTED_TO_ARGS[2]}" '$0 ~ regexp {print}' "${EXPECTED_TO_ARGS[0]}")" == "" ]
           then
             return 0
