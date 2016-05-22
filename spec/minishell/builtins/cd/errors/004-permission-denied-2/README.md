@@ -7,7 +7,7 @@ The purpose of this test is to check that using a directory without any permissi
 
 ```bash
 if [ -d "./permission_denied" ]; then chmod 777 "./permission_denied"; fi
-rm -f "./permission_denied"
+rm -rf "./permission_denied"
 mkdir -m 0 "./permission_denied"
 
 ```
