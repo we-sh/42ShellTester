@@ -1,1 +1,0 @@
-The purpose of this test is to check if cd throw an error when we are passing a file which doesn't exit as argument.

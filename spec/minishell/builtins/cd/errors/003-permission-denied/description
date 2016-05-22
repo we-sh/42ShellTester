@@ -1,0 +1,1 @@
+The purpose of this test is to check that using a directory without any permission as first argument with the builtin `cd` results in error and not changing current directory.

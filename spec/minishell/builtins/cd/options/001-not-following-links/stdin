@@ -1,7 +1,3 @@
-cd -P subdirectory_link
-/bin/pwd
-${GLOBAL_TMP_DIRECTORY}/display_pwd
-
-cd -P subsubdirectory_link
-/bin/pwd
-${GLOBAL_TMP_DIRECTORY}/display_pwd
+cd -P sub_directory_link
+cd -P sub_sub_directory_link
+${GLOBAL_TMP_DIRECTORY}/display_env

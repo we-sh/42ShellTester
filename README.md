@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **95 tests**.
+42ShellTester is currently packaged with **99 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -64,7 +64,7 @@ Also run pending tests.
     * [002-chained-pipes <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/002-chained-pipes)
     * [003-many-chained-pipes <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/003-many-chained-pipes)
     * [004-without-surrounding-whitespaces <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/004-without-surrounding-whitespaces)
-    * [005-synchronous-pipeline <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/005-synchronous-pipeline)
+    * [005-asynchronous <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/005-asynchronous)
     * **[mixed/](spec/21sh/pipe/mixed)**
       * [001-exit-or-not-exit <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/001-exit-or-not-exit)
       * [002-cd-or-not-cd <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/002-cd-or-not-cd)
@@ -154,12 +154,16 @@ Also run pending tests.
       * [005-absolute-path <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/005-absolute-path)
       * [007-symbolic-link <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/007-symbolic-link)
       * [008-symbolic-link-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/008-symbolic-link-2)
-      * [009-following-links <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/009-following-links)
+      * [009-following-links <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/009-following-links)
       * **[errors/](spec/minishell/builtins/cd/errors)**
         * [001-not-a-directory <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/001-not-a-directory)
-        * [002-permission-denied <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/002-permission-denied)
-        * [003-too-many-symbolic-links-encountered <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/003-too-many-symbolic-links-encountered)
-        * [004-no-such-file-or-directory <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/004-no-such-file-or-directory)
+        * [002-not-a-directory-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/002-not-a-directory-2)
+        * [003-permission-denied <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/003-permission-denied)
+        * [004-permission-denied-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/004-permission-denied-2)
+        * [005-too-many-symbolic-links-encountered <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/005-too-many-symbolic-links-encountered)
+        * [006-too-many-symbolic-links-encountered-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/006-too-many-symbolic-links-encountered-2)
+        * [007-no-such-file-or-directory <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/007-no-such-file-or-directory)
+        * [008-no-such-file-or-directory-2 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/errors/008-no-such-file-or-directory-2)
       * **[options/](spec/minishell/builtins/cd/options)**
         * [001-not-following-links <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/options/001-not-following-links)
         * [002-oldpwd <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/options/002-oldpwd)
@@ -279,7 +283,7 @@ Find the available list of support binaries bellow:
 
 * **`./display_env`**: A binary that iterates on `**envp` and write each element on standard output.
 * **`./display_program_name`**: A binary that writes its name on standard ouput.
-* **`./display_pwd`**: A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`.
+* **`./display_pwd`**: A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`, encountered with the strings `PWD:` and `:PWD`.
 * **`./exit_with_status`**: A binary that immediately exits with the status given as first argument.
 * **`./read_on_stdin`**: A binary that reads on standard entry and write each line on standard output suffixed with the character `@` (e.g. same behavior as `cat -e` and the *newline* character). When `read(2)` returns `-1`, then the string `STDIN READ ERROR` is written on standard error.
 * **`./sleep_and_write_on_stderr`**: A binary that sleeps for a duration in seconds given as first argument and then writes on STDERR the string given as second argument without EOL.

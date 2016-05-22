@@ -1,4 +1,0 @@
-if [ -f no_such_file_or_directory ]; then rm -r no_such_file_or_directory; fi
-
-rm -f ./display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd

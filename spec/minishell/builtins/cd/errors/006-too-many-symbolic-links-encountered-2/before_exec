@@ -1,0 +1,4 @@
+rm -f "./symbolic_link1" "./symbolic_link2" "./symbolic_link3"
+ln -s "./symbolic_link1" "./symbolic_link2"
+ln -s "./symbolic_link2" "./symbolic_link3"
+ln -s "./symbolic_link3" "./symbolic_link1"

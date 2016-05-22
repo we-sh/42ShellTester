@@ -6,5 +6,5 @@
 * [002-chained-pipes](./002-chained-pipes)
 * [003-many-chained-pipes](./003-many-chained-pipes)
 * [004-without-surrounding-whitespaces](./004-without-surrounding-whitespaces)
-* [005-synchronous-pipeline](./005-synchronous-pipeline)
+* [005-asynchronous](./005-asynchronous)
 * [mixed](./mixed)

@@ -75,6 +75,8 @@ run_main()
       done
 
       (
+        SUBSHELL_EXIT_STATUS=
+
         if [ -f "${TEST}/before_exec" ]
         then
 
@@ -89,6 +91,22 @@ run_main()
         fi
 
         eval "${GLOBAL_PROG}" < "${GLOBAL_TMP_DIRECTORY}/stdin" 1> "${RESPONSE_STDOUT}.raw" 2> "${RESPONSE_STDERR}.raw"
+        SUBSHELL_EXIT_STATUS=${?}
+
+        if [ -f "${TEST}/after_exec" ]
+        then
+
+          local INDEX=0
+          local TOTAL=$(${AWK_PATH} 'END {print NR+1}' "${TEST}/after_exec")
+          while [ "$INDEX" -le "$TOTAL" ]
+          do
+            eval $(${AWK_PATH} -v INDEX="${INDEX}" 'NR == INDEX {print $0; exit}' "${TEST}/after_exec")
+            (( INDEX += 1 ))
+          done
+
+        fi
+
+        exit "${SUBSHELL_EXIT_STATUS}"
       )
       EXIT_STATUS=${?}
 
@@ -98,6 +116,8 @@ run_main()
       if [ "${GLOBAL_PROG_REFERENCE}" != "" ]
       then
         (
+          SUBSHELL_EXIT_STATUS=
+
           if [ -f "${TEST}/before_exec" ]
           then
 
@@ -112,6 +132,23 @@ run_main()
           fi
 
           eval "${GLOBAL_PROG_REFERENCE}" < "${GLOBAL_TMP_DIRECTORY}/stdin" 1> "${RESPONSE_REFERENCE_STDOUT}.raw" 2> "${RESPONSE_REFERENCE_STDERR}.raw"
+          SUBSHELL_EXIT_STATUS=${?}
+
+
+          if [ -f "${TEST}/after_exec" ]
+          then
+
+            local INDEX=0
+            local TOTAL=$(${AWK_PATH} 'END {print NR+1}' "${TEST}/after_exec")
+            while [ "$INDEX" -le "$TOTAL" ]
+            do
+              eval $(${AWK_PATH} -v INDEX="${INDEX}" 'NR == INDEX {print $0; exit}' "${TEST}/after_exec")
+              (( INDEX += 1 ))
+            done
+
+          fi
+
+          exit "${SUBSHELL_EXIT_STATUS}"
         )
         REFERENCE_EXIT_STATUS=${?}
 

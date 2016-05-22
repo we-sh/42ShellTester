@@ -1,2 +1,0 @@
-rm -f ./display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd

@@ -1,0 +1,1 @@
+The purpose of this test is to check that using a non-existing path as first argument with the builtin `cd` results in a Shell termination with an error status code.

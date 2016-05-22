@@ -1,3 +1,1 @@
-The purpose of this test is to check if cd follow symbolic link as argument.
-We had create a symbolic link to a subdirectory and a link to a subsubdirectory which will be arguments of cd.
-We are doing two tests there, check the before_exec and stdin files.
+The purpose of this test is to check that using symbolic links twice with the builtin `cd` results in a correct environment variable PWD. By default, the path to the current directory should be a non-resolved symbolic path.

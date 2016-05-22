@@ -1,0 +1,1 @@
+This is a hard test because of the trick needed to keep the symlink path to the current directory as the function `getcwd(3)` resolves symbolic links.

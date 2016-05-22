@@ -2,42 +2,30 @@
 
 *[spec > minishell > builtins > cd > options](..) > 001-not-following-links*
 
-The purpose of this test is to check if cd -P doesn't follow symbolic link as argument.
-We had create a symbolic link to a subdirectory and a link to a subsubdirectory which will be arguments of cd.
-We are doing two tests there, check the before_exec and stdin files.### What is done before test
+The purpose of this test is to check that using symbolic links twice with the builtin `cd` and the option `-P` results in a correct environment variable PWD. The option `-P` makes the Shell to resolve symbolic links.
+### What is done before test
 
 ```bash
-rm -fr subdirectory_link subdirectory
-mkdir -p subdirectory/subsubdirectory
-ln -s subdirectory subdirectory_link
-ln -s subsubdirectory subdirectory/subsubdirectory_link
-
-rm -f ./display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd
+rm -fr "./sub_directory_link" "./sub_directory"
+mkdir -p "./sub_directory/sub_sub_directory"
+ln -s "./sub_directory" "./sub_directory_link"
+ln -s "./sub_sub_directory" "./sub_directory/sub_sub_directory_link"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-cd -P subdirectory_link
-/bin/pwd
-${GLOBAL_TMP_DIRECTORY}/display_pwd
-
-cd -P subsubdirectory_link
-/bin/pwd
-${GLOBAL_TMP_DIRECTORY}/display_pwd
+cd -P sub_directory_link
+cd -P sub_sub_directory_link
+${GLOBAL_TMP_DIRECTORY}/display_env
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might_not match_regex "${GLOBAL_TMP_DIRECTORY}/subdirectory_link$"
-might match_regex "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory:PWD$"
-
-might_not match_regex "${GLOBAL_TMP_DIRECTORY}/subdirectory_link/subsubdirectory_link$"
-might match_regex "PWD:${GLOBAL_TMP_DIRECTORY}/subdirectory/subsubdirectory:PWD$"
+expected_to match_regex "PWD=${GLOBAL_TMP_DIRECTORY}/sub_directory/sub_sub_directory"
 
 ```
 
@@ -65,7 +53,7 @@ The following binaries may appear in this test:
 
 * **./display_env** -> A binary that iterates on `**envp` and write each element on standard output.
 * **./display_program_name** -> A binary that writes its name on standard ouput.
-* **./display_pwd** -> A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`.
+* **./display_pwd** -> A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`, encountered with the strings `PWD:` and `:PWD`.
 * **./exit_with_status** -> A binary that immediately exits with the status given as first argument.
 * **./read_on_stdin** -> A binary that reads on standard entry and write each line on standard output suffixed with the character `@` (e.g. same behavior as `cat -e` and the *newline* character). When `read(2)` returns `-1`, then the string `STDIN READ ERROR` is written on standard error.
 * **./sleep_and_write_on_stderr** -> A binary that sleeps for a duration in seconds given as first argument and then writes on STDERR the string given as second argument without EOL.

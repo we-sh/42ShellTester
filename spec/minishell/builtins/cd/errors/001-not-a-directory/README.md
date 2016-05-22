@@ -2,14 +2,11 @@
 
 *[spec > minishell > builtins > cd > errors](..) > 001-not-a-directory*
 
-The purpose of this test is to check if cd throw an error when we are using a file as argument.
+The purpose of this test is to check that using a file name as first argument with the builtin `cd` results in error and not changing current directory.
 ### What is done before test
 
 ```bash
-touch not_a_directory
-
-rm -f ./display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd
+touch "./not_a_directory"
 
 ```
 
@@ -24,7 +21,7 @@ ${GLOBAL_TMP_DIRECTORY}/display_pwd
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}:PWD$"
+expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}:PWD"
 
 ```
 
@@ -34,12 +31,6 @@ expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}:PWD$"
 expected_to_not be_empty
 might match_regex "[Nn]ot a directory"
 
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-might exit_with_status 1
 ```
 
 ### Variables
@@ -59,7 +50,7 @@ The following binaries may appear in this test:
 
 * **./display_env** -> A binary that iterates on `**envp` and write each element on standard output.
 * **./display_program_name** -> A binary that writes its name on standard ouput.
-* **./display_pwd** -> A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`.
+* **./display_pwd** -> A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`, encountered with the strings `PWD:` and `:PWD`.
 * **./exit_with_status** -> A binary that immediately exits with the status given as first argument.
 * **./read_on_stdin** -> A binary that reads on standard entry and write each line on standard output suffixed with the character `@` (e.g. same behavior as `cat -e` and the *newline* character). When `read(2)` returns `-1`, then the string `STDIN READ ERROR` is written on standard error.
 * **./sleep_and_write_on_stderr** -> A binary that sleeps for a duration in seconds given as first argument and then writes on STDERR the string given as second argument without EOL.

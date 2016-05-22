@@ -1,3 +1,1 @@
-The purpose of this test is to check if cd follow the symbolic link of a symbolic link as argument.
-We had create a symbolic link to the an other symb link of .. which will be the argument of cd.
-(Check the before_exec file for more information)
+The purpose of this test is to check that using a symbolic link as first argument with the builtin `cd` results in moving to the linked directory. In this test, the directory is linked with to chained symbolic links.
