@@ -1,14 +1,13 @@
-# 005-binary-test-wrong-path
+# 006-binary-undefined-path
 
-*[spec > minishell > binary](..) > 005-binary-test-wrong-path*
+*[spec > minishell > binary](..) > 006-binary-undefined-path*
 
-This test purpose is to check if your shell is not able to use binary with a wrong PATH
-We are changing the actual PATH by PATH=NULL
-And executing the commande ls
+The purpose of this test is to check that the Shell retrieves the default value of the environment variable PATH if not set. This test depends on the presence of the UNIX binary `ls`, located in a path within the default environment variable PATH.
 ### What is done before test
 
 ```bash
-export PATH="/"
+touch "${GLOBAL_TOKEN}"
+unset PATH
 
 ```
 
@@ -22,22 +21,21 @@ ls
 ### What is expected on standard output
 
 ```bash
-expected_to be_empty
+expected_to match_regex "${GLOBAL_TOKEN}"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to_not be_empty
-might match_regex "[Cc]ommand not found"
+expected_to be_empty
 
 ```
 
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to_not exit_with_status "0"
+expected_to exit_with_status "0"
 
 ```
 

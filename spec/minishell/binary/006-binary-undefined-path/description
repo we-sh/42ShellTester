@@ -1,0 +1,1 @@
+The purpose of this test is to check that the Shell retrieves the default value of the environment variable PATH if not set. This test depends on the presence of the UNIX binary `ls`, located in a path within the default environment variable PATH.

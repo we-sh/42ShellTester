@@ -1,1 +1,1 @@
-expected_to match_regex ${GLOBAL_INSTALLDIR}
+expected_to match_regex ${GLOBAL_TOKEN}

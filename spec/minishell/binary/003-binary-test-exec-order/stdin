@@ -1,1 +1,1 @@
-ls
+fake_echo ${GLOBAL_TOKEN}

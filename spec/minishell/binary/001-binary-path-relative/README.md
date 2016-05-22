@@ -2,37 +2,31 @@
 
 *[spec > minishell > binary](..) > 001-binary-path-relative*
 
-This test check if you are using folders from the environement variable $PATH.
-We are changing the actual PATH by PATH=${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1:${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2
-And executing the commande display_name1 and display_name2 located inside those folders
+The purpose of this test is to check that the Shell correctly finds binaries within the PATH.
 ### What is done before test
 
 ```bash
-mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath
-mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1 ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2
-rm -f ./display_name
-rm -f ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name1
-rm -f ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name2
-gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/display-program-name/main.c" -o ./display_name
-cp ./display_name ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name1
-cp ./display_name ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2/display_name2
-export PATH=${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1:NONE:${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2
+mkdir -p "./virtual_path/p1" "./virtual_path/p2"
+rm -f "./virtual_path/p1/display_my_name1" "./virtual_path/p2/display_my_name2"
+cp "./display_program_name" "./virtual_path/p1/display_my_name1"
+cp "./display_program_name" "./virtual_path/p2/display_my_name2"
+export PATH="${GLOBAL_TMP_DIRECTORY}/virtual_path/p1:${GLOBAL_TMP_DIRECTORY}/virtual_path/p2"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-display_name1
-display_name2
+display_my_name1
+display_my_name2
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "display_name1"
-expected_to match_regex "display_name2"
+expected_to match_regex "display_my_name1"
+expected_to match_regex "display_my_name2"
 
 ```
 
@@ -40,6 +34,13 @@ expected_to match_regex "display_name2"
 
 ```bash
 expected_to be_empty
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to exit_with_status "0"
 
 ```
 

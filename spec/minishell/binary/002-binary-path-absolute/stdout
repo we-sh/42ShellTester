@@ -1,2 +1,2 @@
-expected_to match_regex "${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name1"
-expected_to match_regex "${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2/display_name2"
+expected_to match_regex "${GLOBAL_TOKEN}_1"
+expected_to match_regex "${GLOBAL_TOKEN}_2"

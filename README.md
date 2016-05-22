@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **99 tests**.
+42ShellTester is currently packaged with **100 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -145,6 +145,7 @@ Also run pending tests.
     * [003-binary-test-exec-order <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/003-binary-test-exec-order)
     * [004-binary-test-empty-path <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/004-binary-test-empty-path)
     * [005-binary-test-wrong-path <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/005-binary-test-wrong-path)
+    * [006-binary-undefined-path](spec/minishell/binary/006-binary-undefined-path)
   * **[builtins/](spec/minishell/builtins)**
     * **[cd/](spec/minishell/builtins/cd)**
       * [001-no-arg <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/001-no-arg)

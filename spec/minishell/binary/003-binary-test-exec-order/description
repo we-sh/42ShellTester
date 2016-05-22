@@ -1,2 +1,1 @@
-This test purpose is to check if your shell is using the first binary found into the $PATH environement variable, from left to right.
-We are changing the actual PATH by PATH=/tmp/virtualpath/p1:$PATH, and executing the commande ls located inside /tmp/virtualpath/p1 folder which is actually a getpwd instead of ls, to check if you are doing the job well.
+The purpose of this test is to check that the Shell correctly finds binaries by iterating on paths within the environment variable PATH from left to right.

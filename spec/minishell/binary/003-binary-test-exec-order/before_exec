@@ -1,6 +1,4 @@
-mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath
-mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1
-rm -f ./fake_ls
-gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/display-pwd/main.c" -o ./fake_ls
-cp ./fake_ls ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/ls
-export PATH=${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1:$PATH
+mkdir -p "./virtual_path_1" "./virtual_path_2"
+cp "./write_on_stdout" "./virtual_path_1/fake_echo"
+cp "./write_on_stderr" "./virtual_path_2/fake_echo"
+export PATH="${GLOBAL_TMP_DIRECTORY}/virtual_path_1:${GLOBAL_TMP_DIRECTORY}/virtual_path_2"

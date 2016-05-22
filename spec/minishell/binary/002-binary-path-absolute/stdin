@@ -1,2 +1,2 @@
-${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/display_name1
-${GLOBAL_INSTALLDIR}/tmp/virtualpath/p2/display_name2
+${GLOBAL_TMP_DIRECTORY}/write_on_stdout ${GLOBAL_TOKEN}_1
+${GLOBAL_TMP_DIRECTORY}/virtual_path/write_on_stdout ${GLOBAL_TOKEN}_2

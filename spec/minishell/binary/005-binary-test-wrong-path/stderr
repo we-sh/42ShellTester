@@ -1,2 +1,2 @@
-expected_not_to be_empty
-might match_regex "[Nn]o such file or directory"
+expected_to_not be_empty
+might match_regex "[Cc]ommand not found"

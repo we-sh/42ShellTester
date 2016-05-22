@@ -48,6 +48,9 @@ run_main()
     if [ -f "${TEST}/stdin" ] && [ ! -f "${TEST}/non-posix" -o "${GLOBAL_RUN_POSIX_ONLY}" == "0" ] && [ ! -f "${TEST}/pending" -o "${GLOBAL_RUN_PENDING_TESTS}" == "1" ] && [ ! -f "${TEST}/hard" -o "${GLOBAL_RUN_HARD_TESTS}" == "1" ]
     then
 
+      # compile support binaries
+      make -C "${GLOBAL_INSTALLDIR}/support/" 1>- 2>-
+
       TEST_NAME="${TEST##*/}"
       TEST_FULLNAME="${TEST##*spec/}"
       RUN_TEST=0

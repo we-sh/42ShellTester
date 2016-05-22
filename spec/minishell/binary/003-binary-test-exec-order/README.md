@@ -2,31 +2,28 @@
 
 *[spec > minishell > binary](..) > 003-binary-test-exec-order*
 
-This test purpose is to check if your shell is using the first binary found into the $PATH environement variable, from left to right.
-We are changing the actual PATH by PATH=/tmp/virtualpath/p1:$PATH, and executing the commande ls located inside /tmp/virtualpath/p1 folder which is actually a getpwd instead of ls, to check if you are doing the job well.
+The purpose of this test is to check that the Shell correctly finds binaries by iterating on paths within the environment variable PATH from left to right.
 ### What is done before test
 
 ```bash
-mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath
-mkdir ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1
-rm -f ./fake_ls
-gcc -Wall -Werror -Wextra "${GLOBAL_INSTALLDIR}/support/display-pwd/main.c" -o ./fake_ls
-cp ./fake_ls ${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1/ls
-export PATH=${GLOBAL_INSTALLDIR}/tmp/virtualpath/p1:$PATH
+mkdir -p "./virtual_path_1" "./virtual_path_2"
+cp "./write_on_stdout" "./virtual_path_1/fake_echo"
+cp "./write_on_stderr" "./virtual_path_2/fake_echo"
+export PATH="${GLOBAL_TMP_DIRECTORY}/virtual_path_1:${GLOBAL_TMP_DIRECTORY}/virtual_path_2"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+fake_echo ${GLOBAL_TOKEN}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex ${GLOBAL_INSTALLDIR}
+expected_to match_regex ${GLOBAL_TOKEN}
 
 ```
 
@@ -34,6 +31,13 @@ expected_to match_regex ${GLOBAL_INSTALLDIR}
 
 ```bash
 expected_to be_empty
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to exit_with_status "0"
 
 ```
 

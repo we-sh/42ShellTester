@@ -2,35 +2,39 @@
 
 *[spec > minishell > binary](..) > 004-binary-test-empty-path*
 
-This test purpose is to check if your shell is not able to use binary without PATH
-We are changing the actual PATH by PATH=
-And executing the commande ls
+The purpose of this test is to check that the Shell finds binaries that are located in the current directory when the environment variable PATH is empty.
 ### What is done before test
 
 ```bash
-export PATH=
+export PATH=""
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+write_on_stdout "${GLOBAL_TOKEN}"
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to be_empty
+expected_to match_regex "${GLOBAL_TOKEN}"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_not_to be_empty
-might match_regex "[Nn]o such file or directory"
+expected_to be_empty
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to exit_with_status "0"
 
 ```
 

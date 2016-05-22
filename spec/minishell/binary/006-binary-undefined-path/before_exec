@@ -1,0 +1,2 @@
+touch "${GLOBAL_TOKEN}"
+unset PATH
