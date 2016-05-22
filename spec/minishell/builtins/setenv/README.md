@@ -2,6 +2,7 @@
 
 *[spec > minishell > builtins](..) > setenv*
 
-* [001-setenv-no-parameter](./001-setenv-no-parameter)
-* [002-setenv-noequal](./002-setenv-noequal)
-* [003-setenv-equal](./003-setenv-equal)
+* [001-no-argument](./001-no-argument)
+* [002-add-new-variable](./002-add-new-variable)
+* [003-set-existing-variable](./003-set-existing-variable)
+* [004-invalid-identifier](./004-invalid-identifier)

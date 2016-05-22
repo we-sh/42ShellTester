@@ -1,0 +1,1 @@
+The purpose of this test is to check that the builtin `setenv` (or `export`) can add a new variable to the environment, either with the syntax `setenv KEY VALUE` or with `setenv KEY=VALUE`.

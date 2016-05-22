@@ -1,1 +1,0 @@
-env | awk 'BEGIN {FS="="} $0 !~ /^OLDPWD/ {print $1"="}' > stored_env

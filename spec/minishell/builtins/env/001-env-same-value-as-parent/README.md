@@ -6,7 +6,8 @@ The purpose of this test is to check if your shell is using a copy of his parent
 We are using a copy of the environment variable before starting your shell and the command env from your shell.### What is done before test
 
 ```bash
-env | awk 'BEGIN {FS="="} $0 !~ /^OLDPWD/ {print $1"="}' > stored_env
+# storing all environment variables except OLDPWD
+env | awk 'BEGIN {FS="="} $0 !~ /^OLDPWD/ {print $1"="}' > "./stored_env"
 
 ```
 
@@ -19,7 +20,7 @@ env
 ### What is expected on standard output
 
 ```bash
-expected_to match_each_regex_of_file "stored_env"
+expected_to match_each_regex_of_file "./stored_env"
 
 ```
 

@@ -1,50 +1,28 @@
-# 002-setenv-noequal
+# 003-ignore-environment
 
-*[spec > minishell > builtins > setenv](..) > 002-setenv-noequal*
+*[spec > minishell > builtins > env](..) > 003-ignore-environment*
 
-The purpose of this test is to check if your setenv command works to add new environments variables.
-For this test we are using the following syntax.
-setenv VALUE key### Shell commands that are sent to the standard entry
+The purpose of this test is to check that using the option `-i` with the builtin `env` results in an empty environment sent to the given command.
+### Shell commands that are sent to the standard entry
 
 ```bash
-setenv SETENVNULL
-setenv SETENV1 1
-setenv SETENVLONG LONG
-setenv setenvlowercase lowercase
-	   		 setenv 		Sp4c3_T4B=_O_		 		  
-setenv _ _
-setenv PATH
-setenv HOME
-setenv PWD
-setenv USER
-setenv LOGNAME
-setenv =
-setenv ===
-env
+env -i ./display_env
+
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex SETENVNULL=$
-expected_to match_regex SETENV1=1$
-expected_to match_regex SETENVLONG=LONG$
-expected_to match_regex setenvlowercase=lowercase$
-expected_to match_regex Sp4c3_T4B=_O_$
-expected_to match_regex _=_$
-might match_regex PATH=$
-might match_regex HOME=$
-might match_regex PWD=$
-might match_regex USER=$
-might match_regex LOGNAME=$
+expected_to have_nb_of_lines 2
+expected_to match_regex "START DISPLAYING ENVIRONMENT VARIABLES$"
+expected_to match_regex "END DISPLAYING ENVIRONMENT VARIABLES$"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-might_not be_empty
-
+expected_to be_empty
 ```
 
 ### Variables

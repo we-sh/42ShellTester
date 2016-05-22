@@ -1,72 +1,27 @@
-# 003-setenv-equal
+# 004-invalid-identifier
 
-*[spec > minishell > builtins > setenv](..) > 003-setenv-equal*
+*[spec > minishell > builtins > setenv](..) > 004-invalid-identifier*
 
-The purpose of this test is to check if your setenv command works to add new environments variables.
-For this test we are using the following syntax.
-setenv VALUE=key### Shell commands that are sent to the standard entry
+The purpose of this test is to check that using a wrong variable name with the builtin `setenv` (or `export`) results in error.
+### Shell commands that are sent to the standard entry
 
 ```bash
-setenv SETENVNULL=
+setenv 42
+export 42
 
-setenv SETENV1=1
-
-setenv SETENVLONG=LONG
-
-setenv setenvlowercase=lowercase
-
-	   		 setenv 		Sp4c3_T4B=_O_		 		 
-
-setenv _=_
-
-setenv PATH=
-
-setenv HOME=
-
-setenv PWD=
-
-setenv USER=
-
-setenv LOGNAME=
-
-setenv =
-
-setenv ===
-
-env
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex SETENVNULL=$
-
-expected_to match_regex SETENV1=1$
-
-expected_to match_regex SETENVLONG=LONG$
-
-expected_to match_regex setenvlowercase=lowercase$
-
-expected_to match_regex Sp4c3_T4B=_O_$
-
-expected_to match_regex _=_$
-
-expected_to match_regex PATH=$
-
-expected_to match_regex HOME=$
-
-expected_to match_regex PWD=$
-
-expected_to match_regex USER=$
-
-expected_to match_regex LOGNAME=$
+expected_to be_empty
 
 ```
 
 ### What is expected on error output
 
 ```bash
-might_not be_empty
+expected_to match_regex "(not.*identifier|must begin.*letter)"
 
 ```
 

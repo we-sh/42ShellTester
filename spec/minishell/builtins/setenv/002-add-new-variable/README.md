@@ -1,32 +1,34 @@
-# 001-setenv-no-parameter
+# 002-add-new-variable
 
-*[spec > minishell > builtins > setenv](..) > 001-setenv-no-parameter*
+*[spec > minishell > builtins > setenv](..) > 002-add-new-variable*
 
-The purpose of this test is to check if your shell is using a copy of his parent environment as environment.
-We are using a copy of the environment variable before starting your shell and the command setenv without parameter inside your shell.### What is done before test
+The purpose of this test is to check that the builtin `setenv` (or `export`) can add a new variable to the environment, either with the syntax `setenv KEY VALUE` or with `setenv KEY=VALUE`.
+### What is done before test
 
 ```bash
-env | awk 'BEGIN {FS="="} $0 !~ /^OLDPWD/ {print $1"="}' > stored_env
+unset "TESTVAR1"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-setenv
+setenv TEST_VAR1 VALUE_${GLOBAL_TOKEN}
+./display_env
+
+setenv TEST_VAR1=VALUE_${GLOBAL_TOKEN}
+./display_env
+
+export TEST_VAR1=VALUE_${GLOBAL_TOKEN}
+./display_env
+
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_each_regex_of_file "stored_env"
+expected_to match_regex "TEST_VAR1=VALUE_${GLOBAL_TOKEN}"
 
-```
-
-### What is expected on error output
-
-```bash
-expected_to be_empty
 ```
 
 ### Variables

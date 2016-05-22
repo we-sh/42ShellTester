@@ -1,28 +1,26 @@
-# 005-set-variables
+# 001-no-argument
 
-*[spec > minishell > builtins > env](..) > 005-set-variables*
+*[spec > minishell > builtins > setenv](..) > 001-no-argument*
 
-The purpose of this test is to check that the builtin `env` can modify or set multiple environment variables before executing the given command.
+The purpose of this test is to check that using the builtin `setenv` without any argument results in the same behavior as `env` (display environment variables).
 ### What is done before test
 
 ```bash
-export VARTEST1="OLD_VALUE"
+# storing all environment variables except OLDPWD
+env | awk 'BEGIN {FS="="} $0 !~ /^OLDPWD/ {print $1"="}' > "./stored_env"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env VARTEST1=${GLOBAL_TOKEN}_1 VARTEST2=${GLOBAL_TOKEN}_2 VARTEST3=${GLOBAL_TOKEN}_3 ./display_env
-
+setenv
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "VARTEST1=${GLOBAL_TOKEN}_1"
-expected_to match_regex "VARTEST2=${GLOBAL_TOKEN}_2"
-expected_to match_regex "VARTEST3=${GLOBAL_TOKEN}_3"
+expected_to match_each_regex_of_file "./stored_env"
 
 ```
 

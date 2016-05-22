@@ -1,0 +1,1 @@
+expected_to match_regex "TEST_VAR1=VALUE_${GLOBAL_TOKEN}"

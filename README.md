@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **100 tests**.
+42ShellTester is currently packaged with **101 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -173,7 +173,7 @@ Also display tests that succeed (hidden by default).
     * **[env/](spec/minishell/builtins/env)**
       * [001-env-same-value-as-parent <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/001-env-same-value-as-parent)
       * [002-env-check-usefull-var <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/002-env-check-usefull-var)
-      * [003-ignore-environment-1 <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/003-ignore-environment-1)
+      * [003-ignore-environment <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/003-ignore-environment)
       * [005-set-variables <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/005-set-variables)
       * **[multiple-options/](spec/minishell/builtins/env/multiple-options)**
         * [001-ignore-environment-and-set-variable <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/env/multiple-options/001-ignore-environment-and-set-variable)
@@ -187,13 +187,14 @@ Also display tests that succeed (hidden by default).
       * **[setenv-unsetenv/](spec/minishell/builtins/mixed/setenv-unsetenv)**
         * [001-unsetenv-and-setenv <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/mixed/setenv-unsetenv/001-unsetenv-and-setenv)
     * **[setenv/](spec/minishell/builtins/setenv)**
-      * [001-setenv-no-parameter <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/001-setenv-no-parameter)
-      * [002-setenv-noequal <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/002-setenv-noequal)
-      * [003-setenv-equal <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/003-setenv-equal)
+      * [001-no-argument <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/001-no-argument)
+      * [002-add-new-variable <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/002-add-new-variable)
+      * [003-set-existing-variable <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/003-set-existing-variable)
+      * [004-invalid-identifier <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/004-invalid-identifier)
     * **[unsetenv/](spec/minishell/builtins/unsetenv)**
-      * [001-unsetenv-first-elem <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/001-unsetenv-first-elem)
-      * [002-unsetenv-mult-envp <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/002-unsetenv-mult-envp)
-      * [003-unsetenv-mult-envp-inline <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/003-unsetenv-mult-envp-inline)
+      * [001-unsetenv-first-elem <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/001-unsetenv-first-elem)
+      * [002-unsetenv-mult-envp <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/002-unsetenv-mult-envp)
+      * [003-unsetenv-mult-envp-inline <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/003-unsetenv-mult-envp-inline)
   * **[misc/](spec/minishell/misc)**
     * [copy-of-environment <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/misc/copy-of-environment)
 

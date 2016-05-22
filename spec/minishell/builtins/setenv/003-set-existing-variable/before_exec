@@ -1,0 +1,1 @@
+export "TESTVAR1=OLD_${GLOBAL_TOKEN}"

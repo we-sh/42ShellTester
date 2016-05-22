@@ -1,29 +1,35 @@
-# 003-ignore-environment-1
+# 003-set-existing-variable
 
-*[spec > minishell > builtins > env](..) > 003-ignore-environment-1*
+*[spec > minishell > builtins > setenv](..) > 003-set-existing-variable*
 
-The purpose of this test is to check the implementation of `env -i`.
-We are using a binary which have to display environment variable. But we a launching this binary with env -i, the output is suppose to be empty.
+The purpose of this test is to check that the builtin `setenv` (or `export`) can add a new variable to the environment, either with the syntax `setenv KEY VALUE` or with `setenv KEY=VALUE`.
+### What is done before test
+
+```bash
+export "TESTVAR1=OLD_${GLOBAL_TOKEN}"
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env -i ./display_env
+setenv TEST_VAR1 NEW_${GLOBAL_TOKEN}
+./display_env
+
+setenv TEST_VAR1=NEW_${GLOBAL_TOKEN}
+./display_env
+
+export TEST_VAR1=NEW_${GLOBAL_TOKEN}
+./display_env
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_nb_of_lines 2
-expected_to match_regex "START DISPLAYING ENVIRONMENT VARIABLES$"
-expected_to match_regex "END DISPLAYING ENVIRONMENT VARIABLES$"
+expected_to_not match_regex "TEST_VAR1=OLD_${GLOBAL_TOKEN}"
+expected_to match_regex "TEST_VAR1=NEW_${GLOBAL_TOKEN}"
 
-```
-
-### What is expected on error output
-
-```bash
-expected_to be_empty
 ```
 
 ### Variables

@@ -1,0 +1,1 @@
+The purpose of this test is to check that using the option `-i` with the builtin `env` results in an empty environment sent to the given command.
