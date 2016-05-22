@@ -2,7 +2,7 @@
 
 *[spec > minishell > builtins > cd > errors](..) > 002-not-a-directory-2*
 
-The purpose of this test is to check that using a file name as first argument with the builtin `cd` results in a Shell termination with an error status code.
+The purpose of this test is to check that using a file name as first argument with the builtin `cd` results in a Shell termination with a failure exit status.
 ### What is done before test
 
 ```bash

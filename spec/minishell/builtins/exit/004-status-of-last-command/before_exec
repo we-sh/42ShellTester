@@ -1,2 +1,0 @@
-rm -f ./exit_with_status
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/exit-with-status/main.c -o ./exit_with_status

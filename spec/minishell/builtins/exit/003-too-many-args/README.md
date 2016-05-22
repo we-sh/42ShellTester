@@ -2,25 +2,34 @@
 
 *[spec > minishell > builtins > exit](..) > 003-too-many-args*
 
-The purpose of this test is to check if exit doesn't exit and return an error when we are using more than one argument.### Shell commands that are sent to the standard entry
+The purpose of this test is to check that using a wrong number of arguments with the builtin `exit` does not result in the Shell termination but an error on standard error.
+### Shell commands that are sent to the standard entry
 
 ```bash
-exit 42 43
-/bin/echo TOKEN_NOT_EXITED
+exit 21 42
+./write_on_stdout ${GLOBAL_TOKEN}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex TOKEN_NOT_EXITED
+expected_to match_regex "${GLOBAL_TOKEN}"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-might_not be_empty
+expected_to_not be_empty
+might match_regex "[Tt]oo many arguments"
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to exit_with_status "0"
 
 ```
 

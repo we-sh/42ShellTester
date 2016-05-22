@@ -2,23 +2,33 @@
 
 *[spec > minishell > builtins > exit](..) > 002-valid-arg*
 
-The purpose of this test is to check if exit works and return the status use as argument.### Shell commands that are sent to the standard entry
+The purpose of this test is to check that using a number as first argument with the builtin `exit` results in the Shell termination with given number as exit status.
+### Shell commands that are sent to the standard entry
 
 ```bash
 exit 42
 
 ```
 
+### What is expected on standard output
+
+```bash
+expected_to be_empty
+
+```
+
 ### What is expected on error output
 
 ```bash
-might be_empty
+expected_to be_empty
+
 ```
 
 ### What miscellaneous behaviors are expected
 
 ```bash
-might exit_with_status 42
+expected_to exit_with_status "42"
+
 ```
 
 ### Variables

@@ -2,17 +2,19 @@
 
 *[spec > minishell > builtins > exit](..) > 001-simple*
 
-The purpose of this test is to check if exit works and exit your shell :)### Shell commands that are sent to the standard entry
+The purpose of this test is to check that the builtin `exit` works and exit the Shell.
+### Shell commands that are sent to the standard entry
 
 ```bash
 exit
-/bin/echo INVISIBLE_TOKEN
+./write_on_stdout "${GLOBAL_TOKEN}"
+
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex INVISIBLE_TOKEN
+expected_to_not match_regex "${GLOBAL_TOKEN}"
 
 ```
 
@@ -20,6 +22,13 @@ expected_to_not match_regex INVISIBLE_TOKEN
 
 ```bash
 expected_to be_empty
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to exit_with_status "0"
+
 ```
 
 ### Variables

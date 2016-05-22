@@ -2,15 +2,7 @@
 
 *[spec > minishell > builtins > exit](..) > 004-status-of-last-command*
 
-The purpose of this test is to check if exit return the last binary return status when we are not setting an argument for exit.
-### What is done before test
-
-```bash
-rm -f ./exit_with_status
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/exit-with-status/main.c -o ./exit_with_status
-
-```
-
+The purpose of this test is to check that using the builtin `exit` without any argument results in a Shell termination and the exit status of the previous command.
 ### Shell commands that are sent to the standard entry
 
 ```bash
@@ -19,10 +11,17 @@ exit
 
 ```
 
+### What is expected on standard output
+
+```bash
+expected_to be_empty
+
+```
+
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to exit_with_status 42
+expected_to exit_with_status "42"
 
 ```
 

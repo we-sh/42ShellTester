@@ -2,7 +2,7 @@
 
 *[spec > minishell > builtins > cd > errors](..) > 006-too-many-symbolic-links-encountered-2*
 
-The purpose of this test is to check that using a symbolic link resulting in ELOOP error as first argument with the builtin `cd` results in a Shell termination with an error status code.
+The purpose of this test is to check that using a symbolic link resulting in ELOOP error as first argument with the builtin `cd` results in a Shell termination with a failure exit status.
 ### What is done before test
 
 ```bash

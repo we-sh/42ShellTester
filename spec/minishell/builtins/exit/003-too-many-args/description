@@ -1,1 +1,1 @@
-The purpose of this test is to check if exit doesn't exit and return an error when we are using more than one argument.
+The purpose of this test is to check that using a wrong number of arguments with the builtin `exit` does not result in the Shell termination but an error on standard error.
