@@ -1,1 +1,2 @@
-expected_to create_file "new_empty_file" with_nb_of_lines "0"
+expected_to create_file "new_empty_file"
+expected_to exit_with_status "0"

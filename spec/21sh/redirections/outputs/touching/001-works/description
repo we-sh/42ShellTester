@@ -1,1 +1,1 @@
-The purpose of this test is to check that using `:` with the right redirection `>` creates en empty file and does not result in error (same effect as `touch`).
+The purpose of this test is to check that using the right redirection `>` without any command results in the creation of an empty file (same effect as `touch`).

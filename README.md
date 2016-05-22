@@ -93,7 +93,7 @@ Also display tests that succeed (hidden by default).
         * [003-close-stderr <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/003-close-stderr)
         * [004-close-twice-outputs <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/004-close-twice-outputs)
       * **[touching/](spec/21sh/redirections/outputs/touching)**
-        * [001-works <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/touching/001-works)
+        * [001-works <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/touching/001-works)
       * **[truncating/](spec/21sh/redirections/outputs/truncating)**
         * [001-creates-file-if-not-exits <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/001-creates-file-if-not-exits)
         * [002-truncates-file-if-exists <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/002-truncates-file-if-exists)

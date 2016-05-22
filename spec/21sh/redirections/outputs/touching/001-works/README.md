@@ -2,7 +2,7 @@
 
 *[spec > 21sh > redirections > outputs > touching](..) > 001-works*
 
-The purpose of this test is to check that using `:` with the right redirection `>` creates en empty file and does not result in error (same effect as `touch`).
+The purpose of this test is to check that using the right redirection `>` without any command results in the creation of an empty file (same effect as `touch`).
 ### What is done before test
 
 ```bash
@@ -13,7 +13,7 @@ rm -f "./new_empty_file"
 ### Shell commands that are sent to the standard entry
 
 ```bash
-: >new_empty_file
+>new_empty_file
 
 ```
 
@@ -34,7 +34,8 @@ expected_to be_empty
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file "new_empty_file" with_nb_of_lines "0"
+expected_to create_file "new_empty_file"
+expected_to exit_with_status "0"
 
 ```
 
