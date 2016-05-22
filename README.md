@@ -27,8 +27,6 @@ bash ~/42ShellTester/42ShellTester.sh "PATH/TO/YOUR/SHELL"
 
 ## Options
 
-You can use the following options:
-
 ##### `--filter` + `$regex`
 
 Run tests that matches with the specified regular expression (e.g. `--filter "builtins"`).
