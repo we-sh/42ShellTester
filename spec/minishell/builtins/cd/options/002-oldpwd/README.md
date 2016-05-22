@@ -2,15 +2,7 @@
 
 *[spec > minishell > builtins > cd > options](..) > 002-oldpwd*
 
-The purpose of this test is to check if cd - works. It's suppose to redirect us to the previous directory that we visited.
-### What is done before test
-
-```bash
-rm -f ./display_pwd
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-pwd/main.c -o ./display_pwd
-
-```
-
+The purpose of this test is to check that using `-` as first argument with the builtin `cd` results in moving the previous current directory.
 ### Shell commands that are sent to the standard entry
 
 ```bash
@@ -23,14 +15,14 @@ ${GLOBAL_TMP_DIRECTORY}/display_pwd
 ### What is expected on standard output
 
 ```bash
-might match_regex "PWD:${GLOBAL_TMP_DIRECTORY}:PWD$"
+expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}:PWD"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-might be_empty
+expected_to be_empty
 
 ```
 
