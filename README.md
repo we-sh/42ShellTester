@@ -149,7 +149,7 @@ Also display tests that succeed (hidden by default).
     * [003-binary-test-exec-order <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/003-binary-test-exec-order)
     * [004-binary-test-empty-path <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/004-binary-test-empty-path)
     * [005-binary-test-wrong-path <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/005-binary-test-wrong-path)
-    * [006-binary-undefined-path](spec/minishell/binary/006-binary-undefined-path)
+    * [006-binary-undefined-path <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/binary/006-binary-undefined-path)
   * **[builtins/](spec/minishell/builtins)**
     * **[cd/](spec/minishell/builtins/cd)**
       * [001-no-arg <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/cd/001-no-arg)
