@@ -1,1 +1,1 @@
-rm -f "new_file"
+rm -f "./new_empty_file"

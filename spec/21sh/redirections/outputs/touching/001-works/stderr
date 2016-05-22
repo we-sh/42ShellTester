@@ -1,1 +1,1 @@
-expected_to match_regex "${GLOBAL_TOKEN}_stderr"
+expected_to be_empty

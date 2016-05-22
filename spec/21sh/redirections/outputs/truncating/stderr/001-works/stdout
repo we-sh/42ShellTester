@@ -1,2 +1,1 @@
-expected_to_not match_regex "No such file or directory"
-expected_to match_regex "42shTests.sh"
+expected_to match_regex "${GLOBAL_TOKEN}_STDOUT"

@@ -1,1 +1,1 @@
-A Shell may be able to touch an empty file with the right redirection and the pseudo file descriptor `:`.
+The purpose of this test is to check that using `:` with the right redirection `>` creates en empty file and does not result in error (same effect as `touch`).
