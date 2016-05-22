@@ -1,4 +1,4 @@
-NAME=exit_with_status
+NAME=read_on_stdin
 TARGET_DIR=.
 
 $(NAME): all
@@ -6,9 +6,7 @@ $(NAME): all
 all:
 	gcc -Wall -Werror -Wextra main.c -o "$(TARGET_DIR)/$(NAME)"
 
-clean:
+fclean:
 	rm -f "$(TARGET_DIR)/$(NAME)"
-
-fclean: clean
 
 re: fclean all

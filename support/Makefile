@@ -1,26 +1,26 @@
-TARGET_DIR=../tmp
+TARGET_DIR=../../tmp
 
 all:
 	@mkdir -p $(TARGET_DIR)
-	gcc -Wall -Werror -Wextra ./display-env/main.c -o $(TARGET_DIR)/display_env
-	gcc -Wall -Werror -Wextra ./display-program-name/main.c -o $(TARGET_DIR)/display_program_name
-	gcc -Wall -Werror -Wextra ./display-pwd/main.c -o $(TARGET_DIR)/display_pwd
-	gcc -Wall -Werror -Wextra ./exit-with-status/main.c -o $(TARGET_DIR)/exit_with_status
-	gcc -Wall -Werror -Wextra ./read-on-stdin/main.c -o $(TARGET_DIR)/read_on_stdin
-	gcc -Wall -Werror -Wextra ./sleep-and-write-on-stderr/main.c -o $(TARGET_DIR)/sleep_and_write_on_stderr
-	gcc -Wall -Werror -Wextra ./write-on-stderr/main.c -o $(TARGET_DIR)/write_on_stderr
-	gcc -Wall -Werror -Wextra ./write-on-stdout/main.c -o $(TARGET_DIR)/write_on_stdout
-	gcc -Wall -Werror -Wextra ./write-on-stdout-and-stderr/main.c -o $(TARGET_DIR)/write_on_stdout_and_stderr
+	make TARGET_DIR=$(TARGET_DIR) -C ./display-env
+	make TARGET_DIR=$(TARGET_DIR) -C ./display-program-name
+	make TARGET_DIR=$(TARGET_DIR) -C ./display-pwd
+	make TARGET_DIR=$(TARGET_DIR) -C ./exit-with-status
+	make TARGET_DIR=$(TARGET_DIR) -C ./read-on-stdin
+	make TARGET_DIR=$(TARGET_DIR) -C ./sleep-and-write-on-stderr
+	make TARGET_DIR=$(TARGET_DIR) -C ./write-on-stderr
+	make TARGET_DIR=$(TARGET_DIR) -C ./write-on-stdout
+	make TARGET_DIR=$(TARGET_DIR) -C ./write-on-stdout-and-stderr
 
 re: fclean all
 
 fclean:
-	rm -f $(TARGET_DIR)/display_env
-	rm -f $(TARGET_DIR)/display_program_name
-	rm -f $(TARGET_DIR)/display_pwd
-	rm -f $(TARGET_DIR)/exit_with_status
-	rm -f $(TARGET_DIR)/read_on_stdin
-	rm -f $(TARGET_DIR)/sleep_and_write_on_stderr
-	rm -f $(TARGET_DIR)/write_on_stderr
-	rm -f $(TARGET_DIR)/write_on_stdout
-	rm -f $(TARGET_DIR)/write_on_stdout_and_stderr
+	make TARGET_DIR=$(TARGET_DIR) fclean -C ./display-env
+	make TARGET_DIR=$(TARGET_DIR) fclean -C ./display-program-name
+	make TARGET_DIR=$(TARGET_DIR) fclean -C ./display-pwd
+	make TARGET_DIR=$(TARGET_DIR) fclean -C ./exit-with-status
+	make TARGET_DIR=$(TARGET_DIR) fclean -C ./read-on-stdin
+	make TARGET_DIR=$(TARGET_DIR) fclean -C ./sleep-and-write-on-stderr
+	make TARGET_DIR=$(TARGET_DIR) fclean -C ./write-on-stderr
+	make TARGET_DIR=$(TARGET_DIR) fclean -C ./write-on-stdout
+	make TARGET_DIR=$(TARGET_DIR) fclean -C ./write-on-stdout-and-stderr

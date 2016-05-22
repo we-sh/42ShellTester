@@ -49,7 +49,7 @@ run_main()
     then
 
       # compile support binaries
-      make -C "${GLOBAL_INSTALLDIR}/support/" 1>- 2>-
+      make -C "${GLOBAL_INSTALLDIR}/support/" TARGET_DIR=${GLOBAL_TMP_DIRECTORY} 1>- 2>-
 
       TEST_NAME="${TEST##*/}"
       TEST_FULLNAME="${TEST##*spec/}"

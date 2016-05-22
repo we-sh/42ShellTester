@@ -102,7 +102,7 @@ mkdir -p "${GLOBAL_TMP_DIRECTORY}"
 cd "${GLOBAL_TMP_DIRECTORY}"
 
 # compile support binaries
-make re -C "${GLOBAL_INSTALLDIR}/support/" 1>- 2>-
+make re -C "${GLOBAL_INSTALLDIR}/support/" TARGET_DIR=${GLOBAL_TMP_DIRECTORY} 1>- 2>-
 
 # run main function
 run_main
