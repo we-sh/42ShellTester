@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **101 tests**.
+42ShellTester is currently packaged with **98 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -85,8 +85,6 @@ Also display tests that succeed (hidden by default).
         * [003-append-stderr-to-file <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/003-append-stderr-to-file)
         * **[multiple/](spec/21sh/redirections/outputs/appending/multiple)**
           * [001-append-twice-separately <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/multiple/001-append-twice-separately)
-          * [002-append-twice-together <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/multiple/002-append-twice-together)
-          * [003-append-twice-together-with-whitespaces <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/multiple/003-append-twice-together-with-whitespaces)
       * **[closing/](spec/21sh/redirections/outputs/closing)**
         * [001-close-default-output <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/001-close-default-output)
         * [002-close-stdout <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/002-close-stdout)
@@ -117,9 +115,9 @@ Also display tests that succeed (hidden by default).
 * **[bonuses/](spec/bonuses)**
   * **[builtins/](spec/bonuses/builtins)**
     * **[env/](spec/bonuses/builtins/env)**
-      * [001-ignore-environment-(explicit-syntax) <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/builtins/env/001-ignore-environment-(explicit-syntax))
-      * [002-unset-variables <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/builtins/env/002-unset-variables)
-      * [003-unset-variables-(explicit-syntax) <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/builtins/env/003-unset-variables-(explicit-syntax))
+      * [001-unset-variables <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/builtins/env/001-unset-variables)
+  * **[redirections/](spec/bonuses/redirections)**
+    * [001-append-twice-outputs-together <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/redirections/001-append-twice-outputs-together)
   * **[separators/](spec/bonuses/separators)**
     * **[and/](spec/bonuses/separators/and)**
       * [001-run-twice <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/separators/and/001-run-twice)
@@ -184,8 +182,7 @@ Also display tests that succeed (hidden by default).
       * [003-too-many-args <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/exit/003-too-many-args)
       * [004-status-of-last-command <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/exit/004-status-of-last-command)
     * **[mixed/](spec/minishell/builtins/mixed)**
-      * **[setenv-unsetenv/](spec/minishell/builtins/mixed/setenv-unsetenv)**
-        * [001-unsetenv-and-setenv <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/mixed/setenv-unsetenv/001-unsetenv-and-setenv)
+      * [001-setenv-unsetenv <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/mixed/001-setenv-unsetenv)
     * **[setenv/](spec/minishell/builtins/setenv)**
       * [001-no-argument <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/001-no-argument)
       * [002-add-new-variable <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/002-add-new-variable)

@@ -1,0 +1,1 @@
+The purpose of this test is to check that setting and unsetting environment variable with the builtins `setenv` and `unsetenv` (or `export` and `unset`) works together.

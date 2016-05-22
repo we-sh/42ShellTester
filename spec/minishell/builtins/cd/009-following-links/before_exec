@@ -1,4 +1,4 @@
-rm -fr "./sub_directory_link" "./sub_directory"
+rm -rf "./sub_directory_link" "./sub_directory"
 mkdir -p "./sub_directory/sub_sub_directory"
 ln -s "./sub_directory" "./sub_directory_link"
 ln -s "./sub_sub_directory" "./sub_directory/sub_sub_directory_link"

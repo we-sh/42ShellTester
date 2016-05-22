@@ -7,7 +7,7 @@ So we unset all the environment variables inside the tester environment and set 
 Thereafter we are unseting all of them inside the tested shell.### What is done before test
 
 ```bash
-# unset all variables
+# unset all environment ariables
 for VARIABLE in $(env | awk 'BEGIN {FS="="} {print $1}'); do unset "${VARIABLE}"; done;
 
 export ONE="${GLOBAL_TOKEN}_1"
@@ -22,6 +22,9 @@ export THREE="${GLOBAL_TOKEN}_3"
 unsetenv ONE
 unsetenv TWO
 unsetenv THREE
+unset ONE
+unset TWO
+unset THREE
 ./display_env
 
 ```
@@ -33,12 +36,6 @@ expected_to_not match_regex "ONE="
 expected_to_not match_regex "TWO="
 expected_to_not match_regex "THREE="
 
-```
-
-### What is expected on error output
-
-```bash
-expected_to be_empty
 ```
 
 ### Variables

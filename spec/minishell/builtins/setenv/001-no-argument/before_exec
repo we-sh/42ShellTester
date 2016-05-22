@@ -1,2 +1,2 @@
-# storing all environment variables except OLDPWD
-env | awk 'BEGIN {FS="="} $0 !~ /^OLDPWD/ {print $1"="}' > "./stored_env"
+# storing all environment variables except OLDPWD and _
+env | awk 'BEGIN {FS="="} $0 !~ /^(OLDPWD|_)/ {print $1"="}' > "./stored_env"

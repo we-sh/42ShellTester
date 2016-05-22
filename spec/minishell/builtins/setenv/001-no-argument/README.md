@@ -2,12 +2,12 @@
 
 *[spec > minishell > builtins > setenv](..) > 001-no-argument*
 
-The purpose of this test is to check that using the builtin `setenv` without any argument results in the same behavior as `env` (display environment variables).
+The purpose of this test is to check that using the builtin `setenv` (or `export`) without any argument results in the same behavior as `env` (display environment variables).
 ### What is done before test
 
 ```bash
-# storing all environment variables except OLDPWD
-env | awk 'BEGIN {FS="="} $0 !~ /^OLDPWD/ {print $1"="}' > "./stored_env"
+# storing all environment variables except OLDPWD and _
+env | awk 'BEGIN {FS="="} $0 !~ /^(OLDPWD|_)/ {print $1"="}' > "./stored_env"
 
 ```
 
@@ -15,6 +15,8 @@ env | awk 'BEGIN {FS="="} $0 !~ /^OLDPWD/ {print $1"="}' > "./stored_env"
 
 ```bash
 setenv
+export
+
 ```
 
 ### What is expected on standard output
@@ -22,12 +24,6 @@ setenv
 ```bash
 expected_to match_each_regex_of_file "./stored_env"
 
-```
-
-### What is expected on error output
-
-```bash
-expected_to be_empty
 ```
 
 ### Variables

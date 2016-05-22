@@ -1,2 +1,3 @@
 unsetenv VARTEST
+unset VARTEST
 ./display_env

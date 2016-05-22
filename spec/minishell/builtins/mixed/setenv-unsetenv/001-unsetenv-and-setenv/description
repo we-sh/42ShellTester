@@ -1,2 +1,0 @@
-The purpose of this test is to check that your Shell sets and unsets multiple environment variables.
-This test starts with an empty environment and use the syntax `setenv KEY [value]`.

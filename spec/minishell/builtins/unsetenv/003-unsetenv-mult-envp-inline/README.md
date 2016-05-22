@@ -20,6 +20,7 @@ export THREE="${GLOBAL_TOKEN}_3"
 
 ```bash
 unsetenv ONE TWO THREE
+unset ONE TWO THREE
 ./display_env
 
 ```
@@ -31,12 +32,6 @@ expected_to_not match_regex "ONE="
 expected_to_not match_regex "TWO="
 expected_to_not match_regex "THREE="
 
-```
-
-### What is expected on error output
-
-```bash
-expected_to be_empty
 ```
 
 ### Variables

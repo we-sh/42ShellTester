@@ -8,7 +8,7 @@ Thereafter we are unseting inside the tested shell. We are using env to check if
 ### What is done before test
 
 ```bash
-# unset all variables
+# unset all environment variables
 for VARIABLE in $(env | awk 'BEGIN {FS="="} {print $1}'); do unset "${VARIABLE}"; done;
 
 export VARTEST="${GLOBAL_TOKEN}"
@@ -19,6 +19,7 @@ export VARTEST="${GLOBAL_TOKEN}"
 
 ```bash
 unsetenv VARTEST
+unset VARTEST
 ./display_env
 
 ```
@@ -28,12 +29,6 @@ unsetenv VARTEST
 ```bash
 expected_to_not match_regex "VARTEST="
 
-```
-
-### What is expected on error output
-
-```bash
-expected_to be_empty
 ```
 
 ### Variables

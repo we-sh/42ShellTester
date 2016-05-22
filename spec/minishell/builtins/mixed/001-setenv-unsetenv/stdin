@@ -1,0 +1,11 @@
+setenv TEST1
+setenv TEST2
+unsetenv TEST1
+unsetenv TEST2
+./display_env
+
+export TEST1
+export TEST2
+unset TEST1
+unset TEST2
+./display_env

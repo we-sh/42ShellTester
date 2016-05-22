@@ -1,0 +1,2 @@
+expected_to_not match_regex "TEST1="
+expected_to_not match_regex "TEST2="

@@ -1,4 +1,7 @@
 unsetenv ONE
 unsetenv TWO
 unsetenv THREE
+unset ONE
+unset TWO
+unset THREE
 ./display_env

@@ -13,7 +13,7 @@ export VARIABLE_TEST="${GLOBAL_TOKEN}"
 ### Shell commands that are sent to the standard entry
 
 ```bash
-unsetenv VARIABLE_TEST | ./display_env
+unsetenv VARIABLE_TEST | unset VARIABLE_TEST | ./display_env
 
 ```
 
@@ -21,13 +21,6 @@ unsetenv VARIABLE_TEST | ./display_env
 
 ```bash
 expected_to match_regex "VARIABLE_TEST=${GLOBAL_TOKEN}$"
-
-```
-
-### What is expected on error output
-
-```bash
-expected_to be_empty
 
 ```
 

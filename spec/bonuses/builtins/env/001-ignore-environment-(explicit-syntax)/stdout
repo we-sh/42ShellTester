@@ -1,3 +1,0 @@
-expected_to have_nb_of_lines 2
-expected_to match_regex "START DISPLAYING ENVIRONMENT VARIABLES$"
-expected_to match_regex "END DISPLAYING ENVIRONMENT VARIABLES$"

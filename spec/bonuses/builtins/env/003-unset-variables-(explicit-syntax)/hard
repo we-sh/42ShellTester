@@ -1,1 +1,0 @@
-In case you implemented `env -u KEY`, let's do the same with `env --unset KEY`.

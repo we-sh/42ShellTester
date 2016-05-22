@@ -6,7 +6,7 @@ The purpose of this test is to check that using symbolic links twice with the bu
 ### What is done before test
 
 ```bash
-rm -fr "./sub_directory_link" "./sub_directory"
+rm -rf "./sub_directory_link" "./sub_directory"
 mkdir -p "./sub_directory/sub_sub_directory"
 ln -s "./sub_directory" "./sub_directory_link"
 ln -s "./sub_sub_directory" "./sub_directory/sub_sub_directory_link"
@@ -16,8 +16,8 @@ ln -s "./sub_sub_directory" "./sub_directory/sub_sub_directory_link"
 ### Shell commands that are sent to the standard entry
 
 ```bash
-cd subdirectory_link
-cd subsubdirectory_link
+cd sub_directory_link
+cd sub_sub_directory_link
 ${GLOBAL_TMP_DIRECTORY}/display_env
 
 ```

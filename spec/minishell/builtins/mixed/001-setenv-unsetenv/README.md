@@ -1,29 +1,39 @@
-# 001-ignore-environment-(explicit-syntax)
+# 001-setenv-unsetenv
 
-*[spec > bonuses > builtins > env](..) > 001-ignore-environment-(explicit-syntax)*
+*[spec > minishell > builtins > mixed](..) > 001-setenv-unsetenv*
 
-The purpose of this test is to check the implementation of the option `-i` with the explicit syntax `--ignore-environment`.
-We are using a binary which have to display environment variable. But we a launching this binary with env -i, the output is suppose to be empty.
+The purpose of this test is to check that setting and unsetting environment variable with the builtins `setenv` and `unsetenv` (or `export` and `unset`) works together.
+### What is done before test
+
+```bash
+# unset all environment variables
+for VARIABLE in $(env | awk 'BEGIN {FS="="} {print $1}'); do unset "${VARIABLE}"; done;
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env --ignore-environment ./display_env
+setenv TEST1
+setenv TEST2
+unsetenv TEST1
+unsetenv TEST2
+./display_env
+
+export TEST1
+export TEST2
+unset TEST1
+unset TEST2
+./display_env
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to have_nb_of_lines 2
-expected_to match_regex "START DISPLAYING ENVIRONMENT VARIABLES$"
-expected_to match_regex "END DISPLAYING ENVIRONMENT VARIABLES$"
+expected_to_not match_regex "TEST1="
+expected_to_not match_regex "TEST2="
 
-```
-
-### What is expected on error output
-
-```bash
-expected_to be_empty
 ```
 
 ### Variables

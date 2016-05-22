@@ -1,4 +1,4 @@
-# unset all variables
+# unset all environment ariables
 for VARIABLE in $(env | awk 'BEGIN {FS="="} {print $1}'); do unset "${VARIABLE}"; done;
 
 export ONE="${GLOBAL_TOKEN}_1"

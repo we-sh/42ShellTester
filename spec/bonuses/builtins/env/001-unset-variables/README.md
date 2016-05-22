@@ -1,8 +1,8 @@
-# 003-unset-variables-(explicit-syntax)
+# 001-unset-variables
 
-*[spec > bonuses > builtins > env](..) > 003-unset-variables-(explicit-syntax)*
+*[spec > bonuses > builtins > env](..) > 001-unset-variables*
 
-The purpose of this test is to check that the builtin `env` implements the option `-u` with the explicit syntax `--unset` to unset environment variables.
+The purpose of this test is to check that the builtin `env` implement the option `-u` to unset environment variables.
 ### What is done before test
 
 ```bash
@@ -13,7 +13,7 @@ export TESTVARIABLE="${GLOBAL_TOKEN}"
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env --unset HOME --unset TESTVARIABLE ./display_env
+env -u HOME -u PATH -u TESTVARIABLE ./display_env
 
 ```
 
@@ -21,6 +21,7 @@ env --unset HOME --unset TESTVARIABLE ./display_env
 
 ```bash
 expected_to_not match_regex "HOME="
+expected_to_not match_regex "PATH="
 expected_to_not match_regex "TESTVARIABLE="
 
 ```

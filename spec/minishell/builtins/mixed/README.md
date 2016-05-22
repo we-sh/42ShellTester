@@ -2,4 +2,4 @@
 
 *[spec > minishell > builtins](..) > mixed*
 
-* [setenv-unsetenv](./setenv-unsetenv)
+* [001-setenv-unsetenv](./001-setenv-unsetenv)
