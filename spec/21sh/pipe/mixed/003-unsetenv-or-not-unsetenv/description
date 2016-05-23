@@ -1,1 +1,1 @@
-Calling the built-in `unsetenv` in a piped process does not result in an environment change.
+Calling the built-in `unsetenv` (or `unset`) in a piped process does not result in an environment change.

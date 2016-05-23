@@ -1,12 +1,12 @@
 TARGET_DIR=../../tmp
 
 all:
-	@mkdir -p $(TARGET_DIR)
 	make TARGET_DIR=$(TARGET_DIR) -C ./display-env
 	make TARGET_DIR=$(TARGET_DIR) -C ./display-program-name
 	make TARGET_DIR=$(TARGET_DIR) -C ./display-pwd
 	make TARGET_DIR=$(TARGET_DIR) -C ./exit-with-status
 	make TARGET_DIR=$(TARGET_DIR) -C ./read-on-stdin
+	make TARGET_DIR=$(TARGET_DIR) -C ./sleep-and-exit-with-status
 	make TARGET_DIR=$(TARGET_DIR) -C ./sleep-and-write-on-stderr
 	make TARGET_DIR=$(TARGET_DIR) -C ./write-on-stderr
 	make TARGET_DIR=$(TARGET_DIR) -C ./write-on-stdout
@@ -20,6 +20,7 @@ fclean:
 	make TARGET_DIR=$(TARGET_DIR) fclean -C ./display-pwd
 	make TARGET_DIR=$(TARGET_DIR) fclean -C ./exit-with-status
 	make TARGET_DIR=$(TARGET_DIR) fclean -C ./read-on-stdin
+	make TARGET_DIR=$(TARGET_DIR) fclean -C ./sleep-and-exit-with-status
 	make TARGET_DIR=$(TARGET_DIR) fclean -C ./sleep-and-write-on-stderr
 	make TARGET_DIR=$(TARGET_DIR) fclean -C ./write-on-stderr
 	make TARGET_DIR=$(TARGET_DIR) fclean -C ./write-on-stdout

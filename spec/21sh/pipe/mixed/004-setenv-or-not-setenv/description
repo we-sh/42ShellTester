@@ -1,0 +1,1 @@
+Calling the built-in `setenv` (or `export`) in a piped process does not result in an environment change.

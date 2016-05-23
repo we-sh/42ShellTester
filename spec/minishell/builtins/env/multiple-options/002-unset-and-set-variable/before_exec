@@ -1,2 +1,4 @@
-rm -f ./display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
+# unset all environment variables except PATH
+for VARIABLE in $(env | awk 'BEGIN {FS="="} $0 !~ /^PATH/ {print $1}'); do unset "${VARIABLE}"; done;
+
+export HOME="/my/home"

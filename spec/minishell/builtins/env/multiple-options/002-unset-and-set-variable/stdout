@@ -1,5 +1,2 @@
-might match_regex "START DISPLAYING ENVIRONMENT VARIABLES$"
-might match_regex "TESTVARIABLE=TOKEN$"
-might_not match_regex "HOME="
-might_not match_regex "PATH="
-might match_regex "END DISPLAYING ENVIRONMENT VARIABLES$"
+expected_to match_regex "TESTVARIABLE=${GLOBAL_TOKEN}"
+expected_to_not match_regex "HOME="

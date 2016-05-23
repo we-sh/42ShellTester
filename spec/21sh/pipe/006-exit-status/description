@@ -1,0 +1,1 @@
+The purpose of this test is to check that the exit status of a pipeline command is the same as the last piped process.

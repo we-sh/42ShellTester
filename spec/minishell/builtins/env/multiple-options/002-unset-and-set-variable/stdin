@@ -1,1 +1,1 @@
-env -u HOME -u PATH TESTVARIABLE=TOKEN ./display_env
+env -u HOME TESTVARIABLE=${GLOBAL_TOKEN} ./display_env
