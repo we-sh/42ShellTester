@@ -237,7 +237,7 @@ run_main()
 
           [ -f "${TEST}/before_exec" ] && GLOBAL_LOG="$(printf "%s\n\n  Before test:\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "$(awk '{printf "  %02s: %s\n", NR, $0}' "${TEST}/before_exec")")"
 
-          GLOBAL_LOG="$(printf "  %s\n\n  STDIN:\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "$(awk '{printf "  %02s: %s\n", NR, $0}' "${TEST}/stdin")")"
+          GLOBAL_LOG="$(printf "  %s\n\n  STDIN:\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "$(awk '{printf "  %02s: %s\n", NR, $0}' "${GLOBAL_TMP_DIRECTORY}/stdin")")"
 
           if [ "${LOG_CURRENT_TEST_STDOUT}" != "" ]
           then
