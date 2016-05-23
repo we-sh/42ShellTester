@@ -1,6 +1,6 @@
-# ./sleep_and_write_on_stderr
+# ./sleep_and_exit_with_status
 
-A binary that sleeps for a duration in seconds given as first argument and then writes on STDERR the string given as second argument without EOL.
+A binary that sleeps for a duration in seconds given as first argument and then exits with status given as second argument.
 
 ```c
 #include <unistd.h>
@@ -14,9 +14,7 @@ int main(int argc, char **argv)
     seconds = atoi(argv[1]);
   sleep(seconds);
   if (argc > 2)
-  {
-    write(2, argv[2], strlen(argv[2]));
-  }
+    return (atoi(argv[2]));
   return (0);
 }
 ```

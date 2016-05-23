@@ -5,26 +5,25 @@
 The purpose of this test is to check if env -u works to unset variables for a given binary, we are also checking if an argument not prefix with -u is add to the environment of the given binary.### What is done before test
 
 ```bash
-rm -f ./display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
+# unset all environment variables except PATH
+for VARIABLE in $(env | awk 'BEGIN {FS="="} $0 !~ /^PATH/ {print $1}'); do unset "${VARIABLE}"; done;
+
+export HOME="/my/home"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env -u HOME -u PATH TESTVARIABLE=TOKEN ./display_env
+env -u HOME TESTVARIABLE=${GLOBAL_TOKEN} ./display_env
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might match_regex "START DISPLAYING ENVIRONMENT VARIABLES$"
-might match_regex "TESTVARIABLE=TOKEN$"
-might_not match_regex "HOME="
-might_not match_regex "PATH="
-might match_regex "END DISPLAYING ENVIRONMENT VARIABLES$"
+expected_to match_regex "TESTVARIABLE=${GLOBAL_TOKEN}"
+expected_to_not match_regex "HOME="
 
 ```
 
@@ -54,6 +53,7 @@ The following binaries may appear in this test:
 * **[./display_pwd](http://github.com/42shTests/42ShellTester/tree/master/support/display-pwd)** -> A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`, encountered with the strings `PWD:` and `:PWD`.
 * **[./exit_with_status](http://github.com/42shTests/42ShellTester/tree/master/support/exit-with-status)** -> A binary that immediately exits with the status given as first argument.
 * **[./read_on_stdin](http://github.com/42shTests/42ShellTester/tree/master/support/read-on-stdin)** -> A binary that reads on standard entry and write each line on standard output suffixed with the character `@` (e.g. same behavior as `cat -e` and the *newline* character). When `read(2)` returns `-1`, then the string `STDIN READ ERROR` is written on standard error.
+* **[./sleep_and_exit_with_status](http://github.com/42shTests/42ShellTester/tree/master/support/sleep-and-exit-with-status)** -> A binary that sleeps for a duration in seconds given as first argument and then exits with status given as second argument.
 * **[./sleep_and_write_on_stderr](http://github.com/42shTests/42ShellTester/tree/master/support/sleep-and-write-on-stderr)** -> A binary that sleeps for a duration in seconds given as first argument and then writes on STDERR the string given as second argument without EOL.
 * **[./write_on_stderr](http://github.com/42shTests/42ShellTester/tree/master/support/write-on-stderr)** -> A binary that writes on standard error the first given argument (the same behavior as `echo` but with only one argument) and exits with an error status code given as second argument. If no argument is given, it writes the string "write on stderr" and exit with status `1`.
 * **[./write_on_stdout](http://github.com/42shTests/42ShellTester/tree/master/support/write-on-stdout)** -> A binary that writes on standard output the first given argument (the same behavior as `echo` but with only one argument). If no argument is given, it writes the string "write on stdout".
