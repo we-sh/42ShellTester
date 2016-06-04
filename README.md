@@ -190,7 +190,7 @@ Also display tests that succeed (hidden by default).
       * [002-add-new-variable <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/002-add-new-variable)
       * [003-set-existing-variable <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/003-set-existing-variable)
       * [004-invalid-identifier <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/004-invalid-identifier)
-      * [005-add-multiple-variables <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/005-add-multiple-variables)
+      * [005-add-and-set-multiple-variables <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/005-add-and-set-multiple-variables)
     * **[unsetenv/](spec/minishell/builtins/unsetenv)**
       * [001-unsetenv-first-elem <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/001-unsetenv-first-elem)
       * [002-unsetenv-mult-envp <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/002-unsetenv-mult-envp)

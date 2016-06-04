@@ -1,6 +1,6 @@
-# 005-add-multiple-variables
+# 005-add-and-set-multiple-variables
 
-*[spec > minishell > builtins > setenv](..) > 005-add-multiple-variables*
+*[spec > minishell > builtins > setenv](..) > 005-add-and-set-multiple-variables*
 
 The purpose of this test is to check that the builtin `setenv` (or `export`) can add multiples variables into the environment, either with the syntax `setenv KEY VALUE` or with `setenv KEY=VALUE`.
 ### What is done before test
@@ -17,45 +17,86 @@ unset "TESTVAR8"
 unset "TESTVAR9"
 unset "TESTVAR10"
 
+export "TEST2VAR1=OLD_${GLOBAL_TOKEN}_1"
+export "TEST2VAR2=OLD_${GLOBAL_TOKEN}_2"
+export "TEST2VAR3=OLD_${GLOBAL_TOKEN}_3"
+export "TEST2VAR4=OLD_${GLOBAL_TOKEN}_4"
+export "TEST2VAR5=OLD_${GLOBAL_TOKEN}_5"
+export "TEST2VAR6=OLD_${GLOBAL_TOKEN}_6"
+export "TEST2VAR7=OLD_${GLOBAL_TOKEN}_7"
+export "TEST2VAR8=OLD_${GLOBAL_TOKEN}_8"
+export "TEST2VAR9=OLD_${GLOBAL_TOKEN}_9"
+export "TEST2VAR10=OLD_${GLOBAL_TOKEN}_10"
+
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-setenv TEST_VAR1 VALUE_${GLOBAL_TOKEN}_1
-setenv TEST_VAR2 VALUE_${GLOBAL_TOKEN}_2
-setenv TEST_VAR3 VALUE_${GLOBAL_TOKEN}_3
-setenv TEST_VAR4 VALUE_${GLOBAL_TOKEN}_4
-setenv TEST_VAR5 VALUE_${GLOBAL_TOKEN}_5
-setenv TEST_VAR6 VALUE_${GLOBAL_TOKEN}_6
-setenv TEST_VAR7 VALUE_${GLOBAL_TOKEN}_7
-setenv TEST_VAR8 VALUE_${GLOBAL_TOKEN}_8
-setenv TEST_VAR9 VALUE_${GLOBAL_TOKEN}_9
-setenv TEST_VAR10 VALUE_${GLOBAL_TOKEN}_10
+setenv TESTVAR1 VALUE_${GLOBAL_TOKEN}_1
+setenv TEST2VAR1 VALUE_${GLOBAL_TOKEN}_1
+setenv TESTVAR2 VALUE_${GLOBAL_TOKEN}_2
+setenv TEST2VAR2 VALUE_${GLOBAL_TOKEN}_2
+setenv TESTVAR3 VALUE_${GLOBAL_TOKEN}_3
+setenv TEST2VAR3 VALUE_${GLOBAL_TOKEN}_3
+setenv TESTVAR4 VALUE_${GLOBAL_TOKEN}_4
+setenv TEST2VAR4 VALUE_${GLOBAL_TOKEN}_4
+setenv TESTVAR5 VALUE_${GLOBAL_TOKEN}_5
+setenv TEST2VAR5 VALUE_${GLOBAL_TOKEN}_5
+setenv TESTVAR6 VALUE_${GLOBAL_TOKEN}_6
+setenv TEST2VAR6 VALUE_${GLOBAL_TOKEN}_6
+setenv TESTVAR7 VALUE_${GLOBAL_TOKEN}_7
+setenv TEST2VAR7 VALUE_${GLOBAL_TOKEN}_7
+setenv TESTVAR8 VALUE_${GLOBAL_TOKEN}_8
+setenv TEST2VAR8 VALUE_${GLOBAL_TOKEN}_8
+setenv TESTVAR9 VALUE_${GLOBAL_TOKEN}_9
+setenv TEST2VAR9 VALUE_${GLOBAL_TOKEN}_9
+setenv TESTVAR10 VALUE_${GLOBAL_TOKEN}_10
+setenv TEST2VAR10 VALUE_${GLOBAL_TOKEN}_10
 ./display_env
 
-setenv TEST_VAR1=VALUE_${GLOBAL_TOKEN}_1
-setenv TEST_VAR2=VALUE_${GLOBAL_TOKEN}_2
-setenv TEST_VAR3=VALUE_${GLOBAL_TOKEN}_3
-setenv TEST_VAR4=VALUE_${GLOBAL_TOKEN}_4
-setenv TEST_VAR5=VALUE_${GLOBAL_TOKEN}_5
-setenv TEST_VAR6=VALUE_${GLOBAL_TOKEN}_6
-setenv TEST_VAR7=VALUE_${GLOBAL_TOKEN}_7
-setenv TEST_VAR8=VALUE_${GLOBAL_TOKEN}_8
-setenv TEST_VAR9=VALUE_${GLOBAL_TOKEN}_9
-setenv TEST_VAR10=VALUE_${GLOBAL_TOKEN}_10
+setenv TESTVAR1=VALUE_${GLOBAL_TOKEN}_1
+setenv TEST2VAR1=VALUE_${GLOBAL_TOKEN}_1
+setenv TESTVAR2=VALUE_${GLOBAL_TOKEN}_2
+setenv TEST2VAR2=VALUE_${GLOBAL_TOKEN}_2
+setenv TESTVAR3=VALUE_${GLOBAL_TOKEN}_3
+setenv TEST2VAR3=VALUE_${GLOBAL_TOKEN}_3
+setenv TESTVAR4=VALUE_${GLOBAL_TOKEN}_4
+setenv TEST2VAR4=VALUE_${GLOBAL_TOKEN}_4
+setenv TESTVAR5=VALUE_${GLOBAL_TOKEN}_5
+setenv TEST2VAR5=VALUE_${GLOBAL_TOKEN}_5
+setenv TESTVAR6=VALUE_${GLOBAL_TOKEN}_6
+setenv TEST2VAR6=VALUE_${GLOBAL_TOKEN}_6
+setenv TESTVAR7=VALUE_${GLOBAL_TOKEN}_7
+setenv TEST2VAR7=VALUE_${GLOBAL_TOKEN}_7
+setenv TESTVAR8=VALUE_${GLOBAL_TOKEN}_8
+setenv TEST2VAR8=VALUE_${GLOBAL_TOKEN}_8
+setenv TESTVAR9=VALUE_${GLOBAL_TOKEN}_9
+setenv TEST2VAR9=VALUE_${GLOBAL_TOKEN}_9
+setenv TESTVAR10=VALUE_${GLOBAL_TOKEN}_10
+setenv TEST2VAR10=VALUE_${GLOBAL_TOKEN}_10
 ./display_env
 
-export TEST_VAR1=VALUE_${GLOBAL_TOKEN}_1
-export TEST_VAR2=VALUE_${GLOBAL_TOKEN}_2
-export TEST_VAR3=VALUE_${GLOBAL_TOKEN}_3
-export TEST_VAR4=VALUE_${GLOBAL_TOKEN}_4
-export TEST_VAR5=VALUE_${GLOBAL_TOKEN}_5
-export TEST_VAR6=VALUE_${GLOBAL_TOKEN}_6
-export TEST_VAR7=VALUE_${GLOBAL_TOKEN}_7
-export TEST_VAR8=VALUE_${GLOBAL_TOKEN}_8
-export TEST_VAR9=VALUE_${GLOBAL_TOKEN}_9
-export TEST_VAR10=VALUE_${GLOBAL_TOKEN}_10
+export TESTVAR1=VALUE_${GLOBAL_TOKEN}_1
+export TEST2VAR1=VALUE_${GLOBAL_TOKEN}_1
+export TESTVAR2=VALUE_${GLOBAL_TOKEN}_2
+export TEST2VAR2=VALUE_${GLOBAL_TOKEN}_2
+export TESTVAR3=VALUE_${GLOBAL_TOKEN}_3
+export TEST2VAR3=VALUE_${GLOBAL_TOKEN}_3
+export TESTVAR4=VALUE_${GLOBAL_TOKEN}_4
+export TEST2VAR4=VALUE_${GLOBAL_TOKEN}_4
+export TESTVAR5=VALUE_${GLOBAL_TOKEN}_5
+export TEST2VAR5=VALUE_${GLOBAL_TOKEN}_5
+export TESTVAR6=VALUE_${GLOBAL_TOKEN}_6
+export TEST2VAR6=VALUE_${GLOBAL_TOKEN}_6
+export TESTVAR7=VALUE_${GLOBAL_TOKEN}_7
+export TEST2VAR7=VALUE_${GLOBAL_TOKEN}_7
+export TESTVAR8=VALUE_${GLOBAL_TOKEN}_8
+export TEST2VAR8=VALUE_${GLOBAL_TOKEN}_8
+export TESTVAR9=VALUE_${GLOBAL_TOKEN}_9
+export TEST2VAR9=VALUE_${GLOBAL_TOKEN}_9
+export TESTVAR10=VALUE_${GLOBAL_TOKEN}_10
+export TEST2VAR10=VALUE_${GLOBAL_TOKEN}_10
 ./display_env
 
 ```
@@ -63,16 +104,27 @@ export TEST_VAR10=VALUE_${GLOBAL_TOKEN}_10
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "TEST_VAR1=VALUE_${GLOBAL_TOKEN}_1"
-expected_to match_regex "TEST_VAR2=VALUE_${GLOBAL_TOKEN}_2"
-expected_to match_regex "TEST_VAR3=VALUE_${GLOBAL_TOKEN}_3"
-expected_to match_regex "TEST_VAR4=VALUE_${GLOBAL_TOKEN}_4"
-expected_to match_regex "TEST_VAR5=VALUE_${GLOBAL_TOKEN}_5"
-expected_to match_regex "TEST_VAR6=VALUE_${GLOBAL_TOKEN}_6"
-expected_to match_regex "TEST_VAR7=VALUE_${GLOBAL_TOKEN}_7"
-expected_to match_regex "TEST_VAR8=VALUE_${GLOBAL_TOKEN}_8"
-expected_to match_regex "TEST_VAR9=VALUE_${GLOBAL_TOKEN}_9"
-expected_to match_regex "TEST_VAR10=VALUE_${GLOBAL_TOKEN}_10"
+expected_to match_regex "TESTVAR1=VALUE_${GLOBAL_TOKEN}_1"
+expected_to match_regex "TESTVAR2=VALUE_${GLOBAL_TOKEN}_2"
+expected_to match_regex "TESTVAR3=VALUE_${GLOBAL_TOKEN}_3"
+expected_to match_regex "TESTVAR4=VALUE_${GLOBAL_TOKEN}_4"
+expected_to match_regex "TESTVAR5=VALUE_${GLOBAL_TOKEN}_5"
+expected_to match_regex "TESTVAR6=VALUE_${GLOBAL_TOKEN}_6"
+expected_to match_regex "TESTVAR7=VALUE_${GLOBAL_TOKEN}_7"
+expected_to match_regex "TESTVAR8=VALUE_${GLOBAL_TOKEN}_8"
+expected_to match_regex "TESTVAR9=VALUE_${GLOBAL_TOKEN}_9"
+expected_to match_regex "TESTVAR10=VALUE_${GLOBAL_TOKEN}_10"
+
+expected_to match_regex "TEST2VAR1=VALUE_${GLOBAL_TOKEN}_1"
+expected_to match_regex "TEST2VAR2=VALUE_${GLOBAL_TOKEN}_2"
+expected_to match_regex "TEST2VAR3=VALUE_${GLOBAL_TOKEN}_3"
+expected_to match_regex "TEST2VAR4=VALUE_${GLOBAL_TOKEN}_4"
+expected_to match_regex "TEST2VAR5=VALUE_${GLOBAL_TOKEN}_5"
+expected_to match_regex "TEST2VAR6=VALUE_${GLOBAL_TOKEN}_6"
+expected_to match_regex "TEST2VAR7=VALUE_${GLOBAL_TOKEN}_7"
+expected_to match_regex "TEST2VAR8=VALUE_${GLOBAL_TOKEN}_8"
+expected_to match_regex "TEST2VAR9=VALUE_${GLOBAL_TOKEN}_9"
+expected_to match_regex "TEST2VAR10=VALUE_${GLOBAL_TOKEN}_10"
 
 ```
 

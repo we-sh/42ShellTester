@@ -21,7 +21,8 @@ expected_to be_empty
 ### What is expected on error output
 
 ```bash
-expected_to match_regex "(not.*identifier|must begin.*letter)"
+expected_to_not be_empty
+might match_regex "(not.*identifier|must begin.*letter)"
 
 ```
 

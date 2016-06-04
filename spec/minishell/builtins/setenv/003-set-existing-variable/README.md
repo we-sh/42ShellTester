@@ -13,13 +13,13 @@ export "TESTVAR1=OLD_${GLOBAL_TOKEN}"
 ### Shell commands that are sent to the standard entry
 
 ```bash
-setenv TEST_VAR1 NEW_${GLOBAL_TOKEN}
+setenv TESTVAR1 NEW_${GLOBAL_TOKEN}
 ./display_env
 
-setenv TEST_VAR1=NEW_${GLOBAL_TOKEN}
+setenv TESTVAR1=NEW_${GLOBAL_TOKEN}
 ./display_env
 
-export TEST_VAR1=NEW_${GLOBAL_TOKEN}
+export TESTVAR1=NEW_${GLOBAL_TOKEN}
 ./display_env
 
 ```
@@ -27,8 +27,7 @@ export TEST_VAR1=NEW_${GLOBAL_TOKEN}
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex "TEST_VAR1=OLD_${GLOBAL_TOKEN}"
-expected_to match_regex "TEST_VAR1=NEW_${GLOBAL_TOKEN}"
+expected_to match_regex "TESTVAR1=NEW_${GLOBAL_TOKEN}"
 
 ```
 
