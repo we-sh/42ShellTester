@@ -72,7 +72,7 @@ run_main()
       while [ "$INDEX" -le "$TOTAL" ]
       do
         LINE="$(awk -v INDEX="${INDEX}" 'NR == INDEX {gsub(/"/, "\\\""); gsub(/\|/, "\"|\""); gsub(/;/, "\";\""); gsub(/>/, "\">\""); gsub(/&/, "\"&\""); gsub(/</, "\"<\""); gsub(/-/, "\"-\""); print $0; exit}' "${TEST}/stdin")"
-        eval echo "${LINE}" >>"${GLOBAL_TMP_DIRECTORY}/stdin"
+        [ "${LINE}" != "" ] && eval echo "${LINE}" >>"${GLOBAL_TMP_DIRECTORY}/stdin"
 
         (( INDEX += 1 ))
       done
