@@ -2,7 +2,7 @@
 
 *[spec > minishell > misc](..) > copy-of-environment*
 
-A Shell must send a copy of the environment `char **envp` to its sub-processes.
+A Shell must send a copy of the environment `char **envp` to its child processes.
 ### What is done before test
 
 ```bash

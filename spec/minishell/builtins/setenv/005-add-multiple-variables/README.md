@@ -1,26 +1,78 @@
-# 002-valid-arg
+# 005-add-multiple-variables
 
-*[spec > minishell > builtins > exit](..) > 002-valid-arg*
+*[spec > minishell > builtins > setenv](..) > 005-add-multiple-variables*
 
-The purpose of this test is to check that using a number as first argument with the builtin `exit` results in the Shell termination with given number as exit status.
+The purpose of this test is to check that the builtin `setenv` (or `export`) can add multiples variables into the environment, either with the syntax `setenv KEY VALUE` or with `setenv KEY=VALUE`.
+### What is done before test
+
+```bash
+unset "TESTVAR1"
+unset "TESTVAR2"
+unset "TESTVAR3"
+unset "TESTVAR4"
+unset "TESTVAR5"
+unset "TESTVAR6"
+unset "TESTVAR7"
+unset "TESTVAR8"
+unset "TESTVAR9"
+unset "TESTVAR10"
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
-exit 42
+setenv TEST_VAR1 VALUE_${GLOBAL_TOKEN}_1
+setenv TEST_VAR2 VALUE_${GLOBAL_TOKEN}_2
+setenv TEST_VAR3 VALUE_${GLOBAL_TOKEN}_3
+setenv TEST_VAR4 VALUE_${GLOBAL_TOKEN}_4
+setenv TEST_VAR5 VALUE_${GLOBAL_TOKEN}_5
+setenv TEST_VAR6 VALUE_${GLOBAL_TOKEN}_6
+setenv TEST_VAR7 VALUE_${GLOBAL_TOKEN}_7
+setenv TEST_VAR8 VALUE_${GLOBAL_TOKEN}_8
+setenv TEST_VAR9 VALUE_${GLOBAL_TOKEN}_9
+setenv TEST_VAR10 VALUE_${GLOBAL_TOKEN}_10
+./display_env
+
+setenv TEST_VAR1=VALUE_${GLOBAL_TOKEN}_1
+setenv TEST_VAR2=VALUE_${GLOBAL_TOKEN}_2
+setenv TEST_VAR3=VALUE_${GLOBAL_TOKEN}_3
+setenv TEST_VAR4=VALUE_${GLOBAL_TOKEN}_4
+setenv TEST_VAR5=VALUE_${GLOBAL_TOKEN}_5
+setenv TEST_VAR6=VALUE_${GLOBAL_TOKEN}_6
+setenv TEST_VAR7=VALUE_${GLOBAL_TOKEN}_7
+setenv TEST_VAR8=VALUE_${GLOBAL_TOKEN}_8
+setenv TEST_VAR9=VALUE_${GLOBAL_TOKEN}_9
+setenv TEST_VAR10=VALUE_${GLOBAL_TOKEN}_10
+./display_env
+
+export TEST_VAR1=VALUE_${GLOBAL_TOKEN}_1
+export TEST_VAR2=VALUE_${GLOBAL_TOKEN}_2
+export TEST_VAR3=VALUE_${GLOBAL_TOKEN}_3
+export TEST_VAR4=VALUE_${GLOBAL_TOKEN}_4
+export TEST_VAR5=VALUE_${GLOBAL_TOKEN}_5
+export TEST_VAR6=VALUE_${GLOBAL_TOKEN}_6
+export TEST_VAR7=VALUE_${GLOBAL_TOKEN}_7
+export TEST_VAR8=VALUE_${GLOBAL_TOKEN}_8
+export TEST_VAR9=VALUE_${GLOBAL_TOKEN}_9
+export TEST_VAR10=VALUE_${GLOBAL_TOKEN}_10
+./display_env
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to be_empty
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to exit_with_status "42"
+expected_to match_regex "TEST_VAR1=VALUE_${GLOBAL_TOKEN}_1"
+expected_to match_regex "TEST_VAR2=VALUE_${GLOBAL_TOKEN}_2"
+expected_to match_regex "TEST_VAR3=VALUE_${GLOBAL_TOKEN}_3"
+expected_to match_regex "TEST_VAR4=VALUE_${GLOBAL_TOKEN}_4"
+expected_to match_regex "TEST_VAR5=VALUE_${GLOBAL_TOKEN}_5"
+expected_to match_regex "TEST_VAR6=VALUE_${GLOBAL_TOKEN}_6"
+expected_to match_regex "TEST_VAR7=VALUE_${GLOBAL_TOKEN}_7"
+expected_to match_regex "TEST_VAR8=VALUE_${GLOBAL_TOKEN}_8"
+expected_to match_regex "TEST_VAR9=VALUE_${GLOBAL_TOKEN}_9"
+expected_to match_regex "TEST_VAR10=VALUE_${GLOBAL_TOKEN}_10"
 
 ```
 

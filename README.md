@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **100 tests**.
+42ShellTester is currently packaged with **101 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -67,7 +67,7 @@ Also display tests that succeed (hidden by default).
     * [003-many-chained-pipes <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/003-many-chained-pipes)
     * [004-without-surrounding-whitespaces <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/004-without-surrounding-whitespaces)
     * [005-asynchronous <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/005-asynchronous)
-    * [006-exit-status](spec/21sh/pipe/006-exit-status)
+    * [006-exit-status <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/006-exit-status)
     * **[mixed/](spec/21sh/pipe/mixed)**
       * [001-exit-or-not-exit <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/001-exit-or-not-exit)
       * [002-cd-or-not-cd <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/002-cd-or-not-cd)
@@ -190,12 +190,13 @@ Also display tests that succeed (hidden by default).
       * [002-add-new-variable <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/002-add-new-variable)
       * [003-set-existing-variable <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/003-set-existing-variable)
       * [004-invalid-identifier <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/004-invalid-identifier)
+      * [005-add-multiple-variables <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/setenv/005-add-multiple-variables)
     * **[unsetenv/](spec/minishell/builtins/unsetenv)**
       * [001-unsetenv-first-elem <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/001-unsetenv-first-elem)
       * [002-unsetenv-mult-envp <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/002-unsetenv-mult-envp)
       * [003-unsetenv-mult-envp-inline <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/builtins/unsetenv/003-unsetenv-mult-envp-inline)
   * **[misc/](spec/minishell/misc)**
-    * [copy-of-environment <img src='./lib/assets/pending.png' width='54' height='12' />](spec/minishell/misc/copy-of-environment)
+    * [copy-of-environment](spec/minishell/misc/copy-of-environment)
 
 <!--END_LIST_TESTS-->
 

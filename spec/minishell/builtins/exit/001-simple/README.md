@@ -18,12 +18,6 @@ expected_to_not match_regex "${GLOBAL_TOKEN}"
 
 ```
 
-### What is expected on error output
-
-```bash
-expected_to be_empty
-```
-
 ### What miscellaneous behaviors are expected
 
 ```bash
