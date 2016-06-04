@@ -79,7 +79,7 @@ while [ ! -z "${1}" ]; do
   else
     if [ "${GLOBAL_PROG}" == "" ]
     then
-      [[ "${1}" =~ ^[\.]\/ ]] && GLOBAL_PROG="${1}" || GLOBAL_PROG="$(which ${1})"
+      [[ "${1}" =~ ^[\.][\.]\/ ]] && GLOBAL_PROG="../${1}" || GLOBAL_PROG="$(which ${1})"
     fi
   fi
   shift 1
