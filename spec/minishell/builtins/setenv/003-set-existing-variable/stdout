@@ -1,2 +1,1 @@
-expected_to_not match_regex "TESTVAR1=OLD_${GLOBAL_TOKEN}"
 expected_to match_regex "TESTVAR1=NEW_${GLOBAL_TOKEN}"
