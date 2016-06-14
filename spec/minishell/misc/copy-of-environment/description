@@ -1,1 +1,1 @@
-A Shell must send a copy of the environment `char **envp` to its child processes.
+A Shell must send a copy of the environment to its child processes.

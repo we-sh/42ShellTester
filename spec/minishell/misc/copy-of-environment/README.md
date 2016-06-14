@@ -2,13 +2,10 @@
 
 *[spec > minishell > misc](..) > copy-of-environment*
 
-A Shell must send a copy of the environment `char **envp` to its child processes.
+A Shell must send a copy of the environment to its child processes.
 ### What is done before test
 
 ```bash
-rm -f ./display_env
-gcc -Wall -Werror -Wextra ${GLOBAL_INSTALLDIR}/support/display-env/main.c -o ./display_env
-
 export COPYENV_VAR1="${GLOBAL_TOKEN}_VAR1"
 export COPYENV_VAR2="${GLOBAL_TOKEN}_VAR2"
 export COPYENV_VAR3="${GLOBAL_TOKEN}_VAR3"
