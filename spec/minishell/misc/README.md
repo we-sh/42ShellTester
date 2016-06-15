@@ -2,4 +2,4 @@
 
 *[spec > minishell](..) > misc*
 
-* [copy-of-environment](./copy-of-environment)
+* [001-copy-of-environment](./001-copy-of-environment)

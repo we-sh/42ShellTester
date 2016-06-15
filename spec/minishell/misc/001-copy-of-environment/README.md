@@ -1,6 +1,6 @@
-# copy-of-environment
+# 001-copy-of-environment
 
-*[spec > minishell > misc](..) > copy-of-environment*
+*[spec > minishell > misc](..) > 001-copy-of-environment*
 
 A Shell must send a copy of the environment to its child processes.
 ### What is done before test
