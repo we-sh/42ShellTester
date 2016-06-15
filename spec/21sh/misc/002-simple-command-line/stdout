@@ -1,0 +1,2 @@
+expected_to match_regex "${GLOBAL_TOKEN}_FILE$"
+expected_to match_regex "66$"
