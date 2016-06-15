@@ -1,6 +1,6 @@
-# 003-too-many-args
+# 001-too-many-args
 
-*[spec > minishell > builtins > exit](..) > 003-too-many-args*
+*[spec > minishell > builtins > exit > errors](..) > 001-too-many-args*
 
 The purpose of this test is to check that using a wrong number of arguments with the builtin `exit` does not result in the Shell termination but an error on standard error.
 ### Shell commands that are sent to the standard entry
@@ -22,7 +22,7 @@ expected_to match_regex "${GLOBAL_TOKEN}"
 
 ```bash
 expected_to_not be_empty
-might match_regex "[Tt]oo many arguments"
+might match_regex "([Tt]oo many arguments|[Aa]rgument list too long)"
 
 ```
 

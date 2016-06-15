@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **102 tests**.
+42ShellTester is currently packaged with **104 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -159,6 +159,7 @@ Also display tests that succeed (hidden by default).
       * [007-symbolic-link](spec/minishell/builtins/cd/007-symbolic-link)
       * [008-symbolic-link-2](spec/minishell/builtins/cd/008-symbolic-link-2)
       * [009-following-links <img src='./lib/assets/hard.png' width='38' height='12' />](spec/minishell/builtins/cd/009-following-links)
+      * [010-update-PWD-and-OLDPWD](spec/minishell/builtins/cd/010-update-PWD-and-OLDPWD)
       * **[errors/](spec/minishell/builtins/cd/errors)**
         * [001-not-a-directory](spec/minishell/builtins/cd/errors/001-not-a-directory)
         * [002-not-a-directory-2](spec/minishell/builtins/cd/errors/002-not-a-directory-2)
@@ -180,10 +181,12 @@ Also display tests that succeed (hidden by default).
         * [001-ignore-environment-and-set-variable](spec/minishell/builtins/env/multiple-options/001-ignore-environment-and-set-variable)
         * [002-unset-and-set-variable <img src='./lib/assets/non-posix.png' width='63' height='12' />](spec/minishell/builtins/env/multiple-options/002-unset-and-set-variable)
     * **[exit/](spec/minishell/builtins/exit)**
-      * [001-simple](spec/minishell/builtins/exit/001-simple)
-      * [002-valid-arg](spec/minishell/builtins/exit/002-valid-arg)
-      * [003-too-many-args](spec/minishell/builtins/exit/003-too-many-args)
-      * [004-status-of-last-command](spec/minishell/builtins/exit/004-status-of-last-command)
+      * [001-without-any-argument](spec/minishell/builtins/exit/001-without-any-argument)
+      * [002-status-passed-as-argument](spec/minishell/builtins/exit/002-status-passed-as-argument)
+      * [003-status-of-last-command](spec/minishell/builtins/exit/003-status-of-last-command)
+      * **[errors/](spec/minishell/builtins/exit/errors)**
+        * [001-too-many-args](spec/minishell/builtins/exit/errors/001-too-many-args)
+        * [002-non-numeric-argument](spec/minishell/builtins/exit/errors/002-non-numeric-argument)
     * **[mixed/](spec/minishell/builtins/mixed)**
       * [001-setenv-unsetenv](spec/minishell/builtins/mixed/001-setenv-unsetenv)
     * **[setenv/](spec/minishell/builtins/setenv)**

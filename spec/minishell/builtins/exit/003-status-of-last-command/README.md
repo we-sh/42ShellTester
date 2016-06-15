@@ -1,6 +1,6 @@
-# 004-status-of-last-command
+# 003-status-of-last-command
 
-*[spec > minishell > builtins > exit](..) > 004-status-of-last-command*
+*[spec > minishell > builtins > exit](..) > 003-status-of-last-command*
 
 The purpose of this test is to check that using the builtin `exit` without any argument results in a Shell termination and the exit status of the previous command.
 ### Shell commands that are sent to the standard entry

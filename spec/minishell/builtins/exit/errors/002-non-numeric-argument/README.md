@@ -1,26 +1,35 @@
-# 002-status-passed-as-argument
+# 002-non-numeric-argument
 
-*[spec > minishell > builtins > exit](..) > 002-status-passed-as-argument*
+*[spec > minishell > builtins > exit > errors](..) > 002-non-numeric-argument*
 
-The purpose of this test is to check that using a number as first argument with the builtin `exit` results in the Shell termination with given number as exit status.
+The purpose of this test is to check that using a non-numeric argument with the builtin `exit` results in the Shell termination and an error on standard error.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-exit 42
+exit abc
+./write_on_stdout ${GLOBAL_TOKEN}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to be_empty
+expected_to_not match_regex "${GLOBAL_TOKEN}"
+
+```
+
+### What is expected on error output
+
+```bash
+might_not be_empty
+might match_regex "[Nn]umeric argument required"
 
 ```
 
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to exit_with_status "42"
+expected_to_not exit_with_status "0"
 
 ```
 

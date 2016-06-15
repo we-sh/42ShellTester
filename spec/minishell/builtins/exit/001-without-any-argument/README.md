@@ -1,6 +1,6 @@
-# 001-simple
+# 001-without-any-argument
 
-*[spec > minishell > builtins > exit](..) > 001-simple*
+*[spec > minishell > builtins > exit](..) > 001-without-any-argument*
 
 The purpose of this test is to check that the builtin `exit` works and exit the Shell.
 ### Shell commands that are sent to the standard entry

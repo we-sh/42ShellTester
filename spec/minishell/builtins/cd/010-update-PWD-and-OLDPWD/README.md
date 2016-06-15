@@ -1,26 +1,37 @@
-# 002-status-passed-as-argument
+# 010-update-PWD-and-OLDPWD
 
-*[spec > minishell > builtins > exit](..) > 002-status-passed-as-argument*
+*[spec > minishell > builtins > cd](..) > 010-update-PWD-and-OLDPWD*
 
-The purpose of this test is to check that using a number as first argument with the builtin `exit` results in the Shell termination with given number as exit status.
+The purpose of this test is to check that using the builtin `cd` results in a modified environment variable `PWD`.
+### What is done before test
+
+```bash
+rm -rf "${GLOBAL_TOKEN}"
+mkdir -p "./${GLOBAL_TOKEN}/${GLOBAL_TOKEN}"
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
-exit 42
+cd ${GLOBAL_TOKEN}
+cd ${GLOBAL_TOKEN}
+../../display_env
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to be_empty
+expected_to match_regex "PWD=${GLOBAL_TMP_DIRECTORY}/${GLOBAL_TOKEN}/${GLOBAL_TOKEN}$"
+expected_to match_regex "OLDPWD=${GLOBAL_TMP_DIRECTORY}/${GLOBAL_TOKEN}$"
 
 ```
 
-### What miscellaneous behaviors are expected
+### What is expected on error output
 
 ```bash
-expected_to exit_with_status "42"
+expected_to be_empty
 
 ```
 
