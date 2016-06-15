@@ -1,0 +1,2 @@
+rm -rf "${GLOBAL_TOKEN}"
+mkdir -p "./${GLOBAL_TOKEN}/${GLOBAL_TOKEN}"

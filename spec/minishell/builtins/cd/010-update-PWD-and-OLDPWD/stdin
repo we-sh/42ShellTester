@@ -1,0 +1,3 @@
+cd ${GLOBAL_TOKEN}
+cd ${GLOBAL_TOKEN}
+../../display_env
