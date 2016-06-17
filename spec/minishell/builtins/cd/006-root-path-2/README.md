@@ -1,12 +1,12 @@
-# 005-absolute-path
+# 006-root-path-2
 
-*[spec > minishell > builtins > cd](..) > 005-absolute-path*
+*[spec > minishell > builtins > cd](..) > 006-root-path-2*
 
-The purpose of this test is to check that using an absolute path as first argument with the builtin `cd` results in moving to the correct directory.
+The purpose of this test is to check that using the root path as first argument with the builtin `cd` results in moving to the correct directory.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-cd /
+cd /.
 ${GLOBAL_TMP_DIRECTORY}/display_pwd
 ${GLOBAL_TMP_DIRECTORY}/display_env
 

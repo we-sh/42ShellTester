@@ -1,0 +1,2 @@
+expected_to match_regex "PWD:/:PWD"
+expected_to match_regex "^PWD=/$"

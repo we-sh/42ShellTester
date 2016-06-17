@@ -1,0 +1,2 @@
+rm -rf "./my_sub_directory"
+mkdir -p "./my_sub_directory/and_another_one/"

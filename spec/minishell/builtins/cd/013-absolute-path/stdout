@@ -1,0 +1,2 @@
+expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}/my_sub_directory/and_another_one:PWD"
+expected_to match_regex "^PWD=${GLOBAL_TMP_DIRECTORY}/my_sub_directory/and_another_one$"

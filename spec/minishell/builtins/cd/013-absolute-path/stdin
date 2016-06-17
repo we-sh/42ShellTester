@@ -1,0 +1,3 @@
+cd ${GLOBAL_TMP_DIRECTORY}/my_sub_directory/and_another_one
+${GLOBAL_TMP_DIRECTORY}/display_pwd
+${GLOBAL_TMP_DIRECTORY}/display_env
