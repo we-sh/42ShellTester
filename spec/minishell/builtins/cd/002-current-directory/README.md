@@ -8,6 +8,7 @@ The purpose of this test is to check that using `.` as first argument with the b
 ```bash
 cd .
 ${GLOBAL_TMP_DIRECTORY}/display_pwd
+${GLOBAL_TMP_DIRECTORY}/display_env
 
 ```
 
@@ -15,6 +16,7 @@ ${GLOBAL_TMP_DIRECTORY}/display_pwd
 
 ```bash
 expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}:PWD"
+expected_to match_regex "^PWD=${GLOBAL_TMP_DIRECTORY}$"
 
 ```
 

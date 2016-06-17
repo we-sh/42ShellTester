@@ -1,12 +1,16 @@
-# 005-absolute-path
+# 012-dot
 
-*[spec > minishell > builtins > cd](..) > 005-absolute-path*
+*[spec > minishell > builtins > cd](..) > 012-dot*
 
-The purpose of this test is to check that using an absolute path as first argument with the builtin `cd` results in moving to the correct directory.
+The purpose of this test is to check that playing with relative paths to the current directory with the builtin `cd` results in not changing the current directory.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-cd /
+cd .
+cd ./
+cd ./.
+cd ././
+cd ./././././././././.
 ${GLOBAL_TMP_DIRECTORY}/display_pwd
 ${GLOBAL_TMP_DIRECTORY}/display_env
 
@@ -15,8 +19,8 @@ ${GLOBAL_TMP_DIRECTORY}/display_env
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "PWD:/:PWD"
-expected_to match_regex "^PWD=/$"
+expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}:PWD"
+expected_to match_regex "^PWD=${GLOBAL_TMP_DIRECTORY}$"
 
 ```
 
@@ -24,6 +28,7 @@ expected_to match_regex "^PWD=/$"
 
 ```bash
 expected_to be_empty
+
 ```
 
 ### Variables

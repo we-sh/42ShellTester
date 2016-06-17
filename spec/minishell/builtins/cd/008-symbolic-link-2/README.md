@@ -18,6 +18,7 @@ ln -s "./symbolic_link1" "./symbolic_link2"
 ```bash
 cd symbolic_link2
 ${GLOBAL_TMP_DIRECTORY}/display_pwd
+${GLOBAL_TMP_DIRECTORY}/display_env
 
 ```
 
@@ -25,6 +26,8 @@ ${GLOBAL_TMP_DIRECTORY}/display_pwd
 
 ```bash
 expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}/sub_directory:PWD$"
+expected_to match_regex "^PWD=${GLOBAL_TMP_DIRECTORY}/symbolic_link2$"
+
 
 ```
 

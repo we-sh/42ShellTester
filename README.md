@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **107 tests**.
+42ShellTester is currently packaged with **108 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -159,8 +159,9 @@ Also display tests that succeed (hidden by default).
       * [007-symbolic-link](spec/minishell/builtins/cd/007-symbolic-link)
       * [008-symbolic-link-2](spec/minishell/builtins/cd/008-symbolic-link-2)
       * [009-following-links <img src='./lib/assets/hard.png' width='38' height='12' />](spec/minishell/builtins/cd/009-following-links)
-      * [010-update-PWD-and-OLDPWD](spec/minishell/builtins/cd/010-update-PWD-and-OLDPWD)
+      * [010-update-OLDPWD](spec/minishell/builtins/cd/010-update-OLDPWD)
       * [011-dotdot](spec/minishell/builtins/cd/011-dotdot)
+      * [012-dot](spec/minishell/builtins/cd/012-dot)
       * **[errors/](spec/minishell/builtins/cd/errors)**
         * [001-not-a-directory](spec/minishell/builtins/cd/errors/001-not-a-directory)
         * [002-not-a-directory-2](spec/minishell/builtins/cd/errors/002-not-a-directory-2)

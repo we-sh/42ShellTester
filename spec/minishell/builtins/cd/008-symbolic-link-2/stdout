@@ -1,1 +1,3 @@
 expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}/sub_directory:PWD$"
+expected_to match_regex "^PWD=${GLOBAL_TMP_DIRECTORY}/symbolic_link2$"
+

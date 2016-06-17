@@ -1,6 +1,6 @@
-# 010-update-PWD-and-OLDPWD
+# 010-update-OLDPWD
 
-*[spec > minishell > builtins > cd](..) > 010-update-PWD-and-OLDPWD*
+*[spec > minishell > builtins > cd](..) > 010-update-OLDPWD*
 
 The purpose of this test is to check that using the builtin `cd` results in a modified environment variable `PWD`.
 ### What is done before test
