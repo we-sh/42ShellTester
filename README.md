@@ -63,17 +63,17 @@ Also display tests that succeed (hidden by default).
     * [001-no-prompt-in-non-interactive-mode <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/misc/001-no-prompt-in-non-interactive-mode)
     * [002-simple-command-line <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/misc/002-simple-command-line)
   * **[pipe/](spec/21sh/pipe)**
-    * [001-single-pipe <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/001-single-pipe)
-    * [002-chained-pipes <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/002-chained-pipes)
-    * [003-many-chained-pipes <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/003-many-chained-pipes)
-    * [004-without-surrounding-whitespaces <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/004-without-surrounding-whitespaces)
-    * [005-asynchronous <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/005-asynchronous)
-    * [006-exit-status <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/006-exit-status)
+    * [001-single-pipe](spec/21sh/pipe/001-single-pipe)
+    * [002-chained-pipes](spec/21sh/pipe/002-chained-pipes)
+    * [003-many-chained-pipes](spec/21sh/pipe/003-many-chained-pipes)
+    * [004-without-surrounding-whitespaces](spec/21sh/pipe/004-without-surrounding-whitespaces)
+    * [005-asynchronous](spec/21sh/pipe/005-asynchronous)
+    * [006-exit-status](spec/21sh/pipe/006-exit-status)
     * **[mixed/](spec/21sh/pipe/mixed)**
-      * [001-exit-or-not-exit <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/001-exit-or-not-exit)
-      * [002-cd-or-not-cd <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/002-cd-or-not-cd)
-      * [003-unsetenv-or-not-unsetenv <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/003-unsetenv-or-not-unsetenv)
-      * [004-setenv-or-not-setenv <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/pipe/mixed/004-setenv-or-not-setenv)
+      * [001-exit-or-not-exit <img src='./lib/assets/hard.png' width='38' height='12' />](spec/21sh/pipe/mixed/001-exit-or-not-exit)
+      * [002-cd-or-not-cd <img src='./lib/assets/hard.png' width='38' height='12' />](spec/21sh/pipe/mixed/002-cd-or-not-cd)
+      * [003-unsetenv-or-not-unsetenv <img src='./lib/assets/hard.png' width='38' height='12' />](spec/21sh/pipe/mixed/003-unsetenv-or-not-unsetenv)
+      * [004-setenv-or-not-setenv <img src='./lib/assets/hard.png' width='38' height='12' />](spec/21sh/pipe/mixed/004-setenv-or-not-setenv)
   * **[redirections/](spec/21sh/redirections)**
     * **[inputs/](spec/21sh/redirections/inputs)**
       * [001-close-stdin <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/inputs/001-close-stdin)
