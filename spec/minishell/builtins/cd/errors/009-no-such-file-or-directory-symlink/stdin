@@ -1,0 +1,2 @@
+cd ./enoent_symlink
+${GLOBAL_TMP_DIRECTORY}/display_pwd

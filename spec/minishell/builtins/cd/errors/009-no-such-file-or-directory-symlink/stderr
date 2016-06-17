@@ -1,0 +1,2 @@
+expected_to_not be_empty
+might match_regex "[Nn]o such file or directory"

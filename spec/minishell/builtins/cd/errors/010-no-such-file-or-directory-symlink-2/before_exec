@@ -1,0 +1,2 @@
+rm -rf "./enoent_symlink" "./enoent_directory"
+ln -s "./enoent_directory" "./enoent_symlink"

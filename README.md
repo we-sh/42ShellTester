@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **105 tests**.
+42ShellTester is currently packaged with **107 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -170,6 +170,8 @@ Also display tests that succeed (hidden by default).
         * [006-too-many-symbolic-links-encountered-2](spec/minishell/builtins/cd/errors/006-too-many-symbolic-links-encountered-2)
         * [007-no-such-file-or-directory](spec/minishell/builtins/cd/errors/007-no-such-file-or-directory)
         * [008-no-such-file-or-directory-2](spec/minishell/builtins/cd/errors/008-no-such-file-or-directory-2)
+        * [009-no-such-file-or-directory-symlink](spec/minishell/builtins/cd/errors/009-no-such-file-or-directory-symlink)
+        * [010-no-such-file-or-directory-symlink-2](spec/minishell/builtins/cd/errors/010-no-such-file-or-directory-symlink-2)
       * **[options/](spec/minishell/builtins/cd/options)**
         * [001-not-following-links](spec/minishell/builtins/cd/options/001-not-following-links)
         * [002-oldpwd](spec/minishell/builtins/cd/options/002-oldpwd)

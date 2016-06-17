@@ -1,0 +1,1 @@
+expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}:PWD"
