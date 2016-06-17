@@ -1,12 +1,23 @@
-# 003-current-directory-2
+# 011-dotdot
 
-*[spec > minishell > builtins > cd](..) > 003-current-directory-2*
+*[spec > minishell > builtins > cd](..) > 011-dotdot*
 
-The purpose of this test is to check that using a relative path to the current directory as argument with the builtin `cd` results in not changing the current directory. In this test, the expansion `${GLOBAL_TMP_DIRECTORY##*/}` results in the name of the current directory, so that doing `cd ../${GLOBAL_TMP_DIRECTORY##*/}` is equivalent to do `cd .`. The environment variable must not be changed.
+The purpose of this test is to check that playing with relative paths with the builtin `cd` results in correctly changing the current directory.
+### What is done before test
+
+```bash
+rm -rf "playing_with_dotdot"
+mkdir -p "playing_with_dotdot/1/2/3/4/5/6/7/8/9/10"
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
-cd ../${GLOBAL_TMP_DIRECTORY##*/}
+cd playing_with_dotdot
+cd ../playing_with_dotdot
+cd 1/2/3/4/../4/../4/../../3/4/5/6/7/8/9/10
+cd ../../../../../../../../../../1/2/3/4/5
 ${GLOBAL_TMP_DIRECTORY}/display_pwd
 ${GLOBAL_TMP_DIRECTORY}/display_env
 
@@ -15,8 +26,8 @@ ${GLOBAL_TMP_DIRECTORY}/display_env
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}:PWD"
-expected_to match_regex "^PWD=${GLOBAL_TMP_DIRECTORY}$"
+expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY}/playing_with_dotdot/1/2/3/4/5:PWD"
+expected_to match_regex "^PWD=${GLOBAL_TMP_DIRECTORY}/playing_with_dotdot/1/2/3/4/5$"
 
 ```
 
@@ -24,6 +35,7 @@ expected_to match_regex "^PWD=${GLOBAL_TMP_DIRECTORY}$"
 
 ```bash
 expected_to be_empty
+
 ```
 
 ### Variables

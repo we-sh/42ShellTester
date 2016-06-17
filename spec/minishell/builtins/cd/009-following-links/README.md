@@ -25,7 +25,7 @@ ${GLOBAL_TMP_DIRECTORY}/display_env
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "PWD=${GLOBAL_TMP_DIRECTORY}/sub_directory_link/sub_sub_directory_link"
+expected_to match_regex "^PWD=${GLOBAL_TMP_DIRECTORY}/sub_directory_link/sub_sub_directory_link"
 
 ```
 

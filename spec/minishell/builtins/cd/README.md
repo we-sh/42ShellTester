@@ -11,5 +11,6 @@
 * [008-symbolic-link-2](./008-symbolic-link-2)
 * [009-following-links](./009-following-links)
 * [010-update-PWD-and-OLDPWD](./010-update-PWD-and-OLDPWD)
+* [011-dotdot](./011-dotdot)
 * [errors](./errors)
 * [options](./options)

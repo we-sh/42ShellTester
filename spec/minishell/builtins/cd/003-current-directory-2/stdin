@@ -1,2 +1,3 @@
 cd ../${GLOBAL_TMP_DIRECTORY##*/}
 ${GLOBAL_TMP_DIRECTORY}/display_pwd
+${GLOBAL_TMP_DIRECTORY}/display_env

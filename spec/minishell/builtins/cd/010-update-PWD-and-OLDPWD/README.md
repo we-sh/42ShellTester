@@ -23,8 +23,8 @@ cd ${GLOBAL_TOKEN}
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "PWD=${GLOBAL_TMP_DIRECTORY}/${GLOBAL_TOKEN}/${GLOBAL_TOKEN}$"
-expected_to match_regex "OLDPWD=${GLOBAL_TMP_DIRECTORY}/${GLOBAL_TOKEN}$"
+expected_to match_regex "^PWD=${GLOBAL_TMP_DIRECTORY}/${GLOBAL_TOKEN}/${GLOBAL_TOKEN}$"
+expected_to match_regex "^OLDPWD=${GLOBAL_TMP_DIRECTORY}/${GLOBAL_TOKEN}$"
 
 ```
 

@@ -1,0 +1,1 @@
+The purpose of this test is to check that playing with relative paths with the builtin `cd` results in correctly changing the current directory.
