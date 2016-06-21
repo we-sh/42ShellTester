@@ -15,8 +15,8 @@ ${GLOBAL_TMP_DIRECTORY}/display_env
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "PWD:${GLOBAL_TMP_DIRECTORY%/*}:PWD$"
-expected_to match_regex "^PWD=${GLOBAL_TMP_DIRECTORY%/*}$"
+expected_to match_regex "PWD:${GLOBAL_INSTALLDIR}:PWD$"
+expected_to match_regex "^PWD=${GLOBAL_INSTALLDIR}$"
 
 ```
 

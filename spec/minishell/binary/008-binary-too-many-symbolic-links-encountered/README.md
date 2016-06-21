@@ -1,36 +1,45 @@
-# 002-unset-and-set-variable
+# 008-binary-too-many-symbolic-links-encountered
 
-*[spec > minishell > builtins > env > multiple-options](..) > 002-unset-and-set-variable*
+*[spec > minishell > binary](..) > 008-binary-too-many-symbolic-links-encountered*
 
-The purpose of this test is to check if env -u works to unset variables for a given binary, we are also checking if an argument not prefix with -u is add to the environment of the given binary.### What is done before test
+The purpose of this test is to check that trying to execute a path that encounters an infinite loop of symbolic link results in an error on standard error and a failure exit status.
+### What is done before test
 
 ```bash
-# unset all environment variables except PATH
-for VARIABLE in $(env | awk 'BEGIN {FS="="} $0 !~ /^PATH/ {print $1}'); do unset "${VARIABLE}"; done;
-
-export HOME="/my/home"
+rm -rf ./symbolic_link1 ./symbolic_link2 ./symbolic_link3
+ln -s ./symbolic_link1 ./symbolic_link2
+ln -s ./symbolic_link2 ./symbolic_link3
+ln -s ./symbolic_link3 ./symbolic_link1
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-env -u HOME TESTVARIABLE=${GLOBAL_TOKEN} ./display_env
+./symbolic_link1
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "^TESTVARIABLE=${GLOBAL_TOKEN}$"
-expected_to_not match_regex "^HOME="
+expected_to be_empty
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to be_empty
+expected_to_not be_empty
+might match_regex "[Tt]oo many.*symbolic links"
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to_not exit_with_status 0
+
 ```
 
 ### Variables

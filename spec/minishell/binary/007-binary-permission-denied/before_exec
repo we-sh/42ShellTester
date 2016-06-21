@@ -1,0 +1,3 @@
+rm -rf ./permission_denied
+touch ./permission_denied
+chmod 0 ./permission_denied

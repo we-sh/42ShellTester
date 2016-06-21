@@ -1,0 +1,1 @@
+The purpose of this test is to check that trying to execute a non-permitted binary results in an error on standard error and a failure exit status.

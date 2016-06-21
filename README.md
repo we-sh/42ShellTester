@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **110 tests**.
+42ShellTester is currently packaged with **112 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -149,6 +149,8 @@ Also display tests that succeed (hidden by default).
     * [004-binary-test-empty-path](spec/minishell/binary/004-binary-test-empty-path)
     * [005-binary-test-wrong-path](spec/minishell/binary/005-binary-test-wrong-path)
     * [006-binary-undefined-path](spec/minishell/binary/006-binary-undefined-path)
+    * [007-binary-permission-denied](spec/minishell/binary/007-binary-permission-denied)
+    * [008-binary-too-many-symbolic-links-encountered](spec/minishell/binary/008-binary-too-many-symbolic-links-encountered)
   * **[builtins/](spec/minishell/builtins)**
     * **[cd/](spec/minishell/builtins/cd)**
       * [001-no-arg](spec/minishell/builtins/cd/001-no-arg)
