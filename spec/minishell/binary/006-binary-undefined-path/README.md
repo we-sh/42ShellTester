@@ -6,7 +6,8 @@ The purpose of this test is to check that the Shell retrieves the default value 
 ### What is done before test
 
 ```bash
-touch "${GLOBAL_TOKEN}"
+rm -rf "${GLOBAL_TOKEN}_006-BINARY-UNDEFINED-PATH"
+touch "${GLOBAL_TOKEN}_006-BINARY-UNDEFINED-PATH"
 unset PATH
 
 ```
@@ -21,7 +22,7 @@ ls
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}"
+expected_to match_regex "${GLOBAL_TOKEN}_006-BINARY-UNDEFINED-PATH"
 
 ```
 
