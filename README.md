@@ -60,8 +60,8 @@ Also display tests that succeed (hidden by default).
 <!--START_LIST_TESTS-->
 * **[21sh/](spec/21sh)**
   * **[misc/](spec/21sh/misc)**
-    * [001-no-prompt-in-non-interactive-mode <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/misc/001-no-prompt-in-non-interactive-mode)
-    * [002-simple-command-line <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/misc/002-simple-command-line)
+    * [001-no-prompt-in-non-interactive-mode](spec/21sh/misc/001-no-prompt-in-non-interactive-mode)
+    * [002-simple-command-line](spec/21sh/misc/002-simple-command-line)
   * **[pipe/](spec/21sh/pipe)**
     * [001-single-pipe](spec/21sh/pipe/001-single-pipe)
     * [002-chained-pipes](spec/21sh/pipe/002-chained-pipes)
@@ -76,45 +76,45 @@ Also display tests that succeed (hidden by default).
       * [004-setenv-or-not-setenv <img src='./lib/assets/hard.png' width='38' height='12' />](spec/21sh/pipe/mixed/004-setenv-or-not-setenv)
   * **[redirections/](spec/21sh/redirections)**
     * **[inputs/](spec/21sh/redirections/inputs)**
-      * [001-close-stdin <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/inputs/001-close-stdin)
-      * [002-filename <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/inputs/002-filename)
-      * [003-filename-with-whitespaces <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/inputs/003-filename-with-whitespaces)
-      * [004-absolute-path <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/inputs/004-absolute-path)
-      * [005-no-such-file <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/inputs/005-no-such-file)
+      * [001-close-stdin](spec/21sh/redirections/inputs/001-close-stdin)
+      * [002-filename](spec/21sh/redirections/inputs/002-filename)
+      * [003-filename-with-whitespaces](spec/21sh/redirections/inputs/003-filename-with-whitespaces)
+      * [004-absolute-path](spec/21sh/redirections/inputs/004-absolute-path)
+      * [005-no-such-file](spec/21sh/redirections/inputs/005-no-such-file)
     * **[outputs/](spec/21sh/redirections/outputs)**
       * **[appending/](spec/21sh/redirections/outputs/appending)**
-        * [001-append-default-to-file <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/001-append-default-to-file)
-        * [002-append-stdout-to-file <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/002-append-stdout-to-file)
-        * [003-append-stderr-to-file <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/003-append-stderr-to-file)
+        * [001-append-default-to-file](spec/21sh/redirections/outputs/appending/001-append-default-to-file)
+        * [002-append-stdout-to-file](spec/21sh/redirections/outputs/appending/002-append-stdout-to-file)
+        * [003-append-stderr-to-file](spec/21sh/redirections/outputs/appending/003-append-stderr-to-file)
         * **[multiple/](spec/21sh/redirections/outputs/appending/multiple)**
-          * [001-append-twice-separately <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/appending/multiple/001-append-twice-separately)
+          * [001-append-twice-separately](spec/21sh/redirections/outputs/appending/multiple/001-append-twice-separately)
       * **[closing/](spec/21sh/redirections/outputs/closing)**
-        * [001-close-default-output <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/001-close-default-output)
-        * [002-close-stdout <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/002-close-stdout)
-        * [003-close-stderr <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/003-close-stderr)
-        * [004-close-twice-outputs <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/closing/004-close-twice-outputs)
+        * [001-close-default-output](spec/21sh/redirections/outputs/closing/001-close-default-output)
+        * [002-close-stdout](spec/21sh/redirections/outputs/closing/002-close-stdout)
+        * [003-close-stderr](spec/21sh/redirections/outputs/closing/003-close-stderr)
+        * [004-close-twice-outputs](spec/21sh/redirections/outputs/closing/004-close-twice-outputs)
       * **[touching/](spec/21sh/redirections/outputs/touching)**
-        * [001-works <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/touching/001-works)
+        * [001-works](spec/21sh/redirections/outputs/touching/001-works)
       * **[truncating/](spec/21sh/redirections/outputs/truncating)**
-        * [001-creates-file-if-not-exits <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/001-creates-file-if-not-exits)
-        * [002-truncates-file-if-exists <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/002-truncates-file-if-exists)
-        * [003-whitespace-before-filename <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/003-whitespace-before-filename)
+        * [001-creates-file-if-not-exits](spec/21sh/redirections/outputs/truncating/001-creates-file-if-not-exits)
+        * [002-truncates-file-if-exists](spec/21sh/redirections/outputs/truncating/002-truncates-file-if-exists)
+        * [003-whitespace-before-filename](spec/21sh/redirections/outputs/truncating/003-whitespace-before-filename)
         * **[multiple/](spec/21sh/redirections/outputs/truncating/multiple)**
-          * [001-separately <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/multiple/001-separately)
-          * [002-together-stdout-first <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/multiple/002-together-stdout-first)
-          * [003-together-stderr-first <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/multiple/003-together-stderr-first)
-          * [004-together <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/multiple/004-together)
-          * [005-together-with-whitespaces <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/multiple/005-together-with-whitespaces)
+          * [001-separately](spec/21sh/redirections/outputs/truncating/multiple/001-separately)
+          * [002-together-stdout-first](spec/21sh/redirections/outputs/truncating/multiple/002-together-stdout-first)
+          * [003-together-stderr-first](spec/21sh/redirections/outputs/truncating/multiple/003-together-stderr-first)
+          * [004-together](spec/21sh/redirections/outputs/truncating/multiple/004-together)
+          * [005-together-with-whitespaces](spec/21sh/redirections/outputs/truncating/multiple/005-together-with-whitespaces)
         * **[stderr/](spec/21sh/redirections/outputs/truncating/stderr)**
-          * [001-works <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/stderr/001-works)
+          * [001-works](spec/21sh/redirections/outputs/truncating/stderr/001-works)
         * **[stdout/](spec/21sh/redirections/outputs/truncating/stdout)**
-          * [001-with-explicit-fd <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/redirections/outputs/truncating/stdout/001-with-explicit-fd)
+          * [001-with-explicit-fd](spec/21sh/redirections/outputs/truncating/stdout/001-with-explicit-fd)
   * **[separators/](spec/21sh/separators)**
     * **[semicolon/](spec/21sh/separators/semicolon)**
-      * [001-two-commands-sequentially <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/separators/semicolon/001-two-commands-sequentially)
-      * [002-n-commands-sequentially <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/separators/semicolon/002-n-commands-sequentially)
-      * [003-parse-error-empty-inline-command <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/separators/semicolon/003-parse-error-empty-inline-command)
-      * [004-parse-error-empty-command <img src='./lib/assets/pending.png' width='54' height='12' />](spec/21sh/separators/semicolon/004-parse-error-empty-command)
+      * [001-two-commands-sequentially](spec/21sh/separators/semicolon/001-two-commands-sequentially)
+      * [002-n-commands-sequentially](spec/21sh/separators/semicolon/002-n-commands-sequentially)
+      * [003-parse-error-empty-inline-command](spec/21sh/separators/semicolon/003-parse-error-empty-inline-command)
+      * [004-parse-error-empty-command](spec/21sh/separators/semicolon/004-parse-error-empty-command)
 * **[bonuses/](spec/bonuses)**
   * **[builtins/](spec/bonuses/builtins)**
     * **[env/](spec/bonuses/builtins/env)**
