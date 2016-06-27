@@ -119,6 +119,7 @@ Also display tests that succeed (hidden by default).
   * **[builtins/](spec/bonuses/builtins)**
     * **[env/](spec/bonuses/builtins/env)**
       * [001-unset-variables <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/builtins/env/001-unset-variables)
+      * [002-unset-and-set-variable <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/builtins/env/002-unset-and-set-variable)
   * **[redirections/](spec/bonuses/redirections)**
     * [001-append-twice-outputs-together <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/redirections/001-append-twice-outputs-together)
   * **[separators/](spec/bonuses/separators)**
@@ -187,7 +188,6 @@ Also display tests that succeed (hidden by default).
       * [005-set-variables](spec/minishell/builtins/env/005-set-variables)
       * **[multiple-options/](spec/minishell/builtins/env/multiple-options)**
         * [001-ignore-environment-and-set-variable](spec/minishell/builtins/env/multiple-options/001-ignore-environment-and-set-variable)
-        * [002-unset-and-set-variable <img src='./lib/assets/non-posix.png' width='63' height='12' />](spec/minishell/builtins/env/multiple-options/002-unset-and-set-variable)
     * **[exit/](spec/minishell/builtins/exit)**
       * [001-without-any-argument](spec/minishell/builtins/exit/001-without-any-argument)
       * [002-status-passed-as-argument](spec/minishell/builtins/exit/002-status-passed-as-argument)

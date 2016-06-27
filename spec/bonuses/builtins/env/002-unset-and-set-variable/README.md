@@ -1,6 +1,6 @@
 # 002-unset-and-set-variable
 
-*[spec > minishell > builtins > env > multiple-options](..) > 002-unset-and-set-variable*
+*[spec > bonuses > builtins > env](..) > 002-unset-and-set-variable*
 
 The purpose of this test is to check if env -u works to unset variables for a given binary, we are also checking if an argument not prefix with -u is add to the environment of the given binary.### What is done before test
 
