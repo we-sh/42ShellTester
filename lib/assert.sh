@@ -61,9 +61,9 @@ run_expected_to()
   ASSERT_STATUS="${?}"
   case "${ASSERT_STATUS}" in
     0)
-      printf "${C_GREEN}  √ %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_GREEN}  %-10s %s${C_CLEAR}\n" "SUCCESS" "$(eval echo ${LINE})" ;;
     1)
-      printf "${C_RED}  x %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_RED}  %-10s %s${C_CLEAR}\n" "FAILURE" "$(eval echo ${LINE})" ;;
     255)
       printf "${C_RED} [!] INVALID TEST COMMAND: %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
   esac
@@ -84,10 +84,10 @@ run_expected_to_not()
   case "${ASSERT_STATUS}" in
     1)
       ASSERT_STATUS="0"
-      printf "${C_GREEN}  √ %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_GREEN}  %-10s %s${C_CLEAR}\n" "SUCCESS" "$(eval echo ${LINE})" ;;
     0)
       ASSERT_STATUS="1"
-      printf "${C_RED}  x %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_RED}  %-10s %s${C_CLEAR}\n" "FAILURE" "$(eval echo ${LINE})" ;;
     255)
       printf "${C_RED} [!] INVALID TEST COMMAND: %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
   esac
@@ -107,10 +107,10 @@ run_might()
   ASSERT_STATUS="${?}"
   case "${ASSERT_STATUS}" in
     0)
-      printf "${C_GREEN}  √ %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_GREEN}  %-10s %s${C_CLEAR}\n" "SUCCESS" "$(eval echo ${LINE})" ;;
     1)
       ASSERT_STATUS="2"
-      printf "${C_YELLOW}  ~ %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_YELLOW}  %-10s %s${C_CLEAR}\n" "WARNING" "$(eval echo ${LINE})" ;;
     255)
       printf "${C_RED} [!] INVALID TEST COMMAND: %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
   esac
@@ -131,10 +131,10 @@ run_might_not()
   case "${ASSERT_STATUS}" in
     1)
       ASSERT_STATUS="0"
-      printf "${C_GREEN}  √ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_GREEN}  %-10s %s${C_CLEAR}\n" "SUCCESS" "$(eval echo ${LINE})" ;;
     0)
       ASSERT_STATUS="2"
-      printf "${C_YELLOW}  ~ ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_YELLOW}  %-10s %s${C_CLEAR}\n" "WARNING" "$(eval echo ${LINE})" ;;
     255)
       printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
   esac

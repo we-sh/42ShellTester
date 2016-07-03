@@ -226,7 +226,7 @@ run_main()
 
         if [ "${TEST_STATUS}" != "0" -o "${GLOBAL_SHOW_SUCCESS}" == "1" ]
         then
-          GLOBAL_LOG="$(printf "%s\n\n${C_BOLD}%s${C_CLEAR}" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST}")"
+          GLOBAL_LOG="$(printf "%s\n\n%s\n\n${C_BOLD}%s${C_CLEAR}" "${GLOBAL_LOG}" "----------------------------------------------------------------" "${LOG_CURRENT_TEST}")"
           case "${TEST_STATUS}" in
             0) GLOBAL_LOG="$(printf "%s ${C_GREEN}%s${C_CLEAR}" "${GLOBAL_LOG}" "(SUCCESS)")" ;;
             1) GLOBAL_LOG="$(printf "%s ${C_RED}%s${C_CLEAR}" "${GLOBAL_LOG}" "(FAILED)")" ;;
@@ -259,7 +259,7 @@ run_main()
         fi
 
         case "${TEST_STATUS}" in
-          0) printf "${C_GREEN}√${C_CLEAR}" ;;
+          0) printf "${C_GREEN}.${C_CLEAR}" ;;
           1) printf "${C_RED}x${C_CLEAR}" ;;
           2) printf "${C_YELLOW}~${C_CLEAR}" ;;
           255) printf "${C_RED}!${C_CLEAR}" ;;
