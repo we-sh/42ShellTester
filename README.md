@@ -1,6 +1,6 @@
 # 42ShellTester
 
-<img align="right"  src="./lib/assets/42shTestsTeamLogo_sm.png" width="213" />42ShellTester is an **integration testing framework** wrote in Bash and designed for the pedagogical projects of the Shell branch at School 42 (Paris) listed bellow:
+<img align="right"  src="./lib/assets/we-shTeamLogo_sm.png" width="213" />42ShellTester is an **integration testing framework** wrote in Bash and designed for the pedagogical projects of the Shell branch at School 42 (Paris) listed bellow:
 * **minishell**
 * **21sh**
 * **42sh**
@@ -14,7 +14,7 @@ It brings you an easy way to **add**, **maintain** and **run** integration tests
 ## Install
 
 ```bash
-git clone https://github.com/42shTests/42ShellTester ~/42ShellTester
+git clone https://github.com/we-sh/42ShellTester ~/42ShellTester
 ```
 
 ## Run tests
@@ -22,7 +22,7 @@ git clone https://github.com/42shTests/42ShellTester ~/42ShellTester
 Add the path to your Shell as argument:
 
 ```bash
-bash ~/42ShellTester/42ShellTester.sh "PATH/TO/YOUR/SHELL"
+bash ~/42ShellTester/42ShellTester.sh "/ABSOLUTE/PATH/TO/YOUR/SHELL"
 ```
 
 ## Options
@@ -297,16 +297,16 @@ Find the available list of support binaries bellow:
 
 <!--START_SUPPORT_BINARIES_LIST-->
 
-* **[./display_env](http://github.com/42shTests/42ShellTester/tree/master/support/display-env)**: A binary that iterates on `**envp` and write each element on standard output.
-* **[./display_program_name](http://github.com/42shTests/42ShellTester/tree/master/support/display-program-name)**: A binary that writes its name on standard ouput.
-* **[./display_pwd](http://github.com/42shTests/42ShellTester/tree/master/support/display-pwd)**: A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`, encountered with the strings `PWD:` and `:PWD`.
-* **[./exit_with_status](http://github.com/42shTests/42ShellTester/tree/master/support/exit-with-status)**: A binary that immediately exits with the status given as first argument.
-* **[./read_on_stdin](http://github.com/42shTests/42ShellTester/tree/master/support/read-on-stdin)**: A binary that reads on standard entry and write each line on standard output suffixed with the character `@` (e.g. same behavior as `cat -e` and the *newline* character). When `read(2)` returns `-1`, then the string `STDIN READ ERROR` is written on standard error.
-* **[./sleep_and_exit_with_status](http://github.com/42shTests/42ShellTester/tree/master/support/sleep-and-exit-with-status)**: A binary that sleeps for a duration in seconds given as first argument and then exits with status given as second argument.
-* **[./sleep_and_write_on_stderr](http://github.com/42shTests/42ShellTester/tree/master/support/sleep-and-write-on-stderr)**: A binary that sleeps for a duration in seconds given as first argument and then writes on STDERR the string given as second argument without EOL.
-* **[./write_on_stderr](http://github.com/42shTests/42ShellTester/tree/master/support/write-on-stderr)**: A binary that writes on standard error the first given argument (the same behavior as `echo` but with only one argument) and exits with an error status code given as second argument. If no argument is given, it writes the string "write on stderr" and exit with status `1`.
-* **[./write_on_stdout](http://github.com/42shTests/42ShellTester/tree/master/support/write-on-stdout)**: A binary that writes on standard output the first given argument (the same behavior as `echo` but with only one argument). If no argument is given, it writes the string "write on stdout".
-* **[./write_on_stdout_and_stderr](http://github.com/42shTests/42ShellTester/tree/master/support/write-on-stdout-and-stderr)**: A binary that writes on standard output the first given argument, and writes on standard error the second given argument. If an argument is missing, it writes the strings "write on stdout" and "write on stderr".
+* **[./display_env](http://github.com/we-sh/42ShellTester/tree/master/support/display-env)**: A binary that iterates on `**envp` and write each element on standard output.
+* **[./display_program_name](http://github.com/we-sh/42ShellTester/tree/master/support/display-program-name)**: A binary that writes its name on standard ouput.
+* **[./display_pwd](http://github.com/we-sh/42ShellTester/tree/master/support/display-pwd)**: A binary that writes on standard output the absolute path of the current directory returned by `getcwd(3)`, encountered with the strings `PWD:` and `:PWD`.
+* **[./exit_with_status](http://github.com/we-sh/42ShellTester/tree/master/support/exit-with-status)**: A binary that immediately exits with the status given as first argument.
+* **[./read_on_stdin](http://github.com/we-sh/42ShellTester/tree/master/support/read-on-stdin)**: A binary that reads on standard entry and write each line on standard output suffixed with the character `@` (e.g. same behavior as `cat -e` and the *newline* character). When `read(2)` returns `-1`, then the string `STDIN READ ERROR` is written on standard error.
+* **[./sleep_and_exit_with_status](http://github.com/we-sh/42ShellTester/tree/master/support/sleep-and-exit-with-status)**: A binary that sleeps for a duration in seconds given as first argument and then exits with status given as second argument.
+* **[./sleep_and_write_on_stderr](http://github.com/we-sh/42ShellTester/tree/master/support/sleep-and-write-on-stderr)**: A binary that sleeps for a duration in seconds given as first argument and then writes on STDERR the string given as second argument without EOL.
+* **[./write_on_stderr](http://github.com/we-sh/42ShellTester/tree/master/support/write-on-stderr)**: A binary that writes on standard error the first given argument (the same behavior as `echo` but with only one argument) and exits with an error status code given as second argument. If no argument is given, it writes the string "write on stderr" and exit with status `1`.
+* **[./write_on_stdout](http://github.com/we-sh/42ShellTester/tree/master/support/write-on-stdout)**: A binary that writes on standard output the first given argument (the same behavior as `echo` but with only one argument). If no argument is given, it writes the string "write on stdout".
+* **[./write_on_stdout_and_stderr](http://github.com/we-sh/42ShellTester/tree/master/support/write-on-stdout-and-stderr)**: A binary that writes on standard output the first given argument, and writes on standard error the second given argument. If an argument is missing, it writes the strings "write on stdout" and "write on stderr".
 
 <!--END_SUPPORT_BINARIES_LIST-->
 
