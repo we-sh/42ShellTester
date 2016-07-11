@@ -1,0 +1,2 @@
+rm -f "./folded_file"
+printf "123456789012345678901abcdefghij" > "./folded_file"

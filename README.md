@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **112 tests**.
+42ShellTester is currently packaged with **116 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -120,6 +120,11 @@ Also display tests that succeed (hidden by default).
     * **[env/](spec/bonuses/builtins/env)**
       * [001-unset-variables <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/builtins/env/001-unset-variables)
       * [002-unset-and-set-variable <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/builtins/env/002-unset-and-set-variable)
+    * **[fold/](spec/bonuses/builtins/fold)**
+      * [001-no-arg-no-parameter](spec/bonuses/builtins/fold/001-no-arg-no-parameter)
+      * [002-no-arg-break-lines-at-21-characters](spec/bonuses/builtins/fold/002-no-arg-break-lines-at-21-characters)
+      * [003-valid-file-no-parameter](spec/bonuses/builtins/fold/003-valid-file-no-parameter)
+      * [004-valid-file-break-lines-at-21-characters](spec/bonuses/builtins/fold/004-valid-file-break-lines-at-21-characters)
   * **[redirections/](spec/bonuses/redirections)**
     * [001-append-twice-outputs-together <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/redirections/001-append-twice-outputs-together)
   * **[separators/](spec/bonuses/separators)**
