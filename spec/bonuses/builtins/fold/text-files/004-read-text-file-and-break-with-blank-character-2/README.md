@@ -1,28 +1,32 @@
-# 004-valid-file-break-lines-at-21-characters
+# 004-read-text-file-and-break-with-blank-character-2
 
-*[spec > bonuses > builtins > fold](..) > 004-valid-file-break-lines-at-21-characters*
+*[spec > bonuses > builtins > fold > text-files](..) > 004-read-text-file-and-break-with-blank-character-2*
 
-The purpose of this tests is to check that the builtin `fold` can open and read a file specified as argument and break its lines to have a maximum of 21 columns, width specified with the option `-w`.
+The purpose of this test is to check that using the builtin 'fold' with the option '-s' breaks the lines after the last such <blank> character (width set to 51).
 ### What is done before test
 
 ```bash
 rm -f "./folded_file"
-printf "123456789012345678901abcdefghij" > "./folded_file"
+printf "The purpose of this test is to check that using the builtin 'fold' with the option '-s' breaks the lines after the last such <blank> character.\nIfthereisno<blank>meetingtherequirements,the-soptionshallhavenoeffectforthatoutputsegmentoftheinputline." > "./folded_file"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-fold -w 21 folded_file
+fold -s -w 51 folded_file
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex ^123456789012345678901$
-expected_to match_regex ^abcdefghij$
+expected_to match_regex "^The purpose of this test is to check that using $"
+expected_to match_regex "^the builtin 'fold' with the option '-s' breaks the $"
+expected_to match_regex "^lines after the last such <blank> character.$"
+expected_to match_regex "^Ifthereisno<blank>meetingtherequirements,the-soptio$"
+expected_to match_regex "^nshallhavenoeffectforthatoutputsegmentoftheinputlin$"
+expected_to match_regex "^e.$"
 
 ```
 

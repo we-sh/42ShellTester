@@ -1,0 +1,1 @@
+The purpose of this tests is to check that using the builtin `fold` with an invalid width results in an error.

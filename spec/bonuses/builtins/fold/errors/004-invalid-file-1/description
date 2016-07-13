@@ -1,0 +1,1 @@
+The purpose of this tests is to check that using the builtin `fold` with a list of invalid files results in an error.

@@ -1,0 +1,1 @@
+rm -rf "invalid_file1" "invalid_file2"

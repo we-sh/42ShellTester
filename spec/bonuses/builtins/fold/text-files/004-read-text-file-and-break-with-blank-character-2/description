@@ -1,0 +1,1 @@
+The purpose of this test is to check that using the builtin 'fold' with the option '-s' breaks the lines after the last such <blank> character (width set to 51).

@@ -1,0 +1,2 @@
+rm -f "./folded_file"
+printf "The purpose of this test is to check that using the builtin 'fold' with the option '-s' breaks the lines after the last such <blank> character.\nIfthereisno<blank>meetingtherequirements,the-soptionshallhavenoeffectforthatoutputsegmentoftheinputline." > "./folded_file"

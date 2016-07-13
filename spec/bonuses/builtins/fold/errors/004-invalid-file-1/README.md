@@ -1,42 +1,41 @@
-# 003-valid-file-no-parameter
+# 004-invalid-file-1
 
-*[spec > bonuses > builtins > fold](..) > 003-valid-file-no-parameter*
+*[spec > bonuses > builtins > fold > errors](..) > 004-invalid-file-1*
 
-The purpose of this tests is to check that the builtin `fold` can open and read a file specified as argument and break its lines to have a maximum of 80 columns (width by default).
+The purpose of this tests is to check that using the builtin `fold` with a list of invalid files results in an error.
 ### What is done before test
 
 ```bash
-rm -f "./folded_file"
-printf "12345678901234567890123456789012345678901234567890123456789012345678901234567890abcdefghij" > "./folded_file"
+rm -rf "invalid_file1" "invalid_file2"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-fold folded_file
+fold invalid_file1 invalid_file2
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex ^12345678901234567890123456789012345678901234567890123456789012345678901234567890$
-expected_to match_regex ^abcdefghij$
+expected_to be_empty
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to be_empty
+expected_to_not be_empty
+might match_regex "[Nn]o such file or directory" 2 times
 
 ```
 
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to exit_with_status 0
+expected_to_not exit_with_status 0
 
 ```
 

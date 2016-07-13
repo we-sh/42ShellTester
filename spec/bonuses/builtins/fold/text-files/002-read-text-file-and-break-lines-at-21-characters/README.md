@@ -1,12 +1,20 @@
-# 002-no-arg-break-lines-at-21-characters
+# 002-read-text-file-and-break-lines-at-21-characters
 
-*[spec > bonuses > builtins > fold](..) > 002-no-arg-break-lines-at-21-characters*
+*[spec > bonuses > builtins > fold > text-files](..) > 002-read-text-file-and-break-lines-at-21-characters*
 
-The purpose of this tests is to check that the builtin `fold` can read the standard entry and break the lines to have a maximum of 21 columns, width specified with the option `-w`.
+The purpose of this tests is to check that the builtin `fold` can open and read a file specified as argument and break its lines to have a maximum of 21 columns, width specified with the option `-w`.
+### What is done before test
+
+```bash
+rm -f "./folded_file"
+printf "123456789012345678901abcdefghij" > "./folded_file"
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_on_stdout 123456789012345678901abcdefghij | fold -w 21
+fold -w 21 folded_file
 
 ```
 
