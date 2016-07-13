@@ -116,11 +116,10 @@ Also display tests that succeed (hidden by default).
       * [003-parse-error-empty-inline-command](spec/21sh/separators/semicolon/003-parse-error-empty-inline-command)
       * [004-parse-error-empty-command](spec/21sh/separators/semicolon/004-parse-error-empty-command)
 * **[42sh/](spec/42sh)**
-  * **[quoting/](spec/42sh/quoting)**
-    * **[backslash/](spec/42sh/quoting/backslash)**
-      * [001-escape-double-quote](spec/42sh/quoting/backslash/001-escape-double-quote)
-      * [002-escape-single-quote](spec/42sh/quoting/backslash/002-escape-single-quote)
-      * [003-escape-single-character](spec/42sh/quoting/backslash/003-escape-single-character)
+  * **[escaping/](spec/42sh/escaping)**
+    * [001-escape-double-quote](spec/42sh/escaping/001-escape-double-quote)
+    * [002-escape-single-quote](spec/42sh/escaping/002-escape-single-quote)
+    * [003-escape-single-character](spec/42sh/escaping/003-escape-single-character)
 * **[bonuses/](spec/bonuses)**
   * **[builtins/](spec/bonuses/builtins)**
     * **[env/](spec/bonuses/builtins/env)**

@@ -2,4 +2,4 @@
 
 *[spec](..) > 42sh*
 
-* [quoting](./quoting)
+* [escaping](./escaping)

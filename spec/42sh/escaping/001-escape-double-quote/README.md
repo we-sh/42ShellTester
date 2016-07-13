@@ -1,6 +1,6 @@
 # 001-escape-double-quote
 
-*[spec > 42sh > quoting > backslash](..) > 001-escape-double-quote*
+*[spec > 42sh > escaping](..) > 001-escape-double-quote*
 
 The purpose of this test is to check that a double-quote `"` may be preserved when it is preceded by a backslash `\\`.
 ### Shell commands that are sent to the standard entry

@@ -1,19 +1,25 @@
-# 002-escape-single-quote
+# 003-escape-single-character
 
-*[spec > 42sh > quoting > backslash](..) > 002-escape-single-quote*
+*[spec > 42sh > escaping](..) > 003-escape-single-character*
 
-The purpose of this test is to check that a single-quote `'` may be preserved when it is preceded by a backslash `\\`.
+The purpose of this test is to check that using a backslash `\\` outside enclosing characters double-quote `"` or signle-quote `'` results in a preserved following character.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_on_stdout TEST\'TEST
+./write_on_stdout TEST1\TEST
+./write_on_stdout TEST2\\TEST
+./write_on_stdout TEST3\\\TEST
+./write_on_stdout TEST4\041TEST
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "^TEST\'TEST$"
+expected_to match_regex "^TEST1TEST$"
+expected_to match_regex "^TEST2\\TEST$"
+expected_to match_regex "^TEST3\\TEST$"
+expected_to match_regex "^TEST4041TEST$"
 
 ```
 
