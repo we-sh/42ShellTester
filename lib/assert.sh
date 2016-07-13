@@ -32,11 +32,13 @@ run_assert()
   local OLD_IFS="${IFS}"
   local ASSERT_STATUS="0"
   local CURRENT_ASSERT_STATUS
+  local DISPLAY_LINE
 
   IFS=$'\n'
-  for LINE in $(cat "${TEST}/$(echo "${EXPECTED_STD_NAME}" | awk '{print tolower($0)}')")
+  for LINE in $(awk '{gsub(/\\\\/, "\\\\\\\\\\\\\\\\"); print}' "${TEST}/$(echo "${EXPECTED_STD_NAME}" | awk '{print tolower($0)}')")
   do
     TEST_CMD="$(echo "${LINE}" | awk '{ print $1 }')"
+    DISPLAY_LINE="$(printf "${LINE}" | awk -v GLOBAL_TOKEN="${GLOBAL_TOKEN}" -v GLOBAL_INSTALLDIR="${GLOBAL_INSTALLDIR}" -v GLOBAL_TMP_DIRECTORY="${GLOBAL_TMP_DIRECTORY}" -v PATH="${PATH}" -v HOME="${HOME}" '{i=1; while(i <= NF) {gsub(/^"/, "`", $i); gsub(/"$/, "`", $i); i++}; gsub(/\\\\\\\\/, "\\"); gsub(/\$\{GLOBAL_TOKEN\}/, GLOBAL_TOKEN); gsub(/\$\{GLOBAL_INSTALLDIR\}/, GLOBAL_INSTALLDIR); gsub(/\$\{GLOBAL_TMP_DIRECTORY\}/, GLOBAL_TMP_DIRECTORY); gsub(/\$\{PATH\}/, PATH); gsub(/\$\{HOME\}/, HOME); print}')"
     eval "run_${TEST_CMD}" ${LINE}
     CURRENT_ASSERT_STATUS="${?}"
     if [ "${CURRENT_ASSERT_STATUS}" != "0" ]
@@ -61,11 +63,11 @@ run_expected_to()
   ASSERT_STATUS="${?}"
   case "${ASSERT_STATUS}" in
     0)
-      printf "${C_GREEN}  %-10s %s${C_CLEAR}\n" "SUCCESS" "$(eval echo ${LINE})" ;;
+      printf "${C_GREEN}  %-10s %s${C_CLEAR}\n" "SUCCESS" "${DISPLAY_LINE}" ;;
     1)
-      printf "${C_RED}  %-10s %s${C_CLEAR}\n" "FAILURE" "$(eval echo ${LINE})" ;;
+      printf "${C_RED}  %-10s %s${C_CLEAR}\n" "FAILURE" "${DISPLAY_LINE}" ;;
     255)
-      printf "${C_RED} [!] INVALID TEST COMMAND: %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_RED} [!] INVALID TEST COMMAND: %s${C_CLEAR}\n" "${DISPLAY_LINE}" ;;
   esac
 
   return "${ASSERT_STATUS}"
@@ -84,12 +86,12 @@ run_expected_to_not()
   case "${ASSERT_STATUS}" in
     1)
       ASSERT_STATUS="0"
-      printf "${C_GREEN}  %-10s %s${C_CLEAR}\n" "SUCCESS" "$(eval echo ${LINE})" ;;
+      printf "${C_GREEN}  %-10s %s${C_CLEAR}\n" "SUCCESS" "${DISPLAY_LINE}" ;;
     0)
       ASSERT_STATUS="1"
-      printf "${C_RED}  %-10s %s${C_CLEAR}\n" "FAILURE" "$(eval echo ${LINE})" ;;
+      printf "${C_RED}  %-10s %s${C_CLEAR}\n" "FAILURE" "${DISPLAY_LINE}" ;;
     255)
-      printf "${C_RED} [!] INVALID TEST COMMAND: %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_RED} [!] INVALID TEST COMMAND: %s${C_CLEAR}\n" "${DISPLAY_LINE}" ;;
   esac
 
   return "${ASSERT_STATUS}"
@@ -107,12 +109,12 @@ run_might()
   ASSERT_STATUS="${?}"
   case "${ASSERT_STATUS}" in
     0)
-      printf "${C_GREEN}  %-10s %s${C_CLEAR}\n" "SUCCESS" "$(eval echo ${LINE})" ;;
+      printf "${C_GREEN}  %-10s %s${C_CLEAR}\n" "SUCCESS" "${DISPLAY_LINE}" ;;
     1)
       ASSERT_STATUS="2"
-      printf "${C_YELLOW}  %-10s %s${C_CLEAR}\n" "WARNING" "$(eval echo ${LINE})" ;;
+      printf "${C_YELLOW}  %-10s %s${C_CLEAR}\n" "WARNING" "${DISPLAY_LINE}" ;;
     255)
-      printf "${C_RED} [!] INVALID TEST COMMAND: %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_RED} [!] INVALID TEST COMMAND: %s${C_CLEAR}\n" "${DISPLAY_LINE}" ;;
   esac
 
   return "${ASSERT_STATUS}"
@@ -131,12 +133,12 @@ run_might_not()
   case "${ASSERT_STATUS}" in
     1)
       ASSERT_STATUS="0"
-      printf "${C_GREEN}  %-10s %s${C_CLEAR}\n" "SUCCESS" "$(eval echo ${LINE})" ;;
+      printf "${C_GREEN}  %-10s %s${C_CLEAR}\n" "SUCCESS" "${DISPLAY_LINE}" ;;
     0)
       ASSERT_STATUS="2"
-      printf "${C_YELLOW}  %-10s %s${C_CLEAR}\n" "WARNING" "$(eval echo ${LINE})" ;;
+      printf "${C_YELLOW}  %-10s %s${C_CLEAR}\n" "WARNING" "${DISPLAY_LINE}" ;;
     255)
-      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "$(eval echo ${LINE})" ;;
+      printf "${C_RED} [!] INVALID TEST COMMAND: ${EXPECTED_STD_NAME} %s${C_CLEAR}\n" "${DISPLAY_LINE}" ;;
   esac
 
   return "${ASSERT_STATUS}"

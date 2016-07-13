@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **123 tests**.
+42ShellTester is currently packaged with **126 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -115,6 +115,12 @@ Also display tests that succeed (hidden by default).
       * [002-n-commands-sequentially](spec/21sh/separators/semicolon/002-n-commands-sequentially)
       * [003-parse-error-empty-inline-command](spec/21sh/separators/semicolon/003-parse-error-empty-inline-command)
       * [004-parse-error-empty-command](spec/21sh/separators/semicolon/004-parse-error-empty-command)
+* **[42sh/](spec/42sh)**
+  * **[quoting/](spec/42sh/quoting)**
+    * **[backslash/](spec/42sh/quoting/backslash)**
+      * [001-escape-double-quote](spec/42sh/quoting/backslash/001-escape-double-quote)
+      * [002-escape-single-quote](spec/42sh/quoting/backslash/002-escape-single-quote)
+      * [003-escape-single-character](spec/42sh/quoting/backslash/003-escape-single-character)
 * **[bonuses/](spec/bonuses)**
   * **[builtins/](spec/bonuses/builtins)**
     * **[env/](spec/bonuses/builtins/env)**

@@ -1,43 +1,19 @@
-# 008-binary-too-many-symbolic-links-encountered
+# 001-escape-double-quote
 
-*[spec > minishell > binary](..) > 008-binary-too-many-symbolic-links-encountered*
+*[spec > 42sh > quoting > backslash](..) > 001-escape-double-quote*
 
-The purpose of this test is to check that trying to execute a path that encounters an infinite loop of symbolic link results in an error on standard error and a failure exit status.
-### What is done before test
-
-```bash
-rm -rf ./symbolic_link1 ./symbolic_link2 ./symbolic_link3
-ln -s ./symbolic_link1 ./symbolic_link2
-ln -s ./symbolic_link2 ./symbolic_link3
-ln -s ./symbolic_link3 ./symbolic_link1
-
-```
-
+The purpose of this test is to check that a double-quote `"` may be preserved when it is preceded by a backslash `\\`.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./symbolic_link1
+./write_on_stdout TEST\"TEST
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to be_empty
-
-```
-
-### What is expected on error output
-
-```bash
-might match_regex "[Tt]oo many.*symbolic links"
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to_not exit_with_status 0
+expected_to match_regex "^TEST\"TEST$"
 
 ```
 
