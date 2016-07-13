@@ -71,8 +71,7 @@ run_main()
       local TOTAL=$(awk 'END {print NR+1}' "${TEST}/stdin")
       while [ "$INDEX" -le "$TOTAL" ]
       do
-        LINE="$(awk -v INDEX="${INDEX}" 'NR == INDEX {gsub(/"/, "\\\""); gsub(/\|/, "\"|\""); gsub(/;/, "\";\""); gsub(/>/, "\">\""); gsub(/&/, "\"&\""); gsub(/</, "\"<\""); gsub(/-/, "\"-\""); print $0; exit}' "${TEST}/stdin")"
-        [ "${LINE}" != "" ] && eval echo "${LINE}" >>"${GLOBAL_TMP_DIRECTORY}/stdin"
+        awk -v INDEX="${INDEX}" -v GLOBAL_TOKEN="${GLOBAL_TOKEN}" -v GLOBAL_INSTALLDIR="${GLOBAL_INSTALLDIR}" -v GLOBAL_TMP_DIRECTORY="${GLOBAL_TMP_DIRECTORY}" -v PATH="${PATH}" -v HOME="${HOME}" 'NR == INDEX {gsub(/\$\{GLOBAL_TOKEN\}/, GLOBAL_TOKEN); gsub(/\$\{GLOBAL_INSTALLDIR\}/, GLOBAL_INSTALLDIR); gsub(/\$\{GLOBAL_TMP_DIRECTORY\}/, GLOBAL_TMP_DIRECTORY); gsub(/\$\{PATH\}/, PATH); gsub(/\$\{HOME\}/, HOME); print; exit}' "${TEST}/stdin" >>"${GLOBAL_TMP_DIRECTORY}/stdin"
 
         (( INDEX += 1 ))
       done
@@ -235,7 +234,7 @@ run_main()
           esac
           [ -f "${TEST}/description" ] && GLOBAL_LOG="$(printf "%s\n\n  Description:\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "$(awk '{printf "  %s\n", $0}' "${TEST}/description")")"
 
-          [ -f "${TEST}/before_exec" ] && GLOBAL_LOG="$(printf "%s\n\n  Before test:\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "$(awk '{printf "  %02s: %s\n", NR, $0}' "${TEST}/before_exec")")"
+          [ -f "${TEST}/before_exec" ] && GLOBAL_LOG="$(printf "%s\n\n  Before test:\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "$(awk -v GLOBAL_TOKEN="${GLOBAL_TOKEN}" -v GLOBAL_INSTALLDIR="${GLOBAL_INSTALLDIR}" -v GLOBAL_TMP_DIRECTORY="${GLOBAL_TMP_DIRECTORY}" -v PATH="${PATH}" -v HOME="${HOME}" '{gsub(/\$\{GLOBAL_TOKEN\}/, GLOBAL_TOKEN); gsub(/\$\{GLOBAL_INSTALLDIR\}/, GLOBAL_INSTALLDIR); gsub(/\$\{GLOBAL_TMP_DIRECTORY\}/, GLOBAL_TMP_DIRECTORY); gsub(/\$\{PATH\}/, PATH); gsub(/\$\{HOME\}/, HOME); printf "  %02s: %s\n", NR, $0}' "${TEST}/before_exec")")"
 
           GLOBAL_LOG="$(printf "  %s\n\n  STDIN:\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "$(awk '{printf "  %02s: %s\n", NR, $0}' "${GLOBAL_TMP_DIRECTORY}/stdin")")"
 
@@ -254,6 +253,8 @@ run_main()
           fi
 
           [ "${LOG_CURRENT_TEST_MISC}" != "" ] && GLOBAL_LOG="$(printf "%s\n\n  MISC:\n%s" "${GLOBAL_LOG}" "${LOG_CURRENT_TEST_MISC}")"
+
+          [ -f "${TEST}/after_exec" ] && GLOBAL_LOG="$(printf "%s\n\n  After test:\n${C_GREY}%s${C_CLEAR}" "${GLOBAL_LOG}" "$(awk -v GLOBAL_TOKEN="${GLOBAL_TOKEN}" -v GLOBAL_INSTALLDIR="${GLOBAL_INSTALLDIR}" -v GLOBAL_TMP_DIRECTORY="${GLOBAL_TMP_DIRECTORY}" -v PATH="${PATH}" -v HOME="${HOME}" '{gsub(/\$\{GLOBAL_TOKEN\}/, GLOBAL_TOKEN); gsub(/\$\{GLOBAL_INSTALLDIR\}/, GLOBAL_INSTALLDIR); gsub(/\$\{GLOBAL_TMP_DIRECTORY\}/, GLOBAL_TMP_DIRECTORY); gsub(/\$\{PATH\}/, PATH); gsub(/\$\{HOME\}/, HOME); printf "  %02s: %s\n", NR, $0}' "${TEST}/after_exec")")"
 
           [ "${TEST_STATUS}" == "1" ] && (( GLOBAL_TOTAL_FAILED_TESTS = GLOBAL_TOTAL_FAILED_TESTS + 1 ))
         fi
