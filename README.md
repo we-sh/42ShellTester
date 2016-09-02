@@ -1,6 +1,6 @@
 # 42ShellTester
 
-<img align="right"  src="./lib/assets/we-shTeamLogo_sm.png" width="213" />42ShellTester is an **integration testing framework** wrote in Bash and designed for the pedagogical projects of the Shell branch at School 42 (Paris) listed bellow:
+<img align="right"  src="./42ShellTester_cropped.png" width="45%" />42ShellTester is an **integration testing framework** wrote in Bash and designed for the pedagogical projects of the Shell branch at School 42 (Paris) listed bellow:
 * **minishell**
 * **21sh**
 * **42sh**
@@ -339,3 +339,9 @@ Find the available list of support binaries bellow:
 * **Adrien Nouvel** [@anouvel](https://github.com/anouvel)
 * **Gabriel Kuma** [@gabkk](https://github.com/gabkk)
 * **Jean-Michel Gigault** [@jgigault](https://github.com/jgigault)
+
+## Logo credits
+
+Edouard Audeguy  
+Illustrateur / Infographiste  
+https://edouardaudeguy.wix.com/portfolio
