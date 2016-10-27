@@ -1,1 +1,2 @@
-rm -rf ./permission_denied
+if [ -d "./permission_denied" ]; then chmod 777 "./permission_denied"; fi
+rm -rf "./permission_denied"
