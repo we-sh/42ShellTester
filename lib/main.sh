@@ -34,6 +34,13 @@ run_main()
   local LOG_FAILED_TESTS
   local AWK_PATH="$(which "awk")"
   local OLD_IFS="${IFS}"
+  local UNAME=`uname`
+  local FIND="find"
+
+  # Use find instead find -E on Linux
+  if [ {UNAME} == "Darwin" ]; then
+      FIND= "find -E"
+  fi
 
   if [ ! -f "${GLOBAL_PROG}" ]
   then
@@ -42,7 +49,7 @@ run_main()
   fi
 
   IFS=$'\n'
-  for TEST in $(find -E "${GLOBAL_INSTALLDIR}/spec" -type d -regex "${GLOBAL_INSTALLDIR}/spec/.*${GLOBAL_SPECS_FILTER}.*")
+  for TEST in $(${FIND} "${GLOBAL_INSTALLDIR}/spec" -type d -regex "${GLOBAL_INSTALLDIR}/spec/.*${GLOBAL_SPECS_FILTER}.*")
   do
     [ -f "${TEST}/pending" -a "${GLOBAL_RUN_PENDING_TESTS}" == "0" ] && (( GLOBAL_TOTAL_PENDING_TESTS = GLOBAL_TOTAL_PENDING_TESTS + 1 ))
     if [ -f "${TEST}/stdin" ] && [ ! -f "${TEST}/non-posix" -o "${GLOBAL_RUN_POSIX_ONLY}" == "0" ] && [ ! -f "${TEST}/pending" -o "${GLOBAL_RUN_PENDING_TESTS}" == "1" -o "${GLOBAL_RUN_ALL_TESTS}" == "1" ] && [ ! -f "${TEST}/hard" -o "${GLOBAL_RUN_HARD_TESTS}" == "1" -o "${GLOBAL_RUN_ALL_TESTS}" == "1" ]
