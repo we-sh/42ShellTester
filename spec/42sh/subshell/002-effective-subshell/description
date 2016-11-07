@@ -1,0 +1,1 @@
+The purpose of this test is to check that the part of a command line that is embraced within the subshell tokens `(` and `)` effectively results in a subshell execution.

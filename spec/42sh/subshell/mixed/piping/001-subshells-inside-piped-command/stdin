@@ -1,0 +1,2 @@
+(cd / ; ${GLOBAL_TMP_DIRECTORY}/display_pwd) | (./read_on_stdin) | (./read_on_stdin)
+./write_on_stdout ${GLOBAL_TOKEN}
