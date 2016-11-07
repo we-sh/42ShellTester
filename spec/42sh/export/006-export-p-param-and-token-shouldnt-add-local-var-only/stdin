@@ -1,0 +1,4 @@
+export -p ${GLOBAL_TOKEN}
+export | grep ${GLOBAL_TOKEN} && touch ${GLOBAL_TOKEN}EXPORT
+env | grep ${GLOBAL_TOKEN} && touch ${GLOBAL_TOKEN}ENV
+ls

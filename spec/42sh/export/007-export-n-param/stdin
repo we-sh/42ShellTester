@@ -1,0 +1,3 @@
+export ${GLOBAL_TOKEN}=1
+export -n ${GLOBAL_TOKEN}
+export

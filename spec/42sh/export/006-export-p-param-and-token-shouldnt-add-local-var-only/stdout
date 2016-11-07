@@ -1,0 +1,3 @@
+expected_to_not match_each_regex_of_file "./stored_env"
+expected_to match_regex "${GLOBAL_TOKEN}EXPORT"
+expected_to_not match_regex "${GLOBAL_TOKEN}ENV"
