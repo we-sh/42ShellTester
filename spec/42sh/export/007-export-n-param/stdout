@@ -1,1 +1,2 @@
-expected_to_not match_regex "${GLOBAL_TOKEN}"
+expected_to_not match_regex "${GLOBAL_TOKEN}EXPORT"
+expected_to_not match_regex "${GLOBAL_TOKEN}ENV"

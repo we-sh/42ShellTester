@@ -1,2 +1,2 @@
 export -p ${GLOBAL_TOKEN}
-export
+env
