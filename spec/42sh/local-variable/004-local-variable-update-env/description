@@ -1,0 +1,1 @@
+The purpose of this test is initialize a local variable named as an environment variable and check if it's update the existing environment variable.
