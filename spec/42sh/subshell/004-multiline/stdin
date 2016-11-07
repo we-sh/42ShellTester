@@ -1,0 +1,5 @@
+(
+cd / ;
+${GLOBAL_TMP_DIRECTORY}/display_pwd
+)
+./write_on_stdout ${GLOBAL_TOKEN}
