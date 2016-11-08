@@ -1,0 +1,1 @@
+The purpose of this test is to check that the exit status of a subshell command that is executed at the end of a script is correctly returned at termination by the parent shell.
