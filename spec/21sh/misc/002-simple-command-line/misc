@@ -1,2 +1,1 @@
 expected_to_not create_file "${GLOBAL_TOKEN}/${GLOBAL_TOKEN}_STDOUT" matching_regex "${GLOBAL_TOKEN}_FILE$"
-expected_to create_file "${GLOBAL_TOKEN}/${GLOBAL_TOKEN}_STDOUT" matching_regex "66$"

@@ -1,1 +1,2 @@
 rm -rf "${GLOBAL_TOKEN}"
+echo ${GLOBAL_TOKEN}_FILE_${GLOBAL_TOKEN}_STDOUT | wc -c > SIZE
