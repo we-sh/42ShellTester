@@ -21,7 +21,7 @@ mkdir ${GLOBAL_TOKEN} ; cd ${GLOBAL_TOKEN} ; touch ${GLOBAL_TOKEN}_FILE ; ls -1 
 
 ```bash
 expected_to match_regex "${GLOBAL_TOKEN}_FILE$"
-expected_to match_regex "66$"
+expected_to match_regex "48$"
 
 ```
 
@@ -36,7 +36,7 @@ expected_to be_empty
 
 ```bash
 expected_to_not create_file "${GLOBAL_TOKEN}/${GLOBAL_TOKEN}_STDOUT" matching_regex "${GLOBAL_TOKEN}_FILE$"
-expected_to create_file "${GLOBAL_TOKEN}/${GLOBAL_TOKEN}_STDOUT" matching_regex "66$"
+expected_to create_file "${GLOBAL_TOKEN}/${GLOBAL_TOKEN}_STDOUT" matching_regex "48$"
 
 ```
 
