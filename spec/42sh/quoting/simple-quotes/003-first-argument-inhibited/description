@@ -1,0 +1,1 @@
+The purpose of this test is to check that the shell implementation has no special case for the first argument.

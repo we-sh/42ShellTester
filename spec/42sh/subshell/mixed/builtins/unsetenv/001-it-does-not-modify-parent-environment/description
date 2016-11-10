@@ -1,0 +1,1 @@
+The purpose of this test is to check that changing environment in subshell commands does not result in a changed of the parent shell's environment.

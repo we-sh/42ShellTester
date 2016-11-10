@@ -1,0 +1,2 @@
+(unsetenv ${GLOBAL_TOKEN}_NAME ; unset ${GLOBAL_TOKEN}_NAME)
+./display_env

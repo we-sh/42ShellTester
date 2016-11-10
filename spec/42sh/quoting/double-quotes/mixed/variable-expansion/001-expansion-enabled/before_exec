@@ -1,0 +1,1 @@
+export "TOKEN=${GLOBAL_TOKEN}"
