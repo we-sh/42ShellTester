@@ -1,0 +1,3 @@
+expected_to match_regex "^${GLOBAL_TOKEN}_FIRST$"
+expected_to match_regex "^${GLOBAL_TOKEN}_SECOND$"
+expected_to match_regex "^${GLOBAL_TOKEN}_THIRD$"
