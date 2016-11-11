@@ -1,4 +1,0 @@
-./write_on_stdout TEST1\TEST
-./write_on_stdout TEST2\\TEST
-./write_on_stdout TEST3\\\TEST
-./write_on_stdout TEST4\041TEST
