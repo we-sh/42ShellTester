@@ -2,11 +2,11 @@
 
 *[spec > minishell > builtins > cd](..) > 003-current-directory-2*
 
-The purpose of this test is to check that using a relative path to the current directory as argument with the builtin `cd` results in not changing the current directory. In this test, the expansion `${GLOBAL_TMP_DIRECTORY##*/}` results in the name of the current directory, so that doing `cd ../${GLOBAL_TMP_DIRECTORY##*/}` is equivalent to do `cd .`. The environment variable must not be changed.
+The purpose of this test is to check that using a relative path to the current directory as argument with the builtin `cd` results in not changing the current directory. The environment variable must not be changed.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-cd ../${GLOBAL_TMP_DIRECTORY##*/}
+cd ../tmp
 ${GLOBAL_TMP_DIRECTORY}/display_pwd
 ${GLOBAL_TMP_DIRECTORY}/display_env
 

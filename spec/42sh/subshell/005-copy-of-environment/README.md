@@ -1,43 +1,30 @@
-# 005-binary-test-wrong-path
+# 005-copy-of-environment
 
-*[spec > minishell > binary](..) > 005-binary-test-wrong-path*
+*[spec > 42sh > subshell](..) > 005-copy-of-environment*
 
-This test purpose is to check if your shell is not able to use binary with a wrong PATH
-We are changing the actual PATH by PATH=NULL
-And executing the commande ls
+The purpose of this test is to check that a subshell get a copy of the parent environment.
 ### What is done before test
 
 ```bash
-export PATH="/"
+export "${GLOBAL_TOKEN}_VAR1=VALUE1"
+export "${GLOBAL_TOKEN}_VAR2=VALUE2"
+export "${GLOBAL_TOKEN}_VAR3=VALUE3"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+(./display_env)
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might be_empty
-
-```
-
-### What is expected on error output
-
-```bash
-expected_to_not be_empty
-might match_regex "[Cc]ommand not found"
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to_not exit_with_status "0"
+expected_to match_regex "${GLOBAL_TOKEN}_VAR1=VALUE1"
+expected_to match_regex "${GLOBAL_TOKEN}_VAR2=VALUE2"
+expected_to match_regex "${GLOBAL_TOKEN}_VAR3=VALUE3"
 
 ```
 

@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **126 tests**.
+42ShellTester is currently packaged with **169 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -117,9 +117,73 @@ Also display tests that succeed (hidden by default).
       * [004-parse-error-empty-command](spec/21sh/separators/semicolon/004-parse-error-empty-command)
 * **[42sh/](spec/42sh)**
   * **[escaping/](spec/42sh/escaping)**
-    * [001-escape-double-quote](spec/42sh/escaping/001-escape-double-quote)
-    * [002-escape-single-quote](spec/42sh/escaping/002-escape-single-quote)
-    * [003-escape-single-character](spec/42sh/escaping/003-escape-single-character)
+    * [001-escape-single-character-1](spec/42sh/escaping/001-escape-single-character-1)
+    * [002-escape-single-character-2](spec/42sh/escaping/002-escape-single-character-2)
+    * [003-escape-single-character-3](spec/42sh/escaping/003-escape-single-character-3)
+    * [004-escape-single-character-4](spec/42sh/escaping/004-escape-single-character-4)
+    * [005-escape-single-character-5](spec/42sh/escaping/005-escape-single-character-5)
+    * **[mixed/](spec/42sh/escaping/mixed)**
+      * **[variable-expansion/](spec/42sh/escaping/mixed/variable-expansion)**
+        * [001-escape-variable-1](spec/42sh/escaping/mixed/variable-expansion/001-escape-variable-1)
+        * [002-it-does-not-escape-variable](spec/42sh/escaping/mixed/variable-expansion/002-it-does-not-escape-variable)
+        * [003-escape-variable-2](spec/42sh/escaping/mixed/variable-expansion/003-escape-variable-2)
+  * **[quoting/](spec/42sh/quoting)**
+    * **[double-quotes/](spec/42sh/quoting/double-quotes)**
+      * [001-it-works](spec/42sh/quoting/double-quotes/001-it-works)
+      * [002-concatenated-strings](spec/42sh/quoting/double-quotes/002-concatenated-strings)
+      * [003-first-argument-inhibited](spec/42sh/quoting/double-quotes/003-first-argument-inhibited)
+      * [004-multiline-1](spec/42sh/quoting/double-quotes/004-multiline-1)
+      * [005-multiline-2](spec/42sh/quoting/double-quotes/005-multiline-2)
+      * **[mixed/](spec/42sh/quoting/double-quotes/mixed)**
+        * **[escaping/](spec/42sh/quoting/double-quotes/mixed/escaping)**
+          * [001-escape-double-quote-1](spec/42sh/quoting/double-quotes/mixed/escaping/001-escape-double-quote-1)
+          * [002-escape-double-quote-2](spec/42sh/quoting/double-quotes/mixed/escaping/002-escape-double-quote-2)
+          * [003-it-results-in-error](spec/42sh/quoting/double-quotes/mixed/escaping/003-it-results-in-error)
+          * [004-it-does-not-escape-double-quote](spec/42sh/quoting/double-quotes/mixed/escaping/004-it-does-not-escape-double-quote)
+        * **[variable-expansion/](spec/42sh/quoting/double-quotes/mixed/variable-expansion)**
+          * [001-expansion-enabled](spec/42sh/quoting/double-quotes/mixed/variable-expansion/001-expansion-enabled)
+    * **[mixed/](spec/42sh/quoting/mixed)**
+      * [001-simple-and-double-quotes](spec/42sh/quoting/mixed/001-simple-and-double-quotes)
+      * [002-multiline](spec/42sh/quoting/mixed/002-multiline)
+    * **[simple-quotes/](spec/42sh/quoting/simple-quotes)**
+      * [001-it-works](spec/42sh/quoting/simple-quotes/001-it-works)
+      * [002-concatenated-strings](spec/42sh/quoting/simple-quotes/002-concatenated-strings)
+      * [003-first-argument-inhibited](spec/42sh/quoting/simple-quotes/003-first-argument-inhibited)
+      * [004-multiline-1](spec/42sh/quoting/simple-quotes/004-multiline-1)
+      * [005-multiline-2](spec/42sh/quoting/simple-quotes/005-multiline-2)
+      * **[mixed/](spec/42sh/quoting/simple-quotes/mixed)**
+        * **[escaping/](spec/42sh/quoting/simple-quotes/mixed/escaping)**
+          * [001-escape-simple-quote-1](spec/42sh/quoting/simple-quotes/mixed/escaping/001-escape-simple-quote-1)
+          * [002-escape-simple-quote-2](spec/42sh/quoting/simple-quotes/mixed/escaping/002-escape-simple-quote-2)
+          * [003-it-does-not-escape-simple-quote-1](spec/42sh/quoting/simple-quotes/mixed/escaping/003-it-does-not-escape-simple-quote-1)
+          * [004-it-does-not-escape-simple-quote-2](spec/42sh/quoting/simple-quotes/mixed/escaping/004-it-does-not-escape-simple-quote-2)
+        * **[variable-expansion/](spec/42sh/quoting/simple-quotes/mixed/variable-expansion)**
+          * [001-expansion-disabled](spec/42sh/quoting/simple-quotes/mixed/variable-expansion/001-expansion-disabled)
+  * **[subshell/](spec/42sh/subshell)**
+    * [001-tokens-are-recognized](spec/42sh/subshell/001-tokens-are-recognized)
+    * [002-multiple-levels-of-subshells](spec/42sh/subshell/002-multiple-levels-of-subshells)
+    * [003-multiline](spec/42sh/subshell/003-multiline)
+    * [004-exit-status](spec/42sh/subshell/004-exit-status)
+    * [005-copy-of-environment](spec/42sh/subshell/005-copy-of-environment)
+    * **[mixed/](spec/42sh/subshell/mixed)**
+      * **[builtins/](spec/42sh/subshell/mixed/builtins)**
+        * **[cd/](spec/42sh/subshell/mixed/builtins/cd)**
+          * [001-it-does-not-change-current-directory](spec/42sh/subshell/mixed/builtins/cd/001-it-does-not-change-current-directory)
+          * [002-multiline](spec/42sh/subshell/mixed/builtins/cd/002-multiline)
+        * **[exit/](spec/42sh/subshell/mixed/builtins/exit)**
+          * [001-exiting-subshell](spec/42sh/subshell/mixed/builtins/exit/001-exiting-subshell)
+        * **[setenv/](spec/42sh/subshell/mixed/builtins/setenv)**
+          * [001-it-does-not-modify-parent-environment](spec/42sh/subshell/mixed/builtins/setenv/001-it-does-not-modify-parent-environment)
+        * **[unsetenv/](spec/42sh/subshell/mixed/builtins/unsetenv)**
+          * [001-it-does-not-modify-parent-environment](spec/42sh/subshell/mixed/builtins/unsetenv/001-it-does-not-modify-parent-environment)
+      * **[piping/](spec/42sh/subshell/mixed/piping)**
+        * [001-subshells-inside-piped-command](spec/42sh/subshell/mixed/piping/001-subshells-inside-piped-command)
+        * [002-pipes-inside-subshells](spec/42sh/subshell/mixed/piping/002-pipes-inside-subshells)
+        * [003-imbricated-subshells-and-pipes](spec/42sh/subshell/mixed/piping/003-imbricated-subshells-and-pipes)
+      * **[quoting/](spec/42sh/subshell/mixed/quoting)**
+        * [001-with-simple-quotes](spec/42sh/subshell/mixed/quoting/001-with-simple-quotes)
+        * [002-with-double-quotes](spec/42sh/subshell/mixed/quoting/002-with-double-quotes)
+        * [003-with-simple-and-double-quotes](spec/42sh/subshell/mixed/quoting/003-with-simple-and-double-quotes)
 * **[bonuses/](spec/bonuses)**
   * **[builtins/](spec/bonuses/builtins)**
     * **[env/](spec/bonuses/builtins/env)**

@@ -1,43 +1,26 @@
-# 005-binary-test-wrong-path
+# 002-escape-simple-quote-2
 
-*[spec > minishell > binary](..) > 005-binary-test-wrong-path*
+*[spec > 42sh > quoting > simple-quotes > mixed > escaping](..) > 002-escape-simple-quote-2*
 
-This test purpose is to check if your shell is not able to use binary with a wrong PATH
-We are changing the actual PATH by PATH=NULL
-And executing the commande ls
-### What is done before test
-
-```bash
-export PATH="/"
-
-```
-
+The purpose of this test is to check that a simple-quote `'` may be preserved when it is preceded by a backslash `\\`.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+./write_on_stdout_and_stderr \'${GLOBAL_TOKEN}_STDOUT ${GLOBAL_TOKEN}_STDERR\'
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might be_empty
+expected_to match_regex "^'${GLOBAL_TOKEN}_STDOUT$"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to_not be_empty
-might match_regex "[Cc]ommand not found"
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to_not exit_with_status "0"
+expected_to match_regex "^${GLOBAL_TOKEN}_STDERR'$"
 
 ```
 

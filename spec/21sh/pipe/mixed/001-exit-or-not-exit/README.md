@@ -7,16 +7,16 @@ In this test, the two commands `echo` are nevertheless executed.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-exit | ./write_on_stdout ALIVE
-./write_on_stdout "${GLOBAL_TOKEN}_2"
+exit | ./write_on_stdout ${GLOBAL_TOKEN}_1
+./write_on_stdout ${GLOBAL_TOKEN}_2
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "ALIVE$"
-expected_to match_regex "${GLOBAL_TOKEN}_2$"
+expected_to match_regex "${GLOBAL_TOKEN}_1"
+expected_to match_regex "${GLOBAL_TOKEN}_2"
 
 ```
 

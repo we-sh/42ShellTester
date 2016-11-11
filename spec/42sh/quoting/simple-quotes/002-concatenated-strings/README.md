@@ -1,43 +1,26 @@
-# 005-binary-test-wrong-path
+# 002-concatenated-strings
 
-*[spec > minishell > binary](..) > 005-binary-test-wrong-path*
+*[spec > 42sh > quoting > simple-quotes](..) > 002-concatenated-strings*
 
-This test purpose is to check if your shell is not able to use binary with a wrong PATH
-We are changing the actual PATH by PATH=NULL
-And executing the commande ls
-### What is done before test
-
-```bash
-export PATH="/"
-
-```
-
+The purpose of this test is to check that a mixed argument with multiple inhibited parts is considered as a single argument.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+./write_on_stdout_and_stderr A'B'CDEF'GHIJ''KLMNO' 'P'QRS'T''U''V'WXYZ
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might be_empty
+expected_to match_regex "ABCDEFGHIJKLMNO"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to_not be_empty
-might match_regex "[Cc]ommand not found"
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to_not exit_with_status "0"
+expected_to match_regex "PQRSTUVWXYZ"
 
 ```
 

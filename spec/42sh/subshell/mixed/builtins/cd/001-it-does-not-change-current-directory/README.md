@@ -1,43 +1,27 @@
-# 005-binary-test-wrong-path
+# 001-it-does-not-change-current-directory
 
-*[spec > minishell > binary](..) > 005-binary-test-wrong-path*
+*[spec > 42sh > subshell > mixed > builtins > cd](..) > 001-it-does-not-change-current-directory*
 
-This test purpose is to check if your shell is not able to use binary with a wrong PATH
-We are changing the actual PATH by PATH=NULL
-And executing the commande ls
-### What is done before test
-
-```bash
-export PATH="/"
-
-```
-
+The purpose of this test is to check that the part of a command line that is embraced within the subshell tokens `(` and `)` effectively results in a subshell execution.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+(cd /)
+./display_pwd
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might be_empty
+expected_to match_regex "${GLOBAL_TMP_DIRECTORY}"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to_not be_empty
-might match_regex "[Cc]ommand not found"
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to_not exit_with_status "0"
+expected_to be_empty
 
 ```
 

@@ -1,43 +1,34 @@
-# 005-binary-test-wrong-path
+# 001-escape-variable-1
 
-*[spec > minishell > binary](..) > 005-binary-test-wrong-path*
+*[spec > 42sh > escaping > mixed > variable-expansion](..) > 001-escape-variable-1*
 
-This test purpose is to check if your shell is not able to use binary with a wrong PATH
-We are changing the actual PATH by PATH=NULL
-And executing the commande ls
+The purpose of this test is to check that using a backslash `\\` before the symbol of variable expansion `$` does not result in variable expansion.
 ### What is done before test
 
 ```bash
-export PATH="/"
+export "${GLOBAL_TOKEN}_NAME=${GLOBAL_TOKEN}_VALUE"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+./write_on_stdout \$${GLOBAL_TOKEN}_NAME
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might be_empty
+expected_to match_regex "${GLOBAL_TOKEN}_NAME"
+expected_to_not match_regex "${GLOBAL_TOKEN}_VALUE"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to_not be_empty
-might match_regex "[Cc]ommand not found"
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to_not exit_with_status "0"
+expected_to be_empty
 
 ```
 

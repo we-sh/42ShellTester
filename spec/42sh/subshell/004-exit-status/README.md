@@ -1,43 +1,19 @@
-# 005-binary-test-wrong-path
+# 004-exit-status
 
-*[spec > minishell > binary](..) > 005-binary-test-wrong-path*
+*[spec > 42sh > subshell](..) > 004-exit-status*
 
-This test purpose is to check if your shell is not able to use binary with a wrong PATH
-We are changing the actual PATH by PATH=NULL
-And executing the commande ls
-### What is done before test
-
-```bash
-export PATH="/"
-
-```
-
+The purpose of this test is to check that the exit status of a subshell command that is executed at the end of a script is correctly returned at termination by the parent shell.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
-
-```
-
-### What is expected on standard output
-
-```bash
-might be_empty
-
-```
-
-### What is expected on error output
-
-```bash
-expected_to_not be_empty
-might match_regex "[Cc]ommand not found"
+(./exit_with_status 42)
 
 ```
 
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to_not exit_with_status "0"
+expected_to exit_with_status 42
 
 ```
 

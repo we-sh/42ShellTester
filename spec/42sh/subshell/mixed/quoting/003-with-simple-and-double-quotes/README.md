@@ -1,43 +1,27 @@
-# 005-binary-test-wrong-path
+# 003-with-simple-and-double-quotes
 
-*[spec > minishell > binary](..) > 005-binary-test-wrong-path*
+*[spec > 42sh > subshell > mixed > quoting](..) > 003-with-simple-and-double-quotes*
 
-This test purpose is to check if your shell is not able to use binary with a wrong PATH
-We are changing the actual PATH by PATH=NULL
-And executing the commande ls
-### What is done before test
-
-```bash
-export PATH="/"
-
-```
-
+The purpose of this test is to check that the command line parser correctly takes in account the inhibitor symbols `'` and `"`.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+(./write_on_stdout "${GLOBAL_TOKEN}_FIRST)" ; (./write_on_stdout '(${GLOBAL_TOKEN}_SECOND') )
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might be_empty
+expected_to match_regex "${GLOBAL_TOKEN}_FIRST"
+expected_to match_regex "${GLOBAL_TOKEN}_SECOND"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to_not be_empty
-might match_regex "[Cc]ommand not found"
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to_not exit_with_status "0"
+expected_to be_empty
 
 ```
 

@@ -1,43 +1,34 @@
-# 005-binary-test-wrong-path
+# 002-multiline
 
-*[spec > minishell > binary](..) > 005-binary-test-wrong-path*
+*[spec > 42sh > subshell > mixed > builtins > cd](..) > 002-multiline*
 
-This test purpose is to check if your shell is not able to use binary with a wrong PATH
-We are changing the actual PATH by PATH=NULL
-And executing the commande ls
-### What is done before test
-
-```bash
-export PATH="/"
-
-```
-
+The purpose of this test is to check that the Shell implementation may parse a subshell command on multiple lines.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+(
+cd / ;
+${GLOBAL_TMP_DIRECTORY}/write_on_stdout ${GLOBAL_TOKEN}_SUBSHELL ;
+${GLOBAL_TMP_DIRECTORY}/display_pwd
+)
+./write_on_stdout ${GLOBAL_TOKEN}_PARENT
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might be_empty
+expected_to_not match_regex "${GLOBAL_TMP_DIRECTORY}"
+expected_to match_regex "^PWD:/:PWD$"
+expected_to match_regex "${GLOBAL_TOKEN}_SUBSHELL"
+expected_to match_regex "${GLOBAL_TOKEN}_PARENT"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to_not be_empty
-might match_regex "[Cc]ommand not found"
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to_not exit_with_status "0"
+expected_to be_empty
 
 ```
 

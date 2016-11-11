@@ -1,43 +1,26 @@
-# 005-binary-test-wrong-path
+# 003-it-does-not-escape-simple-quote-1
 
-*[spec > minishell > binary](..) > 005-binary-test-wrong-path*
+*[spec > 42sh > quoting > simple-quotes > mixed > escaping](..) > 003-it-does-not-escape-simple-quote-1*
 
-This test purpose is to check if your shell is not able to use binary with a wrong PATH
-We are changing the actual PATH by PATH=NULL
-And executing the commande ls
-### What is done before test
-
-```bash
-export PATH="/"
-
-```
-
+The purpose of this test is to check that using backslash `\\` before the closing simple-quote `'` does result in syntax error.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+./write_on_stdout_and_stderr '${GLOBAL_TOKEN}_STDOUT\' '${GLOBAL_TOKEN}_STDERR\'
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might be_empty
+expected_to_not match_regex "^${GLOBAL_TOKEN}_STDOUT\$"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to_not be_empty
-might match_regex "[Cc]ommand not found"
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to_not exit_with_status "0"
+expected_to_not match_regex "^${GLOBAL_TOKEN}_STDERR\$"
 
 ```
 

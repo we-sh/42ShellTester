@@ -23,13 +23,14 @@ ln -s ./symbolic_link3 ./symbolic_link1
 ### What is expected on standard output
 
 ```bash
-expected_to be_empty
+might be_empty
 
 ```
 
 ### What is expected on error output
 
 ```bash
+expected_to_not be_empty
 might match_regex "[Tt]oo many.*symbolic links"
 
 ```

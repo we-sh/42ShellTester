@@ -14,7 +14,7 @@ exit
 ### What is expected on standard output
 
 ```bash
-expected_to be_empty
+might be_empty
 
 ```
 

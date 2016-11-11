@@ -1,43 +1,29 @@
-# 005-binary-test-wrong-path
+# 001-subshells-inside-piped-command
 
-*[spec > minishell > binary](..) > 005-binary-test-wrong-path*
+*[spec > 42sh > subshell > mixed > piping](..) > 001-subshells-inside-piped-command*
 
-This test purpose is to check if your shell is not able to use binary with a wrong PATH
-We are changing the actual PATH by PATH=NULL
-And executing the commande ls
-### What is done before test
-
-```bash
-export PATH="/"
-
-```
-
+The purpose of this test is to check that subshells may be executed inside a piped command.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-ls
+(cd / ; ${GLOBAL_TMP_DIRECTORY}/display_pwd) | (./read_on_stdin) | (./read_on_stdin)
+./write_on_stdout ${GLOBAL_TOKEN}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might be_empty
+expected_to_not match_regex "${GLOBAL_TMP_DIRECTORY}"
+expected_to match_regex "^PWD:/:PWD@@$"
+expected_to match_regex "${GLOBAL_TOKEN}"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to_not be_empty
-might match_regex "[Cc]ommand not found"
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to_not exit_with_status "0"
+expected_to be_empty
 
 ```
 
