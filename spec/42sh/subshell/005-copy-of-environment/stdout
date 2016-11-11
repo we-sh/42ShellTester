@@ -1,0 +1,3 @@
+expected_to match_regex "${GLOBAL_TOKEN}_VAR1=VALUE1"
+expected_to match_regex "${GLOBAL_TOKEN}_VAR2=VALUE2"
+expected_to match_regex "${GLOBAL_TOKEN}_VAR3=VALUE3"

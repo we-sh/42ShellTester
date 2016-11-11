@@ -1,0 +1,6 @@
+(
+cd / ;
+${GLOBAL_TMP_DIRECTORY}/write_on_stdout ${GLOBAL_TOKEN}_SUBSHELL ;
+${GLOBAL_TMP_DIRECTORY}/display_pwd
+)
+./write_on_stdout ${GLOBAL_TOKEN}_PARENT

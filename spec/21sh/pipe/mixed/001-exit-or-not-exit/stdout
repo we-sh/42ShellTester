@@ -1,2 +1,2 @@
-expected_to match_regex "ALIVE$"
-expected_to match_regex "${GLOBAL_TOKEN}_2$"
+expected_to match_regex "${GLOBAL_TOKEN}_1"
+expected_to match_regex "${GLOBAL_TOKEN}_2"

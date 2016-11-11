@@ -1,0 +1,2 @@
+expected_to match_regex "^${GLOBAL_TOKEN}_FIR'ST$"
+expected_to match_regex "^${GLOBAL_TOKEN}_SECOND$"

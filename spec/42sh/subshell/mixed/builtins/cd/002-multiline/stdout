@@ -1,0 +1,4 @@
+expected_to_not match_regex "${GLOBAL_TMP_DIRECTORY}"
+expected_to match_regex "^PWD:/:PWD$"
+expected_to match_regex "${GLOBAL_TOKEN}_SUBSHELL"
+expected_to match_regex "${GLOBAL_TOKEN}_PARENT"

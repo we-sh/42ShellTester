@@ -1,0 +1,1 @@
+./write_on_stdout_and_stderr "ABCD'EFG"HI'J"KL"'MNO'P"' Q"RS'T'U''"VW'X"Y'Z

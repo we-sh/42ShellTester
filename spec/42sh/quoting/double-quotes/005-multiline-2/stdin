@@ -1,0 +1,5 @@
+./write_on_stdout_and_stderr "
+"${GLOBAL_TOKEN}"_FIRST
+${GLOBAL_TOKEN}_SECOND" "${GLOBAL_TOKEN}_THIRD
+${GLOBAL_TOKEN}_FOU"RT"H
+"
