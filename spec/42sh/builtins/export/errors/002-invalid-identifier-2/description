@@ -1,0 +1,1 @@
+The purpose of this test is to check that trying to export an invalid variable identifier results in error.

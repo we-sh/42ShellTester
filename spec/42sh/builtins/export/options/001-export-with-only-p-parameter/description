@@ -1,0 +1,1 @@
+The purpose of this test is to check that using the builtin `export` with the option `-p` results at least in a display of the environment variables.
