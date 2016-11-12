@@ -1,0 +1,3 @@
+expected_to match_regex "^${GLOBAL_TOKEN}_VALUE1$"
+expected_to_not match_regex "^${GLOBAL_TOKEN}_VALUE2$"
+expected_to match_regex "^${GLOBAL_TOKEN}_VALUE3$"
