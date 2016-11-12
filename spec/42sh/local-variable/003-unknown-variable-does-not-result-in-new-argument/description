@@ -1,1 +1,1 @@
-The purpose of this test is to check that an unknown variable name is not expanded as a null string and results in any new argument of the command line.
+The purpose of this test is to check that an unknown variable is not expanded as an empty string and results in any new argument in the command line.
