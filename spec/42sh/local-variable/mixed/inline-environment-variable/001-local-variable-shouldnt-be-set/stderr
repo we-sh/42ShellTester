@@ -1,0 +1,2 @@
+expected_to_not match_regex "${GLOBAL_TOKEN}_VALUE"
+expected_to match_regex "write on stderr"

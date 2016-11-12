@@ -1,1 +1,0 @@
-The purpose of this test is to check if your shell doesn't create a local variable when the local is follow by a command.

@@ -1,0 +1,1 @@
+The purpose of this test is to check that declaring a variable and specifying a binary does not result in local variable declaration but a modified environment for the command.

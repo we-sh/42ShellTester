@@ -1,2 +1,0 @@
-expected_to_not be_empty
-might match_regex "[Cc]ommand not found"
