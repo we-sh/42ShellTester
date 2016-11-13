@@ -1,0 +1,2 @@
+expected_to match_regex "^~${GLOBAL_TOKEN}_UNKNOWNUSER$"
+expected_to_not match_regex "/${GLOBAL_TOKEN}${GLOBAL_TOKEN}_UNKNOWNUSER"

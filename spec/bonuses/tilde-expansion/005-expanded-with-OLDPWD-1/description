@@ -1,0 +1,1 @@
+The purpose of this test is to check that the symbol tilde `~` may be expanded with the environment variable OLDPWD when followed by the symbol `+`.

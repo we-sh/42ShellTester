@@ -1,0 +1,2 @@
+expected_to_not match_regex "~"
+expected_to match_regex "^/${GLOBAL_TOKEN}/${GLOBAL_TOKEN}_SUBDIRECTORY$"

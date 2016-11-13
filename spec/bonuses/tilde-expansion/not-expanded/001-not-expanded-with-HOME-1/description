@@ -1,0 +1,1 @@
+The purpose of this test is to check that the symbol tilde `~` may be not expanded when not followed by an authorized symbol or user name.
