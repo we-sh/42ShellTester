@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **169 tests**.
+42ShellTester is currently packaged with **177 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -226,6 +226,16 @@ Also display tests that succeed (hidden by default).
       * [003-run-until-failing](spec/bonuses/separators/or/003-run-until-failing)
       * [004-parse-error-at-beginning](spec/bonuses/separators/or/004-parse-error-at-beginning)
       * [005-parse-error-too-much-symbol](spec/bonuses/separators/or/005-parse-error-too-much-symbol)
+  * **[tilde-expansion/](spec/bonuses/tilde-expansion)**
+    * [001-expanded-with-HOME-1](spec/bonuses/tilde-expansion/001-expanded-with-HOME-1)
+    * [002-expanded-with-HOME-2](spec/bonuses/tilde-expansion/002-expanded-with-HOME-2)
+    * [003-expanded-with-PWD-1](spec/bonuses/tilde-expansion/003-expanded-with-PWD-1)
+    * [004-expanded-with-PWD-2](spec/bonuses/tilde-expansion/004-expanded-with-PWD-2)
+    * [005-expanded-with-OLDPWD-1](spec/bonuses/tilde-expansion/005-expanded-with-OLDPWD-1)
+    * [006-expanded-with-OLDPWD-2](spec/bonuses/tilde-expansion/006-expanded-with-OLDPWD-2)
+    * **[not-expanded/](spec/bonuses/tilde-expansion/not-expanded)**
+      * [001-not-expanded-with-HOME-1](spec/bonuses/tilde-expansion/not-expanded/001-not-expanded-with-HOME-1)
+      * [002-not-expanded-with-HOME-2](spec/bonuses/tilde-expansion/not-expanded/002-not-expanded-with-HOME-2)
 * **[minishell/](spec/minishell)**
   * **[binary/](spec/minishell/binary)**
     * [001-binary-path-relative](spec/minishell/binary/001-binary-path-relative)
