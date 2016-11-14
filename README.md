@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **192 tests**.
+42ShellTester is currently packaged with **202 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -129,6 +129,17 @@ Also display tests that succeed (hidden by default).
         * [003-escape-variable-2](spec/42sh/escaping/mixed/variable-expansion/003-escape-variable-2)
   * **[globbing/](spec/42sh/globbing)**
     * **[brace-expansion/](spec/42sh/globbing/brace-expansion)**
+      * **[ascii-range/](spec/42sh/globbing/brace-expansion/ascii-range)**
+        * [001-simple-ascending-1](spec/42sh/globbing/brace-expansion/ascii-range/001-simple-ascending-1)
+        * [002-simple-ascending-2](spec/42sh/globbing/brace-expansion/ascii-range/002-simple-ascending-2)
+        * [003-simple-ascending-3](spec/42sh/globbing/brace-expansion/ascii-range/003-simple-ascending-3)
+        * [004-simple-descending-1](spec/42sh/globbing/brace-expansion/ascii-range/004-simple-descending-1)
+        * [005-simple-descending-2](spec/42sh/globbing/brace-expansion/ascii-range/005-simple-descending-2)
+        * [006-simple-descending-3](spec/42sh/globbing/brace-expansion/ascii-range/006-simple-descending-3)
+        * [007-identical-start-and-end](spec/42sh/globbing/brace-expansion/ascii-range/007-identical-start-and-end)
+        * [008-multiple-1](spec/42sh/globbing/brace-expansion/ascii-range/008-multiple-1)
+        * [009-multiple-2](spec/42sh/globbing/brace-expansion/ascii-range/009-multiple-2)
+        * [010-big-range](spec/42sh/globbing/brace-expansion/ascii-range/010-big-range)
       * **[numeric-range/](spec/42sh/globbing/brace-expansion/numeric-range)**
         * [001-simple-ascending-1](spec/42sh/globbing/brace-expansion/numeric-range/001-simple-ascending-1)
         * [002-simple-ascending-2](spec/42sh/globbing/brace-expansion/numeric-range/002-simple-ascending-2)

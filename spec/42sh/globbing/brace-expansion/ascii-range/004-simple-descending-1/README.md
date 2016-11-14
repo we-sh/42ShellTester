@@ -1,19 +1,19 @@
-# 006-simple-descending-1
+# 004-simple-descending-1
 
-*[spec > 42sh > globbing > brace-expansion > numeric-range](..) > 006-simple-descending-1*
+*[spec > 42sh > globbing > brace-expansion > ascii-range](..) > 004-simple-descending-1*
 
-The purpose of this test is to check that the brace expansion does work with a numeric range in descending order.
+The purpose of this test is to check that the brace expansion does work with an ASCII range in descending order.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_all_arguments_on_stdout {5..1}
+./write_all_arguments_on_stdout {E..A}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "^5@4@3@2@1@$"
+expected_to match_regex "^E@D@C@B@A@$"
 
 ```
 

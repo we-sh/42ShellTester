@@ -1,19 +1,19 @@
-# 013-multiple-1
+# 008-multiple-1
 
-*[spec > 42sh > globbing > brace-expansion > numeric-range](..) > 013-multiple-1*
+*[spec > 42sh > globbing > brace-expansion > ascii-range](..) > 008-multiple-1*
 
 The purpose of this test is to check that brace expansion may be performed with multiple brace patterns.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_all_arguments_on_stdout {1..2}{3..4}{5..6}
+./write_all_arguments_on_stdout {a..b}{c..d}{e..f}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "^135@136@145@146@235@236@245@246@$"
+expected_to match_regex "^ace@acf@ade@adf@bce@bcf@bde@bdf@$"
 
 ```
 

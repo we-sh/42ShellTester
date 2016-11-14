@@ -1,19 +1,19 @@
-# 008-simple-descending-3
+# 006-simple-descending-3
 
-*[spec > 42sh > globbing > brace-expansion > numeric-range](..) > 008-simple-descending-3*
+*[spec > 42sh > globbing > brace-expansion > ascii-range](..) > 006-simple-descending-3*
 
-The purpose of this test is to check that the brace expansion does work with a numeric range in descending order.
+The purpose of this test is to check that the brace expansion does work with an ASCII range in descending order.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_all_arguments_on_stdout ${GLOBAL_TOKEN}{5..+1}
+./write_all_arguments_on_stdout ${GLOBAL_TOKEN}{e..a}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "^${GLOBAL_TOKEN}5@${GLOBAL_TOKEN}4@${GLOBAL_TOKEN}3@${GLOBAL_TOKEN}2@${GLOBAL_TOKEN}1@$"
+expected_to match_regex "^${GLOBAL_TOKEN}e@${GLOBAL_TOKEN}d@${GLOBAL_TOKEN}c@${GLOBAL_TOKEN}b@${GLOBAL_TOKEN}a@$"
 
 ```
 

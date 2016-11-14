@@ -1,19 +1,19 @@
 # 002-simple-ascending-2
 
-*[spec > 42sh > globbing > brace-expansion > numeric-range](..) > 002-simple-ascending-2*
+*[spec > 42sh > globbing > brace-expansion > ascii-range](..) > 002-simple-ascending-2*
 
-The purpose of this test is to check that the brace expansion does work with a numeric range in ascending order.
+The purpose of this test is to check that the brace expansion does work with an ASCII range in ascending order.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_all_arguments_on_stdout ${GLOBAL_TOKEN}{1..5}${GLOBAL_TOKEN}
+./write_all_arguments_on_stdout ${GLOBAL_TOKEN}{a..e}${GLOBAL_TOKEN}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "^${GLOBAL_TOKEN}1${GLOBAL_TOKEN}@${GLOBAL_TOKEN}2${GLOBAL_TOKEN}@${GLOBAL_TOKEN}3${GLOBAL_TOKEN}@${GLOBAL_TOKEN}4${GLOBAL_TOKEN}@${GLOBAL_TOKEN}5${GLOBAL_TOKEN}@$"
+expected_to match_regex "^${GLOBAL_TOKEN}a${GLOBAL_TOKEN}@${GLOBAL_TOKEN}b${GLOBAL_TOKEN}@${GLOBAL_TOKEN}c${GLOBAL_TOKEN}@${GLOBAL_TOKEN}d${GLOBAL_TOKEN}@${GLOBAL_TOKEN}e${GLOBAL_TOKEN}@$"
 
 ```
 

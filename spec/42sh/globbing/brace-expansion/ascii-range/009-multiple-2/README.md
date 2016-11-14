@@ -1,19 +1,19 @@
-# 014-multiple-2
+# 009-multiple-2
 
-*[spec > 42sh > globbing > brace-expansion > numeric-range](..) > 014-multiple-2*
+*[spec > 42sh > globbing > brace-expansion > ascii-range](..) > 009-multiple-2*
 
 The purpose of this test is to check that brace expansion may be performed with multiple brace patterns.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_all_arguments_on_stdout ${GLOBAL_TOKEN}{1..2}abc{-50..-53}def{0..0}
+./write_all_arguments_on_stdout ${GLOBAL_TOKEN}{a..b}abc{Z..X}def{s..s}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "^${GLOBAL_TOKEN}1abc-50def0@${GLOBAL_TOKEN}1abc-51def0@${GLOBAL_TOKEN}1abc-52def0@${GLOBAL_TOKEN}1abc-53def0@${GLOBAL_TOKEN}2abc-50def0@${GLOBAL_TOKEN}2abc-51def0@${GLOBAL_TOKEN}2abc-52def0@${GLOBAL_TOKEN}2abc-53def0@$"
+expected_to match_regex "^${GLOBAL_TOKEN}aabcZdefs@${GLOBAL_TOKEN}aabcYdefs@${GLOBAL_TOKEN}aabcXdefs@${GLOBAL_TOKEN}babcZdefs@${GLOBAL_TOKEN}babcYdefs@${GLOBAL_TOKEN}babcXdefs@$"
 
 ```
 

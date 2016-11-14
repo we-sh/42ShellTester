@@ -1,19 +1,19 @@
-# 011-identical-positive-start-and-end
+# 007-identical-start-and-end
 
-*[spec > 42sh > globbing > brace-expansion > numeric-range](..) > 011-identical-positive-start-and-end*
+*[spec > 42sh > globbing > brace-expansion > ascii-range](..) > 007-identical-start-and-end*
 
-The purpose of this test is to check that the brace expansion does work with a range of single value.
+The purpose of this test is to check that the brace expansion does work with a range of single ASCII value.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_all_arguments_on_stdout {42..42}
+./write_all_arguments_on_stdout {f..f}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "^42@$"
+expected_to match_regex "^f@$"
 
 ```
 
