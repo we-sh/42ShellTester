@@ -1,0 +1,1 @@
+expected_to match_regex "^${GLOBAL_TOKEN}aabcZdefs@${GLOBAL_TOKEN}aabcYdefs@${GLOBAL_TOKEN}aabcXdefs@${GLOBAL_TOKEN}babcZdefs@${GLOBAL_TOKEN}babcYdefs@${GLOBAL_TOKEN}babcXdefs@$"
