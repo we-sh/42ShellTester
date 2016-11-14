@@ -1,0 +1,1 @@
+expected_to match_regex "^-100${GLOBAL_TOKEN}@-99${GLOBAL_TOKEN}@-98${GLOBAL_TOKEN}@$"

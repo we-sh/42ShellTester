@@ -1,0 +1,1 @@
+./write_all_arguments_on_stdout ${GLOBAL_TOKEN}{1..2}abc{-50..-53}def{0..0}

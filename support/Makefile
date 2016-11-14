@@ -8,6 +8,7 @@ all:
 	make TARGET_DIR=$(TARGET_DIR) -C ./read-on-stdin
 	make TARGET_DIR=$(TARGET_DIR) -C ./sleep-and-exit-with-status
 	make TARGET_DIR=$(TARGET_DIR) -C ./sleep-and-write-on-stderr
+	make TARGET_DIR=$(TARGET_DIR) -C ./write-all-arguments-on-stdout
 	make TARGET_DIR=$(TARGET_DIR) -C ./write-on-stderr
 	make TARGET_DIR=$(TARGET_DIR) -C ./write-on-stdout
 	make TARGET_DIR=$(TARGET_DIR) -C ./write-on-stdout-and-stderr
@@ -22,6 +23,7 @@ fclean:
 	make TARGET_DIR=$(TARGET_DIR) fclean -C ./read-on-stdin
 	make TARGET_DIR=$(TARGET_DIR) fclean -C ./sleep-and-exit-with-status
 	make TARGET_DIR=$(TARGET_DIR) fclean -C ./sleep-and-write-on-stderr
+	make TARGET_DIR=$(TARGET_DIR) fclean -C ./write-all-arguments-on-stdout
 	make TARGET_DIR=$(TARGET_DIR) fclean -C ./write-on-stderr
 	make TARGET_DIR=$(TARGET_DIR) fclean -C ./write-on-stdout
 	make TARGET_DIR=$(TARGET_DIR) fclean -C ./write-on-stdout-and-stderr
