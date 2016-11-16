@@ -1,0 +1,1 @@
+expected_to match_regex "^${GLOBAL_TOKEN}_A@${GLOBAL_TOKEN}_B@${GLOBAL_TOKEN}_C@$"

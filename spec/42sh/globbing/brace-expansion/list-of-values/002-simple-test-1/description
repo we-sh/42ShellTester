@@ -1,0 +1,1 @@
+The purpose of this test is to check that brace expansion is processed when at least one comma `,` is encountered.
