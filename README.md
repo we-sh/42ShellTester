@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **202 tests**.
+42ShellTester is currently packaged with **205 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -140,6 +140,10 @@ Also display tests that succeed (hidden by default).
         * [008-multiple-1](spec/42sh/globbing/brace-expansion/ascii-range/008-multiple-1)
         * [009-multiple-2](spec/42sh/globbing/brace-expansion/ascii-range/009-multiple-2)
         * [010-big-range](spec/42sh/globbing/brace-expansion/ascii-range/010-big-range)
+      * **[list-of-values/](spec/42sh/globbing/brace-expansion/list-of-values)**
+        * [001-nothing-to-be-done](spec/42sh/globbing/brace-expansion/list-of-values/001-nothing-to-be-done)
+        * [002-simple-test-1](spec/42sh/globbing/brace-expansion/list-of-values/002-simple-test-1)
+        * [003-simple-test-2](spec/42sh/globbing/brace-expansion/list-of-values/003-simple-test-2)
       * **[numeric-range/](spec/42sh/globbing/brace-expansion/numeric-range)**
         * [001-simple-ascending-1](spec/42sh/globbing/brace-expansion/numeric-range/001-simple-ascending-1)
         * [002-simple-ascending-2](spec/42sh/globbing/brace-expansion/numeric-range/002-simple-ascending-2)
