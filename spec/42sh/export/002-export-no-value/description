@@ -1,0 +1,1 @@
+The purpose of this test is to check if exporting an environment variable without value add it only in export variable list.

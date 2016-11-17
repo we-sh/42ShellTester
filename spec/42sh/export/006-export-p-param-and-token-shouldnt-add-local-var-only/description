@@ -1,0 +1,1 @@
+The purpose of this test is to check if export with -p option + token , add the variable into export list but not in env list. And don't display the export variable on stdout.
