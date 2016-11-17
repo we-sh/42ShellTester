@@ -1,0 +1,2 @@
+${GLOBAL_TOKEN}=~
+./write_on_stdout TILDE:$${GLOBAL_TOKEN}

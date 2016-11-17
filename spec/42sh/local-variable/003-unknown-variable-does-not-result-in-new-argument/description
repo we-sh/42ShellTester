@@ -1,0 +1,1 @@
+The purpose of this test is to check that an unknown variable is not expanded as an empty string and results in any new argument in the command line.
