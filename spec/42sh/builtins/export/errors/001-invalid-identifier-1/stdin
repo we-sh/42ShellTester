@@ -1,0 +1,2 @@
+export 42=${GLOBAL_TOKEN}
+./display_env

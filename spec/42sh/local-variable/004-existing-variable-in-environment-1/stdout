@@ -1,0 +1,2 @@
+expected_to match_regex "^${GLOBAL_TOKEN}_NAME=${GLOBAL_TOKEN}_VALUE_NEW$"
+expected_to_not match_regex "^${GLOBAL_TOKEN}_NAME=${GLOBAL_TOKEN}_VALUE_OLD$"

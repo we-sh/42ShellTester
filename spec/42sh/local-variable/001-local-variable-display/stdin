@@ -1,2 +1,0 @@
-${GLOBAL_TOKEN}=1
-echo ${GLOBAL_TOKEN}

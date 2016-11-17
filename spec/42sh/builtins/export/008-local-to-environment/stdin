@@ -1,0 +1,3 @@
+${GLOBAL_TOKEN}_NAME=${GLOBAL_TOKEN}_VALUE
+export ${GLOBAL_TOKEN}_NAME
+./display_env
