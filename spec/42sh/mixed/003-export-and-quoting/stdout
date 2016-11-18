@@ -1,1 +1,1 @@
-expected_to match_regex "11\$${GLOBAL_TOKEN}"
+expected_to_not match_each_regex_of_file "${GLOBAL_TOKEN}_FILE"
