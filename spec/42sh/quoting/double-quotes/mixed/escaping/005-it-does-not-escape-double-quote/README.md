@@ -1,6 +1,6 @@
-# 004-it-does-not-escape-double-quote
+# 005-it-does-not-escape-double-quote
 
-*[spec > 42sh > quoting > double-quotes > mixed > escaping](..) > 004-it-does-not-escape-double-quote*
+*[spec > 42sh > quoting > double-quotes > mixed > escaping](..) > 005-it-does-not-escape-double-quote*
 
 The purpose of this test is to check that using two backslashes `\\` before the symbol double-quote `"` does not result in escaped inhibitors.
 ### Shell commands that are sent to the standard entry

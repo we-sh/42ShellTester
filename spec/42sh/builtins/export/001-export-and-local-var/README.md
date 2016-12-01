@@ -1,11 +1,12 @@
-# 002-export-no-value
+# 001-export-and-local-var
 
-*[spec > 42sh > export](..) > 002-export-no-value*
+*[spec > 42sh > builtins > export](..) > 001-export-and-local-var*
 
-The purpose of this test is to check if exporting an environment variable without value add it only in export variable list.
+ The purpose of this test is to check if a local variable is add to env and export variables list.
 ### Shell commands that are sent to the standard entry
 
 ```bash
+${GLOBAL_TOKEN}=1
 export ${GLOBAL_TOKEN}
 export
 
@@ -14,7 +15,7 @@ export
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}"
+expected_to match_regex "${GLOBAL_TOKEN}=1"
 
 ```
 
@@ -22,7 +23,6 @@ expected_to match_regex "${GLOBAL_TOKEN}"
 
 ```bash
 expected_to be_empty
-
 ```
 
 ### Variables

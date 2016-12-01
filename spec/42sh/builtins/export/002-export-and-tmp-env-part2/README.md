@@ -1,20 +1,12 @@
-# 006-export-p-param-and-token-shouldnt-add-local-var-only-part2
+# 002-export-and-tmp-env-part2
 
-*[spec > 42sh > export](..) > 006-export-p-param-and-token-shouldnt-add-local-var-only-part2*
+*[spec > 42sh > builtins > export](..) > 002-export-and-tmp-env-part2*
 
-The purpose of this test is to check if export with -p option + token , add the variable into export list but not in env list. And don't display the export variable on stdout.
-### What is done before test
-
-```bash
-rm -rf ./stored_env
-export | awk 'BEGIN {FS="="} $0 !~ /^(OLDPWD|_)/ {print $1"="}' > "./stored_env"
-
-```
-
+ The purpose of this test is to check if a temporary environment variable is add to env and export variables list
 ### Shell commands that are sent to the standard entry
 
 ```bash
-export -p ${GLOBAL_TOKEN}
+${GLOBAL_TOKEN}=1 export ${GLOBAL_TOKEN}
 env
 
 ```
@@ -22,8 +14,7 @@ env
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_each_regex_of_file "./stored_env"
-expected_to_not match_regex "${GLOBAL_TOKEN}"
+expected_to match_regex "${GLOBAL_TOKEN}=1"
 ```
 
 ### What is expected on error output

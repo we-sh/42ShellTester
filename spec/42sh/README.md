@@ -2,8 +2,8 @@
 
 *[spec](..) > 42sh*
 
+* [builtins](./builtins)
 * [escaping](./escaping)
-* [export](./export)
 * [globbing](./globbing)
 * [local-variable](./local-variable)
 * [mixed](./mixed)

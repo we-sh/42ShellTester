@@ -1,27 +1,19 @@
-# 004-export-without-parameter
+# 003-escape-double-quote-3
 
-*[spec > 42sh > export](..) > 004-export-without-parameter*
+*[spec > 42sh > quoting > double-quotes > mixed > escaping](..) > 003-escape-double-quote-3*
 
-The purpose of this test is to check if export without parameter display environment variables.
-### What is done before test
-
-```bash
-rm -rf ./stored_env
-env | awk 'BEGIN {FS="="} $0 !~ /^(OLDPWD|_)/ {print $1"="}' > "./stored_env"
-
-```
-
+The purpose of this test is to check that a double-quote `"` may be preserved when it is preceded by a backslash `\\`.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-export
+./write_on_stdout "\""
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_each_regex_of_file "./stored_env"
+expected_to match_regex "^\"$"
 
 ```
 

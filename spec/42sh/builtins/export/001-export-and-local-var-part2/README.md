@@ -1,12 +1,13 @@
-# 001-export-basic-key-value-part2
+# 001-export-and-local-var-part2
 
-*[spec > 42sh > export](..) > 001-export-basic-key-value-part2*
+*[spec > 42sh > builtins > export](..) > 001-export-and-local-var-part2*
 
- The purpose of this test is to test the basic usage of export without parameters, is the variable declare in env list
+ The purpose of this test is to check if a local variable is add to env and export variables list.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-export ${GLOBAL_TOKEN}=1
+${GLOBAL_TOKEN}=1
+export ${GLOBAL_TOKEN}
 env
 
 ```
@@ -22,7 +23,6 @@ expected_to match_regex "${GLOBAL_TOKEN}=1"
 
 ```bash
 expected_to be_empty
-
 ```
 
 ### Variables

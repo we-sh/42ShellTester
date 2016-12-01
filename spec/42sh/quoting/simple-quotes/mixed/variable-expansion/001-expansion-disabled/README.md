@@ -6,21 +6,21 @@ The purpose of this test is to check that variable expansion is not processed wi
 ### What is done before test
 
 ```bash
-export "TOKEN=${GLOBAL_TOKEN}"
+export "${GLOBAL_TOKEN}_NAME=${GLOBAL_TOKEN}_VALUE"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_on_stdout '$TOKEN'
+./write_on_stdout '[$]${GLOBAL_TOKEN}_NAME'
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "$TOKEN"
+expected_to match_regex "${GLOBAL_TOKEN}_NAME"
 
 ```
 

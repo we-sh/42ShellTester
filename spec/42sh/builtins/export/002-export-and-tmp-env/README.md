@@ -1,12 +1,12 @@
-# 001-export-basic-key-value
+# 002-export-and-tmp-env
 
-*[spec > 42sh > export](..) > 001-export-basic-key-value*
+*[spec > 42sh > builtins > export](..) > 002-export-and-tmp-env*
 
- The purpose of this test is to check the basic usage of export without parameters
+ The purpose of this test is to check if a temporary environment variable is add to env and export variables list
 ### Shell commands that are sent to the standard entry
 
 ```bash
-export ${GLOBAL_TOKEN}=1
+${GLOBAL_TOKEN}=1 export ${GLOBAL_TOKEN}
 export
 
 ```
@@ -15,14 +15,12 @@ export
 
 ```bash
 expected_to match_regex "${GLOBAL_TOKEN}=1"
-
 ```
 
 ### What is expected on error output
 
 ```bash
 expected_to be_empty
-
 ```
 
 ### Variables

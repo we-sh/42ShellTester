@@ -1,29 +1,26 @@
-# 006-export-p-param-and-token-shouldnt-add-local-var-only
+# 001-it-does-not-expand-in-simple-quotes
 
-*[spec > 42sh > export](..) > 006-export-p-param-and-token-shouldnt-add-local-var-only*
+*[spec > 42sh > quoting > mixed > variable-expansion](..) > 001-it-does-not-expand-in-simple-quotes*
 
-The purpose of this test is to check if export with -p option + token , add the variable into export list but not in env list. And don't display the export variable on stdout.
+ The purpose of this test is to check if a local variable is display correctly inside simple and double quote.
 ### What is done before test
 
 ```bash
-rm -rf ./stored_env
-export | awk 'BEGIN {FS="="} $0 !~ /^(OLDPWD|_)/ {print $1"="}' > "./stored_env"
+export "${GLOBAL_TOKEN}_NAME=${GLOBAL_TOKEN}_VALUE"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-export -p ${GLOBAL_TOKEN}
-export
+./write_on_stdout "$${GLOBAL_TOKEN}_NAME"$${GLOBAL_TOKEN}_NAME'$${GLOBAL_TOKEN}_NAME'
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_each_regex_of_file "./stored_env"
-expected_to match_regex "${GLOBAL_TOKEN}"
+expected_to match_regex "${GLOBAL_TOKEN}_VALUE${GLOBAL_TOKEN}_VALUE[$]${GLOBAL_TOKEN}_NAME"
 
 ```
 

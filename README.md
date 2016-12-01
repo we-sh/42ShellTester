@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **215 tests**.
+42ShellTester is currently packaged with **208 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -116,6 +116,12 @@ Also display tests that succeed (hidden by default).
       * [003-parse-error-empty-inline-command](spec/21sh/separators/semicolon/003-parse-error-empty-inline-command)
       * [004-parse-error-empty-command](spec/21sh/separators/semicolon/004-parse-error-empty-command)
 * **[42sh/](spec/42sh)**
+  * **[builtins/](spec/42sh/builtins)**
+    * **[export/](spec/42sh/builtins/export)**
+      * [001-export-and-local-var](spec/42sh/builtins/export/001-export-and-local-var)
+      * [001-export-and-local-var-part2](spec/42sh/builtins/export/001-export-and-local-var-part2)
+      * [002-export-and-tmp-env](spec/42sh/builtins/export/002-export-and-tmp-env)
+      * [002-export-and-tmp-env-part2](spec/42sh/builtins/export/002-export-and-tmp-env-part2)
   * **[escaping/](spec/42sh/escaping)**
     * [001-escape-single-character-1](spec/42sh/escaping/001-escape-single-character-1)
     * [002-escape-single-character-2](spec/42sh/escaping/002-escape-single-character-2)
@@ -127,17 +133,6 @@ Also display tests that succeed (hidden by default).
         * [001-escape-variable-1](spec/42sh/escaping/mixed/variable-expansion/001-escape-variable-1)
         * [002-it-does-not-escape-variable](spec/42sh/escaping/mixed/variable-expansion/002-it-does-not-escape-variable)
         * [003-escape-variable-2](spec/42sh/escaping/mixed/variable-expansion/003-escape-variable-2)
-  * **[export/](spec/42sh/export)**
-    * [001-export-basic-key-value](spec/42sh/export/001-export-basic-key-value)
-    * [001-export-basic-key-value-part2](spec/42sh/export/001-export-basic-key-value-part2)
-    * [002-export-no-value](spec/42sh/export/002-export-no-value)
-    * [002-export-no-value-part2](spec/42sh/export/002-export-no-value-part2)
-    * [003-export-update-env-variable](spec/42sh/export/003-export-update-env-variable)
-    * [004-export-without-parameter](spec/42sh/export/004-export-without-parameter)
-    * [005-export-with-only-p-parameter](spec/42sh/export/005-export-with-only-p-parameter)
-    * [006-export-p-param-and-token-shouldnt-add-local-var-only](spec/42sh/export/006-export-p-param-and-token-shouldnt-add-local-var-only)
-    * [006-export-p-param-and-token-shouldnt-add-local-var-only-part2](spec/42sh/export/006-export-p-param-and-token-shouldnt-add-local-var-only-part2)
-    * [007-export-n-param](spec/42sh/export/007-export-n-param)
   * **[globbing/](spec/42sh/globbing)**
     * **[brace-expansion/](spec/42sh/globbing/brace-expansion)**
       * **[ascii-range/](spec/42sh/globbing/brace-expansion/ascii-range)**
@@ -178,10 +173,10 @@ Also display tests that succeed (hidden by default).
     * [004-local-variable-update-env](spec/42sh/local-variable/004-local-variable-update-env)
     * [004-local-variable-update-env-part2](spec/42sh/local-variable/004-local-variable-update-env-part2)
   * **[mixed/](spec/42sh/mixed)**
-    * [001-export-and-local-var](spec/42sh/mixed/001-export-and-local-var)
-    * [001-export-and-local-var-part2](spec/42sh/mixed/001-export-and-local-var-part2)
-    * [002-export-and-tmp-env](spec/42sh/mixed/002-export-and-tmp-env)
-    * [002-export-and-tmp-env-part2](spec/42sh/mixed/002-export-and-tmp-env-part2)
+    * **[001-export-and-local-var/](spec/42sh/mixed/001-export-and-local-var)**
+    * **[001-export-and-local-var-part2/](spec/42sh/mixed/001-export-and-local-var-part2)**
+    * **[002-export-and-tmp-env/](spec/42sh/mixed/002-export-and-tmp-env)**
+    * **[002-export-and-tmp-env-part2/](spec/42sh/mixed/002-export-and-tmp-env-part2)**
   * **[quoting/](spec/42sh/quoting)**
     * **[double-quotes/](spec/42sh/quoting/double-quotes)**
       * [001-it-works](spec/42sh/quoting/double-quotes/001-it-works)
@@ -193,13 +188,16 @@ Also display tests that succeed (hidden by default).
         * **[escaping/](spec/42sh/quoting/double-quotes/mixed/escaping)**
           * [001-escape-double-quote-1](spec/42sh/quoting/double-quotes/mixed/escaping/001-escape-double-quote-1)
           * [002-escape-double-quote-2](spec/42sh/quoting/double-quotes/mixed/escaping/002-escape-double-quote-2)
-          * [003-it-results-in-error](spec/42sh/quoting/double-quotes/mixed/escaping/003-it-results-in-error)
-          * [004-it-does-not-escape-double-quote](spec/42sh/quoting/double-quotes/mixed/escaping/004-it-does-not-escape-double-quote)
+          * [003-escape-double-quote-3](spec/42sh/quoting/double-quotes/mixed/escaping/003-escape-double-quote-3)
+          * [004-it-results-in-error](spec/42sh/quoting/double-quotes/mixed/escaping/004-it-results-in-error)
+          * [005-it-does-not-escape-double-quote](spec/42sh/quoting/double-quotes/mixed/escaping/005-it-does-not-escape-double-quote)
         * **[variable-expansion/](spec/42sh/quoting/double-quotes/mixed/variable-expansion)**
           * [001-expansion-enabled](spec/42sh/quoting/double-quotes/mixed/variable-expansion/001-expansion-enabled)
     * **[mixed/](spec/42sh/quoting/mixed)**
       * [001-simple-and-double-quotes](spec/42sh/quoting/mixed/001-simple-and-double-quotes)
       * [002-multiline](spec/42sh/quoting/mixed/002-multiline)
+      * **[variable-expansion/](spec/42sh/quoting/mixed/variable-expansion)**
+        * [001-it-does-not-expand-in-simple-quotes](spec/42sh/quoting/mixed/variable-expansion/001-it-does-not-expand-in-simple-quotes)
     * **[simple-quotes/](spec/42sh/quoting/simple-quotes)**
       * [001-it-works](spec/42sh/quoting/simple-quotes/001-it-works)
       * [002-concatenated-strings](spec/42sh/quoting/simple-quotes/002-concatenated-strings)
@@ -210,8 +208,9 @@ Also display tests that succeed (hidden by default).
         * **[escaping/](spec/42sh/quoting/simple-quotes/mixed/escaping)**
           * [001-escape-simple-quote-1](spec/42sh/quoting/simple-quotes/mixed/escaping/001-escape-simple-quote-1)
           * [002-escape-simple-quote-2](spec/42sh/quoting/simple-quotes/mixed/escaping/002-escape-simple-quote-2)
-          * [003-it-does-not-escape-simple-quote-1](spec/42sh/quoting/simple-quotes/mixed/escaping/003-it-does-not-escape-simple-quote-1)
-          * [004-it-does-not-escape-simple-quote-2](spec/42sh/quoting/simple-quotes/mixed/escaping/004-it-does-not-escape-simple-quote-2)
+          * [003-escape-simple-quote-3](spec/42sh/quoting/simple-quotes/mixed/escaping/003-escape-simple-quote-3)
+          * [004-it-does-not-escape-simple-quote-1](spec/42sh/quoting/simple-quotes/mixed/escaping/004-it-does-not-escape-simple-quote-1)
+          * [005-it-does-not-escape-simple-quote-2](spec/42sh/quoting/simple-quotes/mixed/escaping/005-it-does-not-escape-simple-quote-2)
         * **[variable-expansion/](spec/42sh/quoting/simple-quotes/mixed/variable-expansion)**
           * [001-expansion-disabled](spec/42sh/quoting/simple-quotes/mixed/variable-expansion/001-expansion-disabled)
   * **[subshell/](spec/42sh/subshell)**

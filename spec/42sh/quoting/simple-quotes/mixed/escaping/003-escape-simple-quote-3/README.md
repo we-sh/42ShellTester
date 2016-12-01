@@ -1,20 +1,19 @@
-# 002-export-no-value-part2
+# 003-escape-simple-quote-3
 
-*[spec > 42sh > export](..) > 002-export-no-value-part2*
+*[spec > 42sh > quoting > simple-quotes > mixed > escaping](..) > 003-escape-simple-quote-3*
 
-The purpose of this test is to check if exporting an environment variable without value add it only in export variable list.
+The purpose of this test is to check that a simple-quote `'` may be preserved when it is preceded by a backslash `\\`.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-export ${GLOBAL_TOKEN}
-env
+./write_on_stdout '\'
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex "${GLOBAL_TOKEN}"
+expected_to match_regex "^\\$"
 
 ```
 
@@ -22,7 +21,6 @@ expected_to_not match_regex "${GLOBAL_TOKEN}"
 
 ```bash
 expected_to be_empty
-
 ```
 
 ### Variables

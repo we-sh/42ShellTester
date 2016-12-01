@@ -1,6 +1,6 @@
-# 003-it-results-in-error
+# 004-it-results-in-error
 
-*[spec > 42sh > quoting > double-quotes > mixed > escaping](..) > 003-it-results-in-error*
+*[spec > 42sh > quoting > double-quotes > mixed > escaping](..) > 004-it-results-in-error*
 
 The purpose of this test is to check that using backslash `\\` before the closing double-quote `"` does result in syntax error.
 ### Shell commands that are sent to the standard entry

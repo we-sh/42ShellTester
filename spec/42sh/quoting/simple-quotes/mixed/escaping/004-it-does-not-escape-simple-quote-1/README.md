@@ -1,6 +1,6 @@
-# 003-it-does-not-escape-simple-quote-1
+# 004-it-does-not-escape-simple-quote-1
 
-*[spec > 42sh > quoting > simple-quotes > mixed > escaping](..) > 003-it-does-not-escape-simple-quote-1*
+*[spec > 42sh > quoting > simple-quotes > mixed > escaping](..) > 004-it-does-not-escape-simple-quote-1*
 
 The purpose of this test is to check that using backslash `\\` before the closing simple-quote `'` does result in syntax error.
 ### Shell commands that are sent to the standard entry

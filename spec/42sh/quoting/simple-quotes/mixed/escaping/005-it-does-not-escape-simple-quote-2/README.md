@@ -1,6 +1,6 @@
-# 004-it-does-not-escape-simple-quote-2
+# 005-it-does-not-escape-simple-quote-2
 
-*[spec > 42sh > quoting > simple-quotes > mixed > escaping](..) > 004-it-does-not-escape-simple-quote-2*
+*[spec > 42sh > quoting > simple-quotes > mixed > escaping](..) > 005-it-does-not-escape-simple-quote-2*
 
 The purpose of this test is to check that using two backslashes `\\` before the symbol simple-quote `'` does not result in escaped inhibitors.
 ### Shell commands that are sent to the standard entry
