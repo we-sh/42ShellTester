@@ -1,6 +1,0 @@
-expected_to match_regex "^The purpose of this test is to check that using $"
-expected_to match_regex "^the builtin 'fold' with the option '-s' breaks the $"
-expected_to match_regex "^lines after the last such <blank> character.$"
-expected_to match_regex "^Ifthereisno<blank>meetingtherequirements,the-soptio$"
-expected_to match_regex "^nshallhavenoeffectforthatoutputsegmentoftheinputlin$"
-expected_to match_regex "^e.$"

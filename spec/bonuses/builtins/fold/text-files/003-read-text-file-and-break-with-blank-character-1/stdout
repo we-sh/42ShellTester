@@ -1,4 +1,0 @@
-expected_to match_regex "^The purpose of this test is to check that using the builtin 'fold' with the $"
-expected_to match_regex "^option '-s' breaks the lines after the last such <blank> character.$"
-expected_to match_regex "^Ifthereisno<blank>meetingtherequirements,the-soptionshallhavenoeffectforthatoutp$"
-expected_to match_regex "^utsegmentoftheinputline.$"

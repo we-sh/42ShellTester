@@ -1,1 +1,0 @@
-The purpose of this tests is to check that the builtin `fold` can open and read a file specified as argument and break its lines to have a maximum of 80 columns (width by default).

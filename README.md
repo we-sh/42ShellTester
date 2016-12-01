@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **224 tests**.
+42ShellTester is currently packaged with **213 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -244,21 +244,6 @@ Also display tests that succeed (hidden by default).
     * **[env/](spec/bonuses/builtins/env)**
       * [001-unset-variables <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/builtins/env/001-unset-variables)
       * [002-unset-and-set-variable <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/builtins/env/002-unset-and-set-variable)
-    * **[fold/](spec/bonuses/builtins/fold)**
-      * **[errors/](spec/bonuses/builtins/fold/errors)**
-        * [001-invalid-width-1](spec/bonuses/builtins/fold/errors/001-invalid-width-1)
-        * [002-invalid-width-2](spec/bonuses/builtins/fold/errors/002-invalid-width-2)
-        * [003-invalid-width-3](spec/bonuses/builtins/fold/errors/003-invalid-width-3)
-        * [004-invalid-file-1](spec/bonuses/builtins/fold/errors/004-invalid-file-1)
-        * [005-invalid-file-2](spec/bonuses/builtins/fold/errors/005-invalid-file-2)
-      * **[standard-entry/](spec/bonuses/builtins/fold/standard-entry)**
-        * [001-read-stdin-without-parameter](spec/bonuses/builtins/fold/standard-entry/001-read-stdin-without-parameter)
-        * [002-read-stdin-and-break-lines-at-21-characters](spec/bonuses/builtins/fold/standard-entry/002-read-stdin-and-break-lines-at-21-characters)
-      * **[text-files/](spec/bonuses/builtins/fold/text-files)**
-        * [001-read-text-file-without-parameter](spec/bonuses/builtins/fold/text-files/001-read-text-file-without-parameter)
-        * [002-read-text-file-and-break-lines-at-21-characters](spec/bonuses/builtins/fold/text-files/002-read-text-file-and-break-lines-at-21-characters)
-        * [003-read-text-file-and-break-with-blank-character-1](spec/bonuses/builtins/fold/text-files/003-read-text-file-and-break-with-blank-character-1)
-        * [004-read-text-file-and-break-with-blank-character-2](spec/bonuses/builtins/fold/text-files/004-read-text-file-and-break-with-blank-character-2)
   * **[redirections/](spec/bonuses/redirections)**
     * [001-append-twice-outputs-together <img src='./lib/assets/non-posix.png' width='63' height='12' /> <img src='./lib/assets/hard.png' width='38' height='12' /> <img src='./lib/assets/pending.png' width='54' height='12' />](spec/bonuses/redirections/001-append-twice-outputs-together)
   * **[separators/](spec/bonuses/separators)**

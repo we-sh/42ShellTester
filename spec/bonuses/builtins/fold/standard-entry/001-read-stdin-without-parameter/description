@@ -1,1 +1,0 @@
-The purpose of this tests is to check that the builtin `fold` can read the standard entry and break the lines to have a maximum of 80 columns (width by default).

@@ -1,2 +1,0 @@
-expected_to match_regex ^123456789012345678901$
-expected_to match_regex ^abcdefghij$

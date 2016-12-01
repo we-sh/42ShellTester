@@ -1,1 +1,0 @@
-./write_on_stdout 123 | fold -w -42
