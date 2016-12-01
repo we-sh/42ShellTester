@@ -1,36 +1,37 @@
-# 002-simple-command-line
+# 002-parse-error-too-much-symbol
 
-*[spec > 21sh > misc](..) > 002-simple-command-line*
+*[spec > bonuses > separators > and > errors](..) > 002-parse-error-too-much-symbol*
 
-The purpose of this test is to check that the Shell is able to execute a simple command line that contains separators `;`, pipes `|`, and a right redirection `>`.
-### What is done before test
-
-```bash
-rm -rf "./size"
-rm -rf "${GLOBAL_TOKEN}"
-echo '^'$(echo ${GLOBAL_TOKEN}_FILE_${GLOBAL_TOKEN}_STDOUT | wc -c)'$' > "./size"
-
-```
-
+Parsing test.
+The purpose of this test is to check that more than two '&' operators are detected as a syntax error.
+It should not execute the two commands `write_on_stdout` but display an error and exit with an error status code.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-mkdir ${GLOBAL_TOKEN} ; cd ${GLOBAL_TOKEN} ; touch ${GLOBAL_TOKEN}_FILE ; ls -1 ; ls | cat | wc -c > ${GLOBAL_TOKEN}_STDOUT ; cat ${GLOBAL_TOKEN}_STDOUT
+./write_on_stdout ${GLOBAL_TOKEN} &&& ./write_on_stdout ${GLOBAL_TOKEN}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_FILE$"
-expected_to match_each_regex_of_file "./size"
+might_not match_regex "${GLOBAL_TOKEN}"
+might be_empty
 
 ```
 
 ### What is expected on error output
 
 ```bash
-expected_to be_empty
+might_not be_empty
+might match_regex "([Ss]yntax|[Pp]arse) error"
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to_not exit_with_status "0"
 
 ```
 

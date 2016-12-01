@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **205 tests**.
+42ShellTester is currently packaged with **224 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -127,6 +127,17 @@ Also display tests that succeed (hidden by default).
         * [001-escape-variable-1](spec/42sh/escaping/mixed/variable-expansion/001-escape-variable-1)
         * [002-it-does-not-escape-variable](spec/42sh/escaping/mixed/variable-expansion/002-it-does-not-escape-variable)
         * [003-escape-variable-2](spec/42sh/escaping/mixed/variable-expansion/003-escape-variable-2)
+  * **[export/](spec/42sh/export)**
+    * [001-export-basic-key-value](spec/42sh/export/001-export-basic-key-value)
+    * [001-export-basic-key-value-part2](spec/42sh/export/001-export-basic-key-value-part2)
+    * [002-export-no-value](spec/42sh/export/002-export-no-value)
+    * [002-export-no-value-part2](spec/42sh/export/002-export-no-value-part2)
+    * [003-export-update-env-variable](spec/42sh/export/003-export-update-env-variable)
+    * [004-export-without-parameter](spec/42sh/export/004-export-without-parameter)
+    * [005-export-with-only-p-parameter](spec/42sh/export/005-export-with-only-p-parameter)
+    * [006-export-p-param-and-token-shouldnt-add-local-var-only](spec/42sh/export/006-export-p-param-and-token-shouldnt-add-local-var-only)
+    * [006-export-p-param-and-token-shouldnt-add-local-var-only-part2](spec/42sh/export/006-export-p-param-and-token-shouldnt-add-local-var-only-part2)
+    * [007-export-n-param](spec/42sh/export/007-export-n-param)
   * **[globbing/](spec/42sh/globbing)**
     * **[brace-expansion/](spec/42sh/globbing/brace-expansion)**
       * **[ascii-range/](spec/42sh/globbing/brace-expansion/ascii-range)**
@@ -160,6 +171,17 @@ Also display tests that succeed (hidden by default).
         * [013-multiple-1](spec/42sh/globbing/brace-expansion/numeric-range/013-multiple-1)
         * [014-multiple-2](spec/42sh/globbing/brace-expansion/numeric-range/014-multiple-2)
         * [015-big-range](spec/42sh/globbing/brace-expansion/numeric-range/015-big-range)
+  * **[local-variable/](spec/42sh/local-variable)**
+    * [001-local-variable-display](spec/42sh/local-variable/001-local-variable-display)
+    * [002-local-variable-fail](spec/42sh/local-variable/002-local-variable-fail)
+    * [003-local-variable-shouldnt-be-set](spec/42sh/local-variable/003-local-variable-shouldnt-be-set)
+    * [004-local-variable-update-env](spec/42sh/local-variable/004-local-variable-update-env)
+    * [004-local-variable-update-env-part2](spec/42sh/local-variable/004-local-variable-update-env-part2)
+  * **[mixed/](spec/42sh/mixed)**
+    * [001-export-and-local-var](spec/42sh/mixed/001-export-and-local-var)
+    * [001-export-and-local-var-part2](spec/42sh/mixed/001-export-and-local-var-part2)
+    * [002-export-and-tmp-env](spec/42sh/mixed/002-export-and-tmp-env)
+    * [002-export-and-tmp-env-part2](spec/42sh/mixed/002-export-and-tmp-env-part2)
   * **[quoting/](spec/42sh/quoting)**
     * **[double-quotes/](spec/42sh/quoting/double-quotes)**
       * [001-it-works](spec/42sh/quoting/double-quotes/001-it-works)
@@ -243,9 +265,10 @@ Also display tests that succeed (hidden by default).
     * **[and/](spec/bonuses/separators/and)**
       * [001-run-twice](spec/bonuses/separators/and/001-run-twice)
       * [002-do-not-run-second](spec/bonuses/separators/and/002-do-not-run-second)
-      * [003-run-until-succeeding](spec/bonuses/separators/and/003-run-until-succeeding)
-      * [004-parse-error-at-beginning](spec/bonuses/separators/and/004-parse-error-at-beginning)
-      * [005-parse-error-too-much-symbol](spec/bonuses/separators/and/005-parse-error-too-much-symbol)
+      * [003-run-until-failing](spec/bonuses/separators/and/003-run-until-failing)
+      * **[errors/](spec/bonuses/separators/and/errors)**
+        * [001-parse-error-at-beginning](spec/bonuses/separators/and/errors/001-parse-error-at-beginning)
+        * [002-parse-error-too-much-symbol](spec/bonuses/separators/and/errors/002-parse-error-too-much-symbol)
     * **[mixed/](spec/bonuses/separators/mixed)**
       * [001-and-or](spec/bonuses/separators/mixed/001-and-or)
       * [002-and-or](spec/bonuses/separators/mixed/002-and-or)
@@ -256,9 +279,10 @@ Also display tests that succeed (hidden by default).
     * **[or/](spec/bonuses/separators/or)**
       * [001-run-first-only](spec/bonuses/separators/or/001-run-first-only)
       * [002-run-second-only](spec/bonuses/separators/or/002-run-second-only)
-      * [003-run-until-failing](spec/bonuses/separators/or/003-run-until-failing)
-      * [004-parse-error-at-beginning](spec/bonuses/separators/or/004-parse-error-at-beginning)
-      * [005-parse-error-too-much-symbol](spec/bonuses/separators/or/005-parse-error-too-much-symbol)
+      * [003-run-until-succeeding](spec/bonuses/separators/or/003-run-until-succeeding)
+      * **[errors/](spec/bonuses/separators/or/errors)**
+        * [001-parse-error-at-beginning](spec/bonuses/separators/or/errors/001-parse-error-at-beginning)
+        * [002-parse-error-too-much-symbol](spec/bonuses/separators/or/errors/002-parse-error-too-much-symbol)
   * **[tilde-expansion/](spec/bonuses/tilde-expansion)**
     * [001-expanded-with-HOME-1](spec/bonuses/tilde-expansion/001-expanded-with-HOME-1)
     * [002-expanded-with-HOME-2](spec/bonuses/tilde-expansion/002-expanded-with-HOME-2)

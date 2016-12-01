@@ -1,29 +1,20 @@
-# 002-simple-command-line
+# 003-run-until-failing
 
-*[spec > 21sh > misc](..) > 002-simple-command-line*
+*[spec > bonuses > separators > and](..) > 003-run-until-failing*
 
-The purpose of this test is to check that the Shell is able to execute a simple command line that contains separators `;`, pipes `|`, and a right redirection `>`.
-### What is done before test
-
-```bash
-rm -rf "./size"
-rm -rf "${GLOBAL_TOKEN}"
-echo '^'$(echo ${GLOBAL_TOKEN}_FILE_${GLOBAL_TOKEN}_STDOUT | wc -c)'$' > "./size"
-
-```
-
+The purpose of this test is to check that using the AND separator `&&` with chained commands results in the execution of all until the first fail.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-mkdir ${GLOBAL_TOKEN} ; cd ${GLOBAL_TOKEN} ; touch ${GLOBAL_TOKEN}_FILE ; ls -1 ; ls | cat | wc -c > ${GLOBAL_TOKEN}_STDOUT ; cat ${GLOBAL_TOKEN}_STDOUT
+./exit_with_status 0 && ./exit_with_status 0 && ./exit_with_status 0 && ./exit_with_status 0 && ./write_on_stdout ${GLOBAL_TOKEN}_FIRST && ./exit_with_status 42 && ./write_on_stdout ${GLOBAL_TOKEN}_SECOND
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_FILE$"
-expected_to match_each_regex_of_file "./size"
+expected_to match_regex "${GLOBAL_TOKEN}_FIRST"
+expected_to_not match_regex "${GLOBAL_TOKEN}_SECOND"
 
 ```
 
@@ -31,6 +22,13 @@ expected_to match_each_regex_of_file "./size"
 
 ```bash
 expected_to be_empty
+
+```
+
+### What miscellaneous behaviors are expected
+
+```bash
+expected_to exit_with_status "42"
 
 ```
 

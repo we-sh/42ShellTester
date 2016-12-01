@@ -1,20 +1,20 @@
-# 003-run-until-succeeding
+# 003-local-variable-shouldnt-be-set
 
-*[spec > bonuses > separators > and](..) > 003-run-until-succeeding*
+*[spec > 42sh > local-variable](..) > 003-local-variable-shouldnt-be-set*
 
-The purpose of this test is to check that using the OR separator `||` with chained commands results in the execution of all until the first succeed. The remaining commands are not executed.
+The purpose of this test is to check if your shell doesn't create a local variable when the local is follow by a command.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./exit_with_status 1 || ./exit_with_status 2 || ./exit_with_status 3 || ./exit_with_status 4 || ./write_on_stdout ${GLOBAL_TOKEN}_FIRST || ./write_on_stdout ${GLOBAL_TOKEN}_SECOND
+${GLOBAL_TOKEN}=1 ls
+echo $${GLOBAL_TOKEN}
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_FIRST"
-expected_to_not match_regex "${GLOBAL_TOKEN}_SECOND"
+expected_to match_regex "1"
 
 ```
 
@@ -22,14 +22,6 @@ expected_to_not match_regex "${GLOBAL_TOKEN}_SECOND"
 
 ```bash
 expected_to be_empty
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to exit_with_status "0"
-
 ```
 
 ### Variables

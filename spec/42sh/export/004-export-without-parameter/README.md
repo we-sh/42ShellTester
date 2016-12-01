@@ -1,38 +1,34 @@
-# 005-parse-error-too-much-symbol
+# 004-export-without-parameter
 
-*[spec > bonuses > separators > or](..) > 005-parse-error-too-much-symbol*
+*[spec > 42sh > export](..) > 004-export-without-parameter*
 
-Parsing test.
-The purpose of this test is to check that using more than two pipe symbols `|` is detected as an error.
-The Shell should display an error and exit with a error status code.
+The purpose of this test is to check if export without parameter display environment variables.
+### What is done before test
+
+```bash
+rm -rf ./stored_env
+env | awk 'BEGIN {FS="="} $0 !~ /^(OLDPWD|_)/ {print $1"="}' > "./stored_env"
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_on_stdout ${GLOBAL_TOKEN} ||| ./write_on_stdout ${GLOBAL_TOKEN}
+export
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might be_empty
+expected_to match_each_regex_of_file "./stored_env"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-might_not be_empty
-might match_regex "([Ss]yntax|[Pp]arse) error"
-
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-might_not exit_with_status "0"
-
+expected_to be_empty
 ```
 
 ### Variables

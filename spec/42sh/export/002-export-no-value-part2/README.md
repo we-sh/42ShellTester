@@ -1,29 +1,20 @@
-# 002-simple-command-line
+# 002-export-no-value-part2
 
-*[spec > 21sh > misc](..) > 002-simple-command-line*
+*[spec > 42sh > export](..) > 002-export-no-value-part2*
 
-The purpose of this test is to check that the Shell is able to execute a simple command line that contains separators `;`, pipes `|`, and a right redirection `>`.
-### What is done before test
-
-```bash
-rm -rf "./size"
-rm -rf "${GLOBAL_TOKEN}"
-echo '^'$(echo ${GLOBAL_TOKEN}_FILE_${GLOBAL_TOKEN}_STDOUT | wc -c)'$' > "./size"
-
-```
-
+The purpose of this test is to check if exporting an environment variable without value add it only in export variable list.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-mkdir ${GLOBAL_TOKEN} ; cd ${GLOBAL_TOKEN} ; touch ${GLOBAL_TOKEN}_FILE ; ls -1 ; ls | cat | wc -c > ${GLOBAL_TOKEN}_STDOUT ; cat ${GLOBAL_TOKEN}_STDOUT
+export ${GLOBAL_TOKEN}
+env
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_FILE$"
-expected_to match_each_regex_of_file "./size"
+expected_to_not match_regex "${GLOBAL_TOKEN}"
 
 ```
 

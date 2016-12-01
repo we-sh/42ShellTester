@@ -1,38 +1,26 @@
-# 005-parse-error-too-much-symbol
+# 002-export-and-tmp-env
 
-*[spec > bonuses > separators > and](..) > 005-parse-error-too-much-symbol*
+*[spec > 42sh > mixed](..) > 002-export-and-tmp-env*
 
-Parsing test.
-The purpose of this test is to check that more than two '&' operators are detected as a syntax error.
-It should not execute the two commands `write_on_stdout` but display an error and exit with an error status code.
+ The purpose of this test is to check if a temporary environment variable is add to env and export variables list
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_on_stdout ${GLOBAL_TOKEN} &&& ./write_on_stdout ${GLOBAL_TOKEN}
+${GLOBAL_TOKEN}=1 export ${GLOBAL_TOKEN}
+export
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might_not match_regex "${GLOBAL_TOKEN}"
-might be_empty
-
+expected_to match_regex "${GLOBAL_TOKEN}=1"
 ```
 
 ### What is expected on error output
 
 ```bash
-might_not be_empty
-might match_regex "([Ss]yntax|[Pp]arse) error"
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to_not exit_with_status "0"
-
+expected_to be_empty
 ```
 
 ### Variables

@@ -1,35 +1,35 @@
-# 003-run-until-failing
+# 006-export-p-param-and-token-shouldnt-add-local-var-only-part2
 
-*[spec > bonuses > separators > or](..) > 003-run-until-failing*
+*[spec > 42sh > export](..) > 006-export-p-param-and-token-shouldnt-add-local-var-only-part2*
 
-The purpose of this test is to check that using the AND separator `&&` with chained commands results in the execution of all until the first fail.
+The purpose of this test is to check if export with -p option + token , add the variable into export list but not in env list. And don't display the export variable on stdout.
+### What is done before test
+
+```bash
+rm -rf ./stored_env
+export | awk 'BEGIN {FS="="} $0 !~ /^(OLDPWD|_)/ {print $1"="}' > "./stored_env"
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./exit_with_status 0 && ./exit_with_status 0 && ./exit_with_status 0 && ./exit_with_status 0 && ./write_on_stdout ${GLOBAL_TOKEN}_FIRST && ./exit_with_status 42 && ./write_on_stdout ${GLOBAL_TOKEN}_SECOND
+export -p ${GLOBAL_TOKEN}
+env
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_FIRST"
-expected_to_not match_regex "${GLOBAL_TOKEN}_SECOND"
-
+expected_to_not match_each_regex_of_file "./stored_env"
+expected_to_not match_regex "${GLOBAL_TOKEN}"
 ```
 
 ### What is expected on error output
 
 ```bash
 expected_to be_empty
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-expected_to exit_with_status "42"
-
 ```
 
 ### Variables

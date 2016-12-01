@@ -1,29 +1,27 @@
-# 002-simple-command-line
+# 005-export-with-only-p-parameter
 
-*[spec > 21sh > misc](..) > 002-simple-command-line*
+*[spec > 42sh > export](..) > 005-export-with-only-p-parameter*
 
-The purpose of this test is to check that the Shell is able to execute a simple command line that contains separators `;`, pipes `|`, and a right redirection `>`.
+The purpose of this test is to check if export with -p option display environment variables.
 ### What is done before test
 
 ```bash
-rm -rf "./size"
-rm -rf "${GLOBAL_TOKEN}"
-echo '^'$(echo ${GLOBAL_TOKEN}_FILE_${GLOBAL_TOKEN}_STDOUT | wc -c)'$' > "./size"
+rm -rf ./stored_env
+env | awk 'BEGIN {FS="="} $0 !~ /^(OLDPWD|_)/ {print $1"="}' > "./stored_env"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-mkdir ${GLOBAL_TOKEN} ; cd ${GLOBAL_TOKEN} ; touch ${GLOBAL_TOKEN}_FILE ; ls -1 ; ls | cat | wc -c > ${GLOBAL_TOKEN}_STDOUT ; cat ${GLOBAL_TOKEN}_STDOUT
+export -p
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_FILE$"
-expected_to match_each_regex_of_file "./size"
+expected_to match_each_regex_of_file "./stored_env"
 
 ```
 
@@ -31,7 +29,6 @@ expected_to match_each_regex_of_file "./size"
 
 ```bash
 expected_to be_empty
-
 ```
 
 ### Variables

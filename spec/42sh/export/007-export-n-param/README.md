@@ -1,29 +1,23 @@
-# 002-simple-command-line
+# 007-export-n-param
 
-*[spec > 21sh > misc](..) > 002-simple-command-line*
+*[spec > 42sh > export](..) > 007-export-n-param*
 
-The purpose of this test is to check that the Shell is able to execute a simple command line that contains separators `;`, pipes `|`, and a right redirection `>`.
-### What is done before test
-
-```bash
-rm -rf "./size"
-rm -rf "${GLOBAL_TOKEN}"
-echo '^'$(echo ${GLOBAL_TOKEN}_FILE_${GLOBAL_TOKEN}_STDOUT | wc -c)'$' > "./size"
-
-```
-
+ The purpose of this test is to check the -n parametre which should remove variable from env and export list.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-mkdir ${GLOBAL_TOKEN} ; cd ${GLOBAL_TOKEN} ; touch ${GLOBAL_TOKEN}_FILE ; ls -1 ; ls | cat | wc -c > ${GLOBAL_TOKEN}_STDOUT ; cat ${GLOBAL_TOKEN}_STDOUT
+export ${GLOBAL_TOKEN}=1
+export -n ${GLOBAL_TOKEN}
+export
+env
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_FILE$"
-expected_to match_each_regex_of_file "./size"
+expected_to_not match_regex "${GLOBAL_TOKEN}EXPORT"
+expected_to_not match_regex "${GLOBAL_TOKEN}ENV"
 
 ```
 
@@ -31,7 +25,6 @@ expected_to match_each_regex_of_file "./size"
 
 ```bash
 expected_to be_empty
-
 ```
 
 ### Variables

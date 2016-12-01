@@ -1,14 +1,14 @@
-# 004-parse-error-at-beginning
+# 002-parse-error-too-much-symbol
 
-*[spec > bonuses > separators > or](..) > 004-parse-error-at-beginning*
+*[spec > bonuses > separators > or > errors](..) > 002-parse-error-too-much-symbol*
 
 Parsing test.
-The purpose of this test is to check that the OR operator `||` must be placed after a valid command.
-If not, the Shell should display an error and exit with an error status code.
+The purpose of this test is to check that using more than two pipe symbols `|` is detected as an error.
+The Shell should display an error and exit with a error status code.
 ### Shell commands that are sent to the standard entry
 
 ```bash
-|| ./write_on_stdout ${GLOBAL_TOKEN}
+./write_on_stdout ${GLOBAL_TOKEN} ||| ./write_on_stdout ${GLOBAL_TOKEN}
 
 ```
 
@@ -24,6 +24,7 @@ might be_empty
 ```bash
 might_not be_empty
 might match_regex "([Ss]yntax|[Pp]arse) error"
+
 
 ```
 

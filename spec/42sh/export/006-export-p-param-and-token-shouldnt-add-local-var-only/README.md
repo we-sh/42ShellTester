@@ -1,29 +1,29 @@
-# 002-simple-command-line
+# 006-export-p-param-and-token-shouldnt-add-local-var-only
 
-*[spec > 21sh > misc](..) > 002-simple-command-line*
+*[spec > 42sh > export](..) > 006-export-p-param-and-token-shouldnt-add-local-var-only*
 
-The purpose of this test is to check that the Shell is able to execute a simple command line that contains separators `;`, pipes `|`, and a right redirection `>`.
+The purpose of this test is to check if export with -p option + token , add the variable into export list but not in env list. And don't display the export variable on stdout.
 ### What is done before test
 
 ```bash
-rm -rf "./size"
-rm -rf "${GLOBAL_TOKEN}"
-echo '^'$(echo ${GLOBAL_TOKEN}_FILE_${GLOBAL_TOKEN}_STDOUT | wc -c)'$' > "./size"
+rm -rf ./stored_env
+export | awk 'BEGIN {FS="="} $0 !~ /^(OLDPWD|_)/ {print $1"="}' > "./stored_env"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-mkdir ${GLOBAL_TOKEN} ; cd ${GLOBAL_TOKEN} ; touch ${GLOBAL_TOKEN}_FILE ; ls -1 ; ls | cat | wc -c > ${GLOBAL_TOKEN}_STDOUT ; cat ${GLOBAL_TOKEN}_STDOUT
+export -p ${GLOBAL_TOKEN}
+export
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_FILE$"
-expected_to match_each_regex_of_file "./size"
+expected_to_not match_each_regex_of_file "./stored_env"
+expected_to match_regex "${GLOBAL_TOKEN}"
 
 ```
 
@@ -31,7 +31,6 @@ expected_to match_each_regex_of_file "./size"
 
 ```bash
 expected_to be_empty
-
 ```
 
 ### Variables

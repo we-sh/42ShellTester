@@ -1,37 +1,27 @@
-# 004-parse-error-at-beginning
+# 001-export-basic-key-value
 
-*[spec > bonuses > separators > and](..) > 004-parse-error-at-beginning*
+*[spec > 42sh > export](..) > 001-export-basic-key-value*
 
-Parsing test.
-The purpose of this test is to check that the AND operator `&&` must be placed after a valid command.
-If not, the Shell should display an error and exit with an error status code.
+ The purpose of this test is to check the basic usage of export without parameters
 ### Shell commands that are sent to the standard entry
 
 ```bash
-&& ./write_on_stdout ${GLOBAL_TOKEN}
+export ${GLOBAL_TOKEN}=1
+export
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-might_not match_regex "${GLOBAL_TOKEN}"
-might be_empty
+expected_to match_regex "${GLOBAL_TOKEN}=1"
 
 ```
 
 ### What is expected on error output
 
 ```bash
-might_not be_empty
-might match_regex "([Ss]yntax|[Pp]arse) error"
-
-```
-
-### What miscellaneous behaviors are expected
-
-```bash
-might_not exit_with_status "0"
+expected_to be_empty
 
 ```
 
