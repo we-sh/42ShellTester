@@ -1,2 +1,0 @@
-rm -rf ./stored_env
-export | awk 'BEGIN {FS="="} $0 !~ /^(OLDPWD|_)/ {print $1"="}' > "./stored_env"

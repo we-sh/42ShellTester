@@ -1,1 +1,1 @@
-./write_on_stdout '$TOKEN'
+./write_on_stdout '[$]${GLOBAL_TOKEN}_NAME'
