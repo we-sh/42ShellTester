@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **213 tests**.
+42ShellTester is currently packaged with **215 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -231,6 +231,9 @@ Also display tests that succeed (hidden by default).
           * [001-it-does-not-modify-parent-environment](spec/42sh/subshell/mixed/builtins/setenv/001-it-does-not-modify-parent-environment)
         * **[unsetenv/](spec/42sh/subshell/mixed/builtins/unsetenv)**
           * [001-it-does-not-modify-parent-environment](spec/42sh/subshell/mixed/builtins/unsetenv/001-it-does-not-modify-parent-environment)
+      * **[escaping/](spec/42sh/subshell/mixed/escaping)**
+        * [001-escaped-subshell-1](spec/42sh/subshell/mixed/escaping/001-escaped-subshell-1)
+        * [002-escaped-subshell-2](spec/42sh/subshell/mixed/escaping/002-escaped-subshell-2)
       * **[piping/](spec/42sh/subshell/mixed/piping)**
         * [001-subshells-inside-piped-command](spec/42sh/subshell/mixed/piping/001-subshells-inside-piped-command)
         * [002-pipes-inside-subshells](spec/42sh/subshell/mixed/piping/002-pipes-inside-subshells)
