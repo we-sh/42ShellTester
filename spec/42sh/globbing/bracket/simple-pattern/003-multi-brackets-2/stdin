@@ -1,1 +1,1 @@
-echo ${GLOBAL_TMP_DIRECTORY}/test_globbing/[]a][b]
+echo ${GLOBAL_TMP_DIRECTORY}/test_globbing/[][]
