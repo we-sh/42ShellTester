@@ -1,4 +1,1 @@
-expected_to match_regex "${GLOBAL_TMP_DIRECTORY}/test_globbing/a"
-expected_to match_regex "${GLOBAL_TMP_DIRECTORY}/test_globbing/b"
-expected_to match_regex "${GLOBAL_TMP_DIRECTORY}/test_globbing/c"
-
+expected_to match_regex "^${GLOBAL_TMP_DIRECTORY}/test_globbing/a ${GLOBAL_TMP_DIRECTORY}/test_globbing/b ${GLOBAL_TMP_DIRECTORY}/test_globbing/c$"
