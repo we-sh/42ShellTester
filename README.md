@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **208 tests**.
+42ShellTester is currently packaged with **218 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -191,11 +191,19 @@ Also display tests that succeed (hidden by default).
           * [003-escape-double-quote-3](spec/42sh/quoting/double-quotes/mixed/escaping/003-escape-double-quote-3)
           * [004-it-results-in-error](spec/42sh/quoting/double-quotes/mixed/escaping/004-it-results-in-error)
           * [005-it-does-not-escape-double-quote](spec/42sh/quoting/double-quotes/mixed/escaping/005-it-does-not-escape-double-quote)
+        * **[globbing/](spec/42sh/quoting/double-quotes/mixed/globbing)**
+          * **[brace-expansion/](spec/42sh/quoting/double-quotes/mixed/globbing/brace-expansion)**
+            * [001-it-does-not-expand-braces-1](spec/42sh/quoting/double-quotes/mixed/globbing/brace-expansion/001-it-does-not-expand-braces-1)
+            * [002-it-does-not-expand-braces-2](spec/42sh/quoting/double-quotes/mixed/globbing/brace-expansion/002-it-does-not-expand-braces-2)
+            * [003-it-does-not-expand-braces-3](spec/42sh/quoting/double-quotes/mixed/globbing/brace-expansion/003-it-does-not-expand-braces-3)
+            * [004-it-does-not-expand-braces-4](spec/42sh/quoting/double-quotes/mixed/globbing/brace-expansion/004-it-does-not-expand-braces-4)
+            * [005-it-does-not-expand-braces-5](spec/42sh/quoting/double-quotes/mixed/globbing/brace-expansion/005-it-does-not-expand-braces-5)
         * **[variable-expansion/](spec/42sh/quoting/double-quotes/mixed/variable-expansion)**
           * [001-expansion-enabled](spec/42sh/quoting/double-quotes/mixed/variable-expansion/001-expansion-enabled)
     * **[mixed/](spec/42sh/quoting/mixed)**
       * [001-simple-and-double-quotes](spec/42sh/quoting/mixed/001-simple-and-double-quotes)
       * [002-multiline](spec/42sh/quoting/mixed/002-multiline)
+      * **[globbing/](spec/42sh/quoting/mixed/globbing)**
       * **[variable-expansion/](spec/42sh/quoting/mixed/variable-expansion)**
         * [001-it-does-not-expand-in-simple-quotes](spec/42sh/quoting/mixed/variable-expansion/001-it-does-not-expand-in-simple-quotes)
     * **[simple-quotes/](spec/42sh/quoting/simple-quotes)**
@@ -211,6 +219,13 @@ Also display tests that succeed (hidden by default).
           * [003-escape-simple-quote-3](spec/42sh/quoting/simple-quotes/mixed/escaping/003-escape-simple-quote-3)
           * [004-it-does-not-escape-simple-quote-1](spec/42sh/quoting/simple-quotes/mixed/escaping/004-it-does-not-escape-simple-quote-1)
           * [005-it-does-not-escape-simple-quote-2](spec/42sh/quoting/simple-quotes/mixed/escaping/005-it-does-not-escape-simple-quote-2)
+        * **[globbing/](spec/42sh/quoting/simple-quotes/mixed/globbing)**
+          * **[brace-expansion/](spec/42sh/quoting/simple-quotes/mixed/globbing/brace-expansion)**
+            * [001-it-does-not-expand-braces-1](spec/42sh/quoting/simple-quotes/mixed/globbing/brace-expansion/001-it-does-not-expand-braces-1)
+            * [002-it-does-not-expand-braces-2](spec/42sh/quoting/simple-quotes/mixed/globbing/brace-expansion/002-it-does-not-expand-braces-2)
+            * [003-it-does-not-expand-braces-3](spec/42sh/quoting/simple-quotes/mixed/globbing/brace-expansion/003-it-does-not-expand-braces-3)
+            * [004-it-does-not-expand-braces-4](spec/42sh/quoting/simple-quotes/mixed/globbing/brace-expansion/004-it-does-not-expand-braces-4)
+            * [005-it-does-not-expand-braces-5](spec/42sh/quoting/simple-quotes/mixed/globbing/brace-expansion/005-it-does-not-expand-braces-5)
         * **[variable-expansion/](spec/42sh/quoting/simple-quotes/mixed/variable-expansion)**
           * [001-expansion-disabled](spec/42sh/quoting/simple-quotes/mixed/variable-expansion/001-expansion-disabled)
   * **[subshell/](spec/42sh/subshell)**
