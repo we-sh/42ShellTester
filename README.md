@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **218 tests**.
+42ShellTester is currently packaged with **219 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -204,6 +204,8 @@ Also display tests that succeed (hidden by default).
       * [001-simple-and-double-quotes](spec/42sh/quoting/mixed/001-simple-and-double-quotes)
       * [002-multiline](spec/42sh/quoting/mixed/002-multiline)
       * **[globbing/](spec/42sh/quoting/mixed/globbing)**
+        * **[brace-expansion/](spec/42sh/quoting/mixed/globbing/brace-expansion)**
+          * [001-it-does-not-expand-braces-1](spec/42sh/quoting/mixed/globbing/brace-expansion/001-it-does-not-expand-braces-1)
       * **[variable-expansion/](spec/42sh/quoting/mixed/variable-expansion)**
         * [001-it-does-not-expand-in-simple-quotes](spec/42sh/quoting/mixed/variable-expansion/001-it-does-not-expand-in-simple-quotes)
     * **[simple-quotes/](spec/42sh/quoting/simple-quotes)**
