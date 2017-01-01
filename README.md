@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **221 tests**.
+42ShellTester is currently packaged with **224 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -129,6 +129,11 @@ Also display tests that succeed (hidden by default).
     * [004-escape-single-character-4](spec/42sh/escaping/004-escape-single-character-4)
     * [005-escape-single-character-5](spec/42sh/escaping/005-escape-single-character-5)
     * **[mixed/](spec/42sh/escaping/mixed)**
+      * **[globbing/](spec/42sh/escaping/mixed/globbing)**
+        * **[brace-expansion/](spec/42sh/escaping/mixed/globbing/brace-expansion)**
+          * [001-it-does-not-expand-braces-1](spec/42sh/escaping/mixed/globbing/brace-expansion/001-it-does-not-expand-braces-1)
+          * [002-it-expands-braces-1](spec/42sh/escaping/mixed/globbing/brace-expansion/002-it-expands-braces-1)
+          * [003-it-expands-braces-2](spec/42sh/escaping/mixed/globbing/brace-expansion/003-it-expands-braces-2)
       * **[variable-expansion/](spec/42sh/escaping/mixed/variable-expansion)**
         * [001-escape-variable-1](spec/42sh/escaping/mixed/variable-expansion/001-escape-variable-1)
         * [002-it-does-not-escape-variable](spec/42sh/escaping/mixed/variable-expansion/002-it-does-not-escape-variable)
