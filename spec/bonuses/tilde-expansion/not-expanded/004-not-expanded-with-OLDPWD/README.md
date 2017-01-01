@@ -23,7 +23,7 @@ ${GLOBAL_TMP_DIRECTORY}/write_on_stdout ~-${GLOBAL_TOKEN}_OTHERDIRECTORY
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "~-${GLOBAL_TOKEN}_OTHERDIRECTORY"
+expected_to match_regex "^~-${GLOBAL_TOKEN}_OTHERDIRECTORY$"
 expected_to_not match_regex "/${GLOBAL_TOKEN}-/${GLOBAL_TOKEN}_OTHERDIRECTORY"
 expected_to_not match_regex "${GLOBAL_TMP_DIRECTORY}/${GLOBAL_TOKEN}_OTHERDIRECTORY"
 
