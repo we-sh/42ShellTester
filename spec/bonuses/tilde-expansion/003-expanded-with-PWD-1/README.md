@@ -20,8 +20,8 @@ export "HOME=/${GLOBAL_TOKEN}"
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex "~+"
-expected_to_not match_regex "/${GLOBAL_TOKEN}+"
+expected_to_not match_regex "~[+]"
+expected_to_not match_regex "/${GLOBAL_TOKEN}[+]"
 expected_to match_regex "^${GLOBAL_TMP_DIRECTORY}$"
 
 ```

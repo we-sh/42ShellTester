@@ -1,8 +1,8 @@
-# 004-expanded-with-PWD-2
+# 003-not-expanded-with-PWD
 
-*[spec > bonuses > tilde-expansion](..) > 004-expanded-with-PWD-2*
+*[spec > bonuses > tilde-expansion > not-expanded](..) > 003-not-expanded-with-PWD*
 
-The purpose of this test is to check that the symbol tilde `~` may be expanded with the environment variable PWD when followed by the symbol `+`.
+The purpose of this test is to check that the symbol tilde `~` is not expanded with the environment variable PWD when not followed by the symbol `/`.
 ### What is done before test
 
 ```bash
@@ -13,16 +13,16 @@ export "HOME=/${GLOBAL_TOKEN}"
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_on_stdout ~+/${GLOBAL_TOKEN}_SUBDIRECTORY
+./write_on_stdout ~+${GLOBAL_TOKEN}_SUBDIRECTORY
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex "~+/${GLOBAL_TOKEN}_SUBDIRECTORY"
-expected_to_not match_regex "/${GLOBAL_TOKEN}[+]/${GLOBAL_TOKEN}_SUBDIRECTORY"
-expected_to match_regex "^${GLOBAL_TMP_DIRECTORY}/${GLOBAL_TOKEN}_SUBDIRECTORY$"
+expected_to match_regex "^~[+]${GLOBAL_TOKEN}_SUBDIRECTORY$"
+expected_to_not match_regex "/${GLOBAL_TOKEN}[+]${GLOBAL_TOKEN}_SUBDIRECTORY"
+expected_to_not match_regex "${GLOBAL_TMP_DIRECTORY}${GLOBAL_TOKEN}_SUBDIRECTORY"
 
 ```
 

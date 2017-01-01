@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **219 tests**.
+42ShellTester is currently packaged with **221 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -297,6 +297,8 @@ Also display tests that succeed (hidden by default).
     * **[not-expanded/](spec/bonuses/tilde-expansion/not-expanded)**
       * [001-not-expanded-with-HOME-1](spec/bonuses/tilde-expansion/not-expanded/001-not-expanded-with-HOME-1)
       * [002-not-expanded-with-HOME-2](spec/bonuses/tilde-expansion/not-expanded/002-not-expanded-with-HOME-2)
+      * [003-not-expanded-with-PWD](spec/bonuses/tilde-expansion/not-expanded/003-not-expanded-with-PWD)
+      * [004-expanded-with-OLDPWD](spec/bonuses/tilde-expansion/not-expanded/004-expanded-with-OLDPWD)
 * **[minishell/](spec/minishell)**
   * **[binary/](spec/minishell/binary)**
     * [001-binary-path-relative](spec/minishell/binary/001-binary-path-relative)
