@@ -298,7 +298,7 @@ Also display tests that succeed (hidden by default).
       * [001-not-expanded-with-HOME-1](spec/bonuses/tilde-expansion/not-expanded/001-not-expanded-with-HOME-1)
       * [002-not-expanded-with-HOME-2](spec/bonuses/tilde-expansion/not-expanded/002-not-expanded-with-HOME-2)
       * [003-not-expanded-with-PWD](spec/bonuses/tilde-expansion/not-expanded/003-not-expanded-with-PWD)
-      * [004-expanded-with-OLDPWD](spec/bonuses/tilde-expansion/not-expanded/004-expanded-with-OLDPWD)
+      * [004-not-expanded-with-OLDPWD](spec/bonuses/tilde-expansion/not-expanded/004-not-expanded-with-OLDPWD)
 * **[minishell/](spec/minishell)**
   * **[binary/](spec/minishell/binary)**
     * [001-binary-path-relative](spec/minishell/binary/001-binary-path-relative)

@@ -1,6 +1,6 @@
-# 004-expanded-with-OLDPWD
+# 004-not-expanded-with-OLDPWD
 
-*[spec > bonuses > tilde-expansion > not-expanded](..) > 004-expanded-with-OLDPWD*
+*[spec > bonuses > tilde-expansion > not-expanded](..) > 004-not-expanded-with-OLDPWD*
 
 The purpose of this test is to check that the symbol tilde `~` is not expanded with the environment variable OLDPWD when not followed by the symbol `/`.
 ### What is done before test
