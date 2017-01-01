@@ -1,6 +1,6 @@
-# 001-it-does-not-expand-in-simple-quotes
+# 001-it-does-not-expand-in-quotes
 
-*[spec > 42sh > quoting > mixed > variable-expansion](..) > 001-it-does-not-expand-in-simple-quotes*
+*[spec > 42sh > quoting > mixed > variable-expansion](..) > 001-it-does-not-expand-in-quotes*
 
  The purpose of this test is to check if a local variable is display correctly inside simple and double quote.
 ### What is done before test

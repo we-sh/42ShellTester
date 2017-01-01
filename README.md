@@ -207,7 +207,7 @@ Also display tests that succeed (hidden by default).
         * **[brace-expansion/](spec/42sh/quoting/mixed/globbing/brace-expansion)**
           * [001-it-does-not-expand-braces-1](spec/42sh/quoting/mixed/globbing/brace-expansion/001-it-does-not-expand-braces-1)
       * **[variable-expansion/](spec/42sh/quoting/mixed/variable-expansion)**
-        * [001-it-does-not-expand-in-simple-quotes](spec/42sh/quoting/mixed/variable-expansion/001-it-does-not-expand-in-simple-quotes)
+        * [001-it-does-not-expand-in-quotes](spec/42sh/quoting/mixed/variable-expansion/001-it-does-not-expand-in-quotes)
     * **[simple-quotes/](spec/42sh/quoting/simple-quotes)**
       * [001-it-works](spec/42sh/quoting/simple-quotes/001-it-works)
       * [002-concatenated-strings](spec/42sh/quoting/simple-quotes/002-concatenated-strings)
