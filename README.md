@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **224 tests**.
+42ShellTester is currently packaged with **226 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -348,6 +348,9 @@ Also display tests that succeed (hidden by default).
       * [002-env-check-usefull-var](spec/minishell/builtins/env/002-env-check-usefull-var)
       * [003-ignore-environment](spec/minishell/builtins/env/003-ignore-environment)
       * [005-set-variables](spec/minishell/builtins/env/005-set-variables)
+      * **[errors/](spec/minishell/builtins/env/errors)**
+        * [001-command-not-found](spec/minishell/builtins/env/errors/001-command-not-found)
+        * [002-illegal-option](spec/minishell/builtins/env/errors/002-illegal-option)
       * **[multiple-options/](spec/minishell/builtins/env/multiple-options)**
         * [001-ignore-environment-and-set-variable](spec/minishell/builtins/env/multiple-options/001-ignore-environment-and-set-variable)
     * **[exit/](spec/minishell/builtins/exit)**

@@ -6,4 +6,5 @@
 * [002-env-check-usefull-var](./002-env-check-usefull-var)
 * [003-ignore-environment](./003-ignore-environment)
 * [005-set-variables](./005-set-variables)
+* [errors](./errors)
 * [multiple-options](./multiple-options)
