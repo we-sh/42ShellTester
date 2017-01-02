@@ -1,1 +1,0 @@
-The purpose of this test is to check that using the builtin `export` with an invalid identifier results in an error and a failure exit status.

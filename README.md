@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **228 tests**.
+42ShellTester is currently packaged with **246 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -118,13 +118,28 @@ Also display tests that succeed (hidden by default).
 * **[42sh/](spec/42sh)**
   * **[builtins/](spec/42sh/builtins)**
     * **[export/](spec/42sh/builtins/export)**
-      * [001-export-and-local-var](spec/42sh/builtins/export/001-export-and-local-var)
-      * [001-export-and-local-var-part2](spec/42sh/builtins/export/001-export-and-local-var-part2)
-      * [002-export-and-tmp-env](spec/42sh/builtins/export/002-export-and-tmp-env)
-      * [002-export-and-tmp-env-part2](spec/42sh/builtins/export/002-export-and-tmp-env-part2)
+      * [001-display-env](spec/42sh/builtins/export/001-display-env)
+      * [002-export-basic-key-value-1](spec/42sh/builtins/export/002-export-basic-key-value-1)
+      * [003-export-basic-key-value-2](spec/42sh/builtins/export/003-export-basic-key-value-2)
+      * [004-export-empty-variable-1](spec/42sh/builtins/export/004-export-empty-variable-1)
+      * [005-export-empty-variable-2](spec/42sh/builtins/export/005-export-empty-variable-2)
+      * [006-export-update-env-variable](spec/42sh/builtins/export/006-export-update-env-variable)
+      * [007-existing-environment-variable](spec/42sh/builtins/export/007-existing-environment-variable)
+      * [008-local-to-environment](spec/42sh/builtins/export/008-local-to-environment)
+      * [009-export-with-equal-but-no-value-part1](spec/42sh/builtins/export/009-export-with-equal-but-no-value-part1)
+      * [010-export-with-equal-but-no-value-part2](spec/42sh/builtins/export/010-export-with-equal-but-no-value-part2)
       * **[errors/](spec/42sh/builtins/export/errors)**
-        * [001-not-a-valid-identifier](spec/42sh/builtins/export/errors/001-not-a-valid-identifier)
-        * [002-illegal-option](spec/42sh/builtins/export/errors/002-illegal-option)
+        * [001-invalid-identifier-1](spec/42sh/builtins/export/errors/001-invalid-identifier-1)
+        * [002-invalid-identifier-2](spec/42sh/builtins/export/errors/002-invalid-identifier-2)
+        * [003-illegal-option](spec/42sh/builtins/export/errors/003-illegal-option)
+      * **[mixed/](spec/42sh/builtins/export/mixed)**
+        * [001-export-and-tmp-env-part1](spec/42sh/builtins/export/mixed/001-export-and-tmp-env-part1)
+        * [002-export-and-tmp-env-part2](spec/42sh/builtins/export/mixed/002-export-and-tmp-env-part2)
+      * **[options/](spec/42sh/builtins/export/options)**
+        * [001-export-with-only-p-parameter](spec/42sh/builtins/export/options/001-export-with-only-p-parameter)
+        * [002-export-p-param-and-token-should-add-local-var-only-part1](spec/42sh/builtins/export/options/002-export-p-param-and-token-should-add-local-var-only-part1)
+        * [003-export-p-param-and-token-should-add-local-var-only-part2](spec/42sh/builtins/export/options/003-export-p-param-and-token-should-add-local-var-only-part2)
+        * [004-export-n-param](spec/42sh/builtins/export/options/004-export-n-param)
   * **[escaping/](spec/42sh/escaping)**
     * [001-escape-single-character-1](spec/42sh/escaping/001-escape-single-character-1)
     * [002-escape-single-character-2](spec/42sh/escaping/002-escape-single-character-2)
@@ -175,11 +190,24 @@ Also display tests that succeed (hidden by default).
         * [014-multiple-2](spec/42sh/globbing/brace-expansion/numeric-range/014-multiple-2)
         * [015-big-range](spec/42sh/globbing/brace-expansion/numeric-range/015-big-range)
   * **[local-variable/](spec/42sh/local-variable)**
-    * [001-local-variable-display](spec/42sh/local-variable/001-local-variable-display)
-    * [002-local-variable-fail](spec/42sh/local-variable/002-local-variable-fail)
-    * [003-local-variable-shouldnt-be-set](spec/42sh/local-variable/003-local-variable-shouldnt-be-set)
-    * [004-local-variable-update-env](spec/42sh/local-variable/004-local-variable-update-env)
-    * [004-local-variable-update-env-part2](spec/42sh/local-variable/004-local-variable-update-env-part2)
+    * [001-declare-and-expand-1](spec/42sh/local-variable/001-declare-and-expand-1)
+    * **[001-local-variable-display/](spec/42sh/local-variable/001-local-variable-display)**
+    * [002-declare-and-expand-2](spec/42sh/local-variable/002-declare-and-expand-2)
+    * **[002-local-variable-fail/](spec/42sh/local-variable/002-local-variable-fail)**
+    * **[003-local-variable-shouldnt-be-set/](spec/42sh/local-variable/003-local-variable-shouldnt-be-set)**
+    * [003-unknown-variable-does-not-result-in-new-argument](spec/42sh/local-variable/003-unknown-variable-does-not-result-in-new-argument)
+    * [004-existing-variable-in-environment-1](spec/42sh/local-variable/004-existing-variable-in-environment-1)
+    * **[004-local-variable-update-env/](spec/42sh/local-variable/004-local-variable-update-env)**
+    * **[004-local-variable-update-env-part2/](spec/42sh/local-variable/004-local-variable-update-env-part2)**
+    * [005-existing-variable-in-environment-2](spec/42sh/local-variable/005-existing-variable-in-environment-2)
+    * [006-existing-variable-in-environment-3](spec/42sh/local-variable/006-existing-variable-in-environment-3)
+    * [007-multiple-declaration-at-a-time](spec/42sh/local-variable/007-multiple-declaration-at-a-time)
+    * [008-multiple-declaration-with-same-name](spec/42sh/local-variable/008-multiple-declaration-with-same-name)
+    * **[mixed/](spec/42sh/local-variable/mixed)**
+      * **[inline-environment-variable/](spec/42sh/local-variable/mixed/inline-environment-variable)**
+        * [001-local-variable-shouldnt-be-set](spec/42sh/local-variable/mixed/inline-environment-variable/001-local-variable-shouldnt-be-set)
+      * **[tilde-expansion/](spec/42sh/local-variable/mixed/tilde-expansion)**
+        * [001-process-tilde-expansion](spec/42sh/local-variable/mixed/tilde-expansion/001-process-tilde-expansion)
   * **[mixed/](spec/42sh/mixed)**
     * **[001-export-and-local-var/](spec/42sh/mixed/001-export-and-local-var)**
     * **[001-export-and-local-var-part2/](spec/42sh/mixed/001-export-and-local-var-part2)**

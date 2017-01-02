@@ -1,3 +1,0 @@
-${GLOBAL_TOKEN}=1
-export ${GLOBAL_TOKEN}
-env

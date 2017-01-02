@@ -2,5 +2,6 @@
 
 *[spec > 42sh > builtins > export](..) > errors*
 
-* [001-not-a-valid-identifier](./001-not-a-valid-identifier)
-* [002-illegal-option](./002-illegal-option)
+* [001-invalid-identifier-1](./001-invalid-identifier-1)
+* [002-invalid-identifier-2](./002-invalid-identifier-2)
+* [003-illegal-option](./003-illegal-option)
