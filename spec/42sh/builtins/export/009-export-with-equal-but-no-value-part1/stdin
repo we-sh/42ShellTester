@@ -1,2 +1,2 @@
-export ${GLOBAL_TOKEN}=
+export ${GLOBAL_TOKEN}_NAME=
 ./display_env
