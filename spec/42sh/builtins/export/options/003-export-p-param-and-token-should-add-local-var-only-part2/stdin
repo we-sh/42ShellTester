@@ -1,2 +1,2 @@
 export -p ${GLOBAL_TOKEN}_NAME
-env
+./display_env
