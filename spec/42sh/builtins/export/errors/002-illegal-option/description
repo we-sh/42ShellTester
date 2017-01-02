@@ -1,0 +1,1 @@
+The purpose of this test is to check that using the builtin `export` with an illegal option results in an error and a failure exit status.

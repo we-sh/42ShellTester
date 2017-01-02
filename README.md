@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **226 tests**.
+42ShellTester is currently packaged with **228 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -122,6 +122,9 @@ Also display tests that succeed (hidden by default).
       * [001-export-and-local-var-part2](spec/42sh/builtins/export/001-export-and-local-var-part2)
       * [002-export-and-tmp-env](spec/42sh/builtins/export/002-export-and-tmp-env)
       * [002-export-and-tmp-env-part2](spec/42sh/builtins/export/002-export-and-tmp-env-part2)
+      * **[errors/](spec/42sh/builtins/export/errors)**
+        * [001-not-a-valid-identifier](spec/42sh/builtins/export/errors/001-not-a-valid-identifier)
+        * [002-illegal-option](spec/42sh/builtins/export/errors/002-illegal-option)
   * **[escaping/](spec/42sh/escaping)**
     * [001-escape-single-character-1](spec/42sh/escaping/001-escape-single-character-1)
     * [002-escape-single-character-2](spec/42sh/escaping/002-escape-single-character-2)
