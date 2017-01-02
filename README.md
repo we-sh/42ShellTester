@@ -191,14 +191,9 @@ Also display tests that succeed (hidden by default).
         * [015-big-range](spec/42sh/globbing/brace-expansion/numeric-range/015-big-range)
   * **[local-variable/](spec/42sh/local-variable)**
     * [001-declare-and-expand-1](spec/42sh/local-variable/001-declare-and-expand-1)
-    * **[001-local-variable-display/](spec/42sh/local-variable/001-local-variable-display)**
     * [002-declare-and-expand-2](spec/42sh/local-variable/002-declare-and-expand-2)
-    * **[002-local-variable-fail/](spec/42sh/local-variable/002-local-variable-fail)**
-    * **[003-local-variable-shouldnt-be-set/](spec/42sh/local-variable/003-local-variable-shouldnt-be-set)**
     * [003-unknown-variable-does-not-result-in-new-argument](spec/42sh/local-variable/003-unknown-variable-does-not-result-in-new-argument)
     * [004-existing-variable-in-environment-1](spec/42sh/local-variable/004-existing-variable-in-environment-1)
-    * **[004-local-variable-update-env/](spec/42sh/local-variable/004-local-variable-update-env)**
-    * **[004-local-variable-update-env-part2/](spec/42sh/local-variable/004-local-variable-update-env-part2)**
     * [005-existing-variable-in-environment-2](spec/42sh/local-variable/005-existing-variable-in-environment-2)
     * [006-existing-variable-in-environment-3](spec/42sh/local-variable/006-existing-variable-in-environment-3)
     * [007-multiple-declaration-at-a-time](spec/42sh/local-variable/007-multiple-declaration-at-a-time)
