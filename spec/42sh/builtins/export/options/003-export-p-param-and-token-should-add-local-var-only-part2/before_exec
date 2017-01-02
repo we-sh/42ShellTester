@@ -1,0 +1,3 @@
+rm -f "./stored_env"
+unset "${GLOBAL_TOKEN}_NAME"
+export | awk 'BEGIN {FS="="} $0 !~ /^(OLDPWD|_)/ {print $1"="}' > "./stored_env"

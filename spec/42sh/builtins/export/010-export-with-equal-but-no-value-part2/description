@@ -1,0 +1,1 @@
+The purpose of this test is to check if the builtin export works fine with equal sign but no value. This test is based on the local variables return.

@@ -1,0 +1,1 @@
+The purpose of this test is to check that the builtin `export` may declare a new environment variable.

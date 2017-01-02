@@ -1,0 +1,2 @@
+expected_to_not match_regex "TILDE:~"
+might match_regex "TILDE:/${GLOBAL_TOKEN}"
