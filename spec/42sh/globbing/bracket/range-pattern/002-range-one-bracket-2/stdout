@@ -1,0 +1,1 @@
+expected_to match_regex "^${GLOBAL_TMP_DIRECTORY}/test_globbing/A ${GLOBAL_TMP_DIRECTORY}/test_globbing/F ${GLOBAL_TMP_DIRECTORY}/test_globbing/Z$"
