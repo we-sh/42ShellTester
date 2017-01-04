@@ -1,0 +1,1 @@
+echo ${GLOBAL_TMP_DIRECTORY}/test_globbing/[!a-y][42]

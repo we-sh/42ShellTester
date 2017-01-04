@@ -1,0 +1,2 @@
+might match_regex "^${GLOBAL_TMP_DIRECTORY}/test_globbing/] ${GLOBAL_TMP_DIRECTORY}/test_globbing/2 ${GLOBAL_TMP_DIRECTORY}/test_globbing/a ${GLOBAL_TMP_DIRECTORY}/test_globbing/A ${GLOBAL_TMP_DIRECTORY}/test_globbing/Z$"
+might match_regex "^${GLOBAL_TMP_DIRECTORY}/test_globbing/2 ${GLOBAL_TMP_DIRECTORY}/test_globbing/A ${GLOBAL_TMP_DIRECTORY}/test_globbing/Z ${GLOBAL_TMP_DIRECTORY}/test_globbing/\[ ${GLOBAL_TMP_DIRECTORY}/test_globbing/] ${GLOBAL_TMP_DIRECTORY}/test_globbing/a$"
