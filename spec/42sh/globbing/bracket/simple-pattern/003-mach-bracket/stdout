@@ -1,1 +1,1 @@
-expected_to match_regex "^${GLOBAL_TMP_DIRECTORY}/test_globbing/\[ ${GLOBAL_TMP_DIRECTORY}/test_globbing/]$"
+expected_to match_regex "^${GLOBAL_TMP_DIRECTORY}/test_globbing/[[] ${GLOBAL_TMP_DIRECTORY}/test_globbing/[]]$"
