@@ -1,1 +1,1 @@
-The purpose of this test is check if ! character is used to reverse the range pattern inside brackets.
+The purpose of this test is to check that the brackets expansion works with the exclamation mark `!`. The expected behavior is the reversion of the following pattern.

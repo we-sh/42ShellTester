@@ -1,1 +1,1 @@
-echo ${GLOBAL_TMP_DIRECTORY}/test_globbing/[!a-y][42]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [!a-y][42]

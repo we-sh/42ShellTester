@@ -1,2 +1,11 @@
-might match_regex "^${GLOBAL_TMP_DIRECTORY}/test_globbing/2 ${GLOBAL_TMP_DIRECTORY}/test_globbing/Y ${GLOBAL_TMP_DIRECTORY}/test_globbing/b$"
-might match_regex "^${GLOBAL_TMP_DIRECTORY}/test_globbing/2 ${GLOBAL_TMP_DIRECTORY}/test_globbing/b ${GLOBAL_TMP_DIRECTORY}/test_globbing/Y$"
+expected_to match_regex "d@"
+expected_to match_regex "e@"
+expected_to match_regex "f@"
+expected_to_not match_regex "a@"
+expected_to_not match_regex "1@"
+expected_to_not match_regex "Z@"
+expected_to_not match_regex "!@"
+expected_to_not match_regex "[[]!a1Z]@"
+expected_to_not match_regex "!a1Z@"
+
+might match_regex "^d@e@f@$"

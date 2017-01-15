@@ -1,3 +1,4 @@
-rm -rf ${GLOBAL_TMP_DIRECTORY}/test_globbing
-mkdir -p ${GLOBAL_TMP_DIRECTORY}/test_globbing
-touch ${GLOBAL_TMP_DIRECTORY}/test_globbing/{y..z}{1..5}
+rm -rf "./test_globbing"
+mkdir "./test_globbing"
+cd "./test_globbing"
+touch 'a4' 'a3' 'a2' 'a42' 'a[42]' 'z4' 'z3' 'z2' 'z42' 'z[42]' '[!a-y][42]' '42'

@@ -1,3 +1,4 @@
-rm -rf ${GLOBAL_TMP_DIRECTORY}/test_globbing
-mkdir -p ${GLOBAL_TMP_DIRECTORY}/test_globbing
-touch ${GLOBAL_TMP_DIRECTORY}/test_globbing/a-1 ${GLOBAL_TMP_DIRECTORY}/test_globbing/b2 ${GLOBAL_TMP_DIRECTORY}/test_globbing/C-3 ${GLOBAL_TMP_DIRECTORY}/test_globbing/D4
+rm -rf "./test_globbing"
+mkdir "./test_globbing"
+cd "./test_globbing"
+touch 'a-0' 'a-1' 'a-2' 'b-0' 'b-1' 'b-2' 'Z-0' 'Z-1' 'Z-2' 'a1' 'Z9' 'D4'

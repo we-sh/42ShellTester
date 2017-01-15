@@ -5,5 +5,6 @@ expected_to_not match_regex "2@"
 expected_to_not match_regex "B@"
 expected_to_not match_regex "Z@"
 expected_to_not match_regex "[[]@"
+expected_to_not match_regex "[[]]-z]@"
 
 might match_regex "^]@a@c@$"

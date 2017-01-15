@@ -1,1 +1,6 @@
-expected_to match_regex "^${GLOBAL_TMP_DIRECTORY}/test_globbing/1[[]$"
+expected_to match_regex "1[[]@"
+expected_to_not match_regex "][[]@"
+expected_to_not match_regex "a[[]@"
+expected_to_not match_regex "[[]!]az][[][[]]@"
+
+might match_regex "^1[[]@$"
