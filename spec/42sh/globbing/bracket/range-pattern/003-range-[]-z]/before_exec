@@ -1,3 +1,0 @@
-rm -rf ${GLOBAL_TMP_DIRECTORY}/test_globbing
-mkdir -p ${GLOBAL_TMP_DIRECTORY}/test_globbing
-touch ${GLOBAL_TMP_DIRECTORY}/test_globbing/2 ${GLOBAL_TMP_DIRECTORY}/test_globbing/a ${GLOBAL_TMP_DIRECTORY}/test_globbing/A ${GLOBAL_TMP_DIRECTORY}/test_globbing/Z ${GLOBAL_TMP_DIRECTORY}/test_globbing/[ ${GLOBAL_TMP_DIRECTORY}/test_globbing/]
