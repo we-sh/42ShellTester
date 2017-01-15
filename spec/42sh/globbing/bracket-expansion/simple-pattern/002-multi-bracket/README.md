@@ -1,37 +1,34 @@
-# 001-simple-list
+# 002-multi-bracket
 
-*[spec > 42sh > globbing > bracket-expansion > simple-pattern](..) > 001-simple-list*
+*[spec > 42sh > globbing > bracket-expansion > simple-pattern](..) > 002-multi-bracket*
 
-The purpose of this test is to check that the brackets expansion works with a simple list of characters as pattern.
+The purpose of this test is to check that the brackets expansion works with multiple brackets patterns.
 ### What is done before test
 
 ```bash
 rm -rf "./test_globbing"
 mkdir "./test_globbing"
 cd "./test_globbing"
-touch 'a' 'b' 'c' 'd' 'e' 'f' '[bca]'
+touch "${GLOBAL_TOKEN}abcd" "${GLOBAL_TOKEN}abc" "${GLOBAL_TOKEN}abdc" "${GLOBAL_TOKEN}b" "${GLOBAL_TOKEN}" "${GLOBAL_TOKEN}\[a]b\[c]\[d]"
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [bca]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout ${GLOBAL_TOKEN}[a]b[c][d]
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "a@"
-expected_to match_regex "b@"
-expected_to match_regex "c@"
-expected_to_not match_regex "d@"
-expected_to_not match_regex "e@"
-expected_to_not match_regex "f@"
-expected_to_not match_regex "[[]bca]@"
-
-might match_regex "^a@b@c@$"
+expected_to match_regex "^${GLOBAL_TOKEN}abcd@$"
+expected_to_not match_regex "${GLOBAL_TOKEN}abc@"
+expected_to_not match_regex "${GLOBAL_TOKEN}abdc@"
+expected_to_not match_regex "${GLOBAL_TOKEN}b@"
+expected_to_not match_regex "${GLOBAL_TOKEN}@"
+expected_to_not match_regex "${GLOBAL_TOKEN}[[]a]b[[]c][[]d]@"
 
 ```
 

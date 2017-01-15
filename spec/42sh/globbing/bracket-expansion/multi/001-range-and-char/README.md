@@ -1,37 +1,40 @@
-# 001-simple-list
+# 001-range-and-char
 
-*[spec > 42sh > globbing > bracket-expansion > simple-pattern](..) > 001-simple-list*
+*[spec > 42sh > globbing > bracket-expansion > multi](..) > 001-range-and-char*
 
-The purpose of this test is to check that the brackets expansion works with a simple list of characters as pattern.
+The purpose of this test is to check that brackets expansion works with a range and 2 characters as pattern.
 ### What is done before test
 
 ```bash
 rm -rf "./test_globbing"
 mkdir "./test_globbing"
 cd "./test_globbing"
-touch 'a' 'b' 'c' 'd' 'e' 'f' '[bca]'
+touch '1' '2' '3' 'a' 'b' 'z' 'C' '-' '[a-z-2]' 'a-z-2'
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [bca]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [a-z-2]
 
 ```
 
 ### What is expected on standard output
 
 ```bash
+expected_to match_regex "-@"
+expected_to match_regex "2@"
 expected_to match_regex "a@"
 expected_to match_regex "b@"
-expected_to match_regex "c@"
-expected_to_not match_regex "d@"
-expected_to_not match_regex "e@"
-expected_to_not match_regex "f@"
-expected_to_not match_regex "[[]bca]@"
+expected_to match_regex "z@"
+expected_to_not match_regex "1@"
+expected_to_not match_regex "3@"
+expected_to_not match_regex "C@"
+expected_to_not match_regex "[[]a-z-2]@"
+expected_to_not match_regex "a-z-2@"
 
-might match_regex "^a@b@c@$"
+might match_regex "^-@2@a@b@z@$"
 
 ```
 

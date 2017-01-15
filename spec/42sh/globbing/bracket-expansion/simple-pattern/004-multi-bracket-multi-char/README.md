@@ -1,37 +1,44 @@
-# 001-simple-list
+# 004-multi-bracket-multi-char
 
-*[spec > 42sh > globbing > bracket-expansion > simple-pattern](..) > 001-simple-list*
+*[spec > 42sh > globbing > bracket-expansion > simple-pattern](..) > 004-multi-bracket-multi-char*
 
-The purpose of this test is to check that the brackets expansion works with a simple list of characters as pattern.
+The purpose of this test is to match a file name which contain a bracket as first character.
 ### What is done before test
 
 ```bash
 rm -rf "./test_globbing"
 mkdir "./test_globbing"
 cd "./test_globbing"
-touch 'a' 'b' 'c' 'd' 'e' 'f' '[bca]'
+touch 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 21 23 24 25 26 27 28 29 ']' '[' '[12][34]' '1234'
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [bca]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [12][34]
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "a@"
-expected_to match_regex "b@"
-expected_to match_regex "c@"
-expected_to_not match_regex "d@"
-expected_to_not match_regex "e@"
-expected_to_not match_regex "f@"
-expected_to_not match_regex "[[]bca]@"
+expected_to match_regex "13@"
+expected_to match_regex "14@"
+expected_to match_regex "23@"
+expected_to match_regex "24@"
 
-might match_regex "^a@b@c@$"
+expected_to_not match_regex "0[0-9]@"
+expected_to_not match_regex "1[0-2]@"
+expected_to_not match_regex "1[5-9]@"
+expected_to_not match_regex "2[0-2]@"
+expected_to_not match_regex "2[5-9]@"
+expected_to_not match_regex "[[]@"
+expected_to_not match_regex "]@"
+expected_to_not match_regex "[[]12][[]34]@"
+expected_to_not match_regex "1234@"
+
+might match_regex "^13@14@23@24@$"
 
 ```
 

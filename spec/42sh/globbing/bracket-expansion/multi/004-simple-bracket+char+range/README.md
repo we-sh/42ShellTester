@@ -1,37 +1,41 @@
-# 001-simple-list
+# 004-simple-bracket+char+range
 
-*[spec > 42sh > globbing > bracket-expansion > simple-pattern](..) > 001-simple-list*
+*[spec > 42sh > globbing > bracket-expansion > multi](..) > 004-simple-bracket+char+range*
 
-The purpose of this test is to check that the brackets expansion works with a simple list of characters as pattern.
+The purpose of this test is to control if 2 patterns splited by a minus characters can be match.
 ### What is done before test
 
 ```bash
 rm -rf "./test_globbing"
 mkdir "./test_globbing"
 cd "./test_globbing"
-touch 'a' 'b' 'c' 'd' 'e' 'f' '[bca]'
+touch 'a-0' 'a-1' 'a-2' 'b-0' 'b-1' 'b-2' 'Z-0' 'Z-1' 'Z-2' 'a1' 'Z9' 'D4'
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [bca]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [aZ]-[1-9]
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "a@"
-expected_to match_regex "b@"
-expected_to match_regex "c@"
-expected_to_not match_regex "d@"
-expected_to_not match_regex "e@"
-expected_to_not match_regex "f@"
-expected_to_not match_regex "[[]bca]@"
+expected_to match_regex "a-1@"
+expected_to match_regex "a-2@"
+expected_to match_regex "Z-1@"
+expected_to match_regex "Z-2@"
+expected_to_not match_regex "a-0@"
+expected_to_not match_regex "b-0@"
+expected_to_not match_regex "b-1@"
+expected_to_not match_regex "b-2@"
+expected_to_not match_regex "a1@"
+expected_to_not match_regex "Z9@"
+expected_to_not match_regex "D4@"
 
-might match_regex "^a@b@c@$"
+might match_regex "^Z-1@Z-2@a-1@a-2@$"
 
 ```
 

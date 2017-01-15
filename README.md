@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **246 tests**.
+42ShellTester is currently packaged with **264 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -189,6 +189,30 @@ Also display tests that succeed (hidden by default).
         * [013-multiple-1](spec/42sh/globbing/brace-expansion/numeric-range/013-multiple-1)
         * [014-multiple-2](spec/42sh/globbing/brace-expansion/numeric-range/014-multiple-2)
         * [015-big-range](spec/42sh/globbing/brace-expansion/numeric-range/015-big-range)
+    * **[bracket-expansion/](spec/42sh/globbing/bracket-expansion)**
+      * **[multi/](spec/42sh/globbing/bracket-expansion/multi)**
+        * [001-range-and-char](spec/42sh/globbing/bracket-expansion/multi/001-range-and-char)
+        * [002-reverse-range-and-chars](spec/42sh/globbing/bracket-expansion/multi/002-reverse-range-and-chars)
+        * [003-reverse-multi-hard](spec/42sh/globbing/bracket-expansion/multi/003-reverse-multi-hard)
+        * [004-simple-bracket+char+range](spec/42sh/globbing/bracket-expansion/multi/004-simple-bracket+char+range)
+      * **[not/](spec/42sh/globbing/bracket-expansion/not)**
+        * [001-simple-opposit-match](spec/42sh/globbing/bracket-expansion/not/001-simple-opposit-match)
+        * [002-simple-opposite-range](spec/42sh/globbing/bracket-expansion/not/002-simple-opposite-range)
+        * [003-escaped-exclamation-mark](spec/42sh/globbing/bracket-expansion/not/003-escaped-exclamation-mark)
+      * **[range-pattern/](spec/42sh/globbing/bracket-expansion/range-pattern)**
+        * [001-alpha-range](spec/42sh/globbing/bracket-expansion/range-pattern/001-alpha-range)
+        * [002-numeric-range](spec/42sh/globbing/bracket-expansion/range-pattern/002-numeric-range)
+        * [003-ascii-range-1](spec/42sh/globbing/bracket-expansion/range-pattern/003-ascii-range-1)
+        * [004-ascii-range-2](spec/42sh/globbing/bracket-expansion/range-pattern/004-ascii-range-2)
+      * **[simple-pattern/](spec/42sh/globbing/bracket-expansion/simple-pattern)**
+        * [001-simple-list](spec/42sh/globbing/bracket-expansion/simple-pattern/001-simple-list)
+        * [002-multi-bracket](spec/42sh/globbing/bracket-expansion/simple-pattern/002-multi-bracket)
+        * [003-brackets-as-pattern](spec/42sh/globbing/bracket-expansion/simple-pattern/003-brackets-as-pattern)
+        * [004-multi-bracket-multi-char](spec/42sh/globbing/bracket-expansion/simple-pattern/004-multi-bracket-multi-char)
+      * **[single-char-pattern/](spec/42sh/globbing/bracket-expansion/single-char-pattern)**
+        * [001-single-char](spec/42sh/globbing/bracket-expansion/single-char-pattern/001-single-char)
+        * [002-closing-bracket-char](spec/42sh/globbing/bracket-expansion/single-char-pattern/002-closing-bracket-char)
+        * [003-opening-bracket-char](spec/42sh/globbing/bracket-expansion/single-char-pattern/003-opening-bracket-char)
   * **[local-variable/](spec/42sh/local-variable)**
     * [001-declare-and-expand-1](spec/42sh/local-variable/001-declare-and-expand-1)
     * [002-declare-and-expand-2](spec/42sh/local-variable/002-declare-and-expand-2)

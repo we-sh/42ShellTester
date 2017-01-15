@@ -1,37 +1,36 @@
-# 001-simple-list
+# 002-simple-opposite-range
 
-*[spec > 42sh > globbing > bracket-expansion > simple-pattern](..) > 001-simple-list*
+*[spec > 42sh > globbing > bracket-expansion > not](..) > 002-simple-opposite-range*
 
-The purpose of this test is to check that the brackets expansion works with a simple list of characters as pattern.
+The purpose of this test is to check that the brackets expansion works with the exclamation mark `!`. The expected behavior is the reversion of the following pattern.
 ### What is done before test
 
 ```bash
 rm -rf "./test_globbing"
 mkdir "./test_globbing"
 cd "./test_globbing"
-touch 'a' 'b' 'c' 'd' 'e' 'f' '[bca]'
+touch 'a' 'b' 'c' 'z' '1' '42'
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [bca]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [!a-z]
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "a@"
-expected_to match_regex "b@"
-expected_to match_regex "c@"
-expected_to_not match_regex "d@"
-expected_to_not match_regex "e@"
-expected_to_not match_regex "f@"
-expected_to_not match_regex "[[]bca]@"
+expected_to match_regex "1@"
+expected_to match_regex "42@"
+expected_to_not match_regex "a@"
+expected_to_not match_regex "b@"
+expected_to_not match_regex "c@"
+expected_to_not match_regex "z@"
 
-might match_regex "^a@b@c@$"
+might match_regex "^1@42@$"
 
 ```
 
