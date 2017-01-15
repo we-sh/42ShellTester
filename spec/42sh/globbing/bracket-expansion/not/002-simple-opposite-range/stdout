@@ -1,0 +1,8 @@
+expected_to match_regex "1@"
+expected_to match_regex "42@"
+expected_to_not match_regex "a@"
+expected_to_not match_regex "b@"
+expected_to_not match_regex "c@"
+expected_to_not match_regex "z@"
+
+might match_regex "^1@42@$"

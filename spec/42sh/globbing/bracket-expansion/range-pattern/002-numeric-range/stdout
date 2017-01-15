@@ -1,0 +1,9 @@
+expected_to match_regex "1@"
+expected_to match_regex "2@"
+expected_to match_regex "4@"
+expected_to match_regex "9@"
+expected_to_not match_regex "a@"
+expected_to_not match_regex "C@"
+expected_to_not match_regex "[[]0-9]@"
+
+might match_regex "^1@2@4@9@$"

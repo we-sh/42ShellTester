@@ -1,0 +1,16 @@
+expected_to match_regex "13@"
+expected_to match_regex "14@"
+expected_to match_regex "23@"
+expected_to match_regex "24@"
+
+expected_to_not match_regex "0[0-9]@"
+expected_to_not match_regex "1[0-2]@"
+expected_to_not match_regex "1[5-9]@"
+expected_to_not match_regex "2[0-2]@"
+expected_to_not match_regex "2[5-9]@"
+expected_to_not match_regex "[[]@"
+expected_to_not match_regex "]@"
+expected_to_not match_regex "[[]12][[]34]@"
+expected_to_not match_regex "1234@"
+
+might match_regex "^13@14@23@24@$"

@@ -1,0 +1,4 @@
+rm -rf "./test_globbing"
+mkdir "./test_globbing"
+cd "./test_globbing"
+touch '2' 'a' 'B' 'c' 'Z' ']' '[' '[1-z]' '1-z' '-'

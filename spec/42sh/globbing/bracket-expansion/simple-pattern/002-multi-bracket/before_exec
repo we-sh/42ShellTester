@@ -1,0 +1,4 @@
+rm -rf "./test_globbing"
+mkdir "./test_globbing"
+cd "./test_globbing"
+touch "${GLOBAL_TOKEN}abcd" "${GLOBAL_TOKEN}abc" "${GLOBAL_TOKEN}abdc" "${GLOBAL_TOKEN}b" "${GLOBAL_TOKEN}" "${GLOBAL_TOKEN}\[a]b\[c]\[d]"

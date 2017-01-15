@@ -1,0 +1,6 @@
+expected_to match_regex "^${GLOBAL_TOKEN}abcd@$"
+expected_to_not match_regex "${GLOBAL_TOKEN}abc@"
+expected_to_not match_regex "${GLOBAL_TOKEN}abdc@"
+expected_to_not match_regex "${GLOBAL_TOKEN}b@"
+expected_to_not match_regex "${GLOBAL_TOKEN}@"
+expected_to_not match_regex "${GLOBAL_TOKEN}[[]a]b[[]c][[]d]@"

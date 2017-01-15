@@ -1,0 +1,7 @@
+expected_to match_regex "[[]@"
+expected_to match_regex "]@"
+expected_to_not match_regex "a@"
+expected_to_not match_regex "Z@"
+expected_to_not match_regex "[[]][[]]@"
+
+might match_regex "^[[]@]@$"

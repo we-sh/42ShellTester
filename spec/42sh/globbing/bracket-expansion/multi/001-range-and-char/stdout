@@ -1,0 +1,12 @@
+expected_to match_regex "-@"
+expected_to match_regex "2@"
+expected_to match_regex "a@"
+expected_to match_regex "b@"
+expected_to match_regex "z@"
+expected_to_not match_regex "1@"
+expected_to_not match_regex "3@"
+expected_to_not match_regex "C@"
+expected_to_not match_regex "[[]a-z-2]@"
+expected_to_not match_regex "a-z-2@"
+
+might match_regex "^-@2@a@b@z@$"
