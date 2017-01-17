@@ -9,21 +9,21 @@ The purpose of this test is to check that escaping brackets does not result in a
 rm -rf "./test_globbing"
 mkdir "./test_globbing"
 cd "./test_globbing"
-touch 'a'
+touch 'a' 'b' 'c'
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout \[a] [a\] \[a\]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout \[abc] [abc\] \[abc\]
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "^[[]a]@[[]a]@[[]a]@$"
+expected_to match_regex "^[[]abc]@[[]abc]@[[]abc]@$"
 
 ```
 

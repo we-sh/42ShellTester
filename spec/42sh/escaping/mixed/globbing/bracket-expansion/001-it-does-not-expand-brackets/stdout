@@ -1,1 +1,1 @@
-expected_to match_regex "^[[]a]@[[]a]@[[]a]@$"
+expected_to match_regex "^[[]abc]@[[]abc]@[[]abc]@$"
