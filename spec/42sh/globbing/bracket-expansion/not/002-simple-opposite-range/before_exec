@@ -1,4 +1,4 @@
 rm -rf "./test_globbing"
 mkdir "./test_globbing"
 cd "./test_globbing"
-touch 'a' 'b' 'c' 'z' '1' '42'
+touch 'a' 'b' 'c' 'z' '1' '2' '3' '42'

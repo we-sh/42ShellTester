@@ -154,6 +154,7 @@ Also display tests that succeed (hidden by default).
           * [003-it-expands-braces-2](spec/42sh/escaping/mixed/globbing/brace-expansion/003-it-expands-braces-2)
         * **[bracket-expansion/](spec/42sh/escaping/mixed/globbing/bracket-expansion)**
           * [001-it-does-not-expand-brackets](spec/42sh/escaping/mixed/globbing/bracket-expansion/001-it-does-not-expand-brackets)
+          * [002-escaped-inversion-mark](spec/42sh/escaping/mixed/globbing/bracket-expansion/002-escaped-inversion-mark)
       * **[variable-expansion/](spec/42sh/escaping/mixed/variable-expansion)**
         * [001-escape-variable-1](spec/42sh/escaping/mixed/variable-expansion/001-escape-variable-1)
         * [002-it-does-not-escape-variable](spec/42sh/escaping/mixed/variable-expansion/002-it-does-not-escape-variable)
@@ -200,7 +201,6 @@ Also display tests that succeed (hidden by default).
       * **[not/](spec/42sh/globbing/bracket-expansion/not)**
         * [001-simple-opposit-match](spec/42sh/globbing/bracket-expansion/not/001-simple-opposit-match)
         * [002-simple-opposite-range](spec/42sh/globbing/bracket-expansion/not/002-simple-opposite-range)
-        * [003-escaped-exclamation-mark](spec/42sh/globbing/bracket-expansion/not/003-escaped-exclamation-mark)
       * **[range-pattern/](spec/42sh/globbing/bracket-expansion/range-pattern)**
         * [001-alpha-range](spec/42sh/globbing/bracket-expansion/range-pattern/001-alpha-range)
         * [002-numeric-range](spec/42sh/globbing/bracket-expansion/range-pattern/002-numeric-range)

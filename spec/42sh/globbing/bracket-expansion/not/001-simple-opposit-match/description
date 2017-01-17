@@ -1,1 +1,1 @@
-The purpose of this test is to check that the brackets expansion works with the exclamation mark `!`. The expected behavior is the reversion of the following pattern.
+The purpose of this test is to check that the brackets expansion works with the inversion mark `!` or `^`. The expected behavior is the reversion of the following pattern.

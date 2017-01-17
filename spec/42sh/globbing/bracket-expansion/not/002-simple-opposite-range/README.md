@@ -2,14 +2,14 @@
 
 *[spec > 42sh > globbing > bracket-expansion > not](..) > 002-simple-opposite-range*
 
-The purpose of this test is to check that the brackets expansion works with the exclamation mark `!`. The expected behavior is the reversion of the following pattern.
+The purpose of this test is to check that the brackets expansion works with the inversion mark `!` or `^`. The expected behavior is the reversion of the following pattern.
 ### What is done before test
 
 ```bash
 rm -rf "./test_globbing"
 mkdir "./test_globbing"
 cd "./test_globbing"
-touch 'a' 'b' 'c' 'z' '1' '42'
+touch 'a' 'b' 'c' 'z' '1' '2' '3' '42'
 
 ```
 
@@ -17,6 +17,7 @@ touch 'a' 'b' 'c' 'z' '1' '42'
 
 ```bash
 ${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [!a-z]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [^a-z]
 
 ```
 
@@ -24,13 +25,11 @@ ${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [!a-z]
 
 ```bash
 expected_to match_regex "1@"
-expected_to match_regex "42@"
-expected_to_not match_regex "a@"
-expected_to_not match_regex "b@"
-expected_to_not match_regex "c@"
-expected_to_not match_regex "z@"
+expected_to match_regex "2@"
+expected_to match_regex "3@"
+expected_to_not match_regex "42@"
 
-might match_regex "^1@42@$"
+might match_regex "^1@2@3@$"
 
 ```
 

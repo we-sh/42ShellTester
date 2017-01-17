@@ -1,0 +1,11 @@
+expected_to match_regex "!@"
+expected_to match_regex "[\\^]@"
+expected_to match_regex "a@"
+expected_to match_regex "b@"
+expected_to match_regex "c@"
+expected_to_not match_regex "d@"
+expected_to_not match_regex "e@"
+expected_to_not match_regex "f@"
+
+might match_regex "^!@a@b@c@$"
+might match_regex "^[\\^]@a@b@c@$"

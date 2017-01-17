@@ -1,1 +1,2 @@
 ${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [!a-z]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [^a-z]
