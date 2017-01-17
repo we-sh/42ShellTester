@@ -17,6 +17,7 @@ touch '][' 'a[' '1['
 
 ```bash
 ${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [!]az][[]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [^]az][[]
 
 ```
 
@@ -26,7 +27,6 @@ ${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [!]az][[]
 expected_to match_regex "1[[]@"
 expected_to_not match_regex "][[]@"
 expected_to_not match_regex "a[[]@"
-expected_to_not match_regex "[[]!]az][[][[]]@"
 
 might match_regex "^1[[]@$"
 

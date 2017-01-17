@@ -17,6 +17,13 @@ expected_to match_regex "^\\1@\\2@$"
 
 ```
 
+### What is expected on error output
+
+```bash
+expected_to be_empty
+
+```
+
 ### Variables
 
 The following variables may appear in this test:

@@ -9,7 +9,7 @@ The purpose of this test is to check that brackets expansion works with 2 patter
 rm -rf "./test_globbing"
 mkdir "./test_globbing"
 cd "./test_globbing"
-touch 'a4' 'a3' 'a2' 'a42' 'a[42]' 'z4' 'z3' 'z2' 'z42' 'z[42]' '[!a-y][42]' '42'
+touch 'a4' 'a3' 'a2' 'a42' 'a[42]' 'z4' 'z3' 'z2' 'z42' 'z[42]' '42'
 
 ```
 
@@ -17,6 +17,7 @@ touch 'a4' 'a3' 'a2' 'a42' 'a[42]' 'z4' 'z3' 'z2' 'z42' 'z[42]' '[!a-y][42]' '42
 
 ```bash
 ${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [!a-y][42]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [^a-y][42]
 
 ```
 
@@ -29,12 +30,9 @@ expected_to match_regex "z2@"
 expected_to_not match_regex "z3@"
 expected_to_not match_regex "z42@"
 expected_to_not match_regex "z[[]42]@"
-expected_to_not match_regex "a4@"
 expected_to_not match_regex "a3@"
-expected_to_not match_regex "a2@"
 expected_to_not match_regex "a42@"
 expected_to_not match_regex "a[[]42]@"
-expected_to_not match_regex "[[]!a-y][[]42]@"
 
 might match_regex "^42@z2@z4@$"
 

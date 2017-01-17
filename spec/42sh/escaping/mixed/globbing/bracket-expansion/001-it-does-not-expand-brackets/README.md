@@ -27,6 +27,13 @@ expected_to match_regex "^[[]abc]@[[]abc]@[[]abc]@$"
 
 ```
 
+### What is expected on error output
+
+```bash
+expected_to be_empty
+
+```
+
 ### Variables
 
 The following variables may appear in this test:

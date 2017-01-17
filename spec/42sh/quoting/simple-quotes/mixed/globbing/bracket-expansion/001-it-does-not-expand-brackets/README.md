@@ -1,19 +1,30 @@
-# 001-it-does-not-expand-braces-1
+# 001-it-does-not-expand-brackets
 
-*[spec > 42sh > escaping > mixed > globbing > brace-expansion](..) > 001-it-does-not-expand-braces-1*
+*[spec > 42sh > quoting > simple-quotes > mixed > globbing > bracket-expansion](..) > 001-it-does-not-expand-brackets*
 
-The purpose of this test is to check that escaping braces does not result in an expansion process.
+The purpose of this test is to check that an argument made with quoted and unquoted parts does not result in bracket pattern expansion.
+### What is done before test
+
+```bash
+rm -rf "./test_globbing"
+mkdir "./test_globbing"
+cd "./test_globbing"
+touch 'a'
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
-./write_all_arguments_on_stdout \{1..2} {1\..2} {1.\.2} {1..2\}
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout ['a']
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "^[{]1..2}@[{]1..2}@[{]1..2}@[{]1..2}@$"
+expected_to match_regex "^[[]a]@$"
+expected_to_not match_regex "a@"
 
 ```
 
