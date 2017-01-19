@@ -1,0 +1,2 @@
+expected_to_not match_regex "[[]a]@"
+expected_to match_regex "^a@$"

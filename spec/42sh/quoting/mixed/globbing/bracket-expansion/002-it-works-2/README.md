@@ -1,30 +1,40 @@
-# 001-it-does-not-expand-brackets
+# 002-it-works-2
 
-*[spec > 42sh > quoting > simple-quotes > mixed > globbing > bracket-expansion](..) > 001-it-does-not-expand-brackets*
+*[spec > 42sh > quoting > mixed > globbing > bracket-expansion](..) > 002-it-works-2*
 
-The purpose of this test is to check that an argument made with quoted and unquoted parts does not result in bracket pattern expansion.
+The purpose of this test is to check that an argument made with quoted and unquoted parts results in bracket pattern expansion.
 ### What is done before test
 
 ```bash
 rm -rf "./test_globbing"
 mkdir "./test_globbing"
 cd "./test_globbing"
-touch 'a'
+touch 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h'
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout ['a']
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout ["a"bc'def'gh"]"
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex "[[]a]@"
-expected_to match_regex "^a@$"
+expected_to match_regex "a@"
+expected_to match_regex "b@"
+expected_to match_regex "c@"
+expected_to match_regex "d@"
+expected_to match_regex "e@"
+expected_to match_regex "f@"
+expected_to match_regex "g@"
+expected_to match_regex "h@"
+
+expected_to_not match_regex "bc"
+expected_to_not match_regex "def"
+expected_to_not match_regex "gh"
 
 ```
 
