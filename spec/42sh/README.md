@@ -6,6 +6,5 @@
 * [escaping](./escaping)
 * [globbing](./globbing)
 * [local-variable](./local-variable)
-* [mixed](./mixed)
 * [quoting](./quoting)
 * [subshell](./subshell)

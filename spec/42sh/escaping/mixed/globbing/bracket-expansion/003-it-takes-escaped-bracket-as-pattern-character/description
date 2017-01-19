@@ -1,0 +1,1 @@
+The purpose of this test is to check that a closing bracket ']' may be escaped in a backet expansion pattern.

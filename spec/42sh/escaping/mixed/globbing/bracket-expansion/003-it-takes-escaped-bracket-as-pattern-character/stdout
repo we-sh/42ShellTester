@@ -1,0 +1,10 @@
+expected_to match_regex "a@" 4 times
+expected_to match_regex "b@" 4 times
+expected_to match_regex "c@" 4 times
+expected_to match_regex "]@" 4 times
+expected_to match_regex "d@" 4 times
+expected_to match_regex "e@" 4 times
+expected_to match_regex "f@" 4 times
+expected_to_not match_regex "def"
+
+might match_regex "^]@a@b@c@d@e@f@$"

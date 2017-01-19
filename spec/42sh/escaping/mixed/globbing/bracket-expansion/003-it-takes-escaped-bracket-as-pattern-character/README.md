@@ -1,30 +1,41 @@
-# 001-it-does-not-expand-brackets
+# 003-it-takes-escaped-bracket-as-pattern-character
 
-*[spec > 42sh > quoting > simple-quotes > mixed > globbing > bracket-expansion](..) > 001-it-does-not-expand-brackets*
+*[spec > 42sh > escaping > mixed > globbing > bracket-expansion](..) > 003-it-takes-escaped-bracket-as-pattern-character*
 
-The purpose of this test is to check that an argument made with quoted and unquoted parts does not result in bracket pattern expansion.
+The purpose of this test is to check that a closing bracket ']' may be escaped in a backet expansion pattern.
 ### What is done before test
 
 ```bash
 rm -rf "./test_globbing"
 mkdir "./test_globbing"
 cd "./test_globbing"
-touch 'a'
+touch 'a' 'b' 'c' 'd' 'e' 'f' ']'
 
 ```
 
 ### Shell commands that are sent to the standard entry
 
 ```bash
-${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout ['a']
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [abc\]def]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [abc\\\]def]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [abc\\\\\]def]
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [abc\\\\\\\]def]
 
 ```
 
 ### What is expected on standard output
 
 ```bash
-expected_to_not match_regex "[[]a]@"
-expected_to match_regex "^a@$"
+expected_to match_regex "a@" 4 times
+expected_to match_regex "b@" 4 times
+expected_to match_regex "c@" 4 times
+expected_to match_regex "]@" 4 times
+expected_to match_regex "d@" 4 times
+expected_to match_regex "e@" 4 times
+expected_to match_regex "f@" 4 times
+expected_to_not match_regex "def"
+
+might match_regex "^]@a@b@c@d@e@f@$"
 
 ```
 

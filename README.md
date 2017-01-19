@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **266 tests**.
+42ShellTester is currently packaged with **267 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -155,6 +155,7 @@ Also display tests that succeed (hidden by default).
         * **[bracket-expansion/](spec/42sh/escaping/mixed/globbing/bracket-expansion)**
           * [001-it-does-not-expand-brackets](spec/42sh/escaping/mixed/globbing/bracket-expansion/001-it-does-not-expand-brackets)
           * [002-escaped-inversion-mark](spec/42sh/escaping/mixed/globbing/bracket-expansion/002-escaped-inversion-mark)
+          * [003-it-takes-escaped-bracket-as-pattern-character](spec/42sh/escaping/mixed/globbing/bracket-expansion/003-it-takes-escaped-bracket-as-pattern-character)
       * **[variable-expansion/](spec/42sh/escaping/mixed/variable-expansion)**
         * [001-escape-variable-1](spec/42sh/escaping/mixed/variable-expansion/001-escape-variable-1)
         * [002-it-does-not-escape-variable](spec/42sh/escaping/mixed/variable-expansion/002-it-does-not-escape-variable)
@@ -229,11 +230,6 @@ Also display tests that succeed (hidden by default).
         * [001-local-variable-shouldnt-be-set](spec/42sh/local-variable/mixed/inline-environment-variable/001-local-variable-shouldnt-be-set)
       * **[tilde-expansion/](spec/42sh/local-variable/mixed/tilde-expansion)**
         * [001-process-tilde-expansion](spec/42sh/local-variable/mixed/tilde-expansion/001-process-tilde-expansion)
-  * **[mixed/](spec/42sh/mixed)**
-    * **[001-export-and-local-var/](spec/42sh/mixed/001-export-and-local-var)**
-    * **[001-export-and-local-var-part2/](spec/42sh/mixed/001-export-and-local-var-part2)**
-    * **[002-export-and-tmp-env/](spec/42sh/mixed/002-export-and-tmp-env)**
-    * **[002-export-and-tmp-env-part2/](spec/42sh/mixed/002-export-and-tmp-env-part2)**
   * **[quoting/](spec/42sh/quoting)**
     * **[double-quotes/](spec/42sh/quoting/double-quotes)**
       * [001-it-works](spec/42sh/quoting/double-quotes/001-it-works)
