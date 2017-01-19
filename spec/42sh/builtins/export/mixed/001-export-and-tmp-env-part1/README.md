@@ -21,7 +21,7 @@ export
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "${GLOBAL_TOKEN}_NAME=${GLOBAL_TOKEN}_VALUE"
+expected_to match_regex "${GLOBAL_TOKEN}_NAME=[\"]${GLOBAL_TOKEN}_VALUE[\"]"
 
 ```
 

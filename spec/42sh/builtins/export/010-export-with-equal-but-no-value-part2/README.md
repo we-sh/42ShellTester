@@ -20,7 +20,7 @@ export
 ### What is expected on standard output
 
 ```bash
-expected_to match_regex "^${GLOBAL_TOKEN}_NAME="
+expected_to match_regex "${GLOBAL_TOKEN}_NAME="
 
 ```
 

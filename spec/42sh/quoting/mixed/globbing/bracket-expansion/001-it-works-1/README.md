@@ -16,7 +16,7 @@ touch 'a'
 ### Shell commands that are sent to the standard entry
 
 ```bash
-${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout ['a'"]"
+${GLOBAL_TMP_DIRECTORY}/write_all_arguments_on_stdout [""'a'""]
 
 ```
 
