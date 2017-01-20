@@ -9,7 +9,7 @@ A binary that sleeps for a duration in seconds given as first argument and then 
 
 int	main(int argc, char **argv)
 {
-	int	seconds
+	int	seconds;
 
 	seconds = 1;
 	if (argc > 1)

@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **273 tests**.
+42ShellTester is currently packaged with **277 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -173,6 +173,11 @@ Also display tests that succeed (hidden by default).
         * [008-multiple-1](spec/42sh/globbing/brace-expansion/ascii-range/008-multiple-1)
         * [009-multiple-2](spec/42sh/globbing/brace-expansion/ascii-range/009-multiple-2)
         * [010-big-range](spec/42sh/globbing/brace-expansion/ascii-range/010-big-range)
+      * **[errors/](spec/42sh/globbing/brace-expansion/errors)**
+        * [001-invalid-pattern-1](spec/42sh/globbing/brace-expansion/errors/001-invalid-pattern-1)
+        * [002-invalid-pattern-2](spec/42sh/globbing/brace-expansion/errors/002-invalid-pattern-2)
+        * [003-invalid-pattern-3](spec/42sh/globbing/brace-expansion/errors/003-invalid-pattern-3)
+        * [004-invalid-pattern-4](spec/42sh/globbing/brace-expansion/errors/004-invalid-pattern-4)
       * **[list-of-values/](spec/42sh/globbing/brace-expansion/list-of-values)**
         * [001-nothing-to-be-done](spec/42sh/globbing/brace-expansion/list-of-values/001-nothing-to-be-done)
         * [002-simple-test-1](spec/42sh/globbing/brace-expansion/list-of-values/002-simple-test-1)
