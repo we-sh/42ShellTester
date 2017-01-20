@@ -1,0 +1,1 @@
+The purpose of this test is to check that declaring a variable and specifying a binary in a subshell does not result in local variable declaration or a modified parent shell's environment, but only a modified child's environment.
