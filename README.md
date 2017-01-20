@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **279 tests**.
+42ShellTester is currently packaged with **283 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -304,6 +304,11 @@ Also display tests that succeed (hidden by default).
     * [003-multiline](spec/42sh/subshell/003-multiline)
     * [004-exit-status](spec/42sh/subshell/004-exit-status)
     * [005-copy-of-environment](spec/42sh/subshell/005-copy-of-environment)
+    * **[errors/](spec/42sh/subshell/errors)**
+      * [001-parse-error-1](spec/42sh/subshell/errors/001-parse-error-1)
+      * [002-parse-error-2](spec/42sh/subshell/errors/002-parse-error-2)
+      * [003-parse-error-3](spec/42sh/subshell/errors/003-parse-error-3)
+      * [004-parse-error-4](spec/42sh/subshell/errors/004-parse-error-4)
     * **[mixed/](spec/42sh/subshell/mixed)**
       * **[builtins/](spec/42sh/subshell/mixed/builtins)**
         * **[cd/](spec/42sh/subshell/mixed/builtins/cd)**

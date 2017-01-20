@@ -7,4 +7,5 @@
 * [003-multiline](./003-multiline)
 * [004-exit-status](./004-exit-status)
 * [005-copy-of-environment](./005-copy-of-environment)
+* [errors](./errors)
 * [mixed](./mixed)

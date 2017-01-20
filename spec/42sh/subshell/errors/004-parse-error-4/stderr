@@ -1,0 +1,2 @@
+expected_to_not be_empty
+might match_regex "([Ss]yntax|[Pp]arse) error"
