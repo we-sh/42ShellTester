@@ -4,8 +4,9 @@
 
 int	main(int argc, char **argv, char **envp)
 {
-	int	i = 0;
+	int	i;
 
+	i = 0;
 	(void)argc;
 	(void)argv;
 	write(1, "------------------------------\n", 31);

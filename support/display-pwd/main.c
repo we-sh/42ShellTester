@@ -3,7 +3,8 @@
 
 int	main(void)
 {
-	char *pwd;
+	char	*pwd;
+
 	pwd = getcwd(NULL, 0);
 	write(1, "PWD:", 4);
 	write(1, pwd, strlen(pwd));

@@ -6,7 +6,7 @@ int	main(int argc, char **argv)
 	if (argc >= 2)
 	{
 		argv++;
-		while(*argv)
+		while (*argv)
 		{
 			write(1, *argv, strlen(*argv));
 			write(1, "@", 1);

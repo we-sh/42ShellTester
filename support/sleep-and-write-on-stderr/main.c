@@ -4,7 +4,7 @@
 
 int	main(int argc, char **argv)
 {
-	int	seconds
+	int	seconds;
 
 	seconds = 1;
 	if (argc > 1)
