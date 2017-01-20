@@ -1,0 +1,2 @@
+./exit_with_status 42
+./write_on_stderr $?

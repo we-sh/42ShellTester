@@ -8,7 +8,7 @@
 It brings you an easy way to **add**, **maintain** and **run** integration tests, helping you to work step by step on your Shell implementation.
 
 <!--START_TOTAL_TESTS-->
-42ShellTester is currently packaged with **272 tests**.
+42ShellTester is currently packaged with **273 tests**.
 <!--END_TOTAL_TESTS-->
 
 ## Install
@@ -225,6 +225,7 @@ Also display tests that succeed (hidden by default).
     * [006-existing-variable-in-environment-3](spec/42sh/local-variable/006-existing-variable-in-environment-3)
     * [007-multiple-declaration-at-a-time](spec/42sh/local-variable/007-multiple-declaration-at-a-time)
     * [008-multiple-declaration-with-same-name](spec/42sh/local-variable/008-multiple-declaration-with-same-name)
+    * [009-last-exit-status](spec/42sh/local-variable/009-last-exit-status)
     * **[mixed/](spec/42sh/local-variable/mixed)**
       * **[inline-environment-variable/](spec/42sh/local-variable/mixed/inline-environment-variable)**
         * [001-local-variable-shouldnt-be-set](spec/42sh/local-variable/mixed/inline-environment-variable/001-local-variable-shouldnt-be-set)
