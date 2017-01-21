@@ -1,0 +1,2 @@
+expected_to create_file "${GLOBAL_TOKEN}_FILENAME" matching_regex "^${GLOBAL_TOKEN}_VALUE$"
+expected_to exit_with_status "0"

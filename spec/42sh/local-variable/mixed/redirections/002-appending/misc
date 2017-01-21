@@ -1,0 +1,3 @@
+expected_to create_file "${GLOBAL_TOKEN}_FILENAME" matching_regex "^${GLOBAL_TOKEN}_VALUE1$"
+expected_to create_file "${GLOBAL_TOKEN}_FILENAME" matching_regex "^${GLOBAL_TOKEN}_VALUE2$"
+expected_to exit_with_status "0"

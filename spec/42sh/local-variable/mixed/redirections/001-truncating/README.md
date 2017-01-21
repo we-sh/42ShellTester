@@ -1,8 +1,15 @@
-# 001-great
+# 001-truncating
 
-*[spec > 42sh > local-variable > mixed > redirections](..) > 001-great*
+*[spec > 42sh > local-variable > mixed > redirections](..) > 001-truncating*
 
-The purpose of this test is to check that a redirection can be set with a local variable.
+The purpose of this test is to check that a redirection can be set with a local variable as file name.
+### What is done before test
+
+```bash
+rm -f "${GLOBAL_TOKEN}_FILENAME"
+
+```
+
 ### Shell commands that are sent to the standard entry
 
 ```bash
@@ -28,7 +35,7 @@ expected_to be_empty
 ### What miscellaneous behaviors are expected
 
 ```bash
-expected_to create_file "${GLOBAL_TOKEN}_FILENAME" matching_regex "${GLOBAL_TOKEN}_VALUE"
+expected_to create_file "${GLOBAL_TOKEN}_FILENAME" matching_regex "^${GLOBAL_TOKEN}_VALUE$"
 expected_to exit_with_status "0"
 
 ```
