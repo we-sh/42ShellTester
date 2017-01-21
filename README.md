@@ -498,12 +498,14 @@ Follow the guideline to add a new test:
 
 * **`be_empty`**: Actual output is empty.
 * **`create_file`** + *`$filename`*: Actual command creates a file named *$filename*. May also be followed with a file test:
-  * **`with_regexp`** + *`$regex`*: At least one line of the file matches with the regular expression *$regex*.
-  * **`without_regexp`** + *`$regex`*: Any line of the file does match with the regular expression *$regex*.
+  * **`matching_regex`** + *`$regex`*: At least one line of the file matches with the regular expression *$regex*.
+  * **`not_matching_regex`** + *`$regex`*: Any line of the file does match with the regular expression *$regex*.
   * **`with_nb_of_lines`** + *`$int`*: The file contains exactly *$int* lines.
 * **`exit_with_status`** + *`$int`*: The Shell termination results in the exit status *$int*.
 * **`have_nb_of_lines`** + *`$int`*: Actual output contains exactly *$int* lines.
 * **`match_regex`** + *`$regex`*: At least one line of actual output does match with the regular expression *$regex*.
+  * **`once`**: The matching is limited to only one occurrence.
+  * *`$int`* **`times`**: The matching must exactly occur *$int* times.
 * **`match_each_regex_of_file`** + *`$filename`*: Actual output does match with each regular expression contained in the file named *$filename* (in an indifferent order).
 
 ## Adding new verb
