@@ -1,0 +1,3 @@
+rm -rf "temporary_directory"
+mkdir -p "temporary_directory"
+cd "temporary_directory"

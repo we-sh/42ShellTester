@@ -1,0 +1,2 @@
+PATH=.. write_on_stdout ${GLOBAL_TOKEN}
+exit_with_status 42
